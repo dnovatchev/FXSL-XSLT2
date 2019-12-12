@@ -1,0 +1,8 @@
+<xml>
+ <factory x="A" capacity = "3" />
+ <factory x="B" capacity= "6" />
+ <factory x="C" capacity = "3" />
+ <factory x="D" capacity = "2" />
+ <factory x="E" capacity = "2" />
+ ...etc...
+</xml>

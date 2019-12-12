@@ -1,0 +1,35 @@
+<claim_file>
+    <claim>
+      <claim_line>
+        <reimbursement_amount>45.00</reimbursement_amount>
+      </claim_line>
+      <claim_line>
+        <reimbursement_amount>23.95</reimbursement_amount>
+      </claim_line>
+      <claim_line>
+        <reimbursement_amount>56.36</reimbursement_amount>
+      </claim_line>
+    </claim>
+    <claim>
+      <claim_line>
+        <reimbursement_amount>45.00</reimbursement_amount>
+      </claim_line>
+      <claim_line>
+        <reimbursement_amount>23.95</reimbursement_amount>
+      </claim_line>
+      <claim_line>
+        <reimbursement_amount>37.04</reimbursement_amount>
+      </claim_line>
+    </claim>
+    <claim>
+      <claim_line>
+        <reimbursement_amount>45.00</reimbursement_amount>
+      </claim_line>
+      <claim_line>
+        <reimbursement_amount>23.95</reimbursement_amount>
+      </claim_line>
+      <claim_line>
+        <reimbursement_amount>43.00</reimbursement_amount>
+      </claim_line>
+    </claim>
+</claim_file>

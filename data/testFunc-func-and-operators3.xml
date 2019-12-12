@@ -1,0 +1,5 @@
+<tgroup cols="3" colsep="0" rowsep="0" align="left">
+  <colspec colname="1" colwidth="100*" />
+  <colspec colname="2" colwidth="200*" />
+  <colspec colname="3" colwidth="300*" />
+</tgroup>

@@ -1,0 +1,11 @@
+<disks>
+  <disk>
+    <freespace>1235MB</freespace>
+  </disk>
+  <disk>
+    <freespace>40MB</freespace>
+  </disk>
+  <disk>
+    <freespace>75MB</freespace>
+  </disk>
+</disks>

@@ -1,0 +1,7 @@
+<order>
+  <order-item price="1.23" qty="2"/>
+  <order-item price="2.34" qty="3"/>
+  <order-item price="3.45" qty="12"/>
+  <order-item price="4.32" qty="2"/>
+  <order-item price="3.21" qty="2"/>
+</order>

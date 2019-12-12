@@ -1,0 +1,16 @@
+<PUBLICATION>
+  <DOCUMENT source="splits" group="surveys" output="body">
+    <RECORD fragment="splits" recid="12129" fragid="13" product="surveys"
+group="surveys" status="1">
+      <ID idtype="fpid">12129</ID>
+      <RECORDSECTION docfragment="splits">
+        <RECORDITEM sqlsource="oldshares">2</RECORDITEM>
+        <RECORDITEM sqlsource="newshares">1</RECORDITEM>
+      </RECORDSECTION>
+      <RECORDSECTION docfragment="splits">
+        <RECORDITEM sqlsource="oldshares">2</RECORDITEM>
+        <RECORDITEM sqlsource="newshares">1</RECORDITEM>
+      </RECORDSECTION>
+    </RECORD>
+  </DOCUMENT>
+</PUBLICATION>

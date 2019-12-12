@@ -1,0 +1,254 @@
+
+   f:add(f:add(2,3), 7) = 12
+   ======================================
+   f:map( f:flip(f:add(), 100), 1 to 10 ) =
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+   
+   ======================================
+   f:map( f:flip(f:subtr(), 100), 1 to 10 ) =
+-99
+-98
+-97
+-96
+-95
+-94
+-93
+-92
+-91
+-90
+   
+   ======================================
+   f:map( f:flip(f:mult(), 3), 1 to 10 ) =
+3
+6
+9
+12
+15
+18
+21
+24
+27
+30
+   
+   ======================================
+   f:map( f:flip(f:div(), 5), 1 to 10 ) =
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+1.8
+2
+   
+   ======================================
+   f:map( f:flip(f:idiv(), 3), 1 to 10 ) =
+0
+0
+1
+1
+1
+2
+2
+2
+3
+3
+   
+   ======================================
+   f:map( f:flip(f:mod(), 3), 1 to 10 ) =
+1
+2
+0
+1
+2
+0
+1
+2
+0
+1
+   
+   ======================================
+   f:zipWith(f:eq(), 1 to 10, f:map(f:flip(f:pow(), 2),  1 to 9)) =
+true
+false
+false
+false
+false
+false
+false
+false
+false
+   
+   ======================================
+   f:zipWith(f:eq(), 1 to 10, f:map(f:pow(2),  0 to 9)) =
+true
+false
+false
+false
+false
+false
+false
+false
+false
+false
+   
+   ======================================
+   f:zipWith(f:ne(), 1 to 10, f:map(f:flip(f:pow(), 2),  1 to 9)) =
+false
+true
+true
+true
+true
+true
+true
+true
+true
+   
+   ======================================
+   f:zipWith(f:ne(), 1 to 10, f:map(f:pow(2),  0 to 9)) =
+false
+true
+true
+true
+true
+true
+true
+true
+true
+true
+   
+   ======================================
+   f:zipWith(f:lt(), 1 to 10, 1 to 10) =
+false
+false
+false
+false
+false
+false
+false
+false
+false
+false
+   
+   ======================================
+   f:zipWith(f:le(), 1 to 10, 1 to 10) =
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+   
+   ======================================
+   f:zipWith(f:gt(), 1 to 10, 1 to 10) =
+false
+false
+false
+false
+false
+false
+false
+false
+false
+false
+   
+   ======================================
+   f:zipWith(f:ge(), 1 to 10, 1 to 10) =
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+   
+   ======================================
+   f:map(f:abs(), -5 to 5) =
+5
+4
+3
+2
+1
+0
+1
+2
+3
+4
+5
+   
+   ======================================
+   f:map(f:ceiling(), f:map( f:flip(f:add(), 0.5), -5 to 5 )) =
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+   
+   ======================================
+   f:map(f:floor(), f:map( f:flip(f:add(), 0.5), -5 to 5 )) =
+-5
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+   
+   ======================================
+   f:map(f:round(), f:map( f:flip(f:add(), 0.5), -5 to 5 )) =
+-4
+-3
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+   
+   ======================================
+   f:map(f:round-half-to-even(f:sqrt(2, 0.000001)), 0 to 13) =
+1
+1.4
+1.41
+1.414
+1.4142
+1.41421
+1.414214
+1.4142136
+1.41421356
+1.414213562
+1.4142135624
+1.41421356237
+1.414213562375
+1.4142135623747

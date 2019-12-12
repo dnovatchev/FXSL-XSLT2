@@ -1,0 +1,14 @@
+<calendar name="americana">
+  <month value="January"/>
+  <month value="February"/>
+  <month value="March"/>
+  <month value="April"/>
+  <month value="May"/>
+  <month value="June"/>
+  <month value="July"/>
+  <month value="August"/>
+  <month value="September"/>
+  <month value="October"/>
+  <month value="November"/>
+  <month value="December"/>
+</calendar>

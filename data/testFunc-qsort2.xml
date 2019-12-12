@@ -1,0 +1,12 @@
+<class>
+  <students>
+    <student name="Kate" dob="1991-01-01+12:00"/>
+    <student name="John" dob="1990-12-31-12:00"/>
+    <student name="Peter" dob="1991-01-01+10:00"/>
+    <student name="Mary" dob="1990-12-31-09:00"/>
+    <student name="Ann" dob="1989-11-12+11:00"/>
+    <student name="Simon" dob="1988-11-12+12:00"/>
+    <student name="Jeni" dob="1991-01-02+10:00"/>
+  </students>
+</class>
+

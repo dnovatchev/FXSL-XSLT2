@@ -1,0 +1,35 @@
+<cat>
+  <entry>
+    <seq_num>81732</seq_num>
+    <k_entries>
+      <k val="kval1"/>
+      <k val="kval2"/>
+    </k_entries>
+    <r_entries>
+      <r val="rval1"/>
+      <r val="rval2"/>
+    </r_entries>
+  </entry>
+  <entry>
+    <seq_num>81742</seq_num>
+    <k_entries>
+      <k val="kval3"/>
+      <k val="kval4"/>
+    </k_entries>
+    <r_entries>
+      <r val="rval3"/>
+      <r val="rval4"/>
+    </r_entries>
+  </entry>
+  <entry>
+    <seq_num>81752</seq_num>
+    <k_entries>
+      <k val="kval5"/>
+      <k val="kval6"/>
+    </k_entries>
+    <r_entries>
+      <r val="rval5"/>
+      <r val="rval6"/>
+    </r_entries>
+  </entry>
+</cat>
