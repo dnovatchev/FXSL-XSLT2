@@ -10,6 +10,6 @@ exclude-result-prefixes="f xs"
   <xsl:function name="f:allTrue" as="xs:boolean" >
     <xsl:param name="pList" as="xs:boolean*"/>
   
-    <xsl:copy-of select="f:foldl(f:and(), true(), $pList)"/>
+    <xsl:sequence select="f:foldl(f:and(), true(), $pList)"/>
   </xsl:function>
 </xsl:stylesheet>

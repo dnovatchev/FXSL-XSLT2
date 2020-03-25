@@ -21,7 +21,7 @@ exclude-result-prefixes="f xs maximum-pick-bigger"
       <xsl:message>
         $pList: '<xsl:copy-of select="$pList"/>'
       </xsl:message>      
--->      
+ -->
       <xsl:variable name="vCMPFun" as="element()">
         <maximum-pick-bigger:maximum-pick-bigger/>
       </xsl:variable> 

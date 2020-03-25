@@ -1,0 +1,177 @@
+<t  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
+  <f name="years-from-duration" type="xs:integer?">
+    <pDuration type="xs:duration?"/>
+    
+    <fCode>
+      <xsl:sequence select="years-from-duration($pDuration)"/>
+    </fCode>
+  </f>
+  <f name="months-from-duration" type="xs:integer?">
+    <pDuration type="xs:duration?"/>
+    
+    <fCode>
+      <xsl:sequence select="months-from-duration($pDuration)"/>
+    </fCode>
+  </f>
+  <f name="days-from-duration" type="xs:integer?">
+    <pDuration type="xs:duration?"/>
+    
+    <fCode>
+      <xsl:sequence select="days-from-duration($pDuration)"/>
+    </fCode>
+  </f>
+  <f name="hours-from-duration" type="xs:integer?">
+    <pDuration type="xs:duration?"/>
+    
+    <fCode>
+      <xsl:sequence select="hours-from-duration($pDuration)"/>
+    </fCode>
+  </f>
+  <f name="minutes-from-duration" type="xs:integer?">
+    <pDuration type="xs:duration?"/>
+    
+    <fCode>
+      <xsl:sequence select="minutes-from-duration($pDuration)"/>
+    </fCode>
+  </f>
+  <f name="seconds-from-duration" type="xs:decimal?">
+    <pDuration type="xs:duration?"/>
+    
+    <fCode>
+      <xsl:sequence select="seconds-from-duration($pDuration)"/>
+    </fCode>
+  </f>
+  <f name="year-from-dateTime" type="xs:integer?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="year-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="month-from-dateTime" type="xs:integer?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="month-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="day-from-dateTime" type="xs:integer?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="day-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="hours-from-dateTime" type="xs:integer?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="hours-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="minutes-from-dateTime" type="xs:integer?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="minutes-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="seconds-from-dateTime" type="xs:decimal?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="seconds-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="timezone-from-dateTime" type="xs:dayTimeDuration?">
+    <pDatetime type="xs:dateTime?"/>
+    
+    <fCode>
+      <xsl:sequence select="timezone-from-dateTime($pDatetime)"/>
+    </fCode>
+  </f>
+  <f name="year-from-date" type="xs:integer?">
+    <pDate type="xs:date?"/>
+    
+    <fCode>
+      <xsl:sequence select="year-from-date($pDate)"/>
+    </fCode>
+  </f>
+  <f name="month-from-date" type="xs:integer?">
+    <pDate type="xs:date?"/>
+    
+    <fCode>
+      <xsl:sequence select="month-from-date($pDate)"/>
+    </fCode>
+  </f>
+  <f name="day-from-date" type="xs:integer?">
+    <pDate type="xs:date?"/>
+    
+    <fCode>
+      <xsl:sequence select="day-from-date($pDate)"/>
+    </fCode>
+  </f>
+  <f name="timezone-from-date" type="xs:dayTimeDuration?">
+    <pDate type="xs:date?"/>
+    
+    <fCode>
+      <xsl:sequence select="timezone-from-date($pDate)"/>
+    </fCode>
+  </f>
+  <f name="hours-from-time" type="xs:integer?">
+    <pTime type="xs:time?"/>
+    
+    <fCode>
+      <xsl:sequence select="hours-from-time($pTime)"/>
+    </fCode>
+  </f>
+  <f name="minutes-from-time" type="xs:integer?">
+    <pTime type="xs:time?"/>
+    
+    <fCode>
+      <xsl:sequence select="minutes-from-time($pTime)"/>
+    </fCode>
+  </f>
+  <f name="seconds-from-time" type="xs:decimal?">
+    <pTime type="xs:time?"/>
+    
+    <fCode>
+      <xsl:sequence select="seconds-from-time($pTime)"/>
+    </fCode>
+  </f>
+  <f name="timezone-from-time" type="xs:dayTimeDuration?">
+    <pTime type="xs:time?"/>
+    
+    <fCode>
+      <xsl:sequence select="timezone-from-time($pTime)"/>
+    </fCode>
+  </f>
+  <f name="adjust-dateTime-to-timezone" type="xs:dateTime?">
+    <pdateTime type="xs:dateTime?"/>
+    <ptimeZone type="xs:dayTimeDuration?"/>
+    
+    <fCode>
+      <xsl:sequence select=
+      "adjust-dateTime-to-timezone($pdateTime,$ptimeZone)"/>
+    </fCode>
+  </f>
+  <f name="adjust-date-to-timezone" type="xs:date?">
+    <pDate type="xs:date?"/>
+    <ptimeZone type="xs:dayTimeDuration?"/>
+    
+    <fCode>
+      <xsl:sequence select=
+      "adjust-date-to-timezone($pDate,$ptimeZone)"/>
+    </fCode>
+  </f>
+  <f name="adjust-time-to-timezone" type="xs:time?">
+    <pTime type="xs:time?"/>
+    <ptimeZone type="xs:dayTimeDuration?"/>
+    
+    <fCode>
+      <xsl:sequence select=
+      "adjust-time-to-timezone($pTime,$ptimeZone)"/>
+    </fCode>
+  </f>
+</t>

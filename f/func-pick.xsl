@@ -21,8 +21,8 @@
  </xsl:function>
  
  <xsl:template match="f:pick" mode="f:FXSL" >
-   <xsl:param name="arg2" as="node()"/>
-   <xsl:param name="arg1" as="item()?"/>
+   <xsl:param name="arg1" as="node()"/>
+   <xsl:param name="arg2" as="item()?"/>
    
    <xsl:sequence select="f:pick($arg1, $arg2)"/>
  </xsl:template>

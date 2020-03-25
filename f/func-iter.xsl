@@ -127,9 +127,10 @@
     <xsl:param name="pFun" as="element()"/>
     <xsl:param name="arg1" />
 
+    <xsl:variable name="vFunResult" 
+         select="f:apply($pFun, $arg1)"/>
     <xsl:sequence select=
-     "for $vFunResult in f:apply($pFun, $arg1) return
-       if(xs:boolean(f:apply($pCond, $vFunResult)))
+     "if(xs:boolean(f:apply($pCond, $vFunResult)))
          then
            $vFunResult
          else
@@ -195,6 +196,43 @@
         <xsl:sequence select=
          "if($arg1 = 0) then $arg3
             else error((),'[scanIter]Error: Negative value for n.')"
+         />
+      </xsl:otherwise> 
+    </xsl:choose>
+  </xsl:function>
+
+  <xsl:function name="f:scanIterDVC" as="item()*">
+    <xsl:param name="arg1" as="xs:integer"/> <!-- n -->
+    <xsl:param name="arg2" as="element()"/>  <!-- f -->
+    <xsl:param name="arg3"/>                 <!-- x -->
+    
+    <xsl:choose>
+      <xsl:when test="$arg1 eq 0">
+        <xsl:sequence select="$arg3"/>
+      </xsl:when>
+      <xsl:when test="$arg1 eq 1">
+        <xsl:sequence select="f:apply($arg2, $arg3)"/>
+      </xsl:when>
+      <xsl:when test="$arg1 gt 1">
+         <xsl:variable name="vHalfTimes" as="xs:integer" select=
+          "$arg1 idiv 2"/>
+          
+         <xsl:variable name="vFirstResult" select=
+          "f:scanIterDVC($vHalfTimes, $arg2, $arg3)"
+          />
+          
+          <xsl:sequence select=
+           "$vFirstResult,
+            f:scanIterDVC($arg1 - $vHalfTimes, 
+                          $arg2, 
+                          $vFirstResult[last()]
+                          )
+           "
+           />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:sequence select=
+         "error((),'[scanIter]Error: Negative value for n.')"
          />
       </xsl:otherwise> 
     </xsl:choose>

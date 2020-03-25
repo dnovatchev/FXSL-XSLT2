@@ -1,0 +1,18 @@
+<graph>
+  <node id="V1"/>
+  <node id="V2"/>
+  <node id="V3"/>
+  <node id="V4"/>
+  <node id="V5"/>
+  <node id="V6"/>
+  <node id="V7"/>
+  <arc source="V1" target="V3"/>
+  <arc source="V1" target="V4"/>
+  <arc source="V2" target="V4"/>
+  <arc source="V2" target="V6"/>
+  <arc source="V3" target="V5"/>
+  <arc source="V4" target="V5"/>
+  <arc source="V6" target="V5"/>
+  <arc source="V6" target="V7"/>
+  <arc source="V7" target="V2"/>
+</graph>

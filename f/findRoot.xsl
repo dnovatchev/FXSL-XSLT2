@@ -103,7 +103,7 @@
         <xsl:with-param name="arg1" select="$pX2"/>
       </xsl:apply-templates>
     </xsl:variable>
-    
+
     <xsl:choose>
       <xsl:when test="$vFX1 = 0">
         <xsl:value-of select="$pX1"/>
@@ -122,7 +122,7 @@
       </xsl:otherwise>
     </xsl:choose>
     
-    <xsl:variable name="vrtfX-Iter">
+    <xsl:variable name="vrtf-X-Iter">
       <X1><xsl:value-of select="$pX1"/></X1>
       <FX1><xsl:value-of select="$vFX1"/></FX1>
       <X2><xsl:value-of select="$pX2"/></X2>
@@ -131,11 +131,12 @@
       <xsl:copy-of select="$pFun"/>
     </xsl:variable>
 
+
     <xsl:variable name="rtftheRoot">
 	    <xsl:call-template name="iterUntil">
 	      <xsl:with-param name="pFun" select="$vIterator"/>
 	      <xsl:with-param name="pCond" select="$x:st/fxslFRBS-Cond:*[1]"/>
-		    <xsl:with-param name="arg1" select="$vrtfX-Iter"/>
+		    <xsl:with-param name="arg1" select="$vrtf-X-Iter"/>
 	    </xsl:call-template>
     </xsl:variable>
     
@@ -171,16 +172,16 @@
   </xsl:template>
   
   <xsl:template match="myBSIterator:*" mode="f:FXSL">
-    <xsl:param name="arg1" select="/.."/>
+    <xsl:param name="arg1" as="document-node()"/>
     
-    <xsl:variable name="vX1" select="number($arg1[name()='X1'])"/>
-    <xsl:variable name="vX2" select="number($arg1[name()='X2'])"/>
-    <xsl:variable name="vFX1" select="number($arg1[name()='FX1'])"/>
-    <xsl:variable name="vFX2" select="number($arg1[name()='FX2'])"/>
-    <xsl:variable name="vEps" select="number($arg1[name()='Eps'])"/>
-    <xsl:variable name="vFun" select="$arg1[last()]"/>
+    <xsl:variable name="vX1" select="number($arg1/X1)"/>
+    <xsl:variable name="vX2" select="number($arg1/X2)"/>
+    <xsl:variable name="vFX1" select="number($arg1/FX1)"/>
+    <xsl:variable name="vFX2" select="number($arg1/FX2)"/>
+    <xsl:variable name="vEps" select="number($arg1/Eps)"/>
+    <xsl:variable name="vFun" select="$arg1/*[last()]"/>
 
-    <xsl:variable name="vMid" as="xs:integer" select="($vX1 + $vX2) idiv 2"/>
+    <xsl:variable name="vMid" as="xs:double" select="($vX1 + $vX2) div 2"/>
     
     <xsl:variable name="vFMid">
       <xsl:apply-templates select="$vFun" mode="f:FXSL">
@@ -188,31 +189,38 @@
       </xsl:apply-templates>
     </xsl:variable>
 
-	  <X1><xsl:value-of select="$vMid"/></X1>
-	  <FX1><xsl:value-of select="$vFMid"/></FX1>
-	    <xsl:choose>
-		    <xsl:when test="$vFMid > 0 and $vFX1 > 0 
-		                 or ($vFMid &lt; 0 and $vFX1 &lt; 0)">
-		      <X2><xsl:value-of select="$vX2"/></X2>
-		      <FX2><xsl:value-of select="$vFX2"/></FX2>
-		    </xsl:when>
-		    <xsl:otherwise>
-		      <X2><xsl:value-of select="$vX1"/></X2>
-		      <FX2><xsl:value-of select="$vFX1"/></FX2>
-		    </xsl:otherwise>
-	    </xsl:choose>
-	  <xsl:copy-of select="$arg1[name()='Eps']"/> <!-- <Eps> -->
-	  <xsl:copy-of select="$vFun"/>
-
+		 <xsl:document>
+			  <X1><xsl:value-of select="$vMid"/></X1>
+			  <FX1><xsl:value-of select="$vFMid"/></FX1>
+			    <xsl:choose>
+				    <xsl:when test="$vFMid > 0 and $vFX1 > 0 
+				                 or ($vFMid &lt; 0 and $vFX1 &lt; 0)">
+				                 
+						      <X2><xsl:value-of select="$vX2"/></X2>
+						      <FX2><xsl:value-of select="$vFX2"/></FX2>
+				    </xsl:when>
+				    <xsl:otherwise>
+				      <X2><xsl:value-of select="$vX1"/></X2>
+				      <FX2><xsl:value-of select="$vFX1"/></FX2>
+				    </xsl:otherwise>
+			    </xsl:choose>
+			  <xsl:copy-of select="$arg1/Eps"/> <!-- <Eps> -->
+			  <xsl:copy-of select="$vFun"/>
+		 </xsl:document>   
   </xsl:template>
   
   <xsl:template match="fxslFRBS-Cond:*" mode="f:FXSL">
-    <xsl:param name="arg1" select="/.."/>
-    
-    <xsl:variable name="vEps" select="$arg1[name()='Eps']"/>
-    <xsl:variable name="vResult" select="$arg1[name()='FX1']"/>
-    
-    <xsl:if test="-$vEps &lt;= $vResult and $vResult &lt;= $vEps">1</xsl:if>
+    <xsl:param name="arg1" as="document-node()"/>
+
+    <xsl:variable name="vEps" as="xs:double" select="$arg1/Eps"/>
+    <xsl:variable name="vResult"  as="xs:double"  select="$arg1/FX1"/>
+
+		<xsl:sequence select=
+		   "if( ($vResult &lt;= $vEps) and (-$vEps &lt;= $vResult) )
+		      then 1
+		      else 0    
+		   "/>
+		   
   </xsl:template>
   
   <!-- ************************************************************* -->

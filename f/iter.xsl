@@ -103,7 +103,7 @@
     </xsl:variable>
     
     <xsl:choose>
-      <xsl:when test="exists($vCond)" >
+      <xsl:when test="$vCond = 1" >
         <xsl:copy-of select="$arg1"/>
       </xsl:when>
       <xsl:otherwise>
@@ -116,8 +116,12 @@
         <xsl:call-template name="iterUntil">
           <xsl:with-param name="pCond" select="$pCond"/>
           <xsl:with-param name="pFun" select="$pFun"/>
+<!--
           <xsl:with-param name="arg1"
                  select="$vrtfFunResult/node()"/>
+-->
+          <xsl:with-param name="arg1"
+                 select="$vrtfFunResult"/>
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>

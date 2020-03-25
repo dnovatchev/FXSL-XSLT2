@@ -11,7 +11,7 @@
   
   <xsl:variable name="f:hexDigits" select="'0123456789ABCDEF'"/>
   
-  <xsl:function name="f:hex-to-decimal">
+  <xsl:function name="f:hex-to-decimal" as="xs:integer">
     <xsl:param name="pxNumber"/>
     
     <xsl:variable name="vFunXConvert" 
@@ -20,7 +20,16 @@
     <xsl:value-of select="f:str-foldl($vFunXConvert, 0, $pxNumber)"/>
   </xsl:function>
   
-  <xsl:template match="hex-converter:*" mode="f:FXSL">
+  <xsl:function name="f:hex-to-decimal" as="element()">
+    <f:hex-to-decimal/>
+  </xsl:function>
+  
+  <xsl:template match="f:hex-to-decimal" as="xs:integer" mode="f:FXSL">
+    <xsl:param name="arg1"/>
+    <xsl:sequence select="f:hex-to-decimal($arg1)"/>
+  </xsl:template> 
+  
+  <xsl:template match="hex-converter:*" mode="f:FXSL" as="xs:integer">
     <xsl:param name="arg1"/> <!-- $pA0 -->
     <xsl:param name="arg2"/> <!-- a char (digit) -->
     

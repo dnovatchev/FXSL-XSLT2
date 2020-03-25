@@ -1,0 +1,36 @@
+<root id="theroot">
+	<set id="1">
+		<point x="3" y1="2" />
+		<point x="1" y1="2" />
+		<point x="2" y1="3" />
+		<point x="1" y1="3" />
+		<point x="1" y1="0" />
+		<point x="1" y1="2" />
+		<point x="1" y1="2" />
+		<point x="2" y1="2" />
+		<point x="3" y1="3" />
+		<point x="3" y1="1" />
+		<point x="3" y1="2" />
+		<point x="3" y1="2" />
+		<point x="2" y1="0" />
+	</set>
+	<set id="2">
+		<point x="1" y1="2" />
+		<point x="1" y1="3" />
+		<point x="1" y1="0" />
+		<point x="1" y1="2" />
+		<point x="2" y1="2" />
+		<point x="3" y1="2" />
+		<point x="3" y1="2" />
+		<point x="3" y1="2" />
+	</set>
+	<set id="n">
+		<point x="1" y1="2" />
+		<point x="1" y1="3" />
+		<point x="1" y1="2" />
+		<point x="2" y1="3" />
+		<point x="2" y1="0" />
+		<point x="2" y1="2" />
+		<point x="3" y1="3" />
+	</set>
+</root>

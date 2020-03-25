@@ -22,10 +22,10 @@
     <xsl:param name="pStarting" as="xs:integer"/>
     
     <xsl:variable name="vLength" select="count($pList)"/>
-
+    
     <xsl:choose>
       <xsl:when test="$vLength > 1">
-        <xsl:variable name="vHalf" select="floor($vLength div 2)"/>
+        <xsl:variable name="vHalf" select="$vLength idiv 2"/>
 
         <xsl:variable name="vResult1" 
            select="int:scanl($pFun, 
@@ -48,7 +48,7 @@
 			    <xsl:sequence select="$pQ0"/>
 		    </xsl:if>
     
-        <xsl:if test="$pList">
+        <xsl:if test="exists($pList)">
           <xsl:sequence select="f:apply($pFun, $pQ0, $pList[1])"/>
         </xsl:if>
       </xsl:otherwise>

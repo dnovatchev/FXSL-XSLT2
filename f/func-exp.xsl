@@ -25,17 +25,15 @@
   ==========================================================================-->
    <xsl:import href="func-iter.xsl"/>
    <xsl:import href="func-curry.xsl"/>
+   <xsl:import href="func-Operators.xsl"/>
    
-<!-- reference to exp()-->  
-  <f:exp/>
-
 <!--
  f:exp() -      convenience function,                                            
                 returns a reference to f:exp()                                  
                 when called with no arguments                                
 -->  
-  <xsl:function name="f:exp" as="node()">
-    <xsl:sequence select="document('')/*/f:exp[1]"/>
+  <xsl:function name="f:exp" as="element()">
+    <f:exp/>
   </xsl:function>
 
   <xsl:template match="f:exp" mode="f:FXSL">
@@ -70,15 +68,23 @@
      <xsl:param name="pX" as="xs:double"/>
      <xsl:param name="pEps" as="xs:double"/>
      
-     <xsl:variable name="vResult" 
-          select="int:expIter($pX, 1 + $pX, $pX, 1, $pEps)"/>
+<!--
+     We represent $pX as m * 2^N, where 0 <= m < 1
+-->     
+     
+     <xsl:variable name="vIntPart" as="xs:integer" 
+       select="xs:integer(floor($pX))"/>
+     
+     <xsl:variable name="vFractX" select="$pX - $vIntPart"/>
+     
+     <xsl:variable name="vResultM" 
+          select="int:expIter($vFractX, 1 + $vFractX, $vFractX, 1, $pEps)"/>
 	     
-     <xsl:value-of 
-          select="if($vResult >= 0)
-                    then $vResult
-                    else 0"/>
+     <xsl:sequence select=
+      "$vResultM * f:ipow($vE, $vIntPart)"/>
+	     
    </xsl:function>
-   
+
    <xsl:function name="int:expIter" as="xs:double">
        <xsl:param name="pX" as="xs:double"/>
        <xsl:param name="pRslt" as="xs:double"/>
@@ -358,16 +364,94 @@
 	   <xsl:value-of select="f:log($pX, 2E0, $pEps)"/>
 	 </xsl:function>
 	 
-<!-- reference to pow()-->  
-  <f:pow/>
+<!--
+ f:ipow() -     convenience function,                                        
+                returns a reference to f:ipow()                              
+                when called with no arguments                                
+-->  
+  <xsl:function name="f:ipow" as="element()">
+    <f:pow/>
+  </xsl:function>
 
+  <xsl:template match="f:ipow" mode="f:FXSL">
+     <xsl:param name="arg1" as="xs:double"/>
+     <xsl:param name="arg2" as="xs:integer"/>
+    
+    <xsl:sequence select="f:ipow($arg1,$arg2)"/>  
+  </xsl:template>
+
+<!--
+      Function: ipow                                                         
+      Purpose : Return the value of base^N (base to the power of N)          
+    Parameters:                                                              
+    $pBase    - the value for the base                                       
+    $pPower   - the *integer* value N, to be used in calculating base^N      
+  ========================================================================== -->
+	 <xsl:function name="f:ipow" as="xs:double">
+	   <xsl:param name="pBase" as="xs:double"/>
+	   <xsl:param name="pPower" as="xs:integer"/>
+	   
+	   <xsl:variable name="vBase" as="xs:double"
+	     select="if($pPower ge 0)
+	               then $pBase
+	               else 1 div $pBase
+	     "/>
+	     
+	     <xsl:sequence select=
+	       "f:ippow( $vBase, 
+	                 ($pPower[. ge 0],
+	                  (-$pPower)[. gt 0]
+	                   )[1]
+	                 )
+	       " 
+        />
+   </xsl:function>
+   
+   <xsl:function name="f:ippow" as="xs:double">
+     <xsl:param name="pBase" as="xs:double"/>
+     <xsl:param name="pNPower" as="xs:integer"/> <!-- Positive -->
+     
+     <xsl:sequence select=
+      "if($pNPower eq 0)
+         then 1
+         else if($pNPower eq 1)
+                then $pBase
+                else 
+                  for $vSqrt in f:ippow($pBase, $pNPower idiv 2)
+                    return
+                      if($pNPower mod 2 eq 0)
+                         then $vSqrt * $vSqrt
+                         else $pBase * $vSqrt * $vSqrt
+      "
+      />
+   </xsl:function>
+   
+   <xsl:function name="f:intppow" as="xs:integer">
+     <xsl:param name="pBase" as="xs:integer"/>
+     <xsl:param name="pNPower" as="xs:integer"/> <!-- Positive -->
+     
+     <xsl:sequence select=
+      "if($pNPower eq 0)
+         then 1
+         else if($pNPower eq 1)
+                then $pBase
+                else 
+                  for $vSqrt in f:intppow($pBase, $pNPower idiv 2)
+                    return
+                      if($pNPower mod 2 eq 0)
+                         then $vSqrt * $vSqrt
+                         else $pBase * $vSqrt * $vSqrt
+      "
+      />
+   </xsl:function>
+   
 <!--
  f:pow() -      convenience function,                                            
                 returns a reference to f:pow()                                  
                 when called with no arguments                                
 -->  
-  <xsl:function name="f:pow" as="node()">
-    <xsl:sequence select="document('')/*/f:pow[1]"/>
+  <xsl:function name="f:pow" as="element()">
+    <f:pow/>
   </xsl:function>
 
   <xsl:template match="f:pow" mode="f:FXSL">
@@ -416,7 +500,15 @@
 	   <xsl:param name="pPower" as="xs:double"/>
      <xsl:variable name="pEps" select=".00000001E0" as="xs:double"/>
      
-     <xsl:value-of select="f:pow($pBase, $pPower, $pEps)"/>
+     <xsl:sequence select=
+      "if($pPower eq floor($pPower))
+         then f:ipow($pBase, xs:integer($pPower))
+         else 
+            f:pow($pBase, $pPower, $pEps)
+      "
+       />
+     
+<!--     <xsl:value-of select="f:pow($pBase, $pPower, $pEps)"/> -->
 	 </xsl:function>
   
    <xsl:function name="f:pow" as="node()">

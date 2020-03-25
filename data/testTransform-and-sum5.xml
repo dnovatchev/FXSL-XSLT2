@@ -1,0 +1,5 @@
+<foo>
+    <bar val="1,23"/>
+    <bar val="4,56"/>
+    <bar val="7,89"/>
+</foo>

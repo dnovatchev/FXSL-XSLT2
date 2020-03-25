@@ -1,0 +1,26 @@
+<Root>
+	<Element A=""/>
+	<Element B=""/>
+	<Data1>
+		<DataElement/>
+		<Values>
+			<Value>2222</Value>
+			<Name>field1</Name>
+		</Values>
+		<Values>
+			<Value>ABC</Value>
+			<Name>field2</Name>
+		</Values>
+	</Data1>
+	<Data2>
+		<DataElement/>
+		<Values>
+			<Value>1111</Value>
+			<Name>field1</Name>
+		</Values>
+		<Values>
+			<Value>XYZ</Value>
+			<Name>field2</Name>
+		</Values>
+	</Data2>
+</Root>

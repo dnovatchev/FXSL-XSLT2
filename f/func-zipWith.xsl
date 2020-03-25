@@ -13,9 +13,10 @@
 
     <xsl:sequence select=
      "if(exists($pList1) and exists($pList2))
-       then (f:apply($pFun, $pList1[1], $pList2[1]))
+       then (f:apply($pFun, $pList1[1], $pList2[1])
              , 
              f:zipWith($pFun, $pList1[position()>1], $pList2[position()>1])
+             )
        else ()"
      />
   </xsl:function>

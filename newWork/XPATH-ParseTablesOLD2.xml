@@ -1,0 +1,4897 @@
+<parseTables>
+  <!-- All grammar rules are coded in this section -->
+	<rules>
+	  <r left="$accept" length="2">
+	    <right>Expr</right>
+	    <right>$end</right>
+	  </r>
+
+	  <r left="Expr" length="1">
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="Expr" length="3">
+	    <right>Expr</right>
+	    <right>,</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="ExprSingle" length="1">
+	    <right>ForExpr</right>
+	  </r>
+
+	  <r left="ExprSingle" length="1">
+	    <right>QuantifiedExpr</right>
+	  </r>
+
+	  <r left="ExprSingle" length="1">
+	    <right>IfExpr</right>
+	  </r>
+
+	  <r left="ExprSingle" length="1">
+	    <right>OrExpr</right>
+	  </r>
+
+	  <r left="ForExpr" length="4">
+	    <right>FOR</right>
+	    <right>VarnameList</right>
+	    <right>RETURN</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="VarnameList" length="3">
+	    <right>VariableReference</right>
+	    <right>IN</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="VarnameList" length="5">
+	    <right>VarnameList</right>
+	    <right>,</right>
+	    <right>VariableReference</right>
+	    <right>IN</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="QuantifiedExpr" length="4">
+	    <right>SomeOrEvery</right>
+	    <right>VarnameList</right>
+	    <right>SATISFIES</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="SomeOrEvery" length="1">
+	    <right>SOME</right>
+	  </r>
+
+	  <r left="SomeOrEvery" length="1">
+	    <right>EVERY</right>
+	  </r>
+
+	  <r left="IfExpr" length="8">
+	    <right>IF</right>
+	    <right>(</right>
+	    <right>Expr</right>
+	    <right>)</right>
+	    <right>THEN</right>
+	    <right>ExprSingle</right>
+	    <right>ELSE</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="OrExpr" length="1">
+	    <right>AndExpr</right>
+	  </r>
+
+	  <r left="OrExpr" length="3">
+	    <right>OrExpr</right>
+	    <right>OR</right>
+	    <right>AndExpr</right>
+	  </r>
+
+	  <r left="AndExpr" length="1">
+	    <right>ComparisonExpr</right>
+	  </r>
+
+	  <r left="AndExpr" length="3">
+	    <right>AndExpr</right>
+	    <right>AND</right>
+	    <right>ComparisonExpr</right>
+	  </r>
+
+	  <r left="ComparisonExpr" length="1">
+	    <right>RangeExpr</right>
+	  </r>
+
+	  <r left="ComparisonExpr" length="3">
+	    <right>RangeExpr</right>
+	    <right>ValGenNodeComp</right>
+	    <right>RangeExpr</right>
+	  </r>
+
+	  <r left="ValGenNodeComp" length="1">
+	    <right>ValueComp</right>
+	  </r>
+
+	  <r left="ValGenNodeComp" length="1">
+	    <right>GeneralComp</right>
+	  </r>
+
+	  <r left="ValGenNodeComp" length="1">
+	    <right>NodeComp</right>
+	  </r>
+
+	  <r left="ValueComp" length="1">
+	    <right>EQ</right>
+	  </r>
+
+	  <r left="ValueComp" length="1">
+	    <right>NE</right>
+	  </r>
+
+	  <r left="ValueComp" length="1">
+	    <right>LT</right>
+	  </r>
+
+	  <r left="ValueComp" length="1">
+	    <right>LE</right>
+	  </r>
+
+	  <r left="ValueComp" length="1">
+	    <right>GT</right>
+	  </r>
+
+	  <r left="ValueComp" length="1">
+	    <right>GE</right>
+	  </r>
+
+	  <r left="GeneralComp" length="1">
+	    <right>=</right>
+	  </r>
+
+	  <r left="GeneralComp" length="1">
+	    <right>!=</right>
+	  </r>
+
+	  <r left="GeneralComp" length="1">
+	    <right>&lt;</right>
+	  </r>
+
+	  <r left="GeneralComp" length="1">
+	    <right>&lt;=</right>
+	  </r>
+
+	  <r left="GeneralComp" length="1">
+	    <right>></right>
+	  </r>
+
+	  <r left="GeneralComp" length="1">
+	    <right>>=</right>
+	  </r>
+
+	  <r left="NodeComp" length="1">
+	    <right>IS</right>
+	  </r>
+
+	  <r left="NodeComp" length="1">
+	    <right>&lt;&lt;</right>
+	  </r>
+
+	  <r left="NodeComp" length="1">
+	    <right>>></right>
+	  </r>
+
+	  <r left="RangeExpr" length="1">
+	    <right>AdditiveExpr</right>
+	  </r>
+
+	  <r left="RangeExpr" length="3">
+	    <right>AdditiveExpr</right>
+	    <right>TO</right>
+	    <right>AdditiveExpr</right>
+	  </r>
+
+	  <r left="AdditiveExpr" length="1">
+	    <right>MultiplicativeExpr</right>
+	  </r>
+
+	  <r left="AdditiveExpr" length="3">
+	    <right>AdditiveExpr</right>
+	    <right>Sign</right>
+	    <right>MultiplicativeExpr</right>
+	  </r>
+
+	  <r left="Sign" length="1">
+	    <right>+</right>
+	  </r>
+
+	  <r left="Sign" length="1">
+	    <right>-</right>
+	  </r>
+
+	  <r left="MultiplicativeExpr" length="1">
+	    <right>UnionExpr</right>
+	  </r>
+
+	  <r left="MultiplicativeExpr" length="3">
+	    <right>MultiplicativeExpr</right>
+	    <right>MultOper</right>
+	    <right>UnionExpr</right>
+	  </r>
+
+	  <r left="MultOper" length="1">
+	    <right>*</right>
+	  </r>
+
+	  <r left="MultOper" length="1">
+	    <right>DIV</right>
+	  </r>
+
+	  <r left="MultOper" length="1">
+	    <right>IDIV</right>
+	  </r>
+
+	  <r left="MultOper" length="1">
+	    <right>MOD</right>
+	  </r>
+
+	  <r left="UnionExpr" length="1">
+	    <right>IntersectExceptExpr</right>
+	  </r>
+
+	  <r left="UnionExpr" length="3">
+	    <right>UnionExpr</right>
+	    <right>UNION</right>
+	    <right>IntersectExceptExpr</right>
+	  </r>
+
+	  <r left="IntersectExceptExpr" length="1">
+	    <right>InstanceOfExpr</right>
+	  </r>
+
+	  <r left="IntersectExceptExpr" length="3">
+	    <right>IntersectExceptExpr</right>
+	    <right>IntersectExcept</right>
+	    <right>InstanceOfExpr</right>
+	  </r>
+
+	  <r left="IntersectExcept" length="1">
+	    <right>INTERSECT</right>
+	  </r>
+
+	  <r left="IntersectExcept" length="1">
+	    <right>EXCEPT</right>
+	  </r>
+
+	  <r left="InstanceOfExpr" length="1">
+	    <right>TreatExpr</right>
+	  </r>
+
+	  <r left="InstanceOfExpr" length="3">
+	    <right>TreatExpr</right>
+	    <right>INSTANCE_OF</right>
+	    <right>SequenceType</right>
+	  </r>
+
+	  <r left="TreatExpr" length="1">
+	    <right>CastableExpr</right>
+	  </r>
+
+	  <r left="TreatExpr" length="3">
+	    <right>CastableExpr</right>
+	    <right>TREAT_AS</right>
+	    <right>SequenceType</right>
+	  </r>
+
+	  <r left="CastableExpr" length="1">
+	    <right>CastExpr</right>
+	  </r>
+
+	  <r left="CastableExpr" length="3">
+	    <right>CastExpr</right>
+	    <right>CASTABLE_AS</right>
+	    <right>SingleType</right>
+	  </r>
+
+	  <r left="CastExpr" length="1">
+	    <right>UnaryExpr</right>
+	  </r>
+
+	  <r left="CastExpr" length="2">
+	    <right>CAST_AS</right>
+	    <right>SingleType</right>
+	  </r>
+
+	  <r left="UnaryExpr" length="1">
+	    <right>PathExpr</right>
+	  </r>
+
+	  <r left="UnaryExpr" length="2">
+	    <right>Sign</right>
+	    <right>PathExpr</right>
+	  </r>
+
+	  <r left="PathExpr" length="2">
+	    <right>/</right>
+	    <right>RelativePathExpr</right>
+	  </r>
+
+	  <r left="PathExpr" length="1">
+	    <right>/</right>
+	  </r>
+
+	  <r left="PathExpr" length="2">
+	    <right>//</right>
+	    <right>RelativePathExpr</right>
+	  </r>
+
+	  <r left="PathExpr" length="1">
+	    <right>RelativePathExpr</right>
+	  </r>
+
+	  <r left="RelativePathExpr" length="1">
+	    <right>StepExpr</right>
+	  </r>
+
+	  <r left="RelativePathExpr" length="3">
+	    <right>RelativePathExpr</right>
+	    <right>/</right>
+	    <right>StepExpr</right>
+	  </r>
+
+	  <r left="RelativePathExpr" length="3">
+	    <right>RelativePathExpr</right>
+	    <right>//</right>
+	    <right>StepExpr</right>
+	  </r>
+
+	  <r left="StepExpr" length="1">
+	    <right>AxisStep</right>
+	  </r>
+
+	  <r left="StepExpr" length="1">
+	    <right>FilterExpr</right>
+	  </r>
+
+	  <r left="AxisStep" length="2">
+	    <right>ForwardStep</right>
+	    <right>PredicateList</right>
+	  </r>
+
+	  <r left="AxisStep" length="2">
+	    <right>ReverseStep</right>
+	    <right>PredicateList</right>
+	  </r>
+
+	  <r left="FilterExpr" length="2">
+	    <right>PrimaryExpr</right>
+	    <right>PredicateList</right>
+	  </r>
+
+	  <r left="PredicateList" length="0">
+	  </r>
+
+	  <r left="PredicateList" length="2">
+	    <right>PredicateList</right>
+	    <right>Predicate</right>
+	  </r>
+
+	  <r left="Predicate" length="3">
+	    <right>[</right>
+	    <right>Expr</right>
+	    <right>]</right>
+	  </r>
+
+	  <r left="PrimaryExpr" length="1">
+	    <right>Literal</right>
+	  </r>
+
+	  <r left="PrimaryExpr" length="1">
+	    <right>VariableReference</right>
+	  </r>
+
+	  <r left="PrimaryExpr" length="1">
+	    <right>ParenthesizedExpr</right>
+	  </r>
+
+	  <r left="PrimaryExpr" length="1">
+	    <right>ContextItemExpr</right>
+	  </r>
+
+	  <r left="PrimaryExpr" length="1">
+	    <right>FunctionCall</right>
+	  </r>
+
+	  <r left="Literal" length="1">
+	    <right>NumericLiteral</right>
+	  </r>
+
+	  <r left="Literal" length="1">
+	    <right>STRING_LITERAL</right>
+	  </r>
+
+	  <r left="NumericLiteral" length="1">
+	    <right>INTEGER_LITERAL</right>
+	  </r>
+
+	  <r left="NumericLiteral" length="1">
+	    <right>DECIMAL_LITERAL</right>
+	  </r>
+
+	  <r left="NumericLiteral" length="1">
+	    <right>DOUBLE_LITERAL</right>
+	  </r>
+
+	  <r left="ParenthesizedExpr" length="3">
+	    <right>(</right>
+	    <right>Expr</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="ParenthesizedExpr" length="2">
+	    <right>(</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="ContextItemExpr" length="1">
+	    <right>.</right>
+	  </r>
+
+	  <r left="FunctionCall" length="4">
+	    <right>FunctionName</right>
+	    <right>(</right>
+	    <right>ExprSingleList</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="FunctionCall" length="3">
+	    <right>FunctionName</right>
+	    <right>(</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="ExprSingleList" length="1">
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="ExprSingleList" length="3">
+	    <right>ExprSingleList</right>
+	    <right>,</right>
+	    <right>ExprSingle</right>
+	  </r>
+
+	  <r left="FunctionName" length="1">
+	    <right>QNAME</right>
+	  </r>
+
+	  <r left="ForwardStep" length="2">
+	    <right>ForwardAxis</right>
+	    <right>NodeTest</right>
+	  </r>
+
+	  <r left="ForwardStep" length="1">
+	    <right>AbbrevForwardStep</right>
+	  </r>
+
+	  <r left="ReverseStep" length="2">
+	    <right>ReverseAxis</right>
+	    <right>NodeTest</right>
+	  </r>
+
+	  <r left="ReverseStep" length="1">
+	    <right>AbbrevReverseStep</right>
+	  </r>
+
+	  <r left="AbbrevForwardStep" length="2">
+	    <right>@</right>
+	    <right>NodeTest</right>
+	  </r>
+
+	  <r left="AbbrevForwardStep" length="1">
+	    <right>NodeTest</right>
+	  </r>
+
+	  <r left="AbbrevReverseStep" length="1">
+	    <right>..</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>CHILD_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>DESCENDANT_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>ATTRIBUTE_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>SELF_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>DESCENDANT_OR_SELF_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>FOLLOWING_SIBLING_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>FOLLOWING_AXIS</right>
+	  </r>
+
+	  <r left="ForwardAxis" length="1">
+	    <right>NAMESPACE_AXIS</right>
+	  </r>
+
+	  <r left="ReverseAxis" length="1">
+	    <right>PARENT_AXIS</right>
+	  </r>
+
+	  <r left="ReverseAxis" length="1">
+	    <right>ANCESTOR_AXIS</right>
+	  </r>
+
+	  <r left="ReverseAxis" length="1">
+	    <right>PRECEDING_SIBLING_AXIS</right>
+	  </r>
+
+	  <r left="ReverseAxis" length="1">
+	    <right>PRECEDING_AXIS</right>
+	  </r>
+
+	  <r left="ReverseAxis" length="1">
+	    <right>ANCESTOR_OR_SELF_AXIS</right>
+	  </r>
+
+	  <r left="NodeTest" length="1">
+	    <right>KindTest</right>
+	  </r>
+
+	  <r left="NodeTest" length="1">
+	    <right>NameTest</right>
+	  </r>
+
+	  <r left="NameTest" length="1">
+	    <right>QNAME</right>
+	  </r>
+
+	  <r left="NameTest" length="1">
+	    <right>WildCard</right>
+	  </r>
+
+	  <r left="WildCard" length="1">
+	    <right>*</right>
+	  </r>
+
+	  <r left="WildCard" length="1">
+	    <right>WILD_NAME</right>
+	  </r>
+
+	  <r left="WildCard" length="1">
+	    <right>WILD_PREFIX</right>
+	  </r>
+
+	  <r left="SingleType" length="1">
+	    <right>AtomicType</right>
+	  </r>
+
+	  <r left="SingleType" length="2">
+	    <right>AtomicType</right>
+	    <right>?</right>
+	  </r>
+
+	  <r left="SequenceType" length="3">
+	    <right>(</right>
+	    <right>ItemType</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="SequenceType" length="4">
+	    <right>(</right>
+	    <right>ItemType</right>
+	    <right>OccurenceIndicator</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="SequenceType" length="1">
+	    <right>EMPTY_TYPE</right>
+	  </r>
+
+	  <r left="AtomicType" length="1">
+	    <right>QNAME</right>
+	  </r>
+
+	  <r left="ItemType" length="1">
+	    <right>AtomicType</right>
+	  </r>
+
+	  <r left="ItemType" length="1">
+	    <right>KindTest</right>
+	  </r>
+
+	  <r left="ItemType" length="1">
+	    <right>ITEM_TYPE</right>
+	  </r>
+
+	  <r left="OccurenceIndicator" length="1">
+	    <right>?</right>
+	  </r>
+
+	  <r left="OccurenceIndicator" length="1">
+	    <right>*</right>
+	  </r>
+
+	  <r left="OccurenceIndicator" length="1">
+	    <right>+</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>DocumentTest</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>ElementTest</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>AttributeTest</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>PITest</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>CommentTest</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>TextTest</right>
+	  </r>
+
+	  <r left="KindTest" length="1">
+	    <right>AnyKindTest</right>
+	  </r>
+
+	  <r left="ElementTest" length="1">
+	    <right>BasicElementTest</right>
+	  </r>
+
+	  <r left="ElementTest" length="1">
+	    <right>SchemaElementTest</right>
+	  </r>
+
+	  <r left="AttributeTest" length="1">
+	    <right>BasicAttributeTest</right>
+	  </r>
+
+	  <r left="AttributeTest" length="1">
+	    <right>SchemaAttributeTest</right>
+	  </r>
+
+	  <r left="BasicElementTest" length="3">
+	    <right>ELEMENT_TEST</right>
+	    <right>(</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="BasicElementTest" length="4">
+	    <right>ELEMENT_TEST</right>
+	    <right>(</right>
+	    <right>ElementNameOrWildCard</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="BasicElementTest" length="6">
+	    <right>ELEMENT_TEST</right>
+	    <right>(</right>
+	    <right>ElementNameOrWildCard</right>
+	    <right>,</right>
+	    <right>TypeName</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="BasicElementTest" length="7">
+	    <right>ELEMENT_TEST</right>
+	    <right>(</right>
+	    <right>ElementNameOrWildCard</right>
+	    <right>,</right>
+	    <right>TypeName</right>
+	    <right>?</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="BasicAttributeTest" length="3">
+	    <right>ATTRIBUTE_TEST</right>
+	    <right>(</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="BasicAttributeTest" length="4">
+	    <right>ATTRIBUTE_TEST</right>
+	    <right>(</right>
+	    <right>AtttibuteNameOrWildCard</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="BasicAttributeTest" length="6">
+	    <right>ATTRIBUTE_TEST</right>
+	    <right>(</right>
+	    <right>AtttibuteNameOrWildCard</right>
+	    <right>,</right>
+	    <right>TypeName</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="ElementNameOrWildCard" length="1">
+	    <right>ElementName</right>
+	  </r>
+
+	  <r left="ElementNameOrWildCard" length="1">
+	    <right>*</right>
+	  </r>
+
+	  <r left="AtttibuteNameOrWildCard" length="1">
+	    <right>AttributeName</right>
+	  </r>
+
+	  <r left="AtttibuteNameOrWildCard" length="1">
+	    <right>*</right>
+	  </r>
+
+	  <r left="ElementName" length="1">
+	    <right>QNAME</right>
+	  </r>
+
+	  <r left="AttributeName" length="1">
+	    <right>QNAME</right>
+	  </r>
+
+	  <r left="TypeName" length="1">
+	    <right>QNAME</right>
+	  </r>
+
+	  <r left="SchemaElementTest" length="3">
+	    <right>SCHEMA_ELEMENT_TEST</right>
+	    <right>ElementName</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="SchemaAttributeTest" length="3">
+	    <right>SCHEMA_ATTRIBUTE_TEST</right>
+	    <right>AttributeName</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="PITest" length="2">
+	    <right>PROCESSING_INSTRUCTION_TEST</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="PITest" length="3">
+	    <right>PROCESSING_INSTRUCTION_TEST</right>
+	    <right>QNAME</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="PITest" length="3">
+	    <right>PROCESSING_INSTRUCTION_TEST</right>
+	    <right>STRING_LITERAL</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="DocumentTest" length="3">
+	    <right>DOCUMENT_NODE_TEST</right>
+	    <right>(</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="DocumentTest" length="4">
+	    <right>DOCUMENT_NODE_TEST</right>
+	    <right>(</right>
+	    <right>ElementTest</right>
+	    <right>)</right>
+	  </r>
+
+	  <r left="CommentTest" length="1">
+	    <right>COMMENT_TEST</right>
+	  </r>
+
+	  <r left="TextTest" length="1">
+	    <right>TEXT_TEST</right>
+	  </r>
+
+	  <r left="AnyKindTest" length="1">
+	    <right>NODE_TEST</right>
+	  </r>
+
+	  <r left="VariableReference" length="2">
+	    <right>$</right>
+	    <right>QNAME</right>
+	  </r>
+	</rules>
+<!--
+       All actions: (state, TSymb) ==> (sN | rK | acc)
+       where 's' = 'shift and 'r' = 'reduce'          
+-->
+	<actionTable>
+	  <state number="0">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="1">
+	    <symbol act="r90">.</symbol>
+	  </state>
+	  <state number="2">
+	    <symbol act="r89">.</symbol>
+	  </state>
+	  <state number="3">
+	    <symbol act="r88">.</symbol>
+	  </state>
+	  <state number="4">
+	    <symbol act="r87">.</symbol>
+	  </state>
+	  <state number="5">
+	    <symbol act="s99">QNAME</symbol>
+	  </state>
+	  <state number="6">
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="7">
+	    <symbol act="r11">.</symbol>
+	  </state>
+	  <state number="8">
+	    <symbol act="r12">.</symbol>
+	  </state>
+	  <state number="9">
+	    <symbol act="s104">(</symbol>
+	  </state>
+	  <state number="10">
+	    <symbol act="r121">$end</symbol>
+	    <symbol act="r121">OR</symbol>
+	    <symbol act="r121">AND</symbol>
+	    <symbol act="r121">EQ</symbol>
+	    <symbol act="r121">NE</symbol>
+	    <symbol act="r121">LT</symbol>
+	    <symbol act="r121">LE</symbol>
+	    <symbol act="r121">GT</symbol>
+	    <symbol act="r121">GE</symbol>
+	    <symbol act="r121">IS</symbol>
+	    <symbol act="r121">TO</symbol>
+	    <symbol act="r121">DIV</symbol>
+	    <symbol act="r121">IDIV</symbol>
+	    <symbol act="r121">MOD</symbol>
+	    <symbol act="r121">UNION</symbol>
+	    <symbol act="r121">INTERSECT</symbol>
+	    <symbol act="r121">EXCEPT</symbol>
+	    <symbol act="r121">INSTANCE_OF</symbol>
+	    <symbol act="r121">CASTABLE_AS</symbol>
+	    <symbol act="r121">TREAT_AS</symbol>
+	    <symbol act="r121">ELSE</symbol>
+	    <symbol act="r121">RETURN</symbol>
+	    <symbol act="r121">SATISFIES</symbol>
+	    <symbol act="r121">,</symbol>
+	    <symbol act="r121">&lt;&lt;</symbol>
+	    <symbol act="r121">>></symbol>
+	    <symbol act="r121">+</symbol>
+	    <symbol act="r121">-</symbol>
+	    <symbol act="r121">*</symbol>
+	    <symbol act="r121">//</symbol>
+	    <symbol act="r121">/</symbol>
+	    <symbol act="r98">(</symbol>
+	    <symbol act="r121">)</symbol>
+	    <symbol act="r121">[</symbol>
+	    <symbol act="r121">]</symbol>
+	    <symbol act="r121">=</symbol>
+	    <symbol act="r121">!=</symbol>
+	    <symbol act="r121">&lt;</symbol>
+	    <symbol act="r121">&lt;=</symbol>
+	    <symbol act="r121">></symbol>
+	    <symbol act="r121">>=</symbol>
+	  </state>
+	  <state number="11">
+	    <symbol act="r106">.</symbol>
+	  </state>
+	  <state number="12">
+	    <symbol act="r107">.</symbol>
+	  </state>
+	  <state number="13">
+	    <symbol act="r108">.</symbol>
+	  </state>
+	  <state number="14">
+	    <symbol act="r109">.</symbol>
+	  </state>
+	  <state number="15">
+	    <symbol act="r110">.</symbol>
+	  </state>
+	  <state number="16">
+	    <symbol act="r111">.</symbol>
+	  </state>
+	  <state number="17">
+	    <symbol act="r112">.</symbol>
+	  </state>
+	  <state number="18">
+	    <symbol act="r113">.</symbol>
+	  </state>
+	  <state number="19">
+	    <symbol act="r114">.</symbol>
+	  </state>
+	  <state number="20">
+	    <symbol act="r115">.</symbol>
+	  </state>
+	  <state number="21">
+	    <symbol act="r116">.</symbol>
+	  </state>
+	  <state number="22">
+	    <symbol act="r117">.</symbol>
+	  </state>
+	  <state number="23">
+	    <symbol act="r118">.</symbol>
+	  </state>
+	  <state number="24">
+	    <symbol act="s105">(</symbol>
+	  </state>
+	  <state number="25">
+	    <symbol act="s106">(</symbol>
+	  </state>
+	  <state number="26">
+	    <symbol act="s107">QNAME</symbol>
+	  </state>
+	  <state number="27">
+	    <symbol act="s109">QNAME</symbol>
+	  </state>
+	  <state number="28">
+	    <symbol act="s111">STRING_LITERAL</symbol>
+	    <symbol act="s112">QNAME</symbol>
+	    <symbol act="s113">)</symbol>
+	  </state>
+	  <state number="29">
+	    <symbol act="s114">(</symbol>
+	  </state>
+	  <state number="30">
+	    <symbol act="r170">.</symbol>
+	  </state>
+	  <state number="31">
+	    <symbol act="r172">.</symbol>
+	  </state>
+	  <state number="32">
+	    <symbol act="r171">.</symbol>
+	  </state>
+	  <state number="33">
+	    <symbol act="r124">.</symbol>
+	  </state>
+	  <state number="34">
+	    <symbol act="r125">.</symbol>
+	  </state>
+	  <state number="35">
+	    <symbol act="r42">.</symbol>
+	  </state>
+	  <state number="36">
+	    <symbol act="r43">.</symbol>
+	  </state>
+	  <state number="37">
+	    <symbol act="r123">.</symbol>
+	  </state>
+	  <state number="38">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="39">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	    <symbol act="r67">$end</symbol>
+	    <symbol act="r67">OR</symbol>
+	    <symbol act="r67">AND</symbol>
+	    <symbol act="r67">EQ</symbol>
+	    <symbol act="r67">NE</symbol>
+	    <symbol act="r67">LT</symbol>
+	    <symbol act="r67">LE</symbol>
+	    <symbol act="r67">GT</symbol>
+	    <symbol act="r67">GE</symbol>
+	    <symbol act="r67">IS</symbol>
+	    <symbol act="r67">TO</symbol>
+	    <symbol act="r67">DIV</symbol>
+	    <symbol act="r67">IDIV</symbol>
+	    <symbol act="r67">MOD</symbol>
+	    <symbol act="r67">UNION</symbol>
+	    <symbol act="r67">INTERSECT</symbol>
+	    <symbol act="r67">EXCEPT</symbol>
+	    <symbol act="r67">INSTANCE_OF</symbol>
+	    <symbol act="r67">CASTABLE_AS</symbol>
+	    <symbol act="r67">TREAT_AS</symbol>
+	    <symbol act="r67">ELSE</symbol>
+	    <symbol act="r67">RETURN</symbol>
+	    <symbol act="r67">SATISFIES</symbol>
+	    <symbol act="r67">,</symbol>
+	    <symbol act="r67">&lt;&lt;</symbol>
+	    <symbol act="r67">>></symbol>
+	    <symbol act="r67">+</symbol>
+	    <symbol act="r67">-</symbol>
+	    <symbol act="r67">)</symbol>
+	    <symbol act="r67">]</symbol>
+	    <symbol act="r67">=</symbol>
+	    <symbol act="r67">!=</symbol>
+	    <symbol act="r67">&lt;</symbol>
+	    <symbol act="r67">&lt;=</symbol>
+	    <symbol act="r67">></symbol>
+	    <symbol act="r67">>=</symbol>
+	  </state>
+	  <state number="40">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s117">)</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="41">
+	    <symbol act="s119">QNAME</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	  </state>
+	  <state number="42">
+	    <symbol act="r93">.</symbol>
+	  </state>
+	  <state number="43">
+	    <symbol act="r105">.</symbol>
+	  </state>
+	  <state number="44">
+	    <symbol act="s121">QNAME</symbol>
+	  </state>
+	  <state number="45">
+	    <symbol act="s122">,</symbol>
+	    <symbol act="acc">$end</symbol>
+	  </state>
+	  <state number="46">
+	    <symbol act="r1">.</symbol>
+	  </state>
+	  <state number="47">
+	    <symbol act="r3">.</symbol>
+	  </state>
+	  <state number="48">
+	    <symbol act="r4">.</symbol>
+	  </state>
+	  <state number="49">
+	    <symbol act="r5">.</symbol>
+	  </state>
+	  <state number="50">
+	    <symbol act="s123">OR</symbol>
+	    <symbol act="r6">$end</symbol>
+	    <symbol act="r6">ELSE</symbol>
+	    <symbol act="r6">RETURN</symbol>
+	    <symbol act="r6">SATISFIES</symbol>
+	    <symbol act="r6">,</symbol>
+	    <symbol act="r6">)</symbol>
+	    <symbol act="r6">]</symbol>
+	  </state>
+	  <state number="51">
+	    <symbol act="r82">.</symbol>
+	  </state>
+	  <state number="52">
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="53">
+	    <symbol act="s125">AND</symbol>
+	    <symbol act="r14">$end</symbol>
+	    <symbol act="r14">OR</symbol>
+	    <symbol act="r14">ELSE</symbol>
+	    <symbol act="r14">RETURN</symbol>
+	    <symbol act="r14">SATISFIES</symbol>
+	    <symbol act="r14">,</symbol>
+	    <symbol act="r14">)</symbol>
+	    <symbol act="r14">]</symbol>
+	  </state>
+	  <state number="54">
+	    <symbol act="r16">.</symbol>
+	  </state>
+	  <state number="55">
+	    <symbol act="s126">EQ</symbol>
+	    <symbol act="s127">NE</symbol>
+	    <symbol act="s128">LT</symbol>
+	    <symbol act="s129">LE</symbol>
+	    <symbol act="s130">GT</symbol>
+	    <symbol act="s131">GE</symbol>
+	    <symbol act="s132">IS</symbol>
+	    <symbol act="s133">&lt;&lt;</symbol>
+	    <symbol act="s134">>></symbol>
+	    <symbol act="s135">=</symbol>
+	    <symbol act="s136">!=</symbol>
+	    <symbol act="s137">&lt;</symbol>
+	    <symbol act="s138">&lt;=</symbol>
+	    <symbol act="s139">></symbol>
+	    <symbol act="s140">>=</symbol>
+	    <symbol act="r18">$end</symbol>
+	    <symbol act="r18">OR</symbol>
+	    <symbol act="r18">AND</symbol>
+	    <symbol act="r18">ELSE</symbol>
+	    <symbol act="r18">RETURN</symbol>
+	    <symbol act="r18">SATISFIES</symbol>
+	    <symbol act="r18">,</symbol>
+	    <symbol act="r18">)</symbol>
+	    <symbol act="r18">]</symbol>
+	  </state>
+	  <state number="56">
+	    <symbol act="s145">TO</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="r38">$end</symbol>
+	    <symbol act="r38">OR</symbol>
+	    <symbol act="r38">AND</symbol>
+	    <symbol act="r38">EQ</symbol>
+	    <symbol act="r38">NE</symbol>
+	    <symbol act="r38">LT</symbol>
+	    <symbol act="r38">LE</symbol>
+	    <symbol act="r38">GT</symbol>
+	    <symbol act="r38">GE</symbol>
+	    <symbol act="r38">IS</symbol>
+	    <symbol act="r38">ELSE</symbol>
+	    <symbol act="r38">RETURN</symbol>
+	    <symbol act="r38">SATISFIES</symbol>
+	    <symbol act="r38">,</symbol>
+	    <symbol act="r38">&lt;&lt;</symbol>
+	    <symbol act="r38">>></symbol>
+	    <symbol act="r38">)</symbol>
+	    <symbol act="r38">]</symbol>
+	    <symbol act="r38">=</symbol>
+	    <symbol act="r38">!=</symbol>
+	    <symbol act="r38">&lt;</symbol>
+	    <symbol act="r38">&lt;=</symbol>
+	    <symbol act="r38">></symbol>
+	    <symbol act="r38">>=</symbol>
+	  </state>
+	  <state number="57">
+	    <symbol act="s147">DIV</symbol>
+	    <symbol act="s148">IDIV</symbol>
+	    <symbol act="s149">MOD</symbol>
+	    <symbol act="s150">*</symbol>
+	    <symbol act="r40">$end</symbol>
+	    <symbol act="r40">OR</symbol>
+	    <symbol act="r40">AND</symbol>
+	    <symbol act="r40">EQ</symbol>
+	    <symbol act="r40">NE</symbol>
+	    <symbol act="r40">LT</symbol>
+	    <symbol act="r40">LE</symbol>
+	    <symbol act="r40">GT</symbol>
+	    <symbol act="r40">GE</symbol>
+	    <symbol act="r40">IS</symbol>
+	    <symbol act="r40">TO</symbol>
+	    <symbol act="r40">ELSE</symbol>
+	    <symbol act="r40">RETURN</symbol>
+	    <symbol act="r40">SATISFIES</symbol>
+	    <symbol act="r40">,</symbol>
+	    <symbol act="r40">&lt;&lt;</symbol>
+	    <symbol act="r40">>></symbol>
+	    <symbol act="r40">+</symbol>
+	    <symbol act="r40">-</symbol>
+	    <symbol act="r40">)</symbol>
+	    <symbol act="r40">]</symbol>
+	    <symbol act="r40">=</symbol>
+	    <symbol act="r40">!=</symbol>
+	    <symbol act="r40">&lt;</symbol>
+	    <symbol act="r40">&lt;=</symbol>
+	    <symbol act="r40">></symbol>
+	    <symbol act="r40">>=</symbol>
+	  </state>
+	  <state number="58">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="59">
+	    <symbol act="s153">UNION</symbol>
+	    <symbol act="r44">$end</symbol>
+	    <symbol act="r44">OR</symbol>
+	    <symbol act="r44">AND</symbol>
+	    <symbol act="r44">EQ</symbol>
+	    <symbol act="r44">NE</symbol>
+	    <symbol act="r44">LT</symbol>
+	    <symbol act="r44">LE</symbol>
+	    <symbol act="r44">GT</symbol>
+	    <symbol act="r44">GE</symbol>
+	    <symbol act="r44">IS</symbol>
+	    <symbol act="r44">TO</symbol>
+	    <symbol act="r44">DIV</symbol>
+	    <symbol act="r44">IDIV</symbol>
+	    <symbol act="r44">MOD</symbol>
+	    <symbol act="r44">ELSE</symbol>
+	    <symbol act="r44">RETURN</symbol>
+	    <symbol act="r44">SATISFIES</symbol>
+	    <symbol act="r44">,</symbol>
+	    <symbol act="r44">&lt;&lt;</symbol>
+	    <symbol act="r44">>></symbol>
+	    <symbol act="r44">+</symbol>
+	    <symbol act="r44">-</symbol>
+	    <symbol act="r44">*</symbol>
+	    <symbol act="r44">)</symbol>
+	    <symbol act="r44">]</symbol>
+	    <symbol act="r44">=</symbol>
+	    <symbol act="r44">!=</symbol>
+	    <symbol act="r44">&lt;</symbol>
+	    <symbol act="r44">&lt;=</symbol>
+	    <symbol act="r44">></symbol>
+	    <symbol act="r44">>=</symbol>
+	  </state>
+	  <state number="60">
+	    <symbol act="s154">INTERSECT</symbol>
+	    <symbol act="s155">EXCEPT</symbol>
+	    <symbol act="r50">$end</symbol>
+	    <symbol act="r50">OR</symbol>
+	    <symbol act="r50">AND</symbol>
+	    <symbol act="r50">EQ</symbol>
+	    <symbol act="r50">NE</symbol>
+	    <symbol act="r50">LT</symbol>
+	    <symbol act="r50">LE</symbol>
+	    <symbol act="r50">GT</symbol>
+	    <symbol act="r50">GE</symbol>
+	    <symbol act="r50">IS</symbol>
+	    <symbol act="r50">TO</symbol>
+	    <symbol act="r50">DIV</symbol>
+	    <symbol act="r50">IDIV</symbol>
+	    <symbol act="r50">MOD</symbol>
+	    <symbol act="r50">UNION</symbol>
+	    <symbol act="r50">ELSE</symbol>
+	    <symbol act="r50">RETURN</symbol>
+	    <symbol act="r50">SATISFIES</symbol>
+	    <symbol act="r50">,</symbol>
+	    <symbol act="r50">&lt;&lt;</symbol>
+	    <symbol act="r50">>></symbol>
+	    <symbol act="r50">+</symbol>
+	    <symbol act="r50">-</symbol>
+	    <symbol act="r50">*</symbol>
+	    <symbol act="r50">)</symbol>
+	    <symbol act="r50">]</symbol>
+	    <symbol act="r50">=</symbol>
+	    <symbol act="r50">!=</symbol>
+	    <symbol act="r50">&lt;</symbol>
+	    <symbol act="r50">&lt;=</symbol>
+	    <symbol act="r50">></symbol>
+	    <symbol act="r50">>=</symbol>
+	  </state>
+	  <state number="61">
+	    <symbol act="r52">.</symbol>
+	  </state>
+	  <state number="62">
+	    <symbol act="s157">INSTANCE_OF</symbol>
+	    <symbol act="r56">$end</symbol>
+	    <symbol act="r56">OR</symbol>
+	    <symbol act="r56">AND</symbol>
+	    <symbol act="r56">EQ</symbol>
+	    <symbol act="r56">NE</symbol>
+	    <symbol act="r56">LT</symbol>
+	    <symbol act="r56">LE</symbol>
+	    <symbol act="r56">GT</symbol>
+	    <symbol act="r56">GE</symbol>
+	    <symbol act="r56">IS</symbol>
+	    <symbol act="r56">TO</symbol>
+	    <symbol act="r56">DIV</symbol>
+	    <symbol act="r56">IDIV</symbol>
+	    <symbol act="r56">MOD</symbol>
+	    <symbol act="r56">UNION</symbol>
+	    <symbol act="r56">INTERSECT</symbol>
+	    <symbol act="r56">EXCEPT</symbol>
+	    <symbol act="r56">ELSE</symbol>
+	    <symbol act="r56">RETURN</symbol>
+	    <symbol act="r56">SATISFIES</symbol>
+	    <symbol act="r56">,</symbol>
+	    <symbol act="r56">&lt;&lt;</symbol>
+	    <symbol act="r56">>></symbol>
+	    <symbol act="r56">+</symbol>
+	    <symbol act="r56">-</symbol>
+	    <symbol act="r56">*</symbol>
+	    <symbol act="r56">)</symbol>
+	    <symbol act="r56">]</symbol>
+	    <symbol act="r56">=</symbol>
+	    <symbol act="r56">!=</symbol>
+	    <symbol act="r56">&lt;</symbol>
+	    <symbol act="r56">&lt;=</symbol>
+	    <symbol act="r56">></symbol>
+	    <symbol act="r56">>=</symbol>
+	  </state>
+	  <state number="63">
+	    <symbol act="s158">TREAT_AS</symbol>
+	    <symbol act="r58">$end</symbol>
+	    <symbol act="r58">OR</symbol>
+	    <symbol act="r58">AND</symbol>
+	    <symbol act="r58">EQ</symbol>
+	    <symbol act="r58">NE</symbol>
+	    <symbol act="r58">LT</symbol>
+	    <symbol act="r58">LE</symbol>
+	    <symbol act="r58">GT</symbol>
+	    <symbol act="r58">GE</symbol>
+	    <symbol act="r58">IS</symbol>
+	    <symbol act="r58">TO</symbol>
+	    <symbol act="r58">DIV</symbol>
+	    <symbol act="r58">IDIV</symbol>
+	    <symbol act="r58">MOD</symbol>
+	    <symbol act="r58">UNION</symbol>
+	    <symbol act="r58">INTERSECT</symbol>
+	    <symbol act="r58">EXCEPT</symbol>
+	    <symbol act="r58">INSTANCE_OF</symbol>
+	    <symbol act="r58">ELSE</symbol>
+	    <symbol act="r58">RETURN</symbol>
+	    <symbol act="r58">SATISFIES</symbol>
+	    <symbol act="r58">,</symbol>
+	    <symbol act="r58">&lt;&lt;</symbol>
+	    <symbol act="r58">>></symbol>
+	    <symbol act="r58">+</symbol>
+	    <symbol act="r58">-</symbol>
+	    <symbol act="r58">*</symbol>
+	    <symbol act="r58">)</symbol>
+	    <symbol act="r58">]</symbol>
+	    <symbol act="r58">=</symbol>
+	    <symbol act="r58">!=</symbol>
+	    <symbol act="r58">&lt;</symbol>
+	    <symbol act="r58">&lt;=</symbol>
+	    <symbol act="r58">></symbol>
+	    <symbol act="r58">>=</symbol>
+	  </state>
+	  <state number="64">
+	    <symbol act="s159">CASTABLE_AS</symbol>
+	    <symbol act="r60">$end</symbol>
+	    <symbol act="r60">OR</symbol>
+	    <symbol act="r60">AND</symbol>
+	    <symbol act="r60">EQ</symbol>
+	    <symbol act="r60">NE</symbol>
+	    <symbol act="r60">LT</symbol>
+	    <symbol act="r60">LE</symbol>
+	    <symbol act="r60">GT</symbol>
+	    <symbol act="r60">GE</symbol>
+	    <symbol act="r60">IS</symbol>
+	    <symbol act="r60">TO</symbol>
+	    <symbol act="r60">DIV</symbol>
+	    <symbol act="r60">IDIV</symbol>
+	    <symbol act="r60">MOD</symbol>
+	    <symbol act="r60">UNION</symbol>
+	    <symbol act="r60">INTERSECT</symbol>
+	    <symbol act="r60">EXCEPT</symbol>
+	    <symbol act="r60">INSTANCE_OF</symbol>
+	    <symbol act="r60">TREAT_AS</symbol>
+	    <symbol act="r60">ELSE</symbol>
+	    <symbol act="r60">RETURN</symbol>
+	    <symbol act="r60">SATISFIES</symbol>
+	    <symbol act="r60">,</symbol>
+	    <symbol act="r60">&lt;&lt;</symbol>
+	    <symbol act="r60">>></symbol>
+	    <symbol act="r60">+</symbol>
+	    <symbol act="r60">-</symbol>
+	    <symbol act="r60">*</symbol>
+	    <symbol act="r60">)</symbol>
+	    <symbol act="r60">]</symbol>
+	    <symbol act="r60">=</symbol>
+	    <symbol act="r60">!=</symbol>
+	    <symbol act="r60">&lt;</symbol>
+	    <symbol act="r60">&lt;=</symbol>
+	    <symbol act="r60">></symbol>
+	    <symbol act="r60">>=</symbol>
+	  </state>
+	  <state number="65">
+	    <symbol act="r62">.</symbol>
+	  </state>
+	  <state number="66">
+	    <symbol act="r64">.</symbol>
+	  </state>
+	  <state number="67">
+	    <symbol act="s160">//</symbol>
+	    <symbol act="s161">/</symbol>
+	    <symbol act="r69">$end</symbol>
+	    <symbol act="r69">OR</symbol>
+	    <symbol act="r69">AND</symbol>
+	    <symbol act="r69">EQ</symbol>
+	    <symbol act="r69">NE</symbol>
+	    <symbol act="r69">LT</symbol>
+	    <symbol act="r69">LE</symbol>
+	    <symbol act="r69">GT</symbol>
+	    <symbol act="r69">GE</symbol>
+	    <symbol act="r69">IS</symbol>
+	    <symbol act="r69">TO</symbol>
+	    <symbol act="r69">DIV</symbol>
+	    <symbol act="r69">IDIV</symbol>
+	    <symbol act="r69">MOD</symbol>
+	    <symbol act="r69">UNION</symbol>
+	    <symbol act="r69">INTERSECT</symbol>
+	    <symbol act="r69">EXCEPT</symbol>
+	    <symbol act="r69">INSTANCE_OF</symbol>
+	    <symbol act="r69">CASTABLE_AS</symbol>
+	    <symbol act="r69">TREAT_AS</symbol>
+	    <symbol act="r69">ELSE</symbol>
+	    <symbol act="r69">RETURN</symbol>
+	    <symbol act="r69">SATISFIES</symbol>
+	    <symbol act="r69">,</symbol>
+	    <symbol act="r69">&lt;&lt;</symbol>
+	    <symbol act="r69">>></symbol>
+	    <symbol act="r69">+</symbol>
+	    <symbol act="r69">-</symbol>
+	    <symbol act="r69">*</symbol>
+	    <symbol act="r69">)</symbol>
+	    <symbol act="r69">]</symbol>
+	    <symbol act="r69">=</symbol>
+	    <symbol act="r69">!=</symbol>
+	    <symbol act="r69">&lt;</symbol>
+	    <symbol act="r69">&lt;=</symbol>
+	    <symbol act="r69">></symbol>
+	    <symbol act="r69">>=</symbol>
+	  </state>
+	  <state number="68">
+	    <symbol act="r70">.</symbol>
+	  </state>
+	  <state number="69">
+	    <symbol act="r73">.</symbol>
+	  </state>
+	  <state number="70">
+	    <symbol act="r74">.</symbol>
+	  </state>
+	  <state number="71">
+	    <symbol act="r78">.</symbol>
+	  </state>
+	  <state number="72">
+	    <symbol act="r78">.</symbol>
+	  </state>
+	  <state number="73">
+	    <symbol act="r78">.</symbol>
+	  </state>
+	  <state number="74">
+	    <symbol act="r81">.</symbol>
+	  </state>
+	  <state number="75">
+	    <symbol act="r83">.</symbol>
+	  </state>
+	  <state number="76">
+	    <symbol act="r84">.</symbol>
+	  </state>
+	  <state number="77">
+	    <symbol act="r85">.</symbol>
+	  </state>
+	  <state number="78">
+	    <symbol act="r86">.</symbol>
+	  </state>
+	  <state number="79">
+	    <symbol act="s165">(</symbol>
+	  </state>
+	  <state number="80">
+	    <symbol act="s119">QNAME</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	  </state>
+	  <state number="81">
+	    <symbol act="r104">.</symbol>
+	  </state>
+	  <state number="82">
+	    <symbol act="r100">.</symbol>
+	  </state>
+	  <state number="83">
+	    <symbol act="s119">QNAME</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	  </state>
+	  <state number="84">
+	    <symbol act="r102">.</symbol>
+	  </state>
+	  <state number="85">
+	    <symbol act="r119">.</symbol>
+	  </state>
+	  <state number="86">
+	    <symbol act="r120">.</symbol>
+	  </state>
+	  <state number="87">
+	    <symbol act="r122">.</symbol>
+	  </state>
+	  <state number="88">
+	    <symbol act="r138">.</symbol>
+	  </state>
+	  <state number="89">
+	    <symbol act="r139">.</symbol>
+	  </state>
+	  <state number="90">
+	    <symbol act="r140">.</symbol>
+	  </state>
+	  <state number="91">
+	    <symbol act="r141">.</symbol>
+	  </state>
+	  <state number="92">
+	    <symbol act="r142">.</symbol>
+	  </state>
+	  <state number="93">
+	    <symbol act="r143">.</symbol>
+	  </state>
+	  <state number="94">
+	    <symbol act="r144">.</symbol>
+	  </state>
+	  <state number="95">
+	    <symbol act="r145">.</symbol>
+	  </state>
+	  <state number="96">
+	    <symbol act="r146">.</symbol>
+	  </state>
+	  <state number="97">
+	    <symbol act="r147">.</symbol>
+	  </state>
+	  <state number="98">
+	    <symbol act="r148">.</symbol>
+	  </state>
+	  <state number="99">
+	    <symbol act="r131">.</symbol>
+	  </state>
+	  <state number="100">
+	    <symbol act="r63">.</symbol>
+	  </state>
+	  <state number="101">
+	    <symbol act="s168">?</symbol>
+	    <symbol act="r126">$end</symbol>
+	    <symbol act="r126">OR</symbol>
+	    <symbol act="r126">AND</symbol>
+	    <symbol act="r126">EQ</symbol>
+	    <symbol act="r126">NE</symbol>
+	    <symbol act="r126">LT</symbol>
+	    <symbol act="r126">LE</symbol>
+	    <symbol act="r126">GT</symbol>
+	    <symbol act="r126">GE</symbol>
+	    <symbol act="r126">IS</symbol>
+	    <symbol act="r126">TO</symbol>
+	    <symbol act="r126">DIV</symbol>
+	    <symbol act="r126">IDIV</symbol>
+	    <symbol act="r126">MOD</symbol>
+	    <symbol act="r126">UNION</symbol>
+	    <symbol act="r126">INTERSECT</symbol>
+	    <symbol act="r126">EXCEPT</symbol>
+	    <symbol act="r126">INSTANCE_OF</symbol>
+	    <symbol act="r126">CASTABLE_AS</symbol>
+	    <symbol act="r126">TREAT_AS</symbol>
+	    <symbol act="r126">ELSE</symbol>
+	    <symbol act="r126">RETURN</symbol>
+	    <symbol act="r126">SATISFIES</symbol>
+	    <symbol act="r126">,</symbol>
+	    <symbol act="r126">&lt;&lt;</symbol>
+	    <symbol act="r126">>></symbol>
+	    <symbol act="r126">+</symbol>
+	    <symbol act="r126">-</symbol>
+	    <symbol act="r126">*</symbol>
+	    <symbol act="r126">)</symbol>
+	    <symbol act="r126">]</symbol>
+	    <symbol act="r126">=</symbol>
+	    <symbol act="r126">!=</symbol>
+	    <symbol act="r126">&lt;</symbol>
+	    <symbol act="r126">&lt;=</symbol>
+	    <symbol act="r126">></symbol>
+	    <symbol act="r126">>=</symbol>
+	  </state>
+	  <state number="102">
+	    <symbol act="s169">RETURN</symbol>
+	    <symbol act="s170">,</symbol>
+	  </state>
+	  <state number="103">
+	    <symbol act="s171">IN</symbol>
+	  </state>
+	  <state number="104">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="105">
+	    <symbol act="s107">QNAME</symbol>
+	    <symbol act="s173">*</symbol>
+	    <symbol act="s174">)</symbol>
+	  </state>
+	  <state number="106">
+	    <symbol act="s109">QNAME</symbol>
+	    <symbol act="s177">*</symbol>
+	    <symbol act="s178">)</symbol>
+	  </state>
+	  <state number="107">
+	    <symbol act="r160">.</symbol>
+	  </state>
+	  <state number="108">
+	    <symbol act="s181">)</symbol>
+	  </state>
+	  <state number="109">
+	    <symbol act="r161">.</symbol>
+	  </state>
+	  <state number="110">
+	    <symbol act="s182">)</symbol>
+	  </state>
+	  <state number="111">
+	    <symbol act="s183">)</symbol>
+	  </state>
+	  <state number="112">
+	    <symbol act="s184">)</symbol>
+	  </state>
+	  <state number="113">
+	    <symbol act="r165">.</symbol>
+	  </state>
+	  <state number="114">
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s185">)</symbol>
+	  </state>
+	  <state number="115">
+	    <symbol act="s160">//</symbol>
+	    <symbol act="s161">/</symbol>
+	    <symbol act="r68">$end</symbol>
+	    <symbol act="r68">OR</symbol>
+	    <symbol act="r68">AND</symbol>
+	    <symbol act="r68">EQ</symbol>
+	    <symbol act="r68">NE</symbol>
+	    <symbol act="r68">LT</symbol>
+	    <symbol act="r68">LE</symbol>
+	    <symbol act="r68">GT</symbol>
+	    <symbol act="r68">GE</symbol>
+	    <symbol act="r68">IS</symbol>
+	    <symbol act="r68">TO</symbol>
+	    <symbol act="r68">DIV</symbol>
+	    <symbol act="r68">IDIV</symbol>
+	    <symbol act="r68">MOD</symbol>
+	    <symbol act="r68">UNION</symbol>
+	    <symbol act="r68">INTERSECT</symbol>
+	    <symbol act="r68">EXCEPT</symbol>
+	    <symbol act="r68">INSTANCE_OF</symbol>
+	    <symbol act="r68">CASTABLE_AS</symbol>
+	    <symbol act="r68">TREAT_AS</symbol>
+	    <symbol act="r68">ELSE</symbol>
+	    <symbol act="r68">RETURN</symbol>
+	    <symbol act="r68">SATISFIES</symbol>
+	    <symbol act="r68">,</symbol>
+	    <symbol act="r68">&lt;&lt;</symbol>
+	    <symbol act="r68">>></symbol>
+	    <symbol act="r68">+</symbol>
+	    <symbol act="r68">-</symbol>
+	    <symbol act="r68">*</symbol>
+	    <symbol act="r68">)</symbol>
+	    <symbol act="r68">]</symbol>
+	    <symbol act="r68">=</symbol>
+	    <symbol act="r68">!=</symbol>
+	    <symbol act="r68">&lt;</symbol>
+	    <symbol act="r68">&lt;=</symbol>
+	    <symbol act="r68">></symbol>
+	    <symbol act="r68">>=</symbol>
+	  </state>
+	  <state number="116">
+	    <symbol act="s160">//</symbol>
+	    <symbol act="s161">/</symbol>
+	    <symbol act="r66">$end</symbol>
+	    <symbol act="r66">OR</symbol>
+	    <symbol act="r66">AND</symbol>
+	    <symbol act="r66">EQ</symbol>
+	    <symbol act="r66">NE</symbol>
+	    <symbol act="r66">LT</symbol>
+	    <symbol act="r66">LE</symbol>
+	    <symbol act="r66">GT</symbol>
+	    <symbol act="r66">GE</symbol>
+	    <symbol act="r66">IS</symbol>
+	    <symbol act="r66">TO</symbol>
+	    <symbol act="r66">DIV</symbol>
+	    <symbol act="r66">IDIV</symbol>
+	    <symbol act="r66">MOD</symbol>
+	    <symbol act="r66">UNION</symbol>
+	    <symbol act="r66">INTERSECT</symbol>
+	    <symbol act="r66">EXCEPT</symbol>
+	    <symbol act="r66">INSTANCE_OF</symbol>
+	    <symbol act="r66">CASTABLE_AS</symbol>
+	    <symbol act="r66">TREAT_AS</symbol>
+	    <symbol act="r66">ELSE</symbol>
+	    <symbol act="r66">RETURN</symbol>
+	    <symbol act="r66">SATISFIES</symbol>
+	    <symbol act="r66">,</symbol>
+	    <symbol act="r66">&lt;&lt;</symbol>
+	    <symbol act="r66">>></symbol>
+	    <symbol act="r66">+</symbol>
+	    <symbol act="r66">-</symbol>
+	    <symbol act="r66">*</symbol>
+	    <symbol act="r66">)</symbol>
+	    <symbol act="r66">]</symbol>
+	    <symbol act="r66">=</symbol>
+	    <symbol act="r66">!=</symbol>
+	    <symbol act="r66">&lt;</symbol>
+	    <symbol act="r66">&lt;=</symbol>
+	    <symbol act="r66">></symbol>
+	    <symbol act="r66">>=</symbol>
+	  </state>
+	  <state number="117">
+	    <symbol act="r92">.</symbol>
+	  </state>
+	  <state number="118">
+	    <symbol act="s122">,</symbol>
+	    <symbol act="s187">)</symbol>
+	  </state>
+	  <state number="119">
+	    <symbol act="r121">.</symbol>
+	  </state>
+	  <state number="120">
+	    <symbol act="r103">.</symbol>
+	  </state>
+	  <state number="121">
+	    <symbol act="r173">.</symbol>
+	  </state>
+	  <state number="122">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="123">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="124">
+	    <symbol act="s190">SATISFIES</symbol>
+	    <symbol act="s170">,</symbol>
+	  </state>
+	  <state number="125">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="126">
+	    <symbol act="r23">.</symbol>
+	  </state>
+	  <state number="127">
+	    <symbol act="r24">.</symbol>
+	  </state>
+	  <state number="128">
+	    <symbol act="r25">.</symbol>
+	  </state>
+	  <state number="129">
+	    <symbol act="r26">.</symbol>
+	  </state>
+	  <state number="130">
+	    <symbol act="r27">.</symbol>
+	  </state>
+	  <state number="131">
+	    <symbol act="r28">.</symbol>
+	  </state>
+	  <state number="132">
+	    <symbol act="r35">.</symbol>
+	  </state>
+	  <state number="133">
+	    <symbol act="r36">.</symbol>
+	  </state>
+	  <state number="134">
+	    <symbol act="r37">.</symbol>
+	  </state>
+	  <state number="135">
+	    <symbol act="r29">.</symbol>
+	  </state>
+	  <state number="136">
+	    <symbol act="r30">.</symbol>
+	  </state>
+	  <state number="137">
+	    <symbol act="r31">.</symbol>
+	  </state>
+	  <state number="138">
+	    <symbol act="r32">.</symbol>
+	  </state>
+	  <state number="139">
+	    <symbol act="r33">.</symbol>
+	  </state>
+	  <state number="140">
+	    <symbol act="r34">.</symbol>
+	  </state>
+	  <state number="141">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="142">
+	    <symbol act="r20">.</symbol>
+	  </state>
+	  <state number="143">
+	    <symbol act="r21">.</symbol>
+	  </state>
+	  <state number="144">
+	    <symbol act="r22">.</symbol>
+	  </state>
+	  <state number="145">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="146">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="147">
+	    <symbol act="r47">.</symbol>
+	  </state>
+	  <state number="148">
+	    <symbol act="r48">.</symbol>
+	  </state>
+	  <state number="149">
+	    <symbol act="r49">.</symbol>
+	  </state>
+	  <state number="150">
+	    <symbol act="r46">.</symbol>
+	  </state>
+	  <state number="151">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="152">
+	    <symbol act="r65">.</symbol>
+	  </state>
+	  <state number="153">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="154">
+	    <symbol act="r54">.</symbol>
+	  </state>
+	  <state number="155">
+	    <symbol act="r55">.</symbol>
+	  </state>
+	  <state number="156">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="157">
+	    <symbol act="s198">EMPTY_TYPE</symbol>
+	    <symbol act="s199">(</symbol>
+	  </state>
+	  <state number="158">
+	    <symbol act="s198">EMPTY_TYPE</symbol>
+	    <symbol act="s199">(</symbol>
+	  </state>
+	  <state number="159">
+	    <symbol act="s99">QNAME</symbol>
+	  </state>
+	  <state number="160">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="161">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="162">
+	    <symbol act="s205">[</symbol>
+	    <symbol act="r75">$end</symbol>
+	    <symbol act="r75">OR</symbol>
+	    <symbol act="r75">AND</symbol>
+	    <symbol act="r75">EQ</symbol>
+	    <symbol act="r75">NE</symbol>
+	    <symbol act="r75">LT</symbol>
+	    <symbol act="r75">LE</symbol>
+	    <symbol act="r75">GT</symbol>
+	    <symbol act="r75">GE</symbol>
+	    <symbol act="r75">IS</symbol>
+	    <symbol act="r75">TO</symbol>
+	    <symbol act="r75">DIV</symbol>
+	    <symbol act="r75">IDIV</symbol>
+	    <symbol act="r75">MOD</symbol>
+	    <symbol act="r75">UNION</symbol>
+	    <symbol act="r75">INTERSECT</symbol>
+	    <symbol act="r75">EXCEPT</symbol>
+	    <symbol act="r75">INSTANCE_OF</symbol>
+	    <symbol act="r75">CASTABLE_AS</symbol>
+	    <symbol act="r75">TREAT_AS</symbol>
+	    <symbol act="r75">ELSE</symbol>
+	    <symbol act="r75">RETURN</symbol>
+	    <symbol act="r75">SATISFIES</symbol>
+	    <symbol act="r75">,</symbol>
+	    <symbol act="r75">&lt;&lt;</symbol>
+	    <symbol act="r75">>></symbol>
+	    <symbol act="r75">+</symbol>
+	    <symbol act="r75">-</symbol>
+	    <symbol act="r75">*</symbol>
+	    <symbol act="r75">//</symbol>
+	    <symbol act="r75">/</symbol>
+	    <symbol act="r75">)</symbol>
+	    <symbol act="r75">]</symbol>
+	    <symbol act="r75">=</symbol>
+	    <symbol act="r75">!=</symbol>
+	    <symbol act="r75">&lt;</symbol>
+	    <symbol act="r75">&lt;=</symbol>
+	    <symbol act="r75">></symbol>
+	    <symbol act="r75">>=</symbol>
+	  </state>
+	  <state number="163">
+	    <symbol act="s205">[</symbol>
+	    <symbol act="r76">$end</symbol>
+	    <symbol act="r76">OR</symbol>
+	    <symbol act="r76">AND</symbol>
+	    <symbol act="r76">EQ</symbol>
+	    <symbol act="r76">NE</symbol>
+	    <symbol act="r76">LT</symbol>
+	    <symbol act="r76">LE</symbol>
+	    <symbol act="r76">GT</symbol>
+	    <symbol act="r76">GE</symbol>
+	    <symbol act="r76">IS</symbol>
+	    <symbol act="r76">TO</symbol>
+	    <symbol act="r76">DIV</symbol>
+	    <symbol act="r76">IDIV</symbol>
+	    <symbol act="r76">MOD</symbol>
+	    <symbol act="r76">UNION</symbol>
+	    <symbol act="r76">INTERSECT</symbol>
+	    <symbol act="r76">EXCEPT</symbol>
+	    <symbol act="r76">INSTANCE_OF</symbol>
+	    <symbol act="r76">CASTABLE_AS</symbol>
+	    <symbol act="r76">TREAT_AS</symbol>
+	    <symbol act="r76">ELSE</symbol>
+	    <symbol act="r76">RETURN</symbol>
+	    <symbol act="r76">SATISFIES</symbol>
+	    <symbol act="r76">,</symbol>
+	    <symbol act="r76">&lt;&lt;</symbol>
+	    <symbol act="r76">>></symbol>
+	    <symbol act="r76">+</symbol>
+	    <symbol act="r76">-</symbol>
+	    <symbol act="r76">*</symbol>
+	    <symbol act="r76">//</symbol>
+	    <symbol act="r76">/</symbol>
+	    <symbol act="r76">)</symbol>
+	    <symbol act="r76">]</symbol>
+	    <symbol act="r76">=</symbol>
+	    <symbol act="r76">!=</symbol>
+	    <symbol act="r76">&lt;</symbol>
+	    <symbol act="r76">&lt;=</symbol>
+	    <symbol act="r76">></symbol>
+	    <symbol act="r76">>=</symbol>
+	  </state>
+	  <state number="164">
+	    <symbol act="s205">[</symbol>
+	    <symbol act="r77">$end</symbol>
+	    <symbol act="r77">OR</symbol>
+	    <symbol act="r77">AND</symbol>
+	    <symbol act="r77">EQ</symbol>
+	    <symbol act="r77">NE</symbol>
+	    <symbol act="r77">LT</symbol>
+	    <symbol act="r77">LE</symbol>
+	    <symbol act="r77">GT</symbol>
+	    <symbol act="r77">GE</symbol>
+	    <symbol act="r77">IS</symbol>
+	    <symbol act="r77">TO</symbol>
+	    <symbol act="r77">DIV</symbol>
+	    <symbol act="r77">IDIV</symbol>
+	    <symbol act="r77">MOD</symbol>
+	    <symbol act="r77">UNION</symbol>
+	    <symbol act="r77">INTERSECT</symbol>
+	    <symbol act="r77">EXCEPT</symbol>
+	    <symbol act="r77">INSTANCE_OF</symbol>
+	    <symbol act="r77">CASTABLE_AS</symbol>
+	    <symbol act="r77">TREAT_AS</symbol>
+	    <symbol act="r77">ELSE</symbol>
+	    <symbol act="r77">RETURN</symbol>
+	    <symbol act="r77">SATISFIES</symbol>
+	    <symbol act="r77">,</symbol>
+	    <symbol act="r77">&lt;&lt;</symbol>
+	    <symbol act="r77">>></symbol>
+	    <symbol act="r77">+</symbol>
+	    <symbol act="r77">-</symbol>
+	    <symbol act="r77">*</symbol>
+	    <symbol act="r77">//</symbol>
+	    <symbol act="r77">/</symbol>
+	    <symbol act="r77">)</symbol>
+	    <symbol act="r77">]</symbol>
+	    <symbol act="r77">=</symbol>
+	    <symbol act="r77">!=</symbol>
+	    <symbol act="r77">&lt;</symbol>
+	    <symbol act="r77">&lt;=</symbol>
+	    <symbol act="r77">></symbol>
+	    <symbol act="r77">>=</symbol>
+	  </state>
+	  <state number="165">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s207">)</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="166">
+	    <symbol act="r99">.</symbol>
+	  </state>
+	  <state number="167">
+	    <symbol act="r101">.</symbol>
+	  </state>
+	  <state number="168">
+	    <symbol act="r127">.</symbol>
+	  </state>
+	  <state number="169">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="170">
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="171">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="172">
+	    <symbol act="s122">,</symbol>
+	    <symbol act="s213">)</symbol>
+	  </state>
+	  <state number="173">
+	    <symbol act="r157">.</symbol>
+	  </state>
+	  <state number="174">
+	    <symbol act="r149">.</symbol>
+	  </state>
+	  <state number="175">
+	    <symbol act="s214">,</symbol>
+	    <symbol act="s215">)</symbol>
+	  </state>
+	  <state number="176">
+	    <symbol act="r156">.</symbol>
+	  </state>
+	  <state number="177">
+	    <symbol act="r159">.</symbol>
+	  </state>
+	  <state number="178">
+	    <symbol act="r153">.</symbol>
+	  </state>
+	  <state number="179">
+	    <symbol act="s216">,</symbol>
+	    <symbol act="s217">)</symbol>
+	  </state>
+	  <state number="180">
+	    <symbol act="r158">.</symbol>
+	  </state>
+	  <state number="181">
+	    <symbol act="r163">.</symbol>
+	  </state>
+	  <state number="182">
+	    <symbol act="r164">.</symbol>
+	  </state>
+	  <state number="183">
+	    <symbol act="r167">.</symbol>
+	  </state>
+	  <state number="184">
+	    <symbol act="r166">.</symbol>
+	  </state>
+	  <state number="185">
+	    <symbol act="r168">.</symbol>
+	  </state>
+	  <state number="186">
+	    <symbol act="s218">)</symbol>
+	  </state>
+	  <state number="187">
+	    <symbol act="r91">.</symbol>
+	  </state>
+	  <state number="188">
+	    <symbol act="r2">.</symbol>
+	  </state>
+	  <state number="189">
+	    <symbol act="s125">AND</symbol>
+	    <symbol act="r15">$end</symbol>
+	    <symbol act="r15">OR</symbol>
+	    <symbol act="r15">ELSE</symbol>
+	    <symbol act="r15">RETURN</symbol>
+	    <symbol act="r15">SATISFIES</symbol>
+	    <symbol act="r15">,</symbol>
+	    <symbol act="r15">)</symbol>
+	    <symbol act="r15">]</symbol>
+	  </state>
+	  <state number="190">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="191">
+	    <symbol act="r17">.</symbol>
+	  </state>
+	  <state number="192">
+	    <symbol act="r19">.</symbol>
+	  </state>
+	  <state number="193">
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="r39">$end</symbol>
+	    <symbol act="r39">OR</symbol>
+	    <symbol act="r39">AND</symbol>
+	    <symbol act="r39">EQ</symbol>
+	    <symbol act="r39">NE</symbol>
+	    <symbol act="r39">LT</symbol>
+	    <symbol act="r39">LE</symbol>
+	    <symbol act="r39">GT</symbol>
+	    <symbol act="r39">GE</symbol>
+	    <symbol act="r39">IS</symbol>
+	    <symbol act="r39">ELSE</symbol>
+	    <symbol act="r39">RETURN</symbol>
+	    <symbol act="r39">SATISFIES</symbol>
+	    <symbol act="r39">,</symbol>
+	    <symbol act="r39">&lt;&lt;</symbol>
+	    <symbol act="r39">>></symbol>
+	    <symbol act="r39">)</symbol>
+	    <symbol act="r39">]</symbol>
+	    <symbol act="r39">=</symbol>
+	    <symbol act="r39">!=</symbol>
+	    <symbol act="r39">&lt;</symbol>
+	    <symbol act="r39">&lt;=</symbol>
+	    <symbol act="r39">></symbol>
+	    <symbol act="r39">>=</symbol>
+	  </state>
+	  <state number="194">
+	    <symbol act="s147">DIV</symbol>
+	    <symbol act="s148">IDIV</symbol>
+	    <symbol act="s149">MOD</symbol>
+	    <symbol act="s150">*</symbol>
+	    <symbol act="r41">$end</symbol>
+	    <symbol act="r41">OR</symbol>
+	    <symbol act="r41">AND</symbol>
+	    <symbol act="r41">EQ</symbol>
+	    <symbol act="r41">NE</symbol>
+	    <symbol act="r41">LT</symbol>
+	    <symbol act="r41">LE</symbol>
+	    <symbol act="r41">GT</symbol>
+	    <symbol act="r41">GE</symbol>
+	    <symbol act="r41">IS</symbol>
+	    <symbol act="r41">TO</symbol>
+	    <symbol act="r41">ELSE</symbol>
+	    <symbol act="r41">RETURN</symbol>
+	    <symbol act="r41">SATISFIES</symbol>
+	    <symbol act="r41">,</symbol>
+	    <symbol act="r41">&lt;&lt;</symbol>
+	    <symbol act="r41">>></symbol>
+	    <symbol act="r41">+</symbol>
+	    <symbol act="r41">-</symbol>
+	    <symbol act="r41">)</symbol>
+	    <symbol act="r41">]</symbol>
+	    <symbol act="r41">=</symbol>
+	    <symbol act="r41">!=</symbol>
+	    <symbol act="r41">&lt;</symbol>
+	    <symbol act="r41">&lt;=</symbol>
+	    <symbol act="r41">></symbol>
+	    <symbol act="r41">>=</symbol>
+	  </state>
+	  <state number="195">
+	    <symbol act="s153">UNION</symbol>
+	    <symbol act="r45">$end</symbol>
+	    <symbol act="r45">OR</symbol>
+	    <symbol act="r45">AND</symbol>
+	    <symbol act="r45">EQ</symbol>
+	    <symbol act="r45">NE</symbol>
+	    <symbol act="r45">LT</symbol>
+	    <symbol act="r45">LE</symbol>
+	    <symbol act="r45">GT</symbol>
+	    <symbol act="r45">GE</symbol>
+	    <symbol act="r45">IS</symbol>
+	    <symbol act="r45">TO</symbol>
+	    <symbol act="r45">DIV</symbol>
+	    <symbol act="r45">IDIV</symbol>
+	    <symbol act="r45">MOD</symbol>
+	    <symbol act="r45">ELSE</symbol>
+	    <symbol act="r45">RETURN</symbol>
+	    <symbol act="r45">SATISFIES</symbol>
+	    <symbol act="r45">,</symbol>
+	    <symbol act="r45">&lt;&lt;</symbol>
+	    <symbol act="r45">>></symbol>
+	    <symbol act="r45">+</symbol>
+	    <symbol act="r45">-</symbol>
+	    <symbol act="r45">*</symbol>
+	    <symbol act="r45">)</symbol>
+	    <symbol act="r45">]</symbol>
+	    <symbol act="r45">=</symbol>
+	    <symbol act="r45">!=</symbol>
+	    <symbol act="r45">&lt;</symbol>
+	    <symbol act="r45">&lt;=</symbol>
+	    <symbol act="r45">></symbol>
+	    <symbol act="r45">>=</symbol>
+	  </state>
+	  <state number="196">
+	    <symbol act="s154">INTERSECT</symbol>
+	    <symbol act="s155">EXCEPT</symbol>
+	    <symbol act="r51">$end</symbol>
+	    <symbol act="r51">OR</symbol>
+	    <symbol act="r51">AND</symbol>
+	    <symbol act="r51">EQ</symbol>
+	    <symbol act="r51">NE</symbol>
+	    <symbol act="r51">LT</symbol>
+	    <symbol act="r51">LE</symbol>
+	    <symbol act="r51">GT</symbol>
+	    <symbol act="r51">GE</symbol>
+	    <symbol act="r51">IS</symbol>
+	    <symbol act="r51">TO</symbol>
+	    <symbol act="r51">DIV</symbol>
+	    <symbol act="r51">IDIV</symbol>
+	    <symbol act="r51">MOD</symbol>
+	    <symbol act="r51">UNION</symbol>
+	    <symbol act="r51">ELSE</symbol>
+	    <symbol act="r51">RETURN</symbol>
+	    <symbol act="r51">SATISFIES</symbol>
+	    <symbol act="r51">,</symbol>
+	    <symbol act="r51">&lt;&lt;</symbol>
+	    <symbol act="r51">>></symbol>
+	    <symbol act="r51">+</symbol>
+	    <symbol act="r51">-</symbol>
+	    <symbol act="r51">*</symbol>
+	    <symbol act="r51">)</symbol>
+	    <symbol act="r51">]</symbol>
+	    <symbol act="r51">=</symbol>
+	    <symbol act="r51">!=</symbol>
+	    <symbol act="r51">&lt;</symbol>
+	    <symbol act="r51">&lt;=</symbol>
+	    <symbol act="r51">></symbol>
+	    <symbol act="r51">>=</symbol>
+	  </state>
+	  <state number="197">
+	    <symbol act="r53">.</symbol>
+	  </state>
+	  <state number="198">
+	    <symbol act="r130">.</symbol>
+	  </state>
+	  <state number="199">
+	    <symbol act="s99">QNAME</symbol>
+	    <symbol act="s220">ITEM_TYPE</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	  </state>
+	  <state number="200">
+	    <symbol act="r57">.</symbol>
+	  </state>
+	  <state number="201">
+	    <symbol act="r59">.</symbol>
+	  </state>
+	  <state number="202">
+	    <symbol act="r61">.</symbol>
+	  </state>
+	  <state number="203">
+	    <symbol act="r72">.</symbol>
+	  </state>
+	  <state number="204">
+	    <symbol act="r71">.</symbol>
+	  </state>
+	  <state number="205">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="206">
+	    <symbol act="r79">.</symbol>
+	  </state>
+	  <state number="207">
+	    <symbol act="r95">.</symbol>
+	  </state>
+	  <state number="208">
+	    <symbol act="r96">.</symbol>
+	  </state>
+	  <state number="209">
+	    <symbol act="s225">,</symbol>
+	    <symbol act="s226">)</symbol>
+	  </state>
+	  <state number="210">
+	    <symbol act="r7">.</symbol>
+	  </state>
+	  <state number="211">
+	    <symbol act="s227">IN</symbol>
+	  </state>
+	  <state number="212">
+	    <symbol act="r8">.</symbol>
+	  </state>
+	  <state number="213">
+	    <symbol act="s228">THEN</symbol>
+	  </state>
+	  <state number="214">
+	    <symbol act="s229">QNAME</symbol>
+	  </state>
+	  <state number="215">
+	    <symbol act="r150">.</symbol>
+	  </state>
+	  <state number="216">
+	    <symbol act="s229">QNAME</symbol>
+	  </state>
+	  <state number="217">
+	    <symbol act="r154">.</symbol>
+	  </state>
+	  <state number="218">
+	    <symbol act="r169">.</symbol>
+	  </state>
+	  <state number="219">
+	    <symbol act="r10">.</symbol>
+	  </state>
+	  <state number="220">
+	    <symbol act="r134">.</symbol>
+	  </state>
+	  <state number="221">
+	    <symbol act="r133">.</symbol>
+	  </state>
+	  <state number="222">
+	    <symbol act="r132">.</symbol>
+	  </state>
+	  <state number="223">
+	    <symbol act="s232">+</symbol>
+	    <symbol act="s233">*</symbol>
+	    <symbol act="s234">)</symbol>
+	    <symbol act="s235">?</symbol>
+	  </state>
+	  <state number="224">
+	    <symbol act="s122">,</symbol>
+	    <symbol act="s237">]</symbol>
+	  </state>
+	  <state number="225">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="226">
+	    <symbol act="r94">.</symbol>
+	  </state>
+	  <state number="227">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="228">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="229">
+	    <symbol act="r162">.</symbol>
+	  </state>
+	  <state number="230">
+	    <symbol act="s241">)</symbol>
+	    <symbol act="s242">?</symbol>
+	  </state>
+	  <state number="231">
+	    <symbol act="s243">)</symbol>
+	  </state>
+	  <state number="232">
+	    <symbol act="r137">.</symbol>
+	  </state>
+	  <state number="233">
+	    <symbol act="r136">.</symbol>
+	  </state>
+	  <state number="234">
+	    <symbol act="r128">.</symbol>
+	  </state>
+	  <state number="235">
+	    <symbol act="r135">.</symbol>
+	  </state>
+	  <state number="236">
+	    <symbol act="s244">)</symbol>
+	  </state>
+	  <state number="237">
+	    <symbol act="r80">.</symbol>
+	  </state>
+	  <state number="238">
+	    <symbol act="r97">.</symbol>
+	  </state>
+	  <state number="239">
+	    <symbol act="r9">.</symbol>
+	  </state>
+	  <state number="240">
+	    <symbol act="s245">ELSE</symbol>
+	  </state>
+	  <state number="241">
+	    <symbol act="r151">.</symbol>
+	  </state>
+	  <state number="242">
+	    <symbol act="s246">)</symbol>
+	  </state>
+	  <state number="243">
+	    <symbol act="r155">.</symbol>
+	  </state>
+	  <state number="244">
+	    <symbol act="r129">.</symbol>
+	  </state>
+	  <state number="245">
+	    <symbol act="s1">DOUBLE_LITERAL</symbol>
+	    <symbol act="s2">DECIMAL_LITERAL</symbol>
+	    <symbol act="s3">INTEGER_LITERAL</symbol>
+	    <symbol act="s4">STRING_LITERAL</symbol>
+	    <symbol act="s5">CAST_AS</symbol>
+	    <symbol act="s6">FOR</symbol>
+	    <symbol act="s7">SOME</symbol>
+	    <symbol act="s8">EVERY</symbol>
+	    <symbol act="s9">IF</symbol>
+	    <symbol act="s10">QNAME</symbol>
+	    <symbol act="s11">CHILD_AXIS</symbol>
+	    <symbol act="s12">DESCENDANT_AXIS</symbol>
+	    <symbol act="s13">ATTRIBUTE_AXIS</symbol>
+	    <symbol act="s14">SELF_AXIS</symbol>
+	    <symbol act="s15">DESCENDANT_OR_SELF_AXIS</symbol>
+	    <symbol act="s16">FOLLOWING_SIBLING_AXIS</symbol>
+	    <symbol act="s17">FOLLOWING_AXIS</symbol>
+	    <symbol act="s18">NAMESPACE_AXIS</symbol>
+	    <symbol act="s19">PARENT_AXIS</symbol>
+	    <symbol act="s20">ANCESTOR_AXIS</symbol>
+	    <symbol act="s21">PRECEDING_SIBLING_AXIS</symbol>
+	    <symbol act="s22">PRECEDING_AXIS</symbol>
+	    <symbol act="s23">ANCESTOR_OR_SELF_AXIS</symbol>
+	    <symbol act="s24">ELEMENT_TEST</symbol>
+	    <symbol act="s25">ATTRIBUTE_TEST</symbol>
+	    <symbol act="s26">SCHEMA_ELEMENT_TEST</symbol>
+	    <symbol act="s27">SCHEMA_ATTRIBUTE_TEST</symbol>
+	    <symbol act="s28">PROCESSING_INSTRUCTION_TEST</symbol>
+	    <symbol act="s29">DOCUMENT_NODE_TEST</symbol>
+	    <symbol act="s30">COMMENT_TEST</symbol>
+	    <symbol act="s31">NODE_TEST</symbol>
+	    <symbol act="s32">TEXT_TEST</symbol>
+	    <symbol act="s33">WILD_NAME</symbol>
+	    <symbol act="s34">WILD_PREFIX</symbol>
+	    <symbol act="s35">+</symbol>
+	    <symbol act="s36">-</symbol>
+	    <symbol act="s37">*</symbol>
+	    <symbol act="s38">//</symbol>
+	    <symbol act="s39">/</symbol>
+	    <symbol act="s40">(</symbol>
+	    <symbol act="s41">@</symbol>
+	    <symbol act="s42">.</symbol>
+	    <symbol act="s43">..</symbol>
+	    <symbol act="s44">$</symbol>
+	  </state>
+	  <state number="246">
+	    <symbol act="r152">.</symbol>
+	  </state>
+	  <state number="247">
+	    <symbol act="r13">.</symbol>
+	  </state>
+	</actionTable>
+  <!-- All reductions: (state, NTSymb) ==> ruleN -->
+	<gotoTable>
+	  <state number="0" NT="Expr" newState="45"/>
+	  <state number="0" NT="ExprSingle" newState="46"/>
+	  <state number="0" NT="ForExpr" newState="47"/>
+	  <state number="0" NT="QuantifiedExpr" newState="48"/>
+	  <state number="0" NT="IfExpr" newState="49"/>
+	  <state number="0" NT="OrExpr" newState="50"/>
+	  <state number="0" NT="VariableReference" newState="51"/>
+	  <state number="0" NT="SomeOrEvery" newState="52"/>
+	  <state number="0" NT="AndExpr" newState="53"/>
+	  <state number="0" NT="ComparisonExpr" newState="54"/>
+	  <state number="0" NT="RangeExpr" newState="55"/>
+	  <state number="0" NT="AdditiveExpr" newState="56"/>
+	  <state number="0" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="0" NT="Sign" newState="58"/>
+	  <state number="0" NT="UnionExpr" newState="59"/>
+	  <state number="0" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="0" NT="InstanceOfExpr" newState="61"/>
+	  <state number="0" NT="TreatExpr" newState="62"/>
+	  <state number="0" NT="CastableExpr" newState="63"/>
+	  <state number="0" NT="CastExpr" newState="64"/>
+	  <state number="0" NT="UnaryExpr" newState="65"/>
+	  <state number="0" NT="PathExpr" newState="66"/>
+	  <state number="0" NT="RelativePathExpr" newState="67"/>
+	  <state number="0" NT="StepExpr" newState="68"/>
+	  <state number="0" NT="AxisStep" newState="69"/>
+	  <state number="0" NT="FilterExpr" newState="70"/>
+	  <state number="0" NT="ForwardStep" newState="71"/>
+	  <state number="0" NT="ReverseStep" newState="72"/>
+	  <state number="0" NT="PrimaryExpr" newState="73"/>
+	  <state number="0" NT="Literal" newState="74"/>
+	  <state number="0" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="0" NT="ContextItemExpr" newState="76"/>
+	  <state number="0" NT="FunctionCall" newState="77"/>
+	  <state number="0" NT="NumericLiteral" newState="78"/>
+	  <state number="0" NT="FunctionName" newState="79"/>
+	  <state number="0" NT="ForwardAxis" newState="80"/>
+	  <state number="0" NT="NodeTest" newState="81"/>
+	  <state number="0" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="0" NT="ReverseAxis" newState="83"/>
+	  <state number="0" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="0" NT="KindTest" newState="85"/>
+	  <state number="0" NT="NameTest" newState="86"/>
+	  <state number="0" NT="WildCard" newState="87"/>
+	  <state number="0" NT="DocumentTest" newState="88"/>
+	  <state number="0" NT="ElementTest" newState="89"/>
+	  <state number="0" NT="AttributeTest" newState="90"/>
+	  <state number="0" NT="PITest" newState="91"/>
+	  <state number="0" NT="CommentTest" newState="92"/>
+	  <state number="0" NT="TextTest" newState="93"/>
+	  <state number="0" NT="AnyKindTest" newState="94"/>
+	  <state number="0" NT="BasicElementTest" newState="95"/>
+	  <state number="0" NT="SchemaElementTest" newState="96"/>
+	  <state number="0" NT="BasicAttributeTest" newState="97"/>
+	  <state number="0" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="5" NT="SingleType" newState="100"/>
+	  <state number="5" NT="AtomicType" newState="101"/>
+	  <state number="6" NT="VarnameList" newState="102"/>
+	  <state number="6" NT="VariableReference" newState="103"/>
+	  <state number="26" NT="ElementName" newState="108"/>
+	  <state number="27" NT="AttributeName" newState="110"/>
+	  <state number="38" NT="VariableReference" newState="51"/>
+	  <state number="38" NT="RelativePathExpr" newState="115"/>
+	  <state number="38" NT="StepExpr" newState="68"/>
+	  <state number="38" NT="AxisStep" newState="69"/>
+	  <state number="38" NT="FilterExpr" newState="70"/>
+	  <state number="38" NT="ForwardStep" newState="71"/>
+	  <state number="38" NT="ReverseStep" newState="72"/>
+	  <state number="38" NT="PrimaryExpr" newState="73"/>
+	  <state number="38" NT="Literal" newState="74"/>
+	  <state number="38" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="38" NT="ContextItemExpr" newState="76"/>
+	  <state number="38" NT="FunctionCall" newState="77"/>
+	  <state number="38" NT="NumericLiteral" newState="78"/>
+	  <state number="38" NT="FunctionName" newState="79"/>
+	  <state number="38" NT="ForwardAxis" newState="80"/>
+	  <state number="38" NT="NodeTest" newState="81"/>
+	  <state number="38" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="38" NT="ReverseAxis" newState="83"/>
+	  <state number="38" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="38" NT="KindTest" newState="85"/>
+	  <state number="38" NT="NameTest" newState="86"/>
+	  <state number="38" NT="WildCard" newState="87"/>
+	  <state number="38" NT="DocumentTest" newState="88"/>
+	  <state number="38" NT="ElementTest" newState="89"/>
+	  <state number="38" NT="AttributeTest" newState="90"/>
+	  <state number="38" NT="PITest" newState="91"/>
+	  <state number="38" NT="CommentTest" newState="92"/>
+	  <state number="38" NT="TextTest" newState="93"/>
+	  <state number="38" NT="AnyKindTest" newState="94"/>
+	  <state number="38" NT="BasicElementTest" newState="95"/>
+	  <state number="38" NT="SchemaElementTest" newState="96"/>
+	  <state number="38" NT="BasicAttributeTest" newState="97"/>
+	  <state number="38" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="39" NT="VariableReference" newState="51"/>
+	  <state number="39" NT="RelativePathExpr" newState="116"/>
+	  <state number="39" NT="StepExpr" newState="68"/>
+	  <state number="39" NT="AxisStep" newState="69"/>
+	  <state number="39" NT="FilterExpr" newState="70"/>
+	  <state number="39" NT="ForwardStep" newState="71"/>
+	  <state number="39" NT="ReverseStep" newState="72"/>
+	  <state number="39" NT="PrimaryExpr" newState="73"/>
+	  <state number="39" NT="Literal" newState="74"/>
+	  <state number="39" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="39" NT="ContextItemExpr" newState="76"/>
+	  <state number="39" NT="FunctionCall" newState="77"/>
+	  <state number="39" NT="NumericLiteral" newState="78"/>
+	  <state number="39" NT="FunctionName" newState="79"/>
+	  <state number="39" NT="ForwardAxis" newState="80"/>
+	  <state number="39" NT="NodeTest" newState="81"/>
+	  <state number="39" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="39" NT="ReverseAxis" newState="83"/>
+	  <state number="39" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="39" NT="KindTest" newState="85"/>
+	  <state number="39" NT="NameTest" newState="86"/>
+	  <state number="39" NT="WildCard" newState="87"/>
+	  <state number="39" NT="DocumentTest" newState="88"/>
+	  <state number="39" NT="ElementTest" newState="89"/>
+	  <state number="39" NT="AttributeTest" newState="90"/>
+	  <state number="39" NT="PITest" newState="91"/>
+	  <state number="39" NT="CommentTest" newState="92"/>
+	  <state number="39" NT="TextTest" newState="93"/>
+	  <state number="39" NT="AnyKindTest" newState="94"/>
+	  <state number="39" NT="BasicElementTest" newState="95"/>
+	  <state number="39" NT="SchemaElementTest" newState="96"/>
+	  <state number="39" NT="BasicAttributeTest" newState="97"/>
+	  <state number="39" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="40" NT="Expr" newState="118"/>
+	  <state number="40" NT="ExprSingle" newState="46"/>
+	  <state number="40" NT="ForExpr" newState="47"/>
+	  <state number="40" NT="QuantifiedExpr" newState="48"/>
+	  <state number="40" NT="IfExpr" newState="49"/>
+	  <state number="40" NT="OrExpr" newState="50"/>
+	  <state number="40" NT="VariableReference" newState="51"/>
+	  <state number="40" NT="SomeOrEvery" newState="52"/>
+	  <state number="40" NT="AndExpr" newState="53"/>
+	  <state number="40" NT="ComparisonExpr" newState="54"/>
+	  <state number="40" NT="RangeExpr" newState="55"/>
+	  <state number="40" NT="AdditiveExpr" newState="56"/>
+	  <state number="40" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="40" NT="Sign" newState="58"/>
+	  <state number="40" NT="UnionExpr" newState="59"/>
+	  <state number="40" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="40" NT="InstanceOfExpr" newState="61"/>
+	  <state number="40" NT="TreatExpr" newState="62"/>
+	  <state number="40" NT="CastableExpr" newState="63"/>
+	  <state number="40" NT="CastExpr" newState="64"/>
+	  <state number="40" NT="UnaryExpr" newState="65"/>
+	  <state number="40" NT="PathExpr" newState="66"/>
+	  <state number="40" NT="RelativePathExpr" newState="67"/>
+	  <state number="40" NT="StepExpr" newState="68"/>
+	  <state number="40" NT="AxisStep" newState="69"/>
+	  <state number="40" NT="FilterExpr" newState="70"/>
+	  <state number="40" NT="ForwardStep" newState="71"/>
+	  <state number="40" NT="ReverseStep" newState="72"/>
+	  <state number="40" NT="PrimaryExpr" newState="73"/>
+	  <state number="40" NT="Literal" newState="74"/>
+	  <state number="40" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="40" NT="ContextItemExpr" newState="76"/>
+	  <state number="40" NT="FunctionCall" newState="77"/>
+	  <state number="40" NT="NumericLiteral" newState="78"/>
+	  <state number="40" NT="FunctionName" newState="79"/>
+	  <state number="40" NT="ForwardAxis" newState="80"/>
+	  <state number="40" NT="NodeTest" newState="81"/>
+	  <state number="40" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="40" NT="ReverseAxis" newState="83"/>
+	  <state number="40" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="40" NT="KindTest" newState="85"/>
+	  <state number="40" NT="NameTest" newState="86"/>
+	  <state number="40" NT="WildCard" newState="87"/>
+	  <state number="40" NT="DocumentTest" newState="88"/>
+	  <state number="40" NT="ElementTest" newState="89"/>
+	  <state number="40" NT="AttributeTest" newState="90"/>
+	  <state number="40" NT="PITest" newState="91"/>
+	  <state number="40" NT="CommentTest" newState="92"/>
+	  <state number="40" NT="TextTest" newState="93"/>
+	  <state number="40" NT="AnyKindTest" newState="94"/>
+	  <state number="40" NT="BasicElementTest" newState="95"/>
+	  <state number="40" NT="SchemaElementTest" newState="96"/>
+	  <state number="40" NT="BasicAttributeTest" newState="97"/>
+	  <state number="40" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="41" NT="NodeTest" newState="120"/>
+	  <state number="41" NT="KindTest" newState="85"/>
+	  <state number="41" NT="NameTest" newState="86"/>
+	  <state number="41" NT="WildCard" newState="87"/>
+	  <state number="41" NT="DocumentTest" newState="88"/>
+	  <state number="41" NT="ElementTest" newState="89"/>
+	  <state number="41" NT="AttributeTest" newState="90"/>
+	  <state number="41" NT="PITest" newState="91"/>
+	  <state number="41" NT="CommentTest" newState="92"/>
+	  <state number="41" NT="TextTest" newState="93"/>
+	  <state number="41" NT="AnyKindTest" newState="94"/>
+	  <state number="41" NT="BasicElementTest" newState="95"/>
+	  <state number="41" NT="SchemaElementTest" newState="96"/>
+	  <state number="41" NT="BasicAttributeTest" newState="97"/>
+	  <state number="41" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="52" NT="VarnameList" newState="124"/>
+	  <state number="52" NT="VariableReference" newState="103"/>
+	  <state number="55" NT="ValGenNodeComp" newState="141"/>
+	  <state number="55" NT="ValueComp" newState="142"/>
+	  <state number="55" NT="GeneralComp" newState="143"/>
+	  <state number="55" NT="NodeComp" newState="144"/>
+	  <state number="56" NT="Sign" newState="146"/>
+	  <state number="57" NT="MultOper" newState="151"/>
+	  <state number="58" NT="VariableReference" newState="51"/>
+	  <state number="58" NT="PathExpr" newState="152"/>
+	  <state number="58" NT="RelativePathExpr" newState="67"/>
+	  <state number="58" NT="StepExpr" newState="68"/>
+	  <state number="58" NT="AxisStep" newState="69"/>
+	  <state number="58" NT="FilterExpr" newState="70"/>
+	  <state number="58" NT="ForwardStep" newState="71"/>
+	  <state number="58" NT="ReverseStep" newState="72"/>
+	  <state number="58" NT="PrimaryExpr" newState="73"/>
+	  <state number="58" NT="Literal" newState="74"/>
+	  <state number="58" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="58" NT="ContextItemExpr" newState="76"/>
+	  <state number="58" NT="FunctionCall" newState="77"/>
+	  <state number="58" NT="NumericLiteral" newState="78"/>
+	  <state number="58" NT="FunctionName" newState="79"/>
+	  <state number="58" NT="ForwardAxis" newState="80"/>
+	  <state number="58" NT="NodeTest" newState="81"/>
+	  <state number="58" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="58" NT="ReverseAxis" newState="83"/>
+	  <state number="58" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="58" NT="KindTest" newState="85"/>
+	  <state number="58" NT="NameTest" newState="86"/>
+	  <state number="58" NT="WildCard" newState="87"/>
+	  <state number="58" NT="DocumentTest" newState="88"/>
+	  <state number="58" NT="ElementTest" newState="89"/>
+	  <state number="58" NT="AttributeTest" newState="90"/>
+	  <state number="58" NT="PITest" newState="91"/>
+	  <state number="58" NT="CommentTest" newState="92"/>
+	  <state number="58" NT="TextTest" newState="93"/>
+	  <state number="58" NT="AnyKindTest" newState="94"/>
+	  <state number="58" NT="BasicElementTest" newState="95"/>
+	  <state number="58" NT="SchemaElementTest" newState="96"/>
+	  <state number="58" NT="BasicAttributeTest" newState="97"/>
+	  <state number="58" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="60" NT="IntersectExcept" newState="156"/>
+	  <state number="71" NT="PredicateList" newState="162"/>
+	  <state number="72" NT="PredicateList" newState="163"/>
+	  <state number="73" NT="PredicateList" newState="164"/>
+	  <state number="80" NT="NodeTest" newState="166"/>
+	  <state number="80" NT="KindTest" newState="85"/>
+	  <state number="80" NT="NameTest" newState="86"/>
+	  <state number="80" NT="WildCard" newState="87"/>
+	  <state number="80" NT="DocumentTest" newState="88"/>
+	  <state number="80" NT="ElementTest" newState="89"/>
+	  <state number="80" NT="AttributeTest" newState="90"/>
+	  <state number="80" NT="PITest" newState="91"/>
+	  <state number="80" NT="CommentTest" newState="92"/>
+	  <state number="80" NT="TextTest" newState="93"/>
+	  <state number="80" NT="AnyKindTest" newState="94"/>
+	  <state number="80" NT="BasicElementTest" newState="95"/>
+	  <state number="80" NT="SchemaElementTest" newState="96"/>
+	  <state number="80" NT="BasicAttributeTest" newState="97"/>
+	  <state number="80" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="83" NT="NodeTest" newState="167"/>
+	  <state number="83" NT="KindTest" newState="85"/>
+	  <state number="83" NT="NameTest" newState="86"/>
+	  <state number="83" NT="WildCard" newState="87"/>
+	  <state number="83" NT="DocumentTest" newState="88"/>
+	  <state number="83" NT="ElementTest" newState="89"/>
+	  <state number="83" NT="AttributeTest" newState="90"/>
+	  <state number="83" NT="PITest" newState="91"/>
+	  <state number="83" NT="CommentTest" newState="92"/>
+	  <state number="83" NT="TextTest" newState="93"/>
+	  <state number="83" NT="AnyKindTest" newState="94"/>
+	  <state number="83" NT="BasicElementTest" newState="95"/>
+	  <state number="83" NT="SchemaElementTest" newState="96"/>
+	  <state number="83" NT="BasicAttributeTest" newState="97"/>
+	  <state number="83" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="104" NT="Expr" newState="172"/>
+	  <state number="104" NT="ExprSingle" newState="46"/>
+	  <state number="104" NT="ForExpr" newState="47"/>
+	  <state number="104" NT="QuantifiedExpr" newState="48"/>
+	  <state number="104" NT="IfExpr" newState="49"/>
+	  <state number="104" NT="OrExpr" newState="50"/>
+	  <state number="104" NT="VariableReference" newState="51"/>
+	  <state number="104" NT="SomeOrEvery" newState="52"/>
+	  <state number="104" NT="AndExpr" newState="53"/>
+	  <state number="104" NT="ComparisonExpr" newState="54"/>
+	  <state number="104" NT="RangeExpr" newState="55"/>
+	  <state number="104" NT="AdditiveExpr" newState="56"/>
+	  <state number="104" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="104" NT="Sign" newState="58"/>
+	  <state number="104" NT="UnionExpr" newState="59"/>
+	  <state number="104" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="104" NT="InstanceOfExpr" newState="61"/>
+	  <state number="104" NT="TreatExpr" newState="62"/>
+	  <state number="104" NT="CastableExpr" newState="63"/>
+	  <state number="104" NT="CastExpr" newState="64"/>
+	  <state number="104" NT="UnaryExpr" newState="65"/>
+	  <state number="104" NT="PathExpr" newState="66"/>
+	  <state number="104" NT="RelativePathExpr" newState="67"/>
+	  <state number="104" NT="StepExpr" newState="68"/>
+	  <state number="104" NT="AxisStep" newState="69"/>
+	  <state number="104" NT="FilterExpr" newState="70"/>
+	  <state number="104" NT="ForwardStep" newState="71"/>
+	  <state number="104" NT="ReverseStep" newState="72"/>
+	  <state number="104" NT="PrimaryExpr" newState="73"/>
+	  <state number="104" NT="Literal" newState="74"/>
+	  <state number="104" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="104" NT="ContextItemExpr" newState="76"/>
+	  <state number="104" NT="FunctionCall" newState="77"/>
+	  <state number="104" NT="NumericLiteral" newState="78"/>
+	  <state number="104" NT="FunctionName" newState="79"/>
+	  <state number="104" NT="ForwardAxis" newState="80"/>
+	  <state number="104" NT="NodeTest" newState="81"/>
+	  <state number="104" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="104" NT="ReverseAxis" newState="83"/>
+	  <state number="104" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="104" NT="KindTest" newState="85"/>
+	  <state number="104" NT="NameTest" newState="86"/>
+	  <state number="104" NT="WildCard" newState="87"/>
+	  <state number="104" NT="DocumentTest" newState="88"/>
+	  <state number="104" NT="ElementTest" newState="89"/>
+	  <state number="104" NT="AttributeTest" newState="90"/>
+	  <state number="104" NT="PITest" newState="91"/>
+	  <state number="104" NT="CommentTest" newState="92"/>
+	  <state number="104" NT="TextTest" newState="93"/>
+	  <state number="104" NT="AnyKindTest" newState="94"/>
+	  <state number="104" NT="BasicElementTest" newState="95"/>
+	  <state number="104" NT="SchemaElementTest" newState="96"/>
+	  <state number="104" NT="BasicAttributeTest" newState="97"/>
+	  <state number="104" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="105" NT="ElementNameOrWildCard" newState="175"/>
+	  <state number="105" NT="ElementName" newState="176"/>
+	  <state number="106" NT="AtttibuteNameOrWildCard" newState="179"/>
+	  <state number="106" NT="AttributeName" newState="180"/>
+	  <state number="114" NT="ElementTest" newState="186"/>
+	  <state number="114" NT="BasicElementTest" newState="95"/>
+	  <state number="114" NT="SchemaElementTest" newState="96"/>
+	  <state number="122" NT="ExprSingle" newState="188"/>
+	  <state number="122" NT="ForExpr" newState="47"/>
+	  <state number="122" NT="QuantifiedExpr" newState="48"/>
+	  <state number="122" NT="IfExpr" newState="49"/>
+	  <state number="122" NT="OrExpr" newState="50"/>
+	  <state number="122" NT="VariableReference" newState="51"/>
+	  <state number="122" NT="SomeOrEvery" newState="52"/>
+	  <state number="122" NT="AndExpr" newState="53"/>
+	  <state number="122" NT="ComparisonExpr" newState="54"/>
+	  <state number="122" NT="RangeExpr" newState="55"/>
+	  <state number="122" NT="AdditiveExpr" newState="56"/>
+	  <state number="122" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="122" NT="Sign" newState="58"/>
+	  <state number="122" NT="UnionExpr" newState="59"/>
+	  <state number="122" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="122" NT="InstanceOfExpr" newState="61"/>
+	  <state number="122" NT="TreatExpr" newState="62"/>
+	  <state number="122" NT="CastableExpr" newState="63"/>
+	  <state number="122" NT="CastExpr" newState="64"/>
+	  <state number="122" NT="UnaryExpr" newState="65"/>
+	  <state number="122" NT="PathExpr" newState="66"/>
+	  <state number="122" NT="RelativePathExpr" newState="67"/>
+	  <state number="122" NT="StepExpr" newState="68"/>
+	  <state number="122" NT="AxisStep" newState="69"/>
+	  <state number="122" NT="FilterExpr" newState="70"/>
+	  <state number="122" NT="ForwardStep" newState="71"/>
+	  <state number="122" NT="ReverseStep" newState="72"/>
+	  <state number="122" NT="PrimaryExpr" newState="73"/>
+	  <state number="122" NT="Literal" newState="74"/>
+	  <state number="122" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="122" NT="ContextItemExpr" newState="76"/>
+	  <state number="122" NT="FunctionCall" newState="77"/>
+	  <state number="122" NT="NumericLiteral" newState="78"/>
+	  <state number="122" NT="FunctionName" newState="79"/>
+	  <state number="122" NT="ForwardAxis" newState="80"/>
+	  <state number="122" NT="NodeTest" newState="81"/>
+	  <state number="122" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="122" NT="ReverseAxis" newState="83"/>
+	  <state number="122" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="122" NT="KindTest" newState="85"/>
+	  <state number="122" NT="NameTest" newState="86"/>
+	  <state number="122" NT="WildCard" newState="87"/>
+	  <state number="122" NT="DocumentTest" newState="88"/>
+	  <state number="122" NT="ElementTest" newState="89"/>
+	  <state number="122" NT="AttributeTest" newState="90"/>
+	  <state number="122" NT="PITest" newState="91"/>
+	  <state number="122" NT="CommentTest" newState="92"/>
+	  <state number="122" NT="TextTest" newState="93"/>
+	  <state number="122" NT="AnyKindTest" newState="94"/>
+	  <state number="122" NT="BasicElementTest" newState="95"/>
+	  <state number="122" NT="SchemaElementTest" newState="96"/>
+	  <state number="122" NT="BasicAttributeTest" newState="97"/>
+	  <state number="122" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="123" NT="VariableReference" newState="51"/>
+	  <state number="123" NT="AndExpr" newState="189"/>
+	  <state number="123" NT="ComparisonExpr" newState="54"/>
+	  <state number="123" NT="RangeExpr" newState="55"/>
+	  <state number="123" NT="AdditiveExpr" newState="56"/>
+	  <state number="123" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="123" NT="Sign" newState="58"/>
+	  <state number="123" NT="UnionExpr" newState="59"/>
+	  <state number="123" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="123" NT="InstanceOfExpr" newState="61"/>
+	  <state number="123" NT="TreatExpr" newState="62"/>
+	  <state number="123" NT="CastableExpr" newState="63"/>
+	  <state number="123" NT="CastExpr" newState="64"/>
+	  <state number="123" NT="UnaryExpr" newState="65"/>
+	  <state number="123" NT="PathExpr" newState="66"/>
+	  <state number="123" NT="RelativePathExpr" newState="67"/>
+	  <state number="123" NT="StepExpr" newState="68"/>
+	  <state number="123" NT="AxisStep" newState="69"/>
+	  <state number="123" NT="FilterExpr" newState="70"/>
+	  <state number="123" NT="ForwardStep" newState="71"/>
+	  <state number="123" NT="ReverseStep" newState="72"/>
+	  <state number="123" NT="PrimaryExpr" newState="73"/>
+	  <state number="123" NT="Literal" newState="74"/>
+	  <state number="123" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="123" NT="ContextItemExpr" newState="76"/>
+	  <state number="123" NT="FunctionCall" newState="77"/>
+	  <state number="123" NT="NumericLiteral" newState="78"/>
+	  <state number="123" NT="FunctionName" newState="79"/>
+	  <state number="123" NT="ForwardAxis" newState="80"/>
+	  <state number="123" NT="NodeTest" newState="81"/>
+	  <state number="123" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="123" NT="ReverseAxis" newState="83"/>
+	  <state number="123" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="123" NT="KindTest" newState="85"/>
+	  <state number="123" NT="NameTest" newState="86"/>
+	  <state number="123" NT="WildCard" newState="87"/>
+	  <state number="123" NT="DocumentTest" newState="88"/>
+	  <state number="123" NT="ElementTest" newState="89"/>
+	  <state number="123" NT="AttributeTest" newState="90"/>
+	  <state number="123" NT="PITest" newState="91"/>
+	  <state number="123" NT="CommentTest" newState="92"/>
+	  <state number="123" NT="TextTest" newState="93"/>
+	  <state number="123" NT="AnyKindTest" newState="94"/>
+	  <state number="123" NT="BasicElementTest" newState="95"/>
+	  <state number="123" NT="SchemaElementTest" newState="96"/>
+	  <state number="123" NT="BasicAttributeTest" newState="97"/>
+	  <state number="123" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="125" NT="VariableReference" newState="51"/>
+	  <state number="125" NT="ComparisonExpr" newState="191"/>
+	  <state number="125" NT="RangeExpr" newState="55"/>
+	  <state number="125" NT="AdditiveExpr" newState="56"/>
+	  <state number="125" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="125" NT="Sign" newState="58"/>
+	  <state number="125" NT="UnionExpr" newState="59"/>
+	  <state number="125" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="125" NT="InstanceOfExpr" newState="61"/>
+	  <state number="125" NT="TreatExpr" newState="62"/>
+	  <state number="125" NT="CastableExpr" newState="63"/>
+	  <state number="125" NT="CastExpr" newState="64"/>
+	  <state number="125" NT="UnaryExpr" newState="65"/>
+	  <state number="125" NT="PathExpr" newState="66"/>
+	  <state number="125" NT="RelativePathExpr" newState="67"/>
+	  <state number="125" NT="StepExpr" newState="68"/>
+	  <state number="125" NT="AxisStep" newState="69"/>
+	  <state number="125" NT="FilterExpr" newState="70"/>
+	  <state number="125" NT="ForwardStep" newState="71"/>
+	  <state number="125" NT="ReverseStep" newState="72"/>
+	  <state number="125" NT="PrimaryExpr" newState="73"/>
+	  <state number="125" NT="Literal" newState="74"/>
+	  <state number="125" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="125" NT="ContextItemExpr" newState="76"/>
+	  <state number="125" NT="FunctionCall" newState="77"/>
+	  <state number="125" NT="NumericLiteral" newState="78"/>
+	  <state number="125" NT="FunctionName" newState="79"/>
+	  <state number="125" NT="ForwardAxis" newState="80"/>
+	  <state number="125" NT="NodeTest" newState="81"/>
+	  <state number="125" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="125" NT="ReverseAxis" newState="83"/>
+	  <state number="125" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="125" NT="KindTest" newState="85"/>
+	  <state number="125" NT="NameTest" newState="86"/>
+	  <state number="125" NT="WildCard" newState="87"/>
+	  <state number="125" NT="DocumentTest" newState="88"/>
+	  <state number="125" NT="ElementTest" newState="89"/>
+	  <state number="125" NT="AttributeTest" newState="90"/>
+	  <state number="125" NT="PITest" newState="91"/>
+	  <state number="125" NT="CommentTest" newState="92"/>
+	  <state number="125" NT="TextTest" newState="93"/>
+	  <state number="125" NT="AnyKindTest" newState="94"/>
+	  <state number="125" NT="BasicElementTest" newState="95"/>
+	  <state number="125" NT="SchemaElementTest" newState="96"/>
+	  <state number="125" NT="BasicAttributeTest" newState="97"/>
+	  <state number="125" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="141" NT="VariableReference" newState="51"/>
+	  <state number="141" NT="RangeExpr" newState="192"/>
+	  <state number="141" NT="AdditiveExpr" newState="56"/>
+	  <state number="141" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="141" NT="Sign" newState="58"/>
+	  <state number="141" NT="UnionExpr" newState="59"/>
+	  <state number="141" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="141" NT="InstanceOfExpr" newState="61"/>
+	  <state number="141" NT="TreatExpr" newState="62"/>
+	  <state number="141" NT="CastableExpr" newState="63"/>
+	  <state number="141" NT="CastExpr" newState="64"/>
+	  <state number="141" NT="UnaryExpr" newState="65"/>
+	  <state number="141" NT="PathExpr" newState="66"/>
+	  <state number="141" NT="RelativePathExpr" newState="67"/>
+	  <state number="141" NT="StepExpr" newState="68"/>
+	  <state number="141" NT="AxisStep" newState="69"/>
+	  <state number="141" NT="FilterExpr" newState="70"/>
+	  <state number="141" NT="ForwardStep" newState="71"/>
+	  <state number="141" NT="ReverseStep" newState="72"/>
+	  <state number="141" NT="PrimaryExpr" newState="73"/>
+	  <state number="141" NT="Literal" newState="74"/>
+	  <state number="141" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="141" NT="ContextItemExpr" newState="76"/>
+	  <state number="141" NT="FunctionCall" newState="77"/>
+	  <state number="141" NT="NumericLiteral" newState="78"/>
+	  <state number="141" NT="FunctionName" newState="79"/>
+	  <state number="141" NT="ForwardAxis" newState="80"/>
+	  <state number="141" NT="NodeTest" newState="81"/>
+	  <state number="141" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="141" NT="ReverseAxis" newState="83"/>
+	  <state number="141" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="141" NT="KindTest" newState="85"/>
+	  <state number="141" NT="NameTest" newState="86"/>
+	  <state number="141" NT="WildCard" newState="87"/>
+	  <state number="141" NT="DocumentTest" newState="88"/>
+	  <state number="141" NT="ElementTest" newState="89"/>
+	  <state number="141" NT="AttributeTest" newState="90"/>
+	  <state number="141" NT="PITest" newState="91"/>
+	  <state number="141" NT="CommentTest" newState="92"/>
+	  <state number="141" NT="TextTest" newState="93"/>
+	  <state number="141" NT="AnyKindTest" newState="94"/>
+	  <state number="141" NT="BasicElementTest" newState="95"/>
+	  <state number="141" NT="SchemaElementTest" newState="96"/>
+	  <state number="141" NT="BasicAttributeTest" newState="97"/>
+	  <state number="141" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="145" NT="VariableReference" newState="51"/>
+	  <state number="145" NT="AdditiveExpr" newState="193"/>
+	  <state number="145" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="145" NT="Sign" newState="58"/>
+	  <state number="145" NT="UnionExpr" newState="59"/>
+	  <state number="145" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="145" NT="InstanceOfExpr" newState="61"/>
+	  <state number="145" NT="TreatExpr" newState="62"/>
+	  <state number="145" NT="CastableExpr" newState="63"/>
+	  <state number="145" NT="CastExpr" newState="64"/>
+	  <state number="145" NT="UnaryExpr" newState="65"/>
+	  <state number="145" NT="PathExpr" newState="66"/>
+	  <state number="145" NT="RelativePathExpr" newState="67"/>
+	  <state number="145" NT="StepExpr" newState="68"/>
+	  <state number="145" NT="AxisStep" newState="69"/>
+	  <state number="145" NT="FilterExpr" newState="70"/>
+	  <state number="145" NT="ForwardStep" newState="71"/>
+	  <state number="145" NT="ReverseStep" newState="72"/>
+	  <state number="145" NT="PrimaryExpr" newState="73"/>
+	  <state number="145" NT="Literal" newState="74"/>
+	  <state number="145" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="145" NT="ContextItemExpr" newState="76"/>
+	  <state number="145" NT="FunctionCall" newState="77"/>
+	  <state number="145" NT="NumericLiteral" newState="78"/>
+	  <state number="145" NT="FunctionName" newState="79"/>
+	  <state number="145" NT="ForwardAxis" newState="80"/>
+	  <state number="145" NT="NodeTest" newState="81"/>
+	  <state number="145" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="145" NT="ReverseAxis" newState="83"/>
+	  <state number="145" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="145" NT="KindTest" newState="85"/>
+	  <state number="145" NT="NameTest" newState="86"/>
+	  <state number="145" NT="WildCard" newState="87"/>
+	  <state number="145" NT="DocumentTest" newState="88"/>
+	  <state number="145" NT="ElementTest" newState="89"/>
+	  <state number="145" NT="AttributeTest" newState="90"/>
+	  <state number="145" NT="PITest" newState="91"/>
+	  <state number="145" NT="CommentTest" newState="92"/>
+	  <state number="145" NT="TextTest" newState="93"/>
+	  <state number="145" NT="AnyKindTest" newState="94"/>
+	  <state number="145" NT="BasicElementTest" newState="95"/>
+	  <state number="145" NT="SchemaElementTest" newState="96"/>
+	  <state number="145" NT="BasicAttributeTest" newState="97"/>
+	  <state number="145" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="146" NT="VariableReference" newState="51"/>
+	  <state number="146" NT="MultiplicativeExpr" newState="194"/>
+	  <state number="146" NT="Sign" newState="58"/>
+	  <state number="146" NT="UnionExpr" newState="59"/>
+	  <state number="146" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="146" NT="InstanceOfExpr" newState="61"/>
+	  <state number="146" NT="TreatExpr" newState="62"/>
+	  <state number="146" NT="CastableExpr" newState="63"/>
+	  <state number="146" NT="CastExpr" newState="64"/>
+	  <state number="146" NT="UnaryExpr" newState="65"/>
+	  <state number="146" NT="PathExpr" newState="66"/>
+	  <state number="146" NT="RelativePathExpr" newState="67"/>
+	  <state number="146" NT="StepExpr" newState="68"/>
+	  <state number="146" NT="AxisStep" newState="69"/>
+	  <state number="146" NT="FilterExpr" newState="70"/>
+	  <state number="146" NT="ForwardStep" newState="71"/>
+	  <state number="146" NT="ReverseStep" newState="72"/>
+	  <state number="146" NT="PrimaryExpr" newState="73"/>
+	  <state number="146" NT="Literal" newState="74"/>
+	  <state number="146" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="146" NT="ContextItemExpr" newState="76"/>
+	  <state number="146" NT="FunctionCall" newState="77"/>
+	  <state number="146" NT="NumericLiteral" newState="78"/>
+	  <state number="146" NT="FunctionName" newState="79"/>
+	  <state number="146" NT="ForwardAxis" newState="80"/>
+	  <state number="146" NT="NodeTest" newState="81"/>
+	  <state number="146" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="146" NT="ReverseAxis" newState="83"/>
+	  <state number="146" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="146" NT="KindTest" newState="85"/>
+	  <state number="146" NT="NameTest" newState="86"/>
+	  <state number="146" NT="WildCard" newState="87"/>
+	  <state number="146" NT="DocumentTest" newState="88"/>
+	  <state number="146" NT="ElementTest" newState="89"/>
+	  <state number="146" NT="AttributeTest" newState="90"/>
+	  <state number="146" NT="PITest" newState="91"/>
+	  <state number="146" NT="CommentTest" newState="92"/>
+	  <state number="146" NT="TextTest" newState="93"/>
+	  <state number="146" NT="AnyKindTest" newState="94"/>
+	  <state number="146" NT="BasicElementTest" newState="95"/>
+	  <state number="146" NT="SchemaElementTest" newState="96"/>
+	  <state number="146" NT="BasicAttributeTest" newState="97"/>
+	  <state number="146" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="151" NT="VariableReference" newState="51"/>
+	  <state number="151" NT="Sign" newState="58"/>
+	  <state number="151" NT="UnionExpr" newState="195"/>
+	  <state number="151" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="151" NT="InstanceOfExpr" newState="61"/>
+	  <state number="151" NT="TreatExpr" newState="62"/>
+	  <state number="151" NT="CastableExpr" newState="63"/>
+	  <state number="151" NT="CastExpr" newState="64"/>
+	  <state number="151" NT="UnaryExpr" newState="65"/>
+	  <state number="151" NT="PathExpr" newState="66"/>
+	  <state number="151" NT="RelativePathExpr" newState="67"/>
+	  <state number="151" NT="StepExpr" newState="68"/>
+	  <state number="151" NT="AxisStep" newState="69"/>
+	  <state number="151" NT="FilterExpr" newState="70"/>
+	  <state number="151" NT="ForwardStep" newState="71"/>
+	  <state number="151" NT="ReverseStep" newState="72"/>
+	  <state number="151" NT="PrimaryExpr" newState="73"/>
+	  <state number="151" NT="Literal" newState="74"/>
+	  <state number="151" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="151" NT="ContextItemExpr" newState="76"/>
+	  <state number="151" NT="FunctionCall" newState="77"/>
+	  <state number="151" NT="NumericLiteral" newState="78"/>
+	  <state number="151" NT="FunctionName" newState="79"/>
+	  <state number="151" NT="ForwardAxis" newState="80"/>
+	  <state number="151" NT="NodeTest" newState="81"/>
+	  <state number="151" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="151" NT="ReverseAxis" newState="83"/>
+	  <state number="151" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="151" NT="KindTest" newState="85"/>
+	  <state number="151" NT="NameTest" newState="86"/>
+	  <state number="151" NT="WildCard" newState="87"/>
+	  <state number="151" NT="DocumentTest" newState="88"/>
+	  <state number="151" NT="ElementTest" newState="89"/>
+	  <state number="151" NT="AttributeTest" newState="90"/>
+	  <state number="151" NT="PITest" newState="91"/>
+	  <state number="151" NT="CommentTest" newState="92"/>
+	  <state number="151" NT="TextTest" newState="93"/>
+	  <state number="151" NT="AnyKindTest" newState="94"/>
+	  <state number="151" NT="BasicElementTest" newState="95"/>
+	  <state number="151" NT="SchemaElementTest" newState="96"/>
+	  <state number="151" NT="BasicAttributeTest" newState="97"/>
+	  <state number="151" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="153" NT="VariableReference" newState="51"/>
+	  <state number="153" NT="Sign" newState="58"/>
+	  <state number="153" NT="IntersectExceptExpr" newState="196"/>
+	  <state number="153" NT="InstanceOfExpr" newState="61"/>
+	  <state number="153" NT="TreatExpr" newState="62"/>
+	  <state number="153" NT="CastableExpr" newState="63"/>
+	  <state number="153" NT="CastExpr" newState="64"/>
+	  <state number="153" NT="UnaryExpr" newState="65"/>
+	  <state number="153" NT="PathExpr" newState="66"/>
+	  <state number="153" NT="RelativePathExpr" newState="67"/>
+	  <state number="153" NT="StepExpr" newState="68"/>
+	  <state number="153" NT="AxisStep" newState="69"/>
+	  <state number="153" NT="FilterExpr" newState="70"/>
+	  <state number="153" NT="ForwardStep" newState="71"/>
+	  <state number="153" NT="ReverseStep" newState="72"/>
+	  <state number="153" NT="PrimaryExpr" newState="73"/>
+	  <state number="153" NT="Literal" newState="74"/>
+	  <state number="153" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="153" NT="ContextItemExpr" newState="76"/>
+	  <state number="153" NT="FunctionCall" newState="77"/>
+	  <state number="153" NT="NumericLiteral" newState="78"/>
+	  <state number="153" NT="FunctionName" newState="79"/>
+	  <state number="153" NT="ForwardAxis" newState="80"/>
+	  <state number="153" NT="NodeTest" newState="81"/>
+	  <state number="153" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="153" NT="ReverseAxis" newState="83"/>
+	  <state number="153" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="153" NT="KindTest" newState="85"/>
+	  <state number="153" NT="NameTest" newState="86"/>
+	  <state number="153" NT="WildCard" newState="87"/>
+	  <state number="153" NT="DocumentTest" newState="88"/>
+	  <state number="153" NT="ElementTest" newState="89"/>
+	  <state number="153" NT="AttributeTest" newState="90"/>
+	  <state number="153" NT="PITest" newState="91"/>
+	  <state number="153" NT="CommentTest" newState="92"/>
+	  <state number="153" NT="TextTest" newState="93"/>
+	  <state number="153" NT="AnyKindTest" newState="94"/>
+	  <state number="153" NT="BasicElementTest" newState="95"/>
+	  <state number="153" NT="SchemaElementTest" newState="96"/>
+	  <state number="153" NT="BasicAttributeTest" newState="97"/>
+	  <state number="153" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="156" NT="VariableReference" newState="51"/>
+	  <state number="156" NT="Sign" newState="58"/>
+	  <state number="156" NT="InstanceOfExpr" newState="197"/>
+	  <state number="156" NT="TreatExpr" newState="62"/>
+	  <state number="156" NT="CastableExpr" newState="63"/>
+	  <state number="156" NT="CastExpr" newState="64"/>
+	  <state number="156" NT="UnaryExpr" newState="65"/>
+	  <state number="156" NT="PathExpr" newState="66"/>
+	  <state number="156" NT="RelativePathExpr" newState="67"/>
+	  <state number="156" NT="StepExpr" newState="68"/>
+	  <state number="156" NT="AxisStep" newState="69"/>
+	  <state number="156" NT="FilterExpr" newState="70"/>
+	  <state number="156" NT="ForwardStep" newState="71"/>
+	  <state number="156" NT="ReverseStep" newState="72"/>
+	  <state number="156" NT="PrimaryExpr" newState="73"/>
+	  <state number="156" NT="Literal" newState="74"/>
+	  <state number="156" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="156" NT="ContextItemExpr" newState="76"/>
+	  <state number="156" NT="FunctionCall" newState="77"/>
+	  <state number="156" NT="NumericLiteral" newState="78"/>
+	  <state number="156" NT="FunctionName" newState="79"/>
+	  <state number="156" NT="ForwardAxis" newState="80"/>
+	  <state number="156" NT="NodeTest" newState="81"/>
+	  <state number="156" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="156" NT="ReverseAxis" newState="83"/>
+	  <state number="156" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="156" NT="KindTest" newState="85"/>
+	  <state number="156" NT="NameTest" newState="86"/>
+	  <state number="156" NT="WildCard" newState="87"/>
+	  <state number="156" NT="DocumentTest" newState="88"/>
+	  <state number="156" NT="ElementTest" newState="89"/>
+	  <state number="156" NT="AttributeTest" newState="90"/>
+	  <state number="156" NT="PITest" newState="91"/>
+	  <state number="156" NT="CommentTest" newState="92"/>
+	  <state number="156" NT="TextTest" newState="93"/>
+	  <state number="156" NT="AnyKindTest" newState="94"/>
+	  <state number="156" NT="BasicElementTest" newState="95"/>
+	  <state number="156" NT="SchemaElementTest" newState="96"/>
+	  <state number="156" NT="BasicAttributeTest" newState="97"/>
+	  <state number="156" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="157" NT="SequenceType" newState="200"/>
+	  <state number="158" NT="SequenceType" newState="201"/>
+	  <state number="159" NT="SingleType" newState="202"/>
+	  <state number="159" NT="AtomicType" newState="101"/>
+	  <state number="160" NT="VariableReference" newState="51"/>
+	  <state number="160" NT="StepExpr" newState="203"/>
+	  <state number="160" NT="AxisStep" newState="69"/>
+	  <state number="160" NT="FilterExpr" newState="70"/>
+	  <state number="160" NT="ForwardStep" newState="71"/>
+	  <state number="160" NT="ReverseStep" newState="72"/>
+	  <state number="160" NT="PrimaryExpr" newState="73"/>
+	  <state number="160" NT="Literal" newState="74"/>
+	  <state number="160" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="160" NT="ContextItemExpr" newState="76"/>
+	  <state number="160" NT="FunctionCall" newState="77"/>
+	  <state number="160" NT="NumericLiteral" newState="78"/>
+	  <state number="160" NT="FunctionName" newState="79"/>
+	  <state number="160" NT="ForwardAxis" newState="80"/>
+	  <state number="160" NT="NodeTest" newState="81"/>
+	  <state number="160" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="160" NT="ReverseAxis" newState="83"/>
+	  <state number="160" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="160" NT="KindTest" newState="85"/>
+	  <state number="160" NT="NameTest" newState="86"/>
+	  <state number="160" NT="WildCard" newState="87"/>
+	  <state number="160" NT="DocumentTest" newState="88"/>
+	  <state number="160" NT="ElementTest" newState="89"/>
+	  <state number="160" NT="AttributeTest" newState="90"/>
+	  <state number="160" NT="PITest" newState="91"/>
+	  <state number="160" NT="CommentTest" newState="92"/>
+	  <state number="160" NT="TextTest" newState="93"/>
+	  <state number="160" NT="AnyKindTest" newState="94"/>
+	  <state number="160" NT="BasicElementTest" newState="95"/>
+	  <state number="160" NT="SchemaElementTest" newState="96"/>
+	  <state number="160" NT="BasicAttributeTest" newState="97"/>
+	  <state number="160" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="161" NT="VariableReference" newState="51"/>
+	  <state number="161" NT="StepExpr" newState="204"/>
+	  <state number="161" NT="AxisStep" newState="69"/>
+	  <state number="161" NT="FilterExpr" newState="70"/>
+	  <state number="161" NT="ForwardStep" newState="71"/>
+	  <state number="161" NT="ReverseStep" newState="72"/>
+	  <state number="161" NT="PrimaryExpr" newState="73"/>
+	  <state number="161" NT="Literal" newState="74"/>
+	  <state number="161" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="161" NT="ContextItemExpr" newState="76"/>
+	  <state number="161" NT="FunctionCall" newState="77"/>
+	  <state number="161" NT="NumericLiteral" newState="78"/>
+	  <state number="161" NT="FunctionName" newState="79"/>
+	  <state number="161" NT="ForwardAxis" newState="80"/>
+	  <state number="161" NT="NodeTest" newState="81"/>
+	  <state number="161" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="161" NT="ReverseAxis" newState="83"/>
+	  <state number="161" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="161" NT="KindTest" newState="85"/>
+	  <state number="161" NT="NameTest" newState="86"/>
+	  <state number="161" NT="WildCard" newState="87"/>
+	  <state number="161" NT="DocumentTest" newState="88"/>
+	  <state number="161" NT="ElementTest" newState="89"/>
+	  <state number="161" NT="AttributeTest" newState="90"/>
+	  <state number="161" NT="PITest" newState="91"/>
+	  <state number="161" NT="CommentTest" newState="92"/>
+	  <state number="161" NT="TextTest" newState="93"/>
+	  <state number="161" NT="AnyKindTest" newState="94"/>
+	  <state number="161" NT="BasicElementTest" newState="95"/>
+	  <state number="161" NT="SchemaElementTest" newState="96"/>
+	  <state number="161" NT="BasicAttributeTest" newState="97"/>
+	  <state number="161" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="162" NT="Predicate" newState="206"/>
+	  <state number="163" NT="Predicate" newState="206"/>
+	  <state number="164" NT="Predicate" newState="206"/>
+	  <state number="165" NT="ExprSingle" newState="208"/>
+	  <state number="165" NT="ForExpr" newState="47"/>
+	  <state number="165" NT="QuantifiedExpr" newState="48"/>
+	  <state number="165" NT="IfExpr" newState="49"/>
+	  <state number="165" NT="OrExpr" newState="50"/>
+	  <state number="165" NT="VariableReference" newState="51"/>
+	  <state number="165" NT="SomeOrEvery" newState="52"/>
+	  <state number="165" NT="AndExpr" newState="53"/>
+	  <state number="165" NT="ComparisonExpr" newState="54"/>
+	  <state number="165" NT="RangeExpr" newState="55"/>
+	  <state number="165" NT="AdditiveExpr" newState="56"/>
+	  <state number="165" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="165" NT="Sign" newState="58"/>
+	  <state number="165" NT="UnionExpr" newState="59"/>
+	  <state number="165" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="165" NT="InstanceOfExpr" newState="61"/>
+	  <state number="165" NT="TreatExpr" newState="62"/>
+	  <state number="165" NT="CastableExpr" newState="63"/>
+	  <state number="165" NT="CastExpr" newState="64"/>
+	  <state number="165" NT="UnaryExpr" newState="65"/>
+	  <state number="165" NT="PathExpr" newState="66"/>
+	  <state number="165" NT="RelativePathExpr" newState="67"/>
+	  <state number="165" NT="StepExpr" newState="68"/>
+	  <state number="165" NT="AxisStep" newState="69"/>
+	  <state number="165" NT="FilterExpr" newState="70"/>
+	  <state number="165" NT="ForwardStep" newState="71"/>
+	  <state number="165" NT="ReverseStep" newState="72"/>
+	  <state number="165" NT="PrimaryExpr" newState="73"/>
+	  <state number="165" NT="Literal" newState="74"/>
+	  <state number="165" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="165" NT="ContextItemExpr" newState="76"/>
+	  <state number="165" NT="FunctionCall" newState="77"/>
+	  <state number="165" NT="NumericLiteral" newState="78"/>
+	  <state number="165" NT="FunctionName" newState="79"/>
+	  <state number="165" NT="ExprSingleList" newState="209"/>
+	  <state number="165" NT="ForwardAxis" newState="80"/>
+	  <state number="165" NT="NodeTest" newState="81"/>
+	  <state number="165" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="165" NT="ReverseAxis" newState="83"/>
+	  <state number="165" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="165" NT="KindTest" newState="85"/>
+	  <state number="165" NT="NameTest" newState="86"/>
+	  <state number="165" NT="WildCard" newState="87"/>
+	  <state number="165" NT="DocumentTest" newState="88"/>
+	  <state number="165" NT="ElementTest" newState="89"/>
+	  <state number="165" NT="AttributeTest" newState="90"/>
+	  <state number="165" NT="PITest" newState="91"/>
+	  <state number="165" NT="CommentTest" newState="92"/>
+	  <state number="165" NT="TextTest" newState="93"/>
+	  <state number="165" NT="AnyKindTest" newState="94"/>
+	  <state number="165" NT="BasicElementTest" newState="95"/>
+	  <state number="165" NT="SchemaElementTest" newState="96"/>
+	  <state number="165" NT="BasicAttributeTest" newState="97"/>
+	  <state number="165" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="169" NT="ExprSingle" newState="210"/>
+	  <state number="169" NT="ForExpr" newState="47"/>
+	  <state number="169" NT="QuantifiedExpr" newState="48"/>
+	  <state number="169" NT="IfExpr" newState="49"/>
+	  <state number="169" NT="OrExpr" newState="50"/>
+	  <state number="169" NT="VariableReference" newState="51"/>
+	  <state number="169" NT="SomeOrEvery" newState="52"/>
+	  <state number="169" NT="AndExpr" newState="53"/>
+	  <state number="169" NT="ComparisonExpr" newState="54"/>
+	  <state number="169" NT="RangeExpr" newState="55"/>
+	  <state number="169" NT="AdditiveExpr" newState="56"/>
+	  <state number="169" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="169" NT="Sign" newState="58"/>
+	  <state number="169" NT="UnionExpr" newState="59"/>
+	  <state number="169" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="169" NT="InstanceOfExpr" newState="61"/>
+	  <state number="169" NT="TreatExpr" newState="62"/>
+	  <state number="169" NT="CastableExpr" newState="63"/>
+	  <state number="169" NT="CastExpr" newState="64"/>
+	  <state number="169" NT="UnaryExpr" newState="65"/>
+	  <state number="169" NT="PathExpr" newState="66"/>
+	  <state number="169" NT="RelativePathExpr" newState="67"/>
+	  <state number="169" NT="StepExpr" newState="68"/>
+	  <state number="169" NT="AxisStep" newState="69"/>
+	  <state number="169" NT="FilterExpr" newState="70"/>
+	  <state number="169" NT="ForwardStep" newState="71"/>
+	  <state number="169" NT="ReverseStep" newState="72"/>
+	  <state number="169" NT="PrimaryExpr" newState="73"/>
+	  <state number="169" NT="Literal" newState="74"/>
+	  <state number="169" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="169" NT="ContextItemExpr" newState="76"/>
+	  <state number="169" NT="FunctionCall" newState="77"/>
+	  <state number="169" NT="NumericLiteral" newState="78"/>
+	  <state number="169" NT="FunctionName" newState="79"/>
+	  <state number="169" NT="ForwardAxis" newState="80"/>
+	  <state number="169" NT="NodeTest" newState="81"/>
+	  <state number="169" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="169" NT="ReverseAxis" newState="83"/>
+	  <state number="169" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="169" NT="KindTest" newState="85"/>
+	  <state number="169" NT="NameTest" newState="86"/>
+	  <state number="169" NT="WildCard" newState="87"/>
+	  <state number="169" NT="DocumentTest" newState="88"/>
+	  <state number="169" NT="ElementTest" newState="89"/>
+	  <state number="169" NT="AttributeTest" newState="90"/>
+	  <state number="169" NT="PITest" newState="91"/>
+	  <state number="169" NT="CommentTest" newState="92"/>
+	  <state number="169" NT="TextTest" newState="93"/>
+	  <state number="169" NT="AnyKindTest" newState="94"/>
+	  <state number="169" NT="BasicElementTest" newState="95"/>
+	  <state number="169" NT="SchemaElementTest" newState="96"/>
+	  <state number="169" NT="BasicAttributeTest" newState="97"/>
+	  <state number="169" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="170" NT="VariableReference" newState="211"/>
+	  <state number="171" NT="ExprSingle" newState="212"/>
+	  <state number="171" NT="ForExpr" newState="47"/>
+	  <state number="171" NT="QuantifiedExpr" newState="48"/>
+	  <state number="171" NT="IfExpr" newState="49"/>
+	  <state number="171" NT="OrExpr" newState="50"/>
+	  <state number="171" NT="VariableReference" newState="51"/>
+	  <state number="171" NT="SomeOrEvery" newState="52"/>
+	  <state number="171" NT="AndExpr" newState="53"/>
+	  <state number="171" NT="ComparisonExpr" newState="54"/>
+	  <state number="171" NT="RangeExpr" newState="55"/>
+	  <state number="171" NT="AdditiveExpr" newState="56"/>
+	  <state number="171" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="171" NT="Sign" newState="58"/>
+	  <state number="171" NT="UnionExpr" newState="59"/>
+	  <state number="171" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="171" NT="InstanceOfExpr" newState="61"/>
+	  <state number="171" NT="TreatExpr" newState="62"/>
+	  <state number="171" NT="CastableExpr" newState="63"/>
+	  <state number="171" NT="CastExpr" newState="64"/>
+	  <state number="171" NT="UnaryExpr" newState="65"/>
+	  <state number="171" NT="PathExpr" newState="66"/>
+	  <state number="171" NT="RelativePathExpr" newState="67"/>
+	  <state number="171" NT="StepExpr" newState="68"/>
+	  <state number="171" NT="AxisStep" newState="69"/>
+	  <state number="171" NT="FilterExpr" newState="70"/>
+	  <state number="171" NT="ForwardStep" newState="71"/>
+	  <state number="171" NT="ReverseStep" newState="72"/>
+	  <state number="171" NT="PrimaryExpr" newState="73"/>
+	  <state number="171" NT="Literal" newState="74"/>
+	  <state number="171" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="171" NT="ContextItemExpr" newState="76"/>
+	  <state number="171" NT="FunctionCall" newState="77"/>
+	  <state number="171" NT="NumericLiteral" newState="78"/>
+	  <state number="171" NT="FunctionName" newState="79"/>
+	  <state number="171" NT="ForwardAxis" newState="80"/>
+	  <state number="171" NT="NodeTest" newState="81"/>
+	  <state number="171" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="171" NT="ReverseAxis" newState="83"/>
+	  <state number="171" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="171" NT="KindTest" newState="85"/>
+	  <state number="171" NT="NameTest" newState="86"/>
+	  <state number="171" NT="WildCard" newState="87"/>
+	  <state number="171" NT="DocumentTest" newState="88"/>
+	  <state number="171" NT="ElementTest" newState="89"/>
+	  <state number="171" NT="AttributeTest" newState="90"/>
+	  <state number="171" NT="PITest" newState="91"/>
+	  <state number="171" NT="CommentTest" newState="92"/>
+	  <state number="171" NT="TextTest" newState="93"/>
+	  <state number="171" NT="AnyKindTest" newState="94"/>
+	  <state number="171" NT="BasicElementTest" newState="95"/>
+	  <state number="171" NT="SchemaElementTest" newState="96"/>
+	  <state number="171" NT="BasicAttributeTest" newState="97"/>
+	  <state number="171" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="190" NT="ExprSingle" newState="219"/>
+	  <state number="190" NT="ForExpr" newState="47"/>
+	  <state number="190" NT="QuantifiedExpr" newState="48"/>
+	  <state number="190" NT="IfExpr" newState="49"/>
+	  <state number="190" NT="OrExpr" newState="50"/>
+	  <state number="190" NT="VariableReference" newState="51"/>
+	  <state number="190" NT="SomeOrEvery" newState="52"/>
+	  <state number="190" NT="AndExpr" newState="53"/>
+	  <state number="190" NT="ComparisonExpr" newState="54"/>
+	  <state number="190" NT="RangeExpr" newState="55"/>
+	  <state number="190" NT="AdditiveExpr" newState="56"/>
+	  <state number="190" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="190" NT="Sign" newState="58"/>
+	  <state number="190" NT="UnionExpr" newState="59"/>
+	  <state number="190" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="190" NT="InstanceOfExpr" newState="61"/>
+	  <state number="190" NT="TreatExpr" newState="62"/>
+	  <state number="190" NT="CastableExpr" newState="63"/>
+	  <state number="190" NT="CastExpr" newState="64"/>
+	  <state number="190" NT="UnaryExpr" newState="65"/>
+	  <state number="190" NT="PathExpr" newState="66"/>
+	  <state number="190" NT="RelativePathExpr" newState="67"/>
+	  <state number="190" NT="StepExpr" newState="68"/>
+	  <state number="190" NT="AxisStep" newState="69"/>
+	  <state number="190" NT="FilterExpr" newState="70"/>
+	  <state number="190" NT="ForwardStep" newState="71"/>
+	  <state number="190" NT="ReverseStep" newState="72"/>
+	  <state number="190" NT="PrimaryExpr" newState="73"/>
+	  <state number="190" NT="Literal" newState="74"/>
+	  <state number="190" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="190" NT="ContextItemExpr" newState="76"/>
+	  <state number="190" NT="FunctionCall" newState="77"/>
+	  <state number="190" NT="NumericLiteral" newState="78"/>
+	  <state number="190" NT="FunctionName" newState="79"/>
+	  <state number="190" NT="ForwardAxis" newState="80"/>
+	  <state number="190" NT="NodeTest" newState="81"/>
+	  <state number="190" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="190" NT="ReverseAxis" newState="83"/>
+	  <state number="190" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="190" NT="KindTest" newState="85"/>
+	  <state number="190" NT="NameTest" newState="86"/>
+	  <state number="190" NT="WildCard" newState="87"/>
+	  <state number="190" NT="DocumentTest" newState="88"/>
+	  <state number="190" NT="ElementTest" newState="89"/>
+	  <state number="190" NT="AttributeTest" newState="90"/>
+	  <state number="190" NT="PITest" newState="91"/>
+	  <state number="190" NT="CommentTest" newState="92"/>
+	  <state number="190" NT="TextTest" newState="93"/>
+	  <state number="190" NT="AnyKindTest" newState="94"/>
+	  <state number="190" NT="BasicElementTest" newState="95"/>
+	  <state number="190" NT="SchemaElementTest" newState="96"/>
+	  <state number="190" NT="BasicAttributeTest" newState="97"/>
+	  <state number="190" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="193" NT="Sign" newState="146"/>
+	  <state number="194" NT="MultOper" newState="151"/>
+	  <state number="196" NT="IntersectExcept" newState="156"/>
+	  <state number="199" NT="KindTest" newState="221"/>
+	  <state number="199" NT="AtomicType" newState="222"/>
+	  <state number="199" NT="ItemType" newState="223"/>
+	  <state number="199" NT="DocumentTest" newState="88"/>
+	  <state number="199" NT="ElementTest" newState="89"/>
+	  <state number="199" NT="AttributeTest" newState="90"/>
+	  <state number="199" NT="PITest" newState="91"/>
+	  <state number="199" NT="CommentTest" newState="92"/>
+	  <state number="199" NT="TextTest" newState="93"/>
+	  <state number="199" NT="AnyKindTest" newState="94"/>
+	  <state number="199" NT="BasicElementTest" newState="95"/>
+	  <state number="199" NT="SchemaElementTest" newState="96"/>
+	  <state number="199" NT="BasicAttributeTest" newState="97"/>
+	  <state number="199" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="205" NT="Expr" newState="224"/>
+	  <state number="205" NT="ExprSingle" newState="46"/>
+	  <state number="205" NT="ForExpr" newState="47"/>
+	  <state number="205" NT="QuantifiedExpr" newState="48"/>
+	  <state number="205" NT="IfExpr" newState="49"/>
+	  <state number="205" NT="OrExpr" newState="50"/>
+	  <state number="205" NT="VariableReference" newState="51"/>
+	  <state number="205" NT="SomeOrEvery" newState="52"/>
+	  <state number="205" NT="AndExpr" newState="53"/>
+	  <state number="205" NT="ComparisonExpr" newState="54"/>
+	  <state number="205" NT="RangeExpr" newState="55"/>
+	  <state number="205" NT="AdditiveExpr" newState="56"/>
+	  <state number="205" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="205" NT="Sign" newState="58"/>
+	  <state number="205" NT="UnionExpr" newState="59"/>
+	  <state number="205" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="205" NT="InstanceOfExpr" newState="61"/>
+	  <state number="205" NT="TreatExpr" newState="62"/>
+	  <state number="205" NT="CastableExpr" newState="63"/>
+	  <state number="205" NT="CastExpr" newState="64"/>
+	  <state number="205" NT="UnaryExpr" newState="65"/>
+	  <state number="205" NT="PathExpr" newState="66"/>
+	  <state number="205" NT="RelativePathExpr" newState="67"/>
+	  <state number="205" NT="StepExpr" newState="68"/>
+	  <state number="205" NT="AxisStep" newState="69"/>
+	  <state number="205" NT="FilterExpr" newState="70"/>
+	  <state number="205" NT="ForwardStep" newState="71"/>
+	  <state number="205" NT="ReverseStep" newState="72"/>
+	  <state number="205" NT="PrimaryExpr" newState="73"/>
+	  <state number="205" NT="Literal" newState="74"/>
+	  <state number="205" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="205" NT="ContextItemExpr" newState="76"/>
+	  <state number="205" NT="FunctionCall" newState="77"/>
+	  <state number="205" NT="NumericLiteral" newState="78"/>
+	  <state number="205" NT="FunctionName" newState="79"/>
+	  <state number="205" NT="ForwardAxis" newState="80"/>
+	  <state number="205" NT="NodeTest" newState="81"/>
+	  <state number="205" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="205" NT="ReverseAxis" newState="83"/>
+	  <state number="205" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="205" NT="KindTest" newState="85"/>
+	  <state number="205" NT="NameTest" newState="86"/>
+	  <state number="205" NT="WildCard" newState="87"/>
+	  <state number="205" NT="DocumentTest" newState="88"/>
+	  <state number="205" NT="ElementTest" newState="89"/>
+	  <state number="205" NT="AttributeTest" newState="90"/>
+	  <state number="205" NT="PITest" newState="91"/>
+	  <state number="205" NT="CommentTest" newState="92"/>
+	  <state number="205" NT="TextTest" newState="93"/>
+	  <state number="205" NT="AnyKindTest" newState="94"/>
+	  <state number="205" NT="BasicElementTest" newState="95"/>
+	  <state number="205" NT="SchemaElementTest" newState="96"/>
+	  <state number="205" NT="BasicAttributeTest" newState="97"/>
+	  <state number="205" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="214" NT="TypeName" newState="230"/>
+	  <state number="216" NT="TypeName" newState="231"/>
+	  <state number="223" NT="OccurenceIndicator" newState="236"/>
+	  <state number="225" NT="ExprSingle" newState="238"/>
+	  <state number="225" NT="ForExpr" newState="47"/>
+	  <state number="225" NT="QuantifiedExpr" newState="48"/>
+	  <state number="225" NT="IfExpr" newState="49"/>
+	  <state number="225" NT="OrExpr" newState="50"/>
+	  <state number="225" NT="VariableReference" newState="51"/>
+	  <state number="225" NT="SomeOrEvery" newState="52"/>
+	  <state number="225" NT="AndExpr" newState="53"/>
+	  <state number="225" NT="ComparisonExpr" newState="54"/>
+	  <state number="225" NT="RangeExpr" newState="55"/>
+	  <state number="225" NT="AdditiveExpr" newState="56"/>
+	  <state number="225" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="225" NT="Sign" newState="58"/>
+	  <state number="225" NT="UnionExpr" newState="59"/>
+	  <state number="225" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="225" NT="InstanceOfExpr" newState="61"/>
+	  <state number="225" NT="TreatExpr" newState="62"/>
+	  <state number="225" NT="CastableExpr" newState="63"/>
+	  <state number="225" NT="CastExpr" newState="64"/>
+	  <state number="225" NT="UnaryExpr" newState="65"/>
+	  <state number="225" NT="PathExpr" newState="66"/>
+	  <state number="225" NT="RelativePathExpr" newState="67"/>
+	  <state number="225" NT="StepExpr" newState="68"/>
+	  <state number="225" NT="AxisStep" newState="69"/>
+	  <state number="225" NT="FilterExpr" newState="70"/>
+	  <state number="225" NT="ForwardStep" newState="71"/>
+	  <state number="225" NT="ReverseStep" newState="72"/>
+	  <state number="225" NT="PrimaryExpr" newState="73"/>
+	  <state number="225" NT="Literal" newState="74"/>
+	  <state number="225" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="225" NT="ContextItemExpr" newState="76"/>
+	  <state number="225" NT="FunctionCall" newState="77"/>
+	  <state number="225" NT="NumericLiteral" newState="78"/>
+	  <state number="225" NT="FunctionName" newState="79"/>
+	  <state number="225" NT="ForwardAxis" newState="80"/>
+	  <state number="225" NT="NodeTest" newState="81"/>
+	  <state number="225" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="225" NT="ReverseAxis" newState="83"/>
+	  <state number="225" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="225" NT="KindTest" newState="85"/>
+	  <state number="225" NT="NameTest" newState="86"/>
+	  <state number="225" NT="WildCard" newState="87"/>
+	  <state number="225" NT="DocumentTest" newState="88"/>
+	  <state number="225" NT="ElementTest" newState="89"/>
+	  <state number="225" NT="AttributeTest" newState="90"/>
+	  <state number="225" NT="PITest" newState="91"/>
+	  <state number="225" NT="CommentTest" newState="92"/>
+	  <state number="225" NT="TextTest" newState="93"/>
+	  <state number="225" NT="AnyKindTest" newState="94"/>
+	  <state number="225" NT="BasicElementTest" newState="95"/>
+	  <state number="225" NT="SchemaElementTest" newState="96"/>
+	  <state number="225" NT="BasicAttributeTest" newState="97"/>
+	  <state number="225" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="227" NT="ExprSingle" newState="239"/>
+	  <state number="227" NT="ForExpr" newState="47"/>
+	  <state number="227" NT="QuantifiedExpr" newState="48"/>
+	  <state number="227" NT="IfExpr" newState="49"/>
+	  <state number="227" NT="OrExpr" newState="50"/>
+	  <state number="227" NT="VariableReference" newState="51"/>
+	  <state number="227" NT="SomeOrEvery" newState="52"/>
+	  <state number="227" NT="AndExpr" newState="53"/>
+	  <state number="227" NT="ComparisonExpr" newState="54"/>
+	  <state number="227" NT="RangeExpr" newState="55"/>
+	  <state number="227" NT="AdditiveExpr" newState="56"/>
+	  <state number="227" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="227" NT="Sign" newState="58"/>
+	  <state number="227" NT="UnionExpr" newState="59"/>
+	  <state number="227" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="227" NT="InstanceOfExpr" newState="61"/>
+	  <state number="227" NT="TreatExpr" newState="62"/>
+	  <state number="227" NT="CastableExpr" newState="63"/>
+	  <state number="227" NT="CastExpr" newState="64"/>
+	  <state number="227" NT="UnaryExpr" newState="65"/>
+	  <state number="227" NT="PathExpr" newState="66"/>
+	  <state number="227" NT="RelativePathExpr" newState="67"/>
+	  <state number="227" NT="StepExpr" newState="68"/>
+	  <state number="227" NT="AxisStep" newState="69"/>
+	  <state number="227" NT="FilterExpr" newState="70"/>
+	  <state number="227" NT="ForwardStep" newState="71"/>
+	  <state number="227" NT="ReverseStep" newState="72"/>
+	  <state number="227" NT="PrimaryExpr" newState="73"/>
+	  <state number="227" NT="Literal" newState="74"/>
+	  <state number="227" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="227" NT="ContextItemExpr" newState="76"/>
+	  <state number="227" NT="FunctionCall" newState="77"/>
+	  <state number="227" NT="NumericLiteral" newState="78"/>
+	  <state number="227" NT="FunctionName" newState="79"/>
+	  <state number="227" NT="ForwardAxis" newState="80"/>
+	  <state number="227" NT="NodeTest" newState="81"/>
+	  <state number="227" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="227" NT="ReverseAxis" newState="83"/>
+	  <state number="227" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="227" NT="KindTest" newState="85"/>
+	  <state number="227" NT="NameTest" newState="86"/>
+	  <state number="227" NT="WildCard" newState="87"/>
+	  <state number="227" NT="DocumentTest" newState="88"/>
+	  <state number="227" NT="ElementTest" newState="89"/>
+	  <state number="227" NT="AttributeTest" newState="90"/>
+	  <state number="227" NT="PITest" newState="91"/>
+	  <state number="227" NT="CommentTest" newState="92"/>
+	  <state number="227" NT="TextTest" newState="93"/>
+	  <state number="227" NT="AnyKindTest" newState="94"/>
+	  <state number="227" NT="BasicElementTest" newState="95"/>
+	  <state number="227" NT="SchemaElementTest" newState="96"/>
+	  <state number="227" NT="BasicAttributeTest" newState="97"/>
+	  <state number="227" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="228" NT="ExprSingle" newState="240"/>
+	  <state number="228" NT="ForExpr" newState="47"/>
+	  <state number="228" NT="QuantifiedExpr" newState="48"/>
+	  <state number="228" NT="IfExpr" newState="49"/>
+	  <state number="228" NT="OrExpr" newState="50"/>
+	  <state number="228" NT="VariableReference" newState="51"/>
+	  <state number="228" NT="SomeOrEvery" newState="52"/>
+	  <state number="228" NT="AndExpr" newState="53"/>
+	  <state number="228" NT="ComparisonExpr" newState="54"/>
+	  <state number="228" NT="RangeExpr" newState="55"/>
+	  <state number="228" NT="AdditiveExpr" newState="56"/>
+	  <state number="228" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="228" NT="Sign" newState="58"/>
+	  <state number="228" NT="UnionExpr" newState="59"/>
+	  <state number="228" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="228" NT="InstanceOfExpr" newState="61"/>
+	  <state number="228" NT="TreatExpr" newState="62"/>
+	  <state number="228" NT="CastableExpr" newState="63"/>
+	  <state number="228" NT="CastExpr" newState="64"/>
+	  <state number="228" NT="UnaryExpr" newState="65"/>
+	  <state number="228" NT="PathExpr" newState="66"/>
+	  <state number="228" NT="RelativePathExpr" newState="67"/>
+	  <state number="228" NT="StepExpr" newState="68"/>
+	  <state number="228" NT="AxisStep" newState="69"/>
+	  <state number="228" NT="FilterExpr" newState="70"/>
+	  <state number="228" NT="ForwardStep" newState="71"/>
+	  <state number="228" NT="ReverseStep" newState="72"/>
+	  <state number="228" NT="PrimaryExpr" newState="73"/>
+	  <state number="228" NT="Literal" newState="74"/>
+	  <state number="228" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="228" NT="ContextItemExpr" newState="76"/>
+	  <state number="228" NT="FunctionCall" newState="77"/>
+	  <state number="228" NT="NumericLiteral" newState="78"/>
+	  <state number="228" NT="FunctionName" newState="79"/>
+	  <state number="228" NT="ForwardAxis" newState="80"/>
+	  <state number="228" NT="NodeTest" newState="81"/>
+	  <state number="228" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="228" NT="ReverseAxis" newState="83"/>
+	  <state number="228" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="228" NT="KindTest" newState="85"/>
+	  <state number="228" NT="NameTest" newState="86"/>
+	  <state number="228" NT="WildCard" newState="87"/>
+	  <state number="228" NT="DocumentTest" newState="88"/>
+	  <state number="228" NT="ElementTest" newState="89"/>
+	  <state number="228" NT="AttributeTest" newState="90"/>
+	  <state number="228" NT="PITest" newState="91"/>
+	  <state number="228" NT="CommentTest" newState="92"/>
+	  <state number="228" NT="TextTest" newState="93"/>
+	  <state number="228" NT="AnyKindTest" newState="94"/>
+	  <state number="228" NT="BasicElementTest" newState="95"/>
+	  <state number="228" NT="SchemaElementTest" newState="96"/>
+	  <state number="228" NT="BasicAttributeTest" newState="97"/>
+	  <state number="228" NT="SchemaAttributeTest" newState="98"/>
+	  <state number="245" NT="ExprSingle" newState="247"/>
+	  <state number="245" NT="ForExpr" newState="47"/>
+	  <state number="245" NT="QuantifiedExpr" newState="48"/>
+	  <state number="245" NT="IfExpr" newState="49"/>
+	  <state number="245" NT="OrExpr" newState="50"/>
+	  <state number="245" NT="VariableReference" newState="51"/>
+	  <state number="245" NT="SomeOrEvery" newState="52"/>
+	  <state number="245" NT="AndExpr" newState="53"/>
+	  <state number="245" NT="ComparisonExpr" newState="54"/>
+	  <state number="245" NT="RangeExpr" newState="55"/>
+	  <state number="245" NT="AdditiveExpr" newState="56"/>
+	  <state number="245" NT="MultiplicativeExpr" newState="57"/>
+	  <state number="245" NT="Sign" newState="58"/>
+	  <state number="245" NT="UnionExpr" newState="59"/>
+	  <state number="245" NT="IntersectExceptExpr" newState="60"/>
+	  <state number="245" NT="InstanceOfExpr" newState="61"/>
+	  <state number="245" NT="TreatExpr" newState="62"/>
+	  <state number="245" NT="CastableExpr" newState="63"/>
+	  <state number="245" NT="CastExpr" newState="64"/>
+	  <state number="245" NT="UnaryExpr" newState="65"/>
+	  <state number="245" NT="PathExpr" newState="66"/>
+	  <state number="245" NT="RelativePathExpr" newState="67"/>
+	  <state number="245" NT="StepExpr" newState="68"/>
+	  <state number="245" NT="AxisStep" newState="69"/>
+	  <state number="245" NT="FilterExpr" newState="70"/>
+	  <state number="245" NT="ForwardStep" newState="71"/>
+	  <state number="245" NT="ReverseStep" newState="72"/>
+	  <state number="245" NT="PrimaryExpr" newState="73"/>
+	  <state number="245" NT="Literal" newState="74"/>
+	  <state number="245" NT="ParenthesizedExpr" newState="75"/>
+	  <state number="245" NT="ContextItemExpr" newState="76"/>
+	  <state number="245" NT="FunctionCall" newState="77"/>
+	  <state number="245" NT="NumericLiteral" newState="78"/>
+	  <state number="245" NT="FunctionName" newState="79"/>
+	  <state number="245" NT="ForwardAxis" newState="80"/>
+	  <state number="245" NT="NodeTest" newState="81"/>
+	  <state number="245" NT="AbbrevForwardStep" newState="82"/>
+	  <state number="245" NT="ReverseAxis" newState="83"/>
+	  <state number="245" NT="AbbrevReverseStep" newState="84"/>
+	  <state number="245" NT="KindTest" newState="85"/>
+	  <state number="245" NT="NameTest" newState="86"/>
+	  <state number="245" NT="WildCard" newState="87"/>
+	  <state number="245" NT="DocumentTest" newState="88"/>
+	  <state number="245" NT="ElementTest" newState="89"/>
+	  <state number="245" NT="AttributeTest" newState="90"/>
+	  <state number="245" NT="PITest" newState="91"/>
+	  <state number="245" NT="CommentTest" newState="92"/>
+	  <state number="245" NT="TextTest" newState="93"/>
+	  <state number="245" NT="AnyKindTest" newState="94"/>
+	  <state number="245" NT="BasicElementTest" newState="95"/>
+	  <state number="245" NT="SchemaElementTest" newState="96"/>
+	  <state number="245" NT="BasicAttributeTest" newState="97"/>
+	  <state number="245" NT="SchemaAttributeTest" newState="98"/>
+	</gotoTable>
+<!--
+       All symbols (terminal (T) or non-terminal (NT)
+       are coded in this section 
+-->
+	<symbols>
+	  <terminal>
+	    <s>$end</s>
+	    <s>error</s>
+	    <s>COMMENT_START</s>
+	    <s>COMMENT_END</s>
+	    <s>DOUBLE_LITERAL</s>
+	    <s>DECIMAL_LITERAL</s>
+	    <s>INTEGER_LITERAL</s>
+	    <s>STRING_LITERAL</s>
+	    <s>OR</s>
+	    <s>AND</s>
+	    <s>EQ</s>
+	    <s>NE</s>
+	    <s>LT</s>
+	    <s>LE</s>
+	    <s>GT</s>
+	    <s>GE</s>
+	    <s>IS</s>
+	    <s>TO</s>
+	    <s>DIV</s>
+	    <s>IDIV</s>
+	    <s>MOD</s>
+	    <s>UNION</s>
+	    <s>INTERSECT</s>
+	    <s>EXCEPT</s>
+	    <s>INSTANCE_OF</s>
+	    <s>CAST_AS</s>
+	    <s>CASTABLE_AS</s>
+	    <s>TREAT_AS</s>
+	    <s>FOR</s>
+	    <s>SOME</s>
+	    <s>EVERY</s>
+	    <s>IF</s>
+	    <s>THEN</s>
+	    <s>ELSE</s>
+	    <s>IN</s>
+	    <s>RETURN</s>
+	    <s>SATISFIES</s>
+	    <s>QNAME</s>
+	    <s>CHILD_AXIS</s>
+	    <s>DESCENDANT_AXIS</s>
+	    <s>ATTRIBUTE_AXIS</s>
+	    <s>SELF_AXIS</s>
+	    <s>DESCENDANT_OR_SELF_AXIS</s>
+	    <s>FOLLOWING_SIBLING_AXIS</s>
+	    <s>FOLLOWING_AXIS</s>
+	    <s>NAMESPACE_AXIS</s>
+	    <s>PARENT_AXIS</s>
+	    <s>ANCESTOR_AXIS</s>
+	    <s>PRECEDING_SIBLING_AXIS</s>
+	    <s>PRECEDING_AXIS</s>
+	    <s>ANCESTOR_OR_SELF_AXIS</s>
+	    <s>EMPTY_TYPE</s>
+	    <s>ITEM_TYPE</s>
+	    <s>ELEMENT_TEST</s>
+	    <s>ATTRIBUTE_TEST</s>
+	    <s>SCHEMA_ELEMENT_TEST</s>
+	    <s>SCHEMA_ATTRIBUTE_TEST</s>
+	    <s>PROCESSING_INSTRUCTION_TEST</s>
+	    <s>DOCUMENT_NODE_TEST</s>
+	    <s>COMMENT_TEST</s>
+	    <s>NODE_TEST</s>
+	    <s>TEXT_TEST</s>
+	    <s>WILD_NAME</s>
+	    <s>WILD_PREFIX</s>
+	    <s>,</s>
+	    <s>&lt;&lt;</s>
+	    <s>>></s>
+	    <s>+</s>
+	    <s>-</s>
+	    <s>*</s>
+	    <s>//</s>
+	    <s>/</s>
+	    <s>(</s>
+	    <s>)</s>
+	    <s>[</s>
+	    <s>]</s>
+	    <s>::</s>
+	    <s>@</s>
+	    <s>.</s>
+	    <s>..</s>
+	    <s>=</s>
+	    <s>!=</s>
+	    <s>&lt;</s>
+	    <s>&lt;=</s>
+	    <s>></s>
+	    <s>>=</s>
+	    <s>$</s>
+	    <s>?</s>
+	    <s>$end</s>
+	    <s>error</s>
+	  </terminal>
+	  <nonTerminal>
+	    <v>$accept</v>
+	    <v>Expr</v>
+	    <v>ExprSingle</v>
+	    <v>ForExpr</v>
+	    <v>QuantifiedExpr</v>
+	    <v>IfExpr</v>
+	    <v>OrExpr</v>
+	    <v>VarnameList</v>
+	    <v>VariableReference</v>
+	    <v>SomeOrEvery</v>
+	    <v>AndExpr</v>
+	    <v>ComparisonExpr</v>
+	    <v>RangeExpr</v>
+	    <v>ValGenNodeComp</v>
+	    <v>ValueComp</v>
+	    <v>GeneralComp</v>
+	    <v>NodeComp</v>
+	    <v>AdditiveExpr</v>
+	    <v>MultiplicativeExpr</v>
+	    <v>Sign</v>
+	    <v>UnionExpr</v>
+	    <v>MultOper</v>
+	    <v>IntersectExceptExpr</v>
+	    <v>InstanceOfExpr</v>
+	    <v>IntersectExcept</v>
+	    <v>TreatExpr</v>
+	    <v>SequenceType</v>
+	    <v>CastableExpr</v>
+	    <v>CastExpr</v>
+	    <v>SingleType</v>
+	    <v>UnaryExpr</v>
+	    <v>PathExpr</v>
+	    <v>RelativePathExpr</v>
+	    <v>StepExpr</v>
+	    <v>AxisStep</v>
+	    <v>FilterExpr</v>
+	    <v>ForwardStep</v>
+	    <v>PredicateList</v>
+	    <v>ReverseStep</v>
+	    <v>PrimaryExpr</v>
+	    <v>Predicate</v>
+	    <v>Literal</v>
+	    <v>ParenthesizedExpr</v>
+	    <v>ContextItemExpr</v>
+	    <v>FunctionCall</v>
+	    <v>NumericLiteral</v>
+	    <v>FunctionName</v>
+	    <v>ExprSingleList</v>
+	    <v>ForwardAxis</v>
+	    <v>NodeTest</v>
+	    <v>AbbrevForwardStep</v>
+	    <v>ReverseAxis</v>
+	    <v>AbbrevReverseStep</v>
+	    <v>KindTest</v>
+	    <v>NameTest</v>
+	    <v>WildCard</v>
+	    <v>AtomicType</v>
+	    <v>ItemType</v>
+	    <v>OccurenceIndicator</v>
+	    <v>DocumentTest</v>
+	    <v>ElementTest</v>
+	    <v>AttributeTest</v>
+	    <v>PITest</v>
+	    <v>CommentTest</v>
+	    <v>TextTest</v>
+	    <v>AnyKindTest</v>
+	    <v>BasicElementTest</v>
+	    <v>SchemaElementTest</v>
+	    <v>BasicAttributeTest</v>
+	    <v>SchemaAttributeTest</v>
+	    <v>ElementNameOrWildCard</v>
+	    <v>TypeName</v>
+	    <v>AtttibuteNameOrWildCard</v>
+	    <v>ElementName</v>
+	    <v>AttributeName</v>
+	  </nonTerminal>
+	</symbols>
+</parseTables>

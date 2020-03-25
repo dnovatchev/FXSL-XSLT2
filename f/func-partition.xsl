@@ -41,17 +41,19 @@ exclude-result-prefixes="f int xs"
       <xsl:sequence select=
       "if(empty($pList))
          then 
-           $pResult1, $pDelim, $pResult2
+           ($pResult1, $pDelim, $pResult2)
          else
            for $vLast in $pList[last()] return
              for $vLastHolds in f:apply($pFunc, $vLast) return
                int:compMap2($pFunc,
-                            if($vLastHolds)
+                            (if($vLastHolds)
                                then insert-before($pResult1, 1, $vLast)
-                               else $pResult1,
-                            if(not($vLastHolds))
+                               else $pResult1
+                               ),
+                            (if(not($vLastHolds))
                                then insert-before($pResult2, 1, $vLast)
-                               else $pResult2,
+                               else $pResult2
+                               ),
                             $pList[position() &lt; last()],
                             $pDelim
                              )"

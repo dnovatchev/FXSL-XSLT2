@@ -1,0 +1,10144 @@
+<anagrams>
+	<aChain key="'aacorsttu">
+		<w>actuator's</w>
+		<w>autocrat's</w>
+	</aChain>
+	<aChain key="'aainprsst">
+		<w>aspirant's</w>
+		<w>partisan's</w>
+	</aChain>
+	<aChain key="'aalmnsu">
+		<w>alumna's</w>
+		<w>manual's</w>
+	</aChain>
+	<aChain key="'ablms">
+		<w>balm's</w>
+		<w>lamb's</w>
+	</aChain>
+	<aChain key="'abrs">
+		<w>bar's</w>
+		<w>bra's</w>
+	</aChain>
+	<aChain key="'acdeilst">
+		<w>citadel's</w>
+		<w>dialect's</w>
+	</aChain>
+	<aChain key="'aceilrst">
+		<w>article's</w>
+		<w>recital's</w>
+	</aChain>
+	<aChain key="'aceinnoorsstv">
+		<w>conservation's</w>
+		<w>conversation's</w>
+	</aChain>
+	<aChain key="'acellrs">
+		<w>caller's</w>
+		<w>cellar's</w>
+	</aChain>
+	<aChain key="'acenos">
+		<w>canoe's</w>
+		<w>ocean's</w>
+	</aChain>
+	<aChain key="'aceorrst">
+		<w>creator's</w>
+		<w>reactor's</w>
+	</aChain>
+	<aChain key="'acnorst">
+		<w>cantor's</w>
+		<w>carton's</w>
+	</aChain>
+	<aChain key="'aeemnssttt">
+		<w>statement's</w>
+		<w>testament's</w>
+	</aChain>
+	<aChain key="'aegilnrst">
+		<w>integral's</w>
+		<w>triangle's</w>
+	</aChain>
+	<aChain key="'aegprs">
+		<w>grape's</w>
+		<w>pager's</w>
+	</aChain>
+	<aChain key="'aehrst">
+		<w>earth's</w>
+		<w>heart's</w>
+	</aChain>
+	<aChain key="'aelmnst">
+		<w>mantel's</w>
+		<w>mantle's</w>
+	</aChain>
+	<aChain key="'aelms">
+		<w>male's</w>
+		<w>meal's</w>
+	</aChain>
+	<aChain key="'aelnpst">
+		<w>planet's</w>
+		<w>platen's</w>
+	</aChain>
+	<aChain key="'aemns">
+		<w>mane's</w>
+		<w>name's</w>
+	</aChain>
+	<aChain key="'aemrs">
+		<w>mare's</w>
+		<w>ream's</w>
+	</aChain>
+	<aChain key="'aemst">
+		<w>mate's</w>
+		<w>meat's</w>
+		<w>team's</w>
+	</aChain>
+	<aChain key="'aghilmorst">
+		<w>algorithm's</w>
+		<w>logarithm's</w>
+	</aChain>
+	<aChain key="'ahnst">
+		<w>hasn't</w>
+		<w>shan't</w>
+	</aChain>
+	<aChain key="'ailrs">
+		<w>lair's</w>
+		<w>liar's</w>
+	</aChain>
+	<aChain key="'aloprst">
+		<w>patrol's</w>
+		<w>portal's</w>
+	</aChain>
+	<aChain key="'alostuy">
+		<w>layout's</w>
+		<w>outlay's</w>
+	</aChain>
+	<aChain key="'alps">
+		<w>lap's</w>
+		<w>pal's</w>
+	</aChain>
+	<aChain key="'alsw">
+		<w>awl's</w>
+		<w>law's</w>
+	</aChain>
+	<aChain key="'amost">
+		<w>atom's</w>
+		<w>moat's</w>
+	</aChain>
+	<aChain key="'amrs">
+		<w>arm's</w>
+		<w>ram's</w>
+	</aChain>
+	<aChain key="'anps">
+		<w>nap's</w>
+		<w>pan's</w>
+	</aChain>
+	<aChain key="'aprsw">
+		<w>warp's</w>
+		<w>wrap's</w>
+	</aChain>
+	<aChain key="'apst">
+		<w>pat's</w>
+		<w>tap's</w>
+	</aChain>
+	<aChain key="'arst">
+		<w>art's</w>
+		<w>rat's</w>
+	</aChain>
+	<aChain key="'cdeiorrst">
+		<w>creditor's</w>
+		<w>director's</w>
+	</aChain>
+	<aChain key="'degirs">
+		<w>dirge's</w>
+		<w>ridge's</w>
+	</aChain>
+	<aChain key="'deinssty">
+		<w>density's</w>
+		<w>destiny's</w>
+	</aChain>
+	<aChain key="'deirrs">
+		<w>drier's</w>
+		<w>rider's</w>
+	</aChain>
+	<aChain key="'dgos">
+		<w>dog's</w>
+		<w>god's</w>
+	</aChain>
+	<aChain key="'eehrst">
+		<w>there's</w>
+		<w>three's</w>
+	</aChain>
+	<aChain key="'eersstt">
+		<w>setter's</w>
+		<w>tester's</w>
+	</aChain>
+	<aChain key="'efils">
+		<w>file's</w>
+		<w>life's</w>
+	</aChain>
+	<aChain key="'ehlls">
+		<w>hell's</w>
+		<w>she'll</w>
+	</aChain>
+	<aChain key="'ehnorst">
+		<w>hornet's</w>
+		<w>throne's</w>
+	</aChain>
+	<aChain key="'ehorss">
+		<w>horse's</w>
+		<w>shore's</w>
+	</aChain>
+	<aChain key="'eilms">
+		<w>lime's</w>
+		<w>mile's</w>
+	</aChain>
+	<aChain key="'eilns">
+		<w>lien's</w>
+		<w>line's</w>
+	</aChain>
+	<aChain key="'eilsst">
+		<w>islet's</w>
+		<w>stile's</w>
+	</aChain>
+	<aChain key="'elmnos">
+		<w>lemon's</w>
+		<w>melon's</w>
+	</aChain>
+	<aChain key="'enosst">
+		<w>onset's</w>
+		<w>stone's</w>
+	</aChain>
+	<aChain key="'enst">
+		<w>net's</w>
+		<w>ten's</w>
+	</aChain>
+	<aChain key="'eoprsstt">
+		<w>protest's</w>
+		<w>spotter's</w>
+	</aChain>
+	<aChain key="'gmsu">
+		<w>gum's</w>
+		<w>mug's</w>
+	</aChain>
+	<aChain key="'hnorst">
+		<w>north's</w>
+		<w>thorn's</w>
+	</aChain>
+	<aChain key="'hosst">
+		<w>host's</w>
+		<w>shot's</w>
+	</aChain>
+	<aChain key="'hosw">
+		<w>how's</w>
+		<w>who's</w>
+	</aChain>
+	<aChain key="'ilnos">
+		<w>lion's</w>
+		<w>loin's</w>
+	</aChain>
+	<aChain key="'ilpss">
+		<w>lisp's</w>
+		<w>slip's</w>
+	</aChain>
+	<aChain key="'inst">
+		<w>isn't</w>
+		<w>tin's</w>
+	</aChain>
+	<aChain key="'ipst">
+		<w>pit's</w>
+		<w>tip's</w>
+	</aChain>
+	<aChain key="'opsst">
+		<w>spot's</w>
+		<w>stop's</w>
+	</aChain>
+	<aChain key="aabcdeorrsst">
+		<w>broadcasters</w>
+		<w>rebroadcasts</w>
+	</aChain>
+	<aChain key="aabcdeorrst">
+		<w>broadcaster</w>
+		<w>rebroadcast</w>
+	</aChain>
+	<aChain key="aabcdkrsw">
+		<w>backwards</w>
+		<w>drawbacks</w>
+	</aChain>
+	<aChain key="aabcdkrw">
+		<w>backward</w>
+		<w>drawback</w>
+	</aChain>
+	<aChain key="aabceilrt">
+		<w>bacterial</w>
+		<w>calibrate</w>
+	</aChain>
+	<aChain key="aabdeginr">
+		<w>bargained</w>
+		<w>gabardine</w>
+	</aChain>
+	<aChain key="aabdor">
+		<w>aboard</w>
+		<w>abroad</w>
+	</aChain>
+	<aChain key="aabeelmn">
+		<w>amenable</w>
+		<w>nameable</w>
+	</aChain>
+	<aChain key="aabls">
+		<w>balsa</w>
+		<w>basal</w>
+	</aChain>
+	<aChain key="aacestv">
+		<w>caveats</w>
+		<w>vacates</w>
+	</aChain>
+	<aChain key="aacetv">
+		<w>caveat</w>
+		<w>vacate</w>
+	</aChain>
+	<aChain key="aacghiilllmorty">
+		<w>algorithmically</w>
+		<w>logarithmically</w>
+	</aChain>
+	<aChain key="aacllsuy">
+		<w>casually</w>
+		<w>causally</w>
+	</aChain>
+	<aChain key="aaclrs">
+		<w>rascal</w>
+		<w>scalar</w>
+	</aChain>
+	<aChain key="aaclrss">
+		<w>rascals</w>
+		<w>scalars</w>
+	</aChain>
+	<aChain key="aaclsu">
+		<w>casual</w>
+		<w>causal</w>
+	</aChain>
+	<aChain key="aacorsttu">
+		<w>actuators</w>
+		<w>autocrats</w>
+	</aChain>
+	<aChain key="aacorttu">
+		<w>actuator</w>
+		<w>autocrat</w>
+	</aChain>
+	<aChain key="aadeipprs">
+		<w>appraised</w>
+		<w>disappear</w>
+	</aChain>
+	<aChain key="aadeiprst">
+		<w>aspirated</w>
+		<w>disparate</w>
+	</aChain>
+	<aChain key="aadmrs">
+		<w>dramas</w>
+		<w>madras</w>
+	</aChain>
+	<aChain key="aaeeknrw">
+		<w>awakener</w>
+		<w>reawaken</w>
+	</aChain>
+	<aChain key="aaeepprr">
+		<w>appearer</w>
+		<w>reappear</w>
+	</aChain>
+	<aChain key="aaeepprrs">
+		<w>appearers</w>
+		<w>reappears</w>
+	</aChain>
+	<aChain key="aaegrsv">
+		<w>ravages</w>
+		<w>savager</w>
+	</aChain>
+	<aChain key="aaegsssu">
+		<w>assuages</w>
+		<w>sausages</w>
+	</aChain>
+	<aChain key="aaegssu">
+		<w>assuage</w>
+		<w>sausage</w>
+	</aChain>
+	<aChain key="aaeiprsst">
+		<w>aspirates</w>
+		<w>parasites</w>
+	</aChain>
+	<aChain key="aaeiprst">
+		<w>aspirate</w>
+		<w>parasite</w>
+	</aChain>
+	<aChain key="aaellnprty">
+		<w>parentally</w>
+		<w>paternally</w>
+	</aChain>
+	<aChain key="aaelnprt">
+		<w>parental</w>
+		<w>paternal</w>
+	</aChain>
+	<aChain key="aagillmnry">
+		<w>alarmingly</w>
+		<w>marginally</w>
+	</aChain>
+	<aChain key="aagilmnr">
+		<w>alarming</w>
+		<w>marginal</w>
+	</aChain>
+	<aChain key="aailsv">
+		<w>avails</w>
+		<w>saliva</w>
+	</aChain>
+	<aChain key="aainprsst">
+		<w>aspirants</w>
+		<w>partisans</w>
+	</aChain>
+	<aChain key="aainprst">
+		<w>aspirant</w>
+		<w>partisan</w>
+	</aChain>
+	<aChain key="aalmnu">
+		<w>alumna</w>
+		<w>manual</w>
+	</aChain>
+	<aChain key="aalrst">
+		<w>altars</w>
+		<w>astral</w>
+	</aChain>
+	<aChain key="abbbdel">
+		<w>babbled</w>
+		<w>blabbed</w>
+	</aChain>
+	<aChain key="abbbgiln">
+		<w>babbling</w>
+		<w>blabbing</w>
+	</aChain>
+	<aChain key="abbdelr">
+		<w>dabbler</w>
+		<w>rabbled</w>
+	</aChain>
+	<aChain key="abbe">
+		<w>abbe</w>
+		<w>babe</w>
+	</aChain>
+	<aChain key="abceeeilrsv">
+		<w>receivables</w>
+		<w>serviceable</w>
+	</aChain>
+	<aChain key="abceilnru">
+		<w>binuclear</w>
+		<w>incurable</w>
+	</aChain>
+	<aChain key="abcelmrs">
+		<w>clambers</w>
+		<w>scramble</w>
+	</aChain>
+	<aChain key="abcer">
+		<w>brace</w>
+		<w>caber</w>
+	</aChain>
+	<aChain key="abddeer">
+		<w>bearded</w>
+		<w>breaded</w>
+	</aChain>
+	<aChain key="abddegir">
+		<w>abridged</w>
+		<w>brigaded</w>
+	</aChain>
+	<aChain key="abddeiors">
+		<w>broadside</w>
+		<w>sideboard</w>
+	</aChain>
+	<aChain key="abde">
+		<w>abed</w>
+		<w>bade</w>
+		<w>bead</w>
+	</aChain>
+	<aChain key="abdeerst">
+		<w>breasted</w>
+		<w>debaters</w>
+	</aChain>
+	<aChain key="abdeert">
+		<w>berated</w>
+		<w>debater</w>
+		<w>rebated</w>
+	</aChain>
+	<aChain key="abdegir">
+		<w>abridge</w>
+		<w>brigade</w>
+	</aChain>
+	<aChain key="abdegirs">
+		<w>abridges</w>
+		<w>brigades</w>
+	</aChain>
+	<aChain key="abdegr">
+		<w>badger</w>
+		<w>barged</w>
+		<w>garbed</w>
+	</aChain>
+	<aChain key="abdeins">
+		<w>bandies</w>
+		<w>basined</w>
+	</aChain>
+	<aChain key="abdeis">
+		<w>abides</w>
+		<w>biased</w>
+	</aChain>
+	<aChain key="abdekr">
+		<w>barked</w>
+		<w>braked</w>
+	</aChain>
+	<aChain key="abdel">
+		<w>baled</w>
+		<w>blade</w>
+	</aChain>
+	<aChain key="abdelm">
+		<w>ambled</w>
+		<w>bedlam</w>
+		<w>blamed</w>
+	</aChain>
+	<aChain key="abdelmr">
+		<w>marbled</w>
+		<w>rambled</w>
+	</aChain>
+	<aChain key="abdelr">
+		<w>balder</w>
+		<w>blared</w>
+	</aChain>
+	<aChain key="abdelrw">
+		<w>brawled</w>
+		<w>warbled</w>
+	</aChain>
+	<aChain key="abdelst">
+		<w>blasted</w>
+		<w>stabled</w>
+	</aChain>
+	<aChain key="abdeo">
+		<w>abode</w>
+		<w>adobe</w>
+	</aChain>
+	<aChain key="abdeorr">
+		<w>boarder</w>
+		<w>broader</w>
+	</aChain>
+	<aChain key="abdeort">
+		<w>aborted</w>
+		<w>borated</w>
+	</aChain>
+	<aChain key="abder">
+		<w>bared</w>
+		<w>beard</w>
+		<w>bread</w>
+	</aChain>
+	<aChain key="abders">
+		<w>beards</w>
+		<w>breads</w>
+	</aChain>
+	<aChain key="abderv">
+		<w>adverb</w>
+		<w>braved</w>
+	</aChain>
+	<aChain key="abdes">
+		<w>based</w>
+		<w>beads</w>
+	</aChain>
+	<aChain key="abdey">
+		<w>bayed</w>
+		<w>beady</w>
+	</aChain>
+	<aChain key="abdggiinr">
+		<w>abridging</w>
+		<w>brigading</w>
+	</aChain>
+	<aChain key="abdor">
+		<w>board</w>
+		<w>broad</w>
+	</aChain>
+	<aChain key="abdors">
+		<w>adsorb</w>
+		<w>boards</w>
+		<w>broads</w>
+	</aChain>
+	<aChain key="abdr">
+		<w>bard</w>
+		<w>drab</w>
+	</aChain>
+	<aChain key="abdrs">
+		<w>bards</w>
+		<w>drabs</w>
+	</aChain>
+	<aChain key="abeehilrsst">
+		<w>establisher</w>
+		<w>reestablish</w>
+	</aChain>
+	<aChain key="abeeilrst">
+		<w>beastlier</w>
+		<w>liberates</w>
+	</aChain>
+	<aChain key="abeerst">
+		<w>beaters</w>
+		<w>berates</w>
+		<w>rebates</w>
+	</aChain>
+	<aChain key="abeert">
+		<w>beater</w>
+		<w>berate</w>
+		<w>rebate</w>
+	</aChain>
+	<aChain key="abefilll">
+		<w>fallible</w>
+		<w>fillable</w>
+	</aChain>
+	<aChain key="abeggr">
+		<w>bagger</w>
+		<w>beggar</w>
+	</aChain>
+	<aChain key="abeggrs">
+		<w>baggers</w>
+		<w>beggars</w>
+	</aChain>
+	<aChain key="abegilnt">
+		<w>bleating</w>
+		<w>tangible</w>
+	</aChain>
+	<aChain key="abeginrt">
+		<w>berating</w>
+		<w>rebating</w>
+	</aChain>
+	<aChain key="abegl">
+		<w>bagel</w>
+		<w>gable</w>
+	</aChain>
+	<aChain key="abeglr">
+		<w>gabler</w>
+		<w>garble</w>
+	</aChain>
+	<aChain key="abegls">
+		<w>bagels</w>
+		<w>gables</w>
+	</aChain>
+	<aChain key="abehrst">
+		<w>bathers</w>
+		<w>breaths</w>
+	</aChain>
+	<aChain key="abehrt">
+		<w>bather</w>
+		<w>breath</w>
+	</aChain>
+	<aChain key="abeillr">
+		<w>braille</w>
+		<w>liberal</w>
+	</aChain>
+	<aChain key="abeinort">
+		<w>baritone</w>
+		<w>obtainer</w>
+	</aChain>
+	<aChain key="abeirrz">
+		<w>bizarre</w>
+		<w>brazier</w>
+	</aChain>
+	<aChain key="abek">
+		<w>bake</w>
+		<w>beak</w>
+	</aChain>
+	<aChain key="abeklnst">
+		<w>blankest</w>
+		<w>blankets</w>
+	</aChain>
+	<aChain key="abekr">
+		<w>baker</w>
+		<w>brake</w>
+		<w>break</w>
+	</aChain>
+	<aChain key="abekrs">
+		<w>bakers</w>
+		<w>brakes</w>
+		<w>breaks</w>
+	</aChain>
+	<aChain key="abeks">
+		<w>bakes</w>
+		<w>beaks</w>
+	</aChain>
+	<aChain key="abel">
+		<w>able</w>
+		<w>bale</w>
+	</aChain>
+	<aChain key="abelm">
+		<w>amble</w>
+		<w>blame</w>
+	</aChain>
+	<aChain key="abelmr">
+		<w>ambler</w>
+		<w>blamer</w>
+		<w>lamber</w>
+		<w>marble</w>
+		<w>ramble</w>
+	</aChain>
+	<aChain key="abelmrr">
+		<w>marbler</w>
+		<w>rambler</w>
+	</aChain>
+	<aChain key="abelmrs">
+		<w>blamers</w>
+		<w>marbles</w>
+		<w>rambles</w>
+	</aChain>
+	<aChain key="abelms">
+		<w>ambles</w>
+		<w>blames</w>
+	</aChain>
+	<aChain key="abelnu">
+		<w>nebula</w>
+		<w>unable</w>
+	</aChain>
+	<aChain key="abelr">
+		<w>abler</w>
+		<w>baler</w>
+		<w>blare</w>
+		<w>blear</w>
+	</aChain>
+	<aChain key="abelrrw">
+		<w>brawler</w>
+		<w>warbler</w>
+	</aChain>
+	<aChain key="abelrs">
+		<w>balers</w>
+		<w>blares</w>
+	</aChain>
+	<aChain key="abelrst">
+		<w>blaster</w>
+		<w>stabler</w>
+	</aChain>
+	<aChain key="abelrw">
+		<w>bawler</w>
+		<w>warble</w>
+	</aChain>
+	<aChain key="abelry">
+		<w>barely</w>
+		<w>barley</w>
+		<w>bleary</w>
+	</aChain>
+	<aChain key="abels">
+		<w>bales</w>
+		<w>blase</w>
+		<w>sable</w>
+	</aChain>
+	<aChain key="abelst">
+		<w>ablest</w>
+		<w>bleats</w>
+		<w>stable</w>
+		<w>tables</w>
+	</aChain>
+	<aChain key="abelstt">
+		<w>battles</w>
+		<w>tablets</w>
+	</aChain>
+	<aChain key="abelsy">
+		<w>basely</w>
+		<w>belays</w>
+	</aChain>
+	<aChain key="abelt">
+		<w>bleat</w>
+		<w>table</w>
+	</aChain>
+	<aChain key="abeltt">
+		<w>battle</w>
+		<w>tablet</w>
+	</aChain>
+	<aChain key="aben">
+		<w>bane</w>
+		<w>bean</w>
+	</aChain>
+	<aChain key="abeorst">
+		<w>boaster</w>
+		<w>boaters</w>
+		<w>borates</w>
+	</aChain>
+	<aChain key="abeort">
+		<w>boater</w>
+		<w>borate</w>
+	</aChain>
+	<aChain key="aber">
+		<w>bare</w>
+		<w>bear</w>
+		<w>brae</w>
+	</aChain>
+	<aChain key="abers">
+		<w>bares</w>
+		<w>baser</w>
+		<w>bears</w>
+		<w>braes</w>
+	</aChain>
+	<aChain key="aberst">
+		<w>barest</w>
+		<w>baster</w>
+		<w>breast</w>
+	</aChain>
+	<aChain key="abersz">
+		<w>brazes</w>
+		<w>zebras</w>
+	</aChain>
+	<aChain key="aberz">
+		<w>braze</w>
+		<w>zebra</w>
+	</aChain>
+	<aChain key="abesst">
+		<w>basest</w>
+		<w>basset</w>
+		<w>bastes</w>
+		<w>beasts</w>
+	</aChain>
+	<aChain key="abest">
+		<w>abets</w>
+		<w>baste</w>
+		<w>beast</w>
+		<w>beats</w>
+		<w>betas</w>
+	</aChain>
+	<aChain key="abesu">
+		<w>abuse</w>
+		<w>beaus</w>
+	</aChain>
+	<aChain key="abet">
+		<w>abet</w>
+		<w>beat</w>
+		<w>beta</w>
+	</aChain>
+	<aChain key="abgiknr">
+		<w>barking</w>
+		<w>braking</w>
+	</aChain>
+	<aChain key="abgikns">
+		<w>bakings</w>
+		<w>basking</w>
+	</aChain>
+	<aChain key="abgilmn">
+		<w>ambling</w>
+		<w>blaming</w>
+	</aChain>
+	<aChain key="abgilmnr">
+		<w>marbling</w>
+		<w>rambling</w>
+	</aChain>
+	<aChain key="abgilnrw">
+		<w>brawling</w>
+		<w>warbling</w>
+	</aChain>
+	<aChain key="abgilnst">
+		<w>blasting</w>
+		<w>stabling</w>
+	</aChain>
+	<aChain key="abgr">
+		<w>brag</w>
+		<w>garb</w>
+		<w>grab</w>
+	</aChain>
+	<aChain key="abgrs">
+		<w>brags</w>
+		<w>grabs</w>
+	</aChain>
+	<aChain key="abimpst">
+		<w>baptism</w>
+		<w>bitmaps</w>
+	</aChain>
+	<aChain key="abinost">
+		<w>bastion</w>
+		<w>obtains</w>
+	</aChain>
+	<aChain key="abinry">
+		<w>binary</w>
+		<w>brainy</w>
+	</aChain>
+	<aChain key="ablm">
+		<w>balm</w>
+		<w>lamb</w>
+	</aChain>
+	<aChain key="ablms">
+		<w>balms</w>
+		<w>lambs</w>
+	</aChain>
+	<aChain key="abls">
+		<w>labs</w>
+		<w>slab</w>
+	</aChain>
+	<aChain key="abnr">
+		<w>barn</w>
+		<w>bran</w>
+	</aChain>
+	<aChain key="abost">
+		<w>boast</w>
+		<w>boats</w>
+	</aChain>
+	<aChain key="abr">
+		<w>bar</w>
+		<w>bra</w>
+	</aChain>
+	<aChain key="abrs">
+		<w>bars</w>
+		<w>bras</w>
+	</aChain>
+	<aChain key="abst">
+		<w>bats</w>
+		<w>stab</w>
+		<w>tabs</w>
+	</aChain>
+	<aChain key="abt">
+		<w>bat</w>
+		<w>tab</w>
+	</aChain>
+	<aChain key="acceklr">
+		<w>cackler</w>
+		<w>crackle</w>
+	</aChain>
+	<aChain key="accersu">
+		<w>accrues</w>
+		<w>accuser</w>
+	</aChain>
+	<aChain key="acdeellr">
+		<w>cellared</w>
+		<w>recalled</w>
+	</aChain>
+	<aChain key="acdeelr">
+		<w>cleared</w>
+		<w>declare</w>
+	</aChain>
+	<aChain key="acdeelrs">
+		<w>declares</w>
+		<w>rescaled</w>
+	</aChain>
+	<aChain key="acdeenrtu">
+		<w>uncreated</w>
+		<w>unreacted</w>
+	</aChain>
+	<aChain key="acdeerrt">
+		<w>cratered</w>
+		<w>retraced</w>
+		<w>terraced</w>
+	</aChain>
+	<aChain key="acdeert">
+		<w>catered</w>
+		<w>created</w>
+		<w>reacted</w>
+	</aChain>
+	<aChain key="acdegln">
+		<w>clanged</w>
+		<w>glanced</w>
+	</aChain>
+	<aChain key="acdehmr">
+		<w>charmed</w>
+		<w>marched</w>
+	</aChain>
+	<aChain key="acdehs">
+		<w>cashed</w>
+		<w>chased</w>
+	</aChain>
+	<aChain key="acdeillmy">
+		<w>decimally</w>
+		<w>medically</w>
+	</aChain>
+	<aChain key="acdeilm">
+		<w>claimed</w>
+		<w>decimal</w>
+		<w>medical</w>
+	</aChain>
+	<aChain key="acdeilst">
+		<w>citadels</w>
+		<w>dialects</w>
+	</aChain>
+	<aChain key="acdeilt">
+		<w>citadel</w>
+		<w>dialect</w>
+	</aChain>
+	<aChain key="acdeinoorst">
+		<w>coordinates</w>
+		<w>decorations</w>
+	</aChain>
+	<aChain key="acdeinoort">
+		<w>coordinate</w>
+		<w>decoration</w>
+	</aChain>
+	<aChain key="acdeinotu">
+		<w>auctioned</w>
+		<w>cautioned</w>
+		<w>education</w>
+	</aChain>
+	<aChain key="acdellops">
+		<w>collapsed</w>
+		<w>scalloped</w>
+	</aChain>
+	<aChain key="acdeln">
+		<w>candle</w>
+		<w>lanced</w>
+	</aChain>
+	<aChain key="acden">
+		<w>acned</w>
+		<w>caned</w>
+		<w>dance</w>
+	</aChain>
+	<aChain key="acdeno">
+		<w>canoed</w>
+		<w>deacon</w>
+	</aChain>
+	<aChain key="acdenr">
+		<w>craned</w>
+		<w>dancer</w>
+	</aChain>
+	<aChain key="acdens">
+		<w>ascend</w>
+		<w>dances</w>
+	</aChain>
+	<aChain key="acder">
+		<w>arced</w>
+		<w>cared</w>
+		<w>cedar</w>
+		<w>raced</w>
+	</aChain>
+	<aChain key="acders">
+		<w>sacred</w>
+		<w>scared</w>
+	</aChain>
+	<aChain key="acdert">
+		<w>carted</w>
+		<w>traced</w>
+	</aChain>
+	<aChain key="acderv">
+		<w>carved</w>
+		<w>craved</w>
+	</aChain>
+	<aChain key="acdls">
+		<w>clads</w>
+		<w>scald</w>
+	</aChain>
+	<aChain key="aceeeinrsstv">
+		<w>creativeness</w>
+		<w>reactiveness</w>
+	</aChain>
+	<aChain key="aceehrrs">
+		<w>research</w>
+		<w>searcher</w>
+	</aChain>
+	<aChain key="aceehrst">
+		<w>cheaters</w>
+		<w>teachers</w>
+	</aChain>
+	<aChain key="aceehrt">
+		<w>cheater</w>
+		<w>teacher</w>
+	</aChain>
+	<aChain key="aceeilrtvy">
+		<w>creatively</w>
+		<w>reactively</w>
+	</aChain>
+	<aChain key="aceeirtv">
+		<w>creative</w>
+		<w>reactive</w>
+	</aChain>
+	<aChain key="aceellrr">
+		<w>cellarer</w>
+		<w>recaller</w>
+	</aChain>
+	<aChain key="aceelnrs">
+		<w>cleaners</w>
+		<w>cleanser</w>
+	</aChain>
+	<aChain key="aceelnrss">
+		<w>cleansers</w>
+		<w>clearness</w>
+	</aChain>
+	<aChain key="aceemrrs">
+		<w>creamers</w>
+		<w>screamer</w>
+	</aChain>
+	<aChain key="aceeps">
+		<w>escape</w>
+		<w>peaces</w>
+	</aChain>
+	<aChain key="aceerrs">
+		<w>careers</w>
+		<w>creaser</w>
+	</aChain>
+	<aChain key="aceerrst">
+		<w>retraces</w>
+		<w>terraces</w>
+	</aChain>
+	<aChain key="aceerrstt">
+		<w>scatterer</w>
+		<w>streetcar</w>
+	</aChain>
+	<aChain key="aceerrt">
+		<w>caterer</w>
+		<w>retrace</w>
+		<w>terrace</w>
+	</aChain>
+	<aChain key="acef">
+		<w>cafe</w>
+		<w>face</w>
+	</aChain>
+	<aChain key="acefr">
+		<w>facer</w>
+		<w>farce</w>
+	</aChain>
+	<aChain key="acefs">
+		<w>cafes</w>
+		<w>faces</w>
+	</aChain>
+	<aChain key="aceghint">
+		<w>cheating</w>
+		<w>teaching</w>
+	</aChain>
+	<aChain key="acegillnr">
+		<w>cellaring</w>
+		<w>recalling</w>
+	</aChain>
+	<aChain key="aceginrrt">
+		<w>retracing</w>
+		<w>terracing</w>
+	</aChain>
+	<aChain key="aceginrt">
+		<w>catering</w>
+		<w>creating</w>
+		<w>reacting</w>
+	</aChain>
+	<aChain key="acegr">
+		<w>cager</w>
+		<w>grace</w>
+	</aChain>
+	<aChain key="acegrs">
+		<w>cagers</w>
+		<w>graces</w>
+	</aChain>
+	<aChain key="aceh">
+		<w>ache</w>
+		<w>each</w>
+	</aChain>
+	<aChain key="acehhstt">
+		<w>hatchets</w>
+		<w>thatches</w>
+	</aChain>
+	<aChain key="acehlst">
+		<w>latches</w>
+		<w>satchel</w>
+	</aChain>
+	<aChain key="acehmrr">
+		<w>charmer</w>
+		<w>marcher</w>
+	</aChain>
+	<aChain key="acehnrst">
+		<w>snatcher</w>
+		<w>stancher</w>
+	</aChain>
+	<aChain key="acehp">
+		<w>cheap</w>
+		<w>peach</w>
+	</aChain>
+	<aChain key="acehprt">
+		<w>chapter</w>
+		<w>patcher</w>
+	</aChain>
+	<aChain key="acehrrs">
+		<w>archers</w>
+		<w>crasher</w>
+	</aChain>
+	<aChain key="acehrs">
+		<w>arches</w>
+		<w>casher</w>
+		<w>chaser</w>
+		<w>search</w>
+	</aChain>
+	<aChain key="acehrss">
+		<w>cashers</w>
+		<w>chasers</w>
+		<w>crashes</w>
+	</aChain>
+	<aChain key="acehs">
+		<w>aches</w>
+		<w>chase</w>
+	</aChain>
+	<aChain key="acehss">
+		<w>cashes</w>
+		<w>chases</w>
+	</aChain>
+	<aChain key="acehst">
+		<w>chaste</w>
+		<w>cheats</w>
+	</aChain>
+	<aChain key="aceht">
+		<w>cheat</w>
+		<w>teach</w>
+	</aChain>
+	<aChain key="aceiinottx">
+		<w>excitation</w>
+		<w>intoxicate</w>
+	</aChain>
+	<aChain key="aceiirttvy">
+		<w>creativity</w>
+		<w>reactivity</w>
+	</aChain>
+	<aChain key="aceilmr">
+		<w>claimer</w>
+		<w>miracle</w>
+		<w>reclaim</w>
+	</aChain>
+	<aChain key="aceilmrs">
+		<w>miracles</w>
+		<w>reclaims</w>
+	</aChain>
+	<aChain key="aceilmsx">
+		<w>climaxes</w>
+		<w>exclaims</w>
+	</aChain>
+	<aChain key="aceilrrtu">
+		<w>curtailer</w>
+		<w>reticular</w>
+	</aChain>
+	<aChain key="aceilrst">
+		<w>articles</w>
+		<w>recitals</w>
+	</aChain>
+	<aChain key="aceilrt">
+		<w>article</w>
+		<w>recital</w>
+	</aChain>
+	<aChain key="aceiltt">
+		<w>lattice</w>
+		<w>tactile</w>
+	</aChain>
+	<aChain key="aceinnoorsstv">
+		<w>conservations</w>
+		<w>conversations</w>
+	</aChain>
+	<aChain key="aceinnoorstv">
+		<w>conservation</w>
+		<w>conversation</w>
+	</aChain>
+	<aChain key="aceinnsst">
+		<w>incessant</w>
+		<w>instances</w>
+	</aChain>
+	<aChain key="aceinnst">
+		<w>ancients</w>
+		<w>instance</w>
+	</aChain>
+	<aChain key="aceinorst">
+		<w>creations</w>
+		<w>reactions</w>
+	</aChain>
+	<aChain key="aceinort">
+		<w>creation</w>
+		<w>reaction</w>
+	</aChain>
+	<aChain key="aceinsstt">
+		<w>scantiest</w>
+		<w>tacitness</w>
+	</aChain>
+	<aChain key="aceirrs">
+		<w>carries</w>
+		<w>scarier</w>
+	</aChain>
+	<aChain key="acekprs">
+		<w>packers</w>
+		<w>repacks</w>
+	</aChain>
+	<aChain key="acekrs">
+		<w>creaks</w>
+		<w>sacker</w>
+	</aChain>
+	<aChain key="acekrst">
+		<w>rackets</w>
+		<w>stacker</w>
+	</aChain>
+	<aChain key="acekrt">
+		<w>racket</w>
+		<w>tacker</w>
+	</aChain>
+	<aChain key="acellr">
+		<w>caller</w>
+		<w>cellar</w>
+		<w>recall</w>
+	</aChain>
+	<aChain key="acellrs">
+		<w>callers</w>
+		<w>cellars</w>
+		<w>recalls</w>
+	</aChain>
+	<aChain key="aceln">
+		<w>clean</w>
+		<w>lance</w>
+	</aChain>
+	<aChain key="acelnru">
+		<w>nuclear</w>
+		<w>unclear</w>
+	</aChain>
+	<aChain key="acelns">
+		<w>cleans</w>
+		<w>lances</w>
+	</aChain>
+	<aChain key="acelor">
+		<w>coaler</w>
+		<w>oracle</w>
+	</aChain>
+	<aChain key="acelors">
+		<w>oracles</w>
+		<w>solacer</w>
+	</aChain>
+	<aChain key="acelpr">
+		<w>parcel</w>
+		<w>placer</w>
+	</aChain>
+	<aChain key="acelprs">
+		<w>clasper</w>
+		<w>parcels</w>
+		<w>scalper</w>
+	</aChain>
+	<aChain key="acelr">
+		<w>clear</w>
+		<w>lacer</w>
+	</aChain>
+	<aChain key="acelrrsw">
+		<w>crawlers</w>
+		<w>scrawler</w>
+	</aChain>
+	<aChain key="acelrs">
+		<w>clears</w>
+		<w>scaler</w>
+	</aChain>
+	<aChain key="acelrss">
+		<w>classer</w>
+		<w>scalers</w>
+	</aChain>
+	<aChain key="acels">
+		<w>laces</w>
+		<w>scale</w>
+	</aChain>
+	<aChain key="acem">
+		<w>acme</w>
+		<w>came</w>
+		<w>mace</w>
+	</aChain>
+	<aChain key="acemprs">
+		<w>campers</w>
+		<w>scamper</w>
+	</aChain>
+	<aChain key="acemr">
+		<w>cream</w>
+		<w>macer</w>
+	</aChain>
+	<aChain key="acemrs">
+		<w>creams</w>
+		<w>scream</w>
+	</aChain>
+	<aChain key="acems">
+		<w>emacs</w>
+		<w>maces</w>
+	</aChain>
+	<aChain key="acen">
+		<w>acne</w>
+		<w>cane</w>
+	</aChain>
+	<aChain key="acennrs">
+		<w>canners</w>
+		<w>scanner</w>
+	</aChain>
+	<aChain key="aceno">
+		<w>canoe</w>
+		<w>ocean</w>
+	</aChain>
+	<aChain key="acenos">
+		<w>canoes</w>
+		<w>oceans</w>
+	</aChain>
+	<aChain key="acenr">
+		<w>caner</w>
+		<w>crane</w>
+	</aChain>
+	<aChain key="acenrs">
+		<w>cranes</w>
+		<w>rescan</w>
+	</aChain>
+	<aChain key="acenrv">
+		<w>cavern</w>
+		<w>craven</w>
+	</aChain>
+	<aChain key="acenst">
+		<w>ascent</w>
+		<w>enacts</w>
+		<w>stance</w>
+	</aChain>
+	<aChain key="aceorrst">
+		<w>creators</w>
+		<w>reactors</w>
+	</aChain>
+	<aChain key="aceorrt">
+		<w>creator</w>
+		<w>reactor</w>
+	</aChain>
+	<aChain key="aceorsst">
+		<w>coarsest</w>
+		<w>coasters</w>
+	</aChain>
+	<aChain key="aceorst">
+		<w>coaster</w>
+		<w>coaters</w>
+	</aChain>
+	<aChain key="acep">
+		<w>cape</w>
+		<w>pace</w>
+	</aChain>
+	<aChain key="acepr">
+		<w>caper</w>
+		<w>pacer</w>
+	</aChain>
+	<aChain key="aceprs">
+		<w>capers</w>
+		<w>pacers</w>
+		<w>scrape</w>
+		<w>spacer</w>
+	</aChain>
+	<aChain key="aceprss">
+		<w>scrapes</w>
+		<w>spacers</w>
+	</aChain>
+	<aChain key="aceprst">
+		<w>carpets</w>
+		<w>spectra</w>
+	</aChain>
+	<aChain key="aceps">
+		<w>capes</w>
+		<w>paces</w>
+		<w>space</w>
+	</aChain>
+	<aChain key="acer">
+		<w>acer</w>
+		<w>acre</w>
+		<w>care</w>
+		<w>race</w>
+	</aChain>
+	<aChain key="acerr">
+		<w>carer</w>
+		<w>racer</w>
+	</aChain>
+	<aChain key="acerrs">
+		<w>carers</w>
+		<w>racers</w>
+		<w>scarer</w>
+	</aChain>
+	<aChain key="acerrst">
+		<w>carters</w>
+		<w>craters</w>
+		<w>tracers</w>
+	</aChain>
+	<aChain key="acerrt">
+		<w>carter</w>
+		<w>crater</w>
+		<w>tracer</w>
+	</aChain>
+	<aChain key="acerrv">
+		<w>carver</w>
+		<w>craver</w>
+	</aChain>
+	<aChain key="acers">
+		<w>acres</w>
+		<w>cares</w>
+		<w>races</w>
+		<w>scare</w>
+	</aChain>
+	<aChain key="acerss">
+		<w>caress</w>
+		<w>scares</w>
+	</aChain>
+	<aChain key="acersst">
+		<w>actress</w>
+		<w>casters</w>
+		<w>recasts</w>
+	</aChain>
+	<aChain key="acerst">
+		<w>carets</w>
+		<w>caster</w>
+		<w>caters</w>
+		<w>crates</w>
+		<w>reacts</w>
+		<w>recast</w>
+		<w>traces</w>
+	</aChain>
+	<aChain key="acersu">
+		<w>causer</w>
+		<w>saucer</w>
+	</aChain>
+	<aChain key="acersv">
+		<w>carves</w>
+		<w>craves</w>
+	</aChain>
+	<aChain key="acert">
+		<w>caret</w>
+		<w>cater</w>
+		<w>crate</w>
+		<w>react</w>
+		<w>recta</w>
+		<w>trace</w>
+	</aChain>
+	<aChain key="acerv">
+		<w>carve</w>
+		<w>caver</w>
+		<w>crave</w>
+	</aChain>
+	<aChain key="aces">
+		<w>aces</w>
+		<w>case</w>
+	</aChain>
+	<aChain key="acessu">
+		<w>causes</w>
+		<w>sauces</w>
+	</aChain>
+	<aChain key="acesu">
+		<w>cause</w>
+		<w>sauce</w>
+	</aChain>
+	<aChain key="acggilnn">
+		<w>clanging</w>
+		<w>glancing</w>
+	</aChain>
+	<aChain key="acghimnr">
+		<w>charming</w>
+		<w>marching</w>
+	</aChain>
+	<aChain key="acghinr">
+		<w>arching</w>
+		<w>chagrin</w>
+		<w>charing</w>
+	</aChain>
+	<aChain key="acghinrs">
+		<w>chagrins</w>
+		<w>crashing</w>
+	</aChain>
+	<aChain key="acghinrst">
+		<w>chartings</w>
+		<w>starching</w>
+	</aChain>
+	<aChain key="acghins">
+		<w>cashing</w>
+		<w>chasing</w>
+	</aChain>
+	<aChain key="acgiinnotu">
+		<w>auctioning</w>
+		<w>cautioning</w>
+	</aChain>
+	<aChain key="acgillnops">
+		<w>collapsing</w>
+		<w>scalloping</w>
+	</aChain>
+	<aChain key="acgilnps">
+		<w>clasping</w>
+		<w>scalping</w>
+	</aChain>
+	<aChain key="acgilnss">
+		<w>classing</w>
+		<w>scalings</w>
+	</aChain>
+	<aChain key="acginost">
+		<w>agnostic</w>
+		<w>coasting</w>
+		<w>coatings</w>
+	</aChain>
+	<aChain key="acginr">
+		<w>arcing</w>
+		<w>caring</w>
+		<w>racing</w>
+	</aChain>
+	<aChain key="acginrt">
+		<w>carting</w>
+		<w>crating</w>
+		<w>tracing</w>
+	</aChain>
+	<aChain key="acginrv">
+		<w>carving</w>
+		<w>craving</w>
+	</aChain>
+	<aChain key="acginsu">
+		<w>causing</w>
+		<w>saucing</w>
+	</aChain>
+	<aChain key="achks">
+		<w>hacks</w>
+		<w>shack</w>
+	</aChain>
+	<aChain key="achmr">
+		<w>charm</w>
+		<w>march</w>
+	</aChain>
+	<aChain key="achnst">
+		<w>chants</w>
+		<w>snatch</w>
+		<w>stanch</w>
+	</aChain>
+	<aChain key="achr">
+		<w>arch</w>
+		<w>char</w>
+	</aChain>
+	<aChain key="achrs">
+		<w>chars</w>
+		<w>crash</w>
+	</aChain>
+	<aChain key="achrst">
+		<w>charts</w>
+		<w>starch</w>
+	</aChain>
+	<aChain key="acillopty">
+		<w>optically</w>
+		<w>topically</w>
+	</aChain>
+	<aChain key="acilopt">
+		<w>capitol</w>
+		<w>optical</w>
+		<w>topical</w>
+	</aChain>
+	<aChain key="acimno">
+		<w>anomic</w>
+		<w>camion</w>
+	</aChain>
+	<aChain key="acinnost">
+		<w>contains</w>
+		<w>sanction</w>
+	</aChain>
+	<aChain key="acinotu">
+		<w>auction</w>
+		<w>caution</w>
+	</aChain>
+	<aChain key="acistt">
+		<w>attics</w>
+		<w>static</w>
+	</aChain>
+	<aChain key="acitt">
+		<w>attic</w>
+		<w>tacit</w>
+	</aChain>
+	<aChain key="ackls">
+		<w>lacks</w>
+		<w>slack</w>
+	</aChain>
+	<aChain key="acks">
+		<w>cask</w>
+		<w>sack</w>
+	</aChain>
+	<aChain key="ackss">
+		<w>casks</w>
+		<w>sacks</w>
+	</aChain>
+	<aChain key="ackst">
+		<w>stack</w>
+		<w>tacks</w>
+	</aChain>
+	<aChain key="aclm">
+		<w>calm</w>
+		<w>clam</w>
+	</aChain>
+	<aChain key="aclms">
+		<w>calms</w>
+		<w>clams</w>
+	</aChain>
+	<aChain key="aclor">
+		<w>carol</w>
+		<w>coral</w>
+	</aChain>
+	<aChain key="aclps">
+		<w>claps</w>
+		<w>clasp</w>
+		<w>scalp</w>
+	</aChain>
+	<aChain key="aclpss">
+		<w>clasps</w>
+		<w>scalps</w>
+	</aChain>
+	<aChain key="aclrsw">
+		<w>crawls</w>
+		<w>scrawl</w>
+	</aChain>
+	<aChain key="aclsy">
+		<w>clays</w>
+		<w>scaly</w>
+	</aChain>
+	<aChain key="acnnot">
+		<w>cannot</w>
+		<w>canton</w>
+	</aChain>
+	<aChain key="acnorst">
+		<w>cantors</w>
+		<w>cartons</w>
+	</aChain>
+	<aChain key="acnort">
+		<w>cantor</w>
+		<w>carton</w>
+	</aChain>
+	<aChain key="acns">
+		<w>cans</w>
+		<w>scan</w>
+	</aChain>
+	<aChain key="acost">
+		<w>ascot</w>
+		<w>coast</w>
+		<w>coats</w>
+	</aChain>
+	<aChain key="acprs">
+		<w>craps</w>
+		<w>scrap</w>
+	</aChain>
+	<aChain key="acr">
+		<w>arc</w>
+		<w>car</w>
+	</aChain>
+	<aChain key="acrs">
+		<w>arcs</w>
+		<w>cars</w>
+		<w>scar</w>
+	</aChain>
+	<aChain key="acst">
+		<w>acts</w>
+		<w>cast</w>
+		<w>cats</w>
+	</aChain>
+	<aChain key="act">
+		<w>act</w>
+		<w>cat</w>
+	</aChain>
+	<aChain key="add">
+		<w>add</w>
+		<w>dad</w>
+	</aChain>
+	<aChain key="adddeemn">
+		<w>demanded</w>
+		<w>maddened</w>
+	</aChain>
+	<aChain key="addeeenr">
+		<w>deadener</w>
+		<w>endeared</w>
+	</aChain>
+	<aChain key="addeegrr">
+		<w>degrader</w>
+		<w>regarded</w>
+	</aChain>
+	<aChain key="addeeilr">
+		<w>deadlier</w>
+		<w>derailed</w>
+	</aChain>
+	<aChain key="addeemnr">
+		<w>damneder</w>
+		<w>demander</w>
+	</aChain>
+	<aChain key="addeeprt">
+		<w>departed</w>
+		<w>predated</w>
+	</aChain>
+	<aChain key="addeeprv">
+		<w>depraved</w>
+		<w>pervaded</w>
+	</aChain>
+	<aChain key="addegilmnny">
+		<w>demandingly</w>
+		<w>maddeningly</w>
+	</aChain>
+	<aChain key="addegimnn">
+		<w>demanding</w>
+		<w>maddening</w>
+	</aChain>
+	<aChain key="addehs">
+		<w>dashed</w>
+		<w>shaded</w>
+	</aChain>
+	<aChain key="addeinr">
+		<w>dandier</w>
+		<w>drained</w>
+	</aChain>
+	<aChain key="addelr">
+		<w>ladder</w>
+		<w>larded</w>
+	</aChain>
+	<aChain key="addelrs">
+		<w>ladders</w>
+		<w>saddler</w>
+	</aChain>
+	<aChain key="addemn">
+		<w>damned</w>
+		<w>demand</w>
+		<w>madden</w>
+	</aChain>
+	<aChain key="addens">
+		<w>sadden</w>
+		<w>sanded</w>
+	</aChain>
+	<aChain key="adder">
+		<w>adder</w>
+		<w>dared</w>
+		<w>dread</w>
+	</aChain>
+	<aChain key="adders">
+		<w>adders</w>
+		<w>dreads</w>
+		<w>sadder</w>
+	</aChain>
+	<aChain key="addert">
+		<w>darted</w>
+		<w>traded</w>
+	</aChain>
+	<aChain key="adds">
+		<w>adds</w>
+		<w>dads</w>
+	</aChain>
+	<aChain key="adeeegnrt">
+		<w>generated</w>
+		<w>greatened</w>
+	</aChain>
+	<aChain key="adeeelrs">
+		<w>released</w>
+		<w>resealed</w>
+	</aChain>
+	<aChain key="adeefr">
+		<w>deafer</w>
+		<w>feared</w>
+	</aChain>
+	<aChain key="adeefst">
+		<w>deafest</w>
+		<w>defeats</w>
+		<w>feasted</w>
+	</aChain>
+	<aChain key="adeegnr">
+		<w>angered</w>
+		<w>enraged</w>
+		<w>grenade</w>
+	</aChain>
+	<aChain key="adeegnrr">
+		<w>gardener</w>
+		<w>garnered</w>
+	</aChain>
+	<aChain key="adeegr">
+		<w>agreed</w>
+		<w>geared</w>
+	</aChain>
+	<aChain key="adeehlrt">
+		<w>haltered</w>
+		<w>lathered</w>
+	</aChain>
+	<aChain key="adeehr">
+		<w>adhere</w>
+		<w>header</w>
+	</aChain>
+	<aChain key="adeehrs">
+		<w>adheres</w>
+		<w>headers</w>
+		<w>sheared</w>
+	</aChain>
+	<aChain key="adeehrt">
+		<w>earthed</w>
+		<w>hearted</w>
+	</aChain>
+	<aChain key="adeeilrt">
+		<w>detailer</w>
+		<w>retailed</w>
+	</aChain>
+	<aChain key="adeeimnoprst">
+		<w>impersonated</w>
+		<w>predominates</w>
+	</aChain>
+	<aChain key="adeeimstt">
+		<w>estimated</w>
+		<w>meditates</w>
+	</aChain>
+	<aChain key="adeeinottv">
+		<w>denotative</w>
+		<w>detonative</w>
+	</aChain>
+	<aChain key="adeeinprt">
+		<w>pertained</w>
+		<w>repainted</w>
+	</aChain>
+	<aChain key="adeeinrstt">
+		<w>reinstated</w>
+		<w>straitened</w>
+	</aChain>
+	<aChain key="adeeinrt">
+		<w>detainer</w>
+		<w>retained</w>
+	</aChain>
+	<aChain key="adeeiprrs">
+		<w>despairer</w>
+		<w>draperies</w>
+	</aChain>
+	<aChain key="adeeirst">
+		<w>readiest</w>
+		<w>steadier</w>
+	</aChain>
+	<aChain key="adeeiss">
+		<w>disease</w>
+		<w>seaside</w>
+	</aChain>
+	<aChain key="adeellrty">
+		<w>alertedly</w>
+		<w>relatedly</w>
+	</aChain>
+	<aChain key="adeeln">
+		<w>leaden</w>
+		<w>leaned</w>
+	</aChain>
+	<aChain key="adeelnrtu">
+		<w>unaltered</w>
+		<w>unrelated</w>
+	</aChain>
+	<aChain key="adeelp">
+		<w>leaped</w>
+		<w>pealed</w>
+	</aChain>
+	<aChain key="adeelps">
+		<w>elapsed</w>
+		<w>pleased</w>
+	</aChain>
+	<aChain key="adeelr">
+		<w>dealer</w>
+		<w>leader</w>
+	</aChain>
+	<aChain key="adeelrs">
+		<w>dealers</w>
+		<w>leaders</w>
+	</aChain>
+	<aChain key="adeelrt">
+		<w>alerted</w>
+		<w>altered</w>
+		<w>related</w>
+	</aChain>
+	<aChain key="adeelry">
+		<w>delayer</w>
+		<w>layered</w>
+		<w>relayed</w>
+	</aChain>
+	<aChain key="adeels">
+		<w>leased</w>
+		<w>sealed</w>
+	</aChain>
+	<aChain key="adeemnr">
+		<w>amender</w>
+		<w>meander</w>
+		<w>renamed</w>
+	</aChain>
+	<aChain key="adeemr">
+		<w>reamed</w>
+		<w>remade</w>
+	</aChain>
+	<aChain key="adeemrr">
+		<w>dreamer</w>
+		<w>rearmed</w>
+	</aChain>
+	<aChain key="adeemrst">
+		<w>mastered</w>
+		<w>streamed</w>
+	</aChain>
+	<aChain key="adeenr">
+		<w>earned</w>
+		<w>endear</w>
+		<w>neared</w>
+	</aChain>
+	<aChain key="adeeprrtu">
+		<w>apertured</w>
+		<w>departure</w>
+	</aChain>
+	<aChain key="adeeprsv">
+		<w>depraves</w>
+		<w>pervades</w>
+	</aChain>
+	<aChain key="adeeprt">
+		<w>predate</w>
+		<w>tapered</w>
+	</aChain>
+	<aChain key="adeeprv">
+		<w>deprave</w>
+		<w>pervade</w>
+	</aChain>
+	<aChain key="adeerr">
+		<w>dearer</w>
+		<w>reader</w>
+		<w>reared</w>
+		<w>reread</w>
+	</aChain>
+	<aChain key="adeerrs">
+		<w>readers</w>
+		<w>rereads</w>
+	</aChain>
+	<aChain key="adeers">
+		<w>erased</w>
+		<w>seared</w>
+	</aChain>
+	<aChain key="adeest">
+		<w>seated</w>
+		<w>teased</w>
+	</aChain>
+	<aChain key="adef">
+		<w>deaf</w>
+		<w>fade</w>
+	</aChain>
+	<aChain key="adefil">
+		<w>afield</w>
+		<w>failed</w>
+	</aChain>
+	<aChain key="adefint">
+		<w>defiant</w>
+		<w>fainted</w>
+	</aChain>
+	<aChain key="adefltu">
+		<w>default</w>
+		<w>faulted</w>
+	</aChain>
+	<aChain key="adefmr">
+		<w>farmed</w>
+		<w>framed</w>
+	</aChain>
+	<aChain key="adefr">
+		<w>fader</w>
+		<w>fared</w>
+	</aChain>
+	<aChain key="adeggr">
+		<w>dagger</w>
+		<w>ragged</w>
+	</aChain>
+	<aChain key="adeggt">
+		<w>gadget</w>
+		<w>tagged</w>
+	</aChain>
+	<aChain key="adegiilnprsy">
+		<w>despairingly</w>
+		<w>redisplaying</w>
+	</aChain>
+	<aChain key="adegiln">
+		<w>aligned</w>
+		<w>dealing</w>
+		<w>leading</w>
+	</aChain>
+	<aChain key="adegilns">
+		<w>dealings</w>
+		<w>leadings</w>
+	</aChain>
+	<aChain key="adegimnr">
+		<w>dreaming</w>
+		<w>margined</w>
+	</aChain>
+	<aChain key="adeginprt">
+		<w>departing</w>
+		<w>predating</w>
+	</aChain>
+	<aChain key="adeginprv">
+		<w>depraving</w>
+		<w>pervading</w>
+	</aChain>
+	<aChain key="adeginr">
+		<w>grained</w>
+		<w>reading</w>
+	</aChain>
+	<aChain key="adeginrrw">
+		<w>redrawing</w>
+		<w>rewarding</w>
+	</aChain>
+	<aChain key="adeginrt">
+		<w>gradient</w>
+		<w>treading</w>
+	</aChain>
+	<aChain key="adegln">
+		<w>angled</w>
+		<w>dangle</w>
+	</aChain>
+	<aChain key="adeglnrs">
+		<w>danglers</w>
+		<w>glanders</w>
+	</aChain>
+	<aChain key="adegnr">
+		<w>danger</w>
+		<w>garden</w>
+		<w>ranged</w>
+	</aChain>
+	<aChain key="adegnrs">
+		<w>dangers</w>
+		<w>gardens</w>
+	</aChain>
+	<aChain key="adegp">
+		<w>gaped</w>
+		<w>paged</w>
+	</aChain>
+	<aChain key="adegr">
+		<w>grade</w>
+		<w>raged</w>
+	</aChain>
+	<aChain key="adegrr">
+		<w>grader</w>
+		<w>regard</w>
+	</aChain>
+	<aChain key="adegrrs">
+		<w>graders</w>
+		<w>regards</w>
+	</aChain>
+	<aChain key="adehirr">
+		<w>hardier</w>
+		<w>harried</w>
+	</aChain>
+	<aChain key="adehlss">
+		<w>hassled</w>
+		<w>slashed</w>
+	</aChain>
+	<aChain key="adehlt">
+		<w>daleth</w>
+		<w>halted</w>
+	</aChain>
+	<aChain key="adehms">
+		<w>mashed</w>
+		<w>shamed</w>
+	</aChain>
+	<aChain key="adehnr">
+		<w>hander</w>
+		<w>harden</w>
+	</aChain>
+	<aChain key="adehnrs">
+		<w>handers</w>
+		<w>hardens</w>
+	</aChain>
+	<aChain key="adehprs">
+		<w>phrased</w>
+		<w>sharped</w>
+	</aChain>
+	<aChain key="adehps">
+		<w>phased</w>
+		<w>shaped</w>
+	</aChain>
+	<aChain key="adehrs">
+		<w>dasher</w>
+		<w>shader</w>
+		<w>shared</w>
+	</aChain>
+	<aChain key="adehrst">
+		<w>dearths</w>
+		<w>hardest</w>
+		<w>threads</w>
+		<w>trashed</w>
+	</aChain>
+	<aChain key="adehrt">
+		<w>dearth</w>
+		<w>hatred</w>
+		<w>thread</w>
+	</aChain>
+	<aChain key="adehs">
+		<w>heads</w>
+		<w>shade</w>
+	</aChain>
+	<aChain key="adehss">
+		<w>dashes</w>
+		<w>sashed</w>
+		<w>shades</w>
+	</aChain>
+	<aChain key="adehst">
+		<w>deaths</w>
+		<w>hasted</w>
+	</aChain>
+	<aChain key="adeht">
+		<w>death</w>
+		<w>hated</w>
+	</aChain>
+	<aChain key="adei">
+		<w>aide</w>
+		<w>idea</w>
+	</aChain>
+	<aChain key="adeiiintt">
+		<w>dietitian</w>
+		<w>initiated</w>
+	</aChain>
+	<aChain key="adeiirs">
+		<w>dairies</w>
+		<w>diaries</w>
+	</aChain>
+	<aChain key="adeil">
+		<w>ailed</w>
+		<w>ideal</w>
+	</aChain>
+	<aChain key="adeilmny">
+		<w>maidenly</w>
+		<w>medianly</w>
+	</aChain>
+	<aChain key="adeiln">
+		<w>denial</w>
+		<w>nailed</w>
+	</aChain>
+	<aChain key="adeilprsy">
+		<w>displayer</w>
+		<w>redisplay</w>
+	</aChain>
+	<aChain key="adeilr">
+		<w>derail</w>
+		<w>railed</w>
+	</aChain>
+	<aChain key="adeilrs">
+		<w>derails</w>
+		<w>redials</w>
+	</aChain>
+	<aChain key="adeils">
+		<w>ideals</w>
+		<w>ladies</w>
+		<w>sailed</w>
+	</aChain>
+	<aChain key="adeilst">
+		<w>details</w>
+		<w>dilates</w>
+	</aChain>
+	<aChain key="adeilsttu">
+		<w>altitudes</w>
+		<w>latitudes</w>
+	</aChain>
+	<aChain key="adeilt">
+		<w>detail</w>
+		<w>dilate</w>
+		<w>tailed</w>
+	</aChain>
+	<aChain key="adeilttu">
+		<w>altitude</w>
+		<w>latitude</w>
+	</aChain>
+	<aChain key="adeim">
+		<w>aimed</w>
+		<w>amide</w>
+		<w>media</w>
+	</aChain>
+	<aChain key="adeimn">
+		<w>maiden</w>
+		<w>median</w>
+	</aChain>
+	<aChain key="adeimns">
+		<w>maidens</w>
+		<w>medians</w>
+	</aChain>
+	<aChain key="adeimrr">
+		<w>admirer</w>
+		<w>married</w>
+	</aChain>
+	<aChain key="adeimrrs">
+		<w>admirers</w>
+		<w>disarmer</w>
+	</aChain>
+	<aChain key="adeimrs">
+		<w>admires</w>
+		<w>misread</w>
+	</aChain>
+	<aChain key="adeinnoott">
+		<w>denotation</w>
+		<w>detonation</w>
+	</aChain>
+	<aChain key="adeinort">
+		<w>ordinate</w>
+		<w>rationed</w>
+	</aChain>
+	<aChain key="adeinostt">
+		<w>antidotes</w>
+		<w>stationed</w>
+	</aChain>
+	<aChain key="adeinrv">
+		<w>invader</w>
+		<w>ravined</w>
+	</aChain>
+	<aChain key="adeinst">
+		<w>detains</w>
+		<w>instead</w>
+		<w>sainted</w>
+		<w>stained</w>
+	</aChain>
+	<aChain key="adeipr">
+		<w>diaper</w>
+		<w>paired</w>
+		<w>repaid</w>
+	</aChain>
+	<aChain key="adeiprs">
+		<w>aspired</w>
+		<w>despair</w>
+		<w>diapers</w>
+		<w>praised</w>
+	</aChain>
+	<aChain key="adeiprt">
+		<w>partied</w>
+		<w>pirated</w>
+	</aChain>
+	<aChain key="adeir">
+		<w>aider</w>
+		<w>aired</w>
+	</aChain>
+	<aChain key="adeirrt">
+		<w>tardier</w>
+		<w>tarried</w>
+	</aChain>
+	<aChain key="adeirst">
+		<w>astride</w>
+		<w>tardies</w>
+	</aChain>
+	<aChain key="adeis">
+		<w>aides</w>
+		<w>aside</w>
+		<w>ideas</w>
+	</aChain>
+	<aChain key="adeisswy">
+		<w>sideways</w>
+		<w>waysides</w>
+	</aChain>
+	<aChain key="adeisv">
+		<w>advise</w>
+		<w>visaed</w>
+	</aChain>
+	<aChain key="adejrsstu">
+		<w>adjusters</w>
+		<w>readjusts</w>
+	</aChain>
+	<aChain key="adekn">
+		<w>knead</w>
+		<w>naked</w>
+	</aChain>
+	<aChain key="adeknr">
+		<w>darken</w>
+		<w>ranked</w>
+	</aChain>
+	<aChain key="adekns">
+		<w>kneads</w>
+		<w>snaked</w>
+	</aChain>
+	<aChain key="adekr">
+		<w>drake</w>
+		<w>raked</w>
+	</aChain>
+	<aChain key="adekst">
+		<w>skated</w>
+		<w>staked</w>
+		<w>tasked</w>
+	</aChain>
+	<aChain key="adel">
+		<w>dale</w>
+		<w>deal</w>
+		<w>lead</w>
+	</aChain>
+	<aChain key="adelm">
+		<w>lamed</w>
+		<w>medal</w>
+	</aChain>
+	<aChain key="adelms">
+		<w>damsel</w>
+		<w>medals</w>
+	</aChain>
+	<aChain key="adelnrs">
+		<w>landers</w>
+		<w>slander</w>
+		<w>snarled</w>
+	</aChain>
+	<aChain key="adelnsstu">
+		<w>adultness</w>
+		<w>dauntless</w>
+	</aChain>
+	<aChain key="adelnst">
+		<w>dentals</w>
+		<w>slanted</w>
+	</aChain>
+	<aChain key="adelopr">
+		<w>leopard</w>
+		<w>paroled</w>
+	</aChain>
+	<aChain key="adelor">
+		<w>loader</w>
+		<w>ordeal</w>
+		<w>reload</w>
+	</aChain>
+	<aChain key="adelors">
+		<w>loaders</w>
+		<w>ordeals</w>
+		<w>reloads</w>
+	</aChain>
+	<aChain key="adelp">
+		<w>paled</w>
+		<w>plead</w>
+	</aChain>
+	<aChain key="adelps">
+		<w>lapsed</w>
+		<w>pleads</w>
+	</aChain>
+	<aChain key="adels">
+		<w>dales</w>
+		<w>deals</w>
+		<w>leads</w>
+	</aChain>
+	<aChain key="adelst">
+		<w>deltas</w>
+		<w>lasted</w>
+		<w>salted</w>
+		<w>slated</w>
+		<w>staled</w>
+	</aChain>
+	<aChain key="adelt">
+		<w>dealt</w>
+		<w>delta</w>
+		<w>lated</w>
+	</aChain>
+	<aChain key="adem">
+		<w>dame</w>
+		<w>made</w>
+		<w>mead</w>
+	</aChain>
+	<aChain key="ademn">
+		<w>amend</w>
+		<w>maned</w>
+		<w>named</w>
+	</aChain>
+	<aChain key="ademnnu">
+		<w>mundane</w>
+		<w>unnamed</w>
+	</aChain>
+	<aChain key="ademno">
+		<w>daemon</w>
+		<w>moaned</w>
+	</aChain>
+	<aChain key="ademnos">
+		<w>daemons</w>
+		<w>masoned</w>
+	</aChain>
+	<aChain key="ademnru">
+		<w>manured</w>
+		<w>unarmed</w>
+	</aChain>
+	<aChain key="ademntu">
+		<w>unmated</w>
+		<w>untamed</w>
+	</aChain>
+	<aChain key="adempr">
+		<w>damper</w>
+		<w>ramped</w>
+	</aChain>
+	<aChain key="ademr">
+		<w>armed</w>
+		<w>dream</w>
+	</aChain>
+	<aChain key="ademt">
+		<w>mated</w>
+		<w>tamed</w>
+	</aChain>
+	<aChain key="adenot">
+		<w>atoned</w>
+		<w>donate</w>
+	</aChain>
+	<aChain key="adenpps">
+		<w>appends</w>
+		<w>snapped</w>
+	</aChain>
+	<aChain key="adenrr">
+		<w>darner</w>
+		<w>errand</w>
+	</aChain>
+	<aChain key="adenrs">
+		<w>anders</w>
+		<w>sander</w>
+		<w>snared</w>
+	</aChain>
+	<aChain key="adenrsw">
+		<w>wanders</w>
+		<w>wardens</w>
+	</aChain>
+	<aChain key="adenrt">
+		<w>ardent</w>
+		<w>ranted</w>
+	</aChain>
+	<aChain key="adenrtu">
+		<w>natured</w>
+		<w>unrated</w>
+	</aChain>
+	<aChain key="adenrw">
+		<w>wander</w>
+		<w>warden</w>
+		<w>warned</w>
+	</aChain>
+	<aChain key="adenttu">
+		<w>attuned</w>
+		<w>taunted</w>
+	</aChain>
+	<aChain key="adeor">
+		<w>adore</w>
+		<w>oared</w>
+	</aChain>
+	<aChain key="adeorr">
+		<w>adorer</w>
+		<w>roared</w>
+	</aChain>
+	<aChain key="adeors">
+		<w>adores</w>
+		<w>soared</w>
+	</aChain>
+	<aChain key="adepr">
+		<w>drape</w>
+		<w>raped</w>
+	</aChain>
+	<aChain key="adeprs">
+		<w>drapes</w>
+		<w>parsed</w>
+		<w>rasped</w>
+		<w>spader</w>
+		<w>spared</w>
+		<w>spread</w>
+	</aChain>
+	<aChain key="adeprt">
+		<w>depart</w>
+		<w>parted</w>
+		<w>prated</w>
+	</aChain>
+	<aChain key="adepss">
+		<w>passed</w>
+		<w>spades</w>
+	</aChain>
+	<aChain key="adepst">
+		<w>adepts</w>
+		<w>pasted</w>
+	</aChain>
+	<aChain key="adept">
+		<w>adept</w>
+		<w>pated</w>
+		<w>taped</w>
+	</aChain>
+	<aChain key="ader">
+		<w>dare</w>
+		<w>dear</w>
+		<w>read</w>
+	</aChain>
+	<aChain key="aderrst">
+		<w>starred</w>
+		<w>traders</w>
+	</aChain>
+	<aChain key="aderrsw">
+		<w>drawers</w>
+		<w>redraws</w>
+		<w>rewards</w>
+	</aChain>
+	<aChain key="aderrt">
+		<w>darter</w>
+		<w>retard</w>
+		<w>trader</w>
+	</aChain>
+	<aChain key="aderrw">
+		<w>drawer</w>
+		<w>redraw</w>
+		<w>reward</w>
+		<w>warder</w>
+		<w>warred</w>
+	</aChain>
+	<aChain key="aders">
+		<w>dares</w>
+		<w>dears</w>
+		<w>reads</w>
+	</aChain>
+	<aChain key="aderst">
+		<w>stared</w>
+		<w>trades</w>
+		<w>treads</w>
+	</aChain>
+	<aChain key="adert">
+		<w>dater</w>
+		<w>rated</w>
+		<w>trade</w>
+		<w>tread</w>
+	</aChain>
+	<aChain key="adery">
+		<w>rayed</w>
+		<w>ready</w>
+	</aChain>
+	<aChain key="adest">
+		<w>dates</w>
+		<w>sated</w>
+		<w>stead</w>
+	</aChain>
+	<aChain key="adestt">
+		<w>stated</w>
+		<w>tasted</w>
+	</aChain>
+	<aChain key="adesty">
+		<w>stayed</w>
+		<w>steady</w>
+	</aChain>
+	<aChain key="adesw">
+		<w>sawed</w>
+		<w>wades</w>
+	</aChain>
+	<aChain key="adew">
+		<w>awed</w>
+		<w>wade</w>
+	</aChain>
+	<aChain key="adghins">
+		<w>dashing</w>
+		<w>shading</w>
+	</aChain>
+	<aChain key="adgilnr">
+		<w>darling</w>
+		<w>larding</w>
+	</aChain>
+	<aChain key="adginrt">
+		<w>darting</w>
+		<w>trading</w>
+	</aChain>
+	<aChain key="adginrw">
+		<w>drawing</w>
+		<w>warding</w>
+	</aChain>
+	<aChain key="adiimnnoost">
+		<w>admonitions</w>
+		<w>dominations</w>
+	</aChain>
+	<aChain key="adiimnnoot">
+		<w>admonition</w>
+		<w>domination</w>
+	</aChain>
+	<aChain key="adil">
+		<w>dial</w>
+		<w>laid</w>
+	</aChain>
+	<aChain key="adilorty">
+		<w>adroitly</w>
+		<w>idolatry</w>
+	</aChain>
+	<aChain key="adim">
+		<w>amid</w>
+		<w>maid</w>
+	</aChain>
+	<aChain key="adimst">
+		<w>admits</w>
+		<w>amidst</w>
+	</aChain>
+	<aChain key="adinor">
+		<w>inroad</w>
+		<w>ordain</w>
+	</aChain>
+	<aChain key="adinors">
+		<w>inroads</w>
+		<w>ordains</w>
+	</aChain>
+	<aChain key="adir">
+		<w>arid</w>
+		<w>raid</w>
+	</aChain>
+	<aChain key="adiry">
+		<w>dairy</w>
+		<w>diary</w>
+	</aChain>
+	<aChain key="adis">
+		<w>aids</w>
+		<w>said</w>
+	</aChain>
+	<aChain key="adm">
+		<w>dam</w>
+		<w>mad</w>
+	</aChain>
+	<aChain key="adns">
+		<w>ands</w>
+		<w>sand</w>
+	</aChain>
+	<aChain key="adnw">
+		<w>dawn</w>
+		<w>wand</w>
+	</aChain>
+	<aChain key="adrsw">
+		<w>draws</w>
+		<w>wards</w>
+	</aChain>
+	<aChain key="adrw">
+		<w>draw</w>
+		<w>ward</w>
+	</aChain>
+	<aChain key="ads">
+		<w>ads</w>
+		<w>sad</w>
+	</aChain>
+	<aChain key="aeeefhrrt">
+		<w>featherer</w>
+		<w>hereafter</w>
+	</aChain>
+	<aChain key="aeeegnrst">
+		<w>generates</w>
+		<w>teenagers</w>
+	</aChain>
+	<aChain key="aeeegnrt">
+		<w>generate</w>
+		<w>teenager</w>
+	</aChain>
+	<aChain key="aeeeinnsstttv">
+		<w>attentiveness</w>
+		<w>tentativeness</w>
+	</aChain>
+	<aChain key="aeegginnrt">
+		<w>generating</w>
+		<w>greatening</w>
+	</aChain>
+	<aChain key="aeegillrs">
+		<w>allergies</w>
+		<w>galleries</w>
+	</aChain>
+	<aChain key="aeeginrstt">
+		<w>integrates</w>
+		<w>interstage</w>
+	</aChain>
+	<aChain key="aeegintv">
+		<w>agentive</w>
+		<w>negative</w>
+	</aChain>
+	<aChain key="aeeglnr">
+		<w>enlarge</w>
+		<w>general</w>
+		<w>gleaner</w>
+	</aChain>
+	<aChain key="aeeglnrs">
+		<w>enlarges</w>
+		<w>generals</w>
+	</aChain>
+	<aChain key="aeegnrsst">
+		<w>greatness</w>
+		<w>sergeants</w>
+	</aChain>
+	<aChain key="aeegnrst">
+		<w>reagents</w>
+		<w>sergeant</w>
+	</aChain>
+	<aChain key="aeegnrt">
+		<w>greaten</w>
+		<w>negater</w>
+	</aChain>
+	<aChain key="aeegnrv">
+		<w>avenger</w>
+		<w>engrave</w>
+	</aChain>
+	<aChain key="aeegr">
+		<w>agree</w>
+		<w>eager</w>
+	</aChain>
+	<aChain key="aeegrrs">
+		<w>agreers</w>
+		<w>greaser</w>
+	</aChain>
+	<aChain key="aeegrs">
+		<w>agrees</w>
+		<w>grease</w>
+	</aChain>
+	<aChain key="aeehirstt">
+		<w>heartiest</w>
+		<w>hesitater</w>
+	</aChain>
+	<aChain key="aeehnrst">
+		<w>hastener</w>
+		<w>heartens</w>
+	</aChain>
+	<aChain key="aeehnrt">
+		<w>earthen</w>
+		<w>hearten</w>
+	</aChain>
+	<aChain key="aeehprrs">
+		<w>rephrase</w>
+		<w>reshaper</w>
+	</aChain>
+	<aChain key="aeehrrs">
+		<w>hearers</w>
+		<w>shearer</w>
+	</aChain>
+	<aChain key="aeehrst">
+		<w>hearest</w>
+		<w>heaters</w>
+	</aChain>
+	<aChain key="aeehrstw">
+		<w>weathers</w>
+		<w>wreathes</w>
+	</aChain>
+	<aChain key="aeeilntttvy">
+		<w>attentively</w>
+		<w>tentatively</w>
+	</aChain>
+	<aChain key="aeeilrstv">
+		<w>relatives</w>
+		<w>versatile</w>
+	</aChain>
+	<aChain key="aeeimnnorstu">
+		<w>enumerations</w>
+		<w>mountaineers</w>
+	</aChain>
+	<aChain key="aeeimnnortu">
+		<w>enumeration</w>
+		<w>mountaineer</w>
+	</aChain>
+	<aChain key="aeeimnoprst">
+		<w>impersonate</w>
+		<w>permeations</w>
+	</aChain>
+	<aChain key="aeeinnoprstt">
+		<w>penetrations</w>
+		<w>presentation</w>
+	</aChain>
+	<aChain key="aeeintttv">
+		<w>attentive</w>
+		<w>tentative</w>
+	</aChain>
+	<aChain key="aeeirstt">
+		<w>iterates</w>
+		<w>treaties</w>
+		<w>treatise</w>
+	</aChain>
+	<aChain key="aeelmnss">
+		<w>lameness</w>
+		<w>maleness</w>
+		<w>nameless</w>
+		<w>salesmen</w>
+	</aChain>
+	<aChain key="aeelnrrs">
+		<w>learners</w>
+		<w>relearns</w>
+	</aChain>
+	<aChain key="aeelpr">
+		<w>leaper</w>
+		<w>repeal</w>
+	</aChain>
+	<aChain key="aeelprs">
+		<w>pleaser</w>
+		<w>relapse</w>
+		<w>repeals</w>
+	</aChain>
+	<aChain key="aeelps">
+		<w>asleep</w>
+		<w>elapse</w>
+		<w>please</w>
+	</aChain>
+	<aChain key="aeelpss">
+		<w>elapses</w>
+		<w>pleases</w>
+	</aChain>
+	<aChain key="aeelrrst">
+		<w>alerters</w>
+		<w>alterers</w>
+	</aChain>
+	<aChain key="aeelrrt">
+		<w>alerter</w>
+		<w>alterer</w>
+		<w>relater</w>
+	</aChain>
+	<aChain key="aeelrst">
+		<w>realest</w>
+		<w>relates</w>
+		<w>stealer</w>
+	</aChain>
+	<aChain key="aeelrsv">
+		<w>leavers</w>
+		<w>reveals</w>
+		<w>several</w>
+	</aChain>
+	<aChain key="aeelrt">
+		<w>elater</w>
+		<w>relate</w>
+	</aChain>
+	<aChain key="aeelrv">
+		<w>leaver</w>
+		<w>reveal</w>
+		<w>vealer</w>
+	</aChain>
+	<aChain key="aeemnr">
+		<w>meaner</w>
+		<w>rename</w>
+	</aChain>
+	<aChain key="aeemns">
+		<w>enemas</w>
+		<w>seamen</w>
+	</aChain>
+	<aChain key="aeemnssttt">
+		<w>statements</w>
+		<w>testaments</w>
+	</aChain>
+	<aChain key="aeemnsttt">
+		<w>statement</w>
+		<w>testament</w>
+	</aChain>
+	<aChain key="aeennrss">
+		<w>ensnares</w>
+		<w>nearness</w>
+	</aChain>
+	<aChain key="aeenrr">
+		<w>earner</w>
+		<w>nearer</w>
+	</aChain>
+	<aChain key="aeenrrstu">
+		<w>renatures</w>
+		<w>saunterer</w>
+	</aChain>
+	<aChain key="aeenrst">
+		<w>earnest</w>
+		<w>eastern</w>
+		<w>nearest</w>
+	</aChain>
+	<aChain key="aeepprr">
+		<w>paperer</w>
+		<w>prepare</w>
+	</aChain>
+	<aChain key="aeepprrs">
+		<w>paperers</w>
+		<w>prepares</w>
+	</aChain>
+	<aChain key="aeerrrst">
+		<w>arrester</w>
+		<w>rearrest</w>
+	</aChain>
+	<aChain key="aeerrssst">
+		<w>asserters</w>
+		<w>reasserts</w>
+	</aChain>
+	<aChain key="aeerrstt">
+		<w>retreats</w>
+		<w>treaters</w>
+	</aChain>
+	<aChain key="aeerrtt">
+		<w>retreat</w>
+		<w>treater</w>
+	</aChain>
+	<aChain key="aeers">
+		<w>easer</w>
+		<w>erase</w>
+	</aChain>
+	<aChain key="aeerst">
+		<w>easter</w>
+		<w>eaters</w>
+		<w>seater</w>
+		<w>teaser</w>
+	</aChain>
+	<aChain key="aefilmnr">
+		<w>inflamer</w>
+		<w>rifleman</w>
+	</aChain>
+	<aChain key="aefkr">
+		<w>faker</w>
+		<w>freak</w>
+	</aChain>
+	<aChain key="aefl">
+		<w>flea</w>
+		<w>leaf</w>
+	</aChain>
+	<aChain key="aeflrs">
+		<w>falser</w>
+		<w>flares</w>
+	</aChain>
+	<aChain key="aefls">
+		<w>false</w>
+		<w>fleas</w>
+		<w>leafs</w>
+	</aChain>
+	<aChain key="aefmrr">
+		<w>farmer</w>
+		<w>framer</w>
+	</aChain>
+	<aChain key="aefmrrs">
+		<w>farmers</w>
+		<w>framers</w>
+	</aChain>
+	<aChain key="aefnsst">
+		<w>fastens</w>
+		<w>fatness</w>
+	</aChain>
+	<aChain key="aefr">
+		<w>fare</w>
+		<w>fear</w>
+	</aChain>
+	<aChain key="aefrs">
+		<w>fares</w>
+		<w>fears</w>
+		<w>safer</w>
+	</aChain>
+	<aChain key="aefrst">
+		<w>afters</w>
+		<w>faster</w>
+	</aChain>
+	<aChain key="aefsst">
+		<w>feasts</w>
+		<w>safest</w>
+	</aChain>
+	<aChain key="aefst">
+		<w>fates</w>
+		<w>feast</w>
+		<w>feats</w>
+	</aChain>
+	<aChain key="aeft">
+		<w>fate</w>
+		<w>feat</w>
+	</aChain>
+	<aChain key="aeggilnr">
+		<w>ganglier</w>
+		<w>regaling</w>
+	</aChain>
+	<aChain key="aegginnr">
+		<w>angering</w>
+		<w>enraging</w>
+	</aChain>
+	<aChain key="aeggnr">
+		<w>ganger</w>
+		<w>grange</w>
+	</aChain>
+	<aChain key="aeghilnoost">
+		<w>anthologies</w>
+		<w>theologians</w>
+	</aChain>
+	<aChain key="aeghilnrt">
+		<w>haltering</w>
+		<w>lathering</w>
+	</aChain>
+	<aChain key="aeghinrs">
+		<w>hearings</w>
+		<w>hearsing</w>
+		<w>shearing</w>
+	</aChain>
+	<aChain key="aeghinrstt">
+		<w>shattering</w>
+		<w>straighten</w>
+	</aChain>
+	<aChain key="aeghlrstu">
+		<w>laughters</w>
+		<w>slaughter</w>
+	</aChain>
+	<aChain key="aeghnorsv">
+		<w>hangovers</w>
+		<w>overhangs</w>
+	</aChain>
+	<aChain key="aeghnorv">
+		<w>hangover</w>
+		<w>overhang</w>
+	</aChain>
+	<aChain key="aegiinnprt">
+		<w>pertaining</w>
+		<w>repainting</w>
+	</aChain>
+	<aChain key="aegiinnrstt">
+		<w>reinstating</w>
+		<w>straitening</w>
+	</aChain>
+	<aChain key="aegikln">
+		<w>leaking</w>
+		<w>linkage</w>
+	</aChain>
+	<aChain key="aegilmnnt">
+		<w>alignment</w>
+		<w>lamenting</w>
+	</aChain>
+	<aChain key="aegilnp">
+		<w>leaping</w>
+		<w>pealing</w>
+	</aChain>
+	<aChain key="aegilnps">
+		<w>elapsing</w>
+		<w>pleasing</w>
+	</aChain>
+	<aChain key="aegilnr">
+		<w>aligner</w>
+		<w>realign</w>
+	</aChain>
+	<aChain key="aegilnrst">
+		<w>integrals</w>
+		<w>triangles</w>
+	</aChain>
+	<aChain key="aegilnrt">
+		<w>alerting</w>
+		<w>altering</w>
+		<w>integral</w>
+		<w>relating</w>
+		<w>triangle</w>
+	</aChain>
+	<aChain key="aegilnry">
+		<w>layering</w>
+		<w>relaying</w>
+	</aChain>
+	<aChain key="aegilns">
+		<w>leasing</w>
+		<w>sealing</w>
+	</aChain>
+	<aChain key="aegilnt">
+		<w>elating</w>
+		<w>gelatin</w>
+	</aChain>
+	<aChain key="aegilnv">
+		<w>leaving</w>
+		<w>vealing</w>
+	</aChain>
+	<aChain key="aegimnrst">
+		<w>emigrants</w>
+		<w>mastering</w>
+		<w>streaming</w>
+	</aChain>
+	<aChain key="aeginnr">
+		<w>earning</w>
+		<w>nearing</w>
+	</aChain>
+	<aChain key="aeginnrs">
+		<w>earnings</w>
+		<w>grannies</w>
+	</aChain>
+	<aChain key="aeginr">
+		<w>earing</w>
+		<w>gainer</w>
+		<w>regain</w>
+	</aChain>
+	<aChain key="aeginrr">
+		<w>angrier</w>
+		<w>earring</w>
+		<w>grainer</w>
+		<w>rearing</w>
+	</aChain>
+	<aChain key="aeginrs">
+		<w>erasing</w>
+		<w>gainers</w>
+		<w>regains</w>
+		<w>searing</w>
+	</aChain>
+	<aChain key="aeginrss">
+		<w>assigner</w>
+		<w>reassign</w>
+	</aChain>
+	<aChain key="aeginrsss">
+		<w>assigners</w>
+		<w>reassigns</w>
+	</aChain>
+	<aChain key="aeginrt">
+		<w>granite</w>
+		<w>tangier</w>
+		<w>tearing</w>
+	</aChain>
+	<aChain key="aeginrtv">
+		<w>averting</w>
+		<w>vintager</w>
+	</aChain>
+	<aChain key="aeginst">
+		<w>easting</w>
+		<w>eatings</w>
+		<w>seating</w>
+		<w>teasing</w>
+	</aChain>
+	<aChain key="aegllry">
+		<w>allergy</w>
+		<w>gallery</w>
+		<w>largely</w>
+		<w>regally</w>
+	</aChain>
+	<aChain key="aegln">
+		<w>angel</w>
+		<w>angle</w>
+		<w>glean</w>
+	</aChain>
+	<aChain key="aeglns">
+		<w>angels</w>
+		<w>angles</w>
+		<w>gleans</w>
+	</aChain>
+	<aChain key="aeglr">
+		<w>glare</w>
+		<w>lager</w>
+		<w>large</w>
+		<w>regal</w>
+	</aChain>
+	<aChain key="aeglrs">
+		<w>glares</w>
+		<w>lagers</w>
+	</aChain>
+	<aChain key="aegnr">
+		<w>anger</w>
+		<w>range</w>
+	</aChain>
+	<aChain key="aegnrr">
+		<w>garner</w>
+		<w>ranger</w>
+	</aChain>
+	<aChain key="aegnrrs">
+		<w>garners</w>
+		<w>rangers</w>
+	</aChain>
+	<aChain key="aegnrs">
+		<w>angers</w>
+		<w>ranges</w>
+	</aChain>
+	<aChain key="aegp">
+		<w>gape</w>
+		<w>page</w>
+	</aChain>
+	<aChain key="aegpr">
+		<w>gaper</w>
+		<w>grape</w>
+		<w>pager</w>
+	</aChain>
+	<aChain key="aegprs">
+		<w>gasper</w>
+		<w>grapes</w>
+		<w>pagers</w>
+	</aChain>
+	<aChain key="aegps">
+		<w>gapes</w>
+		<w>pages</w>
+	</aChain>
+	<aChain key="aegr">
+		<w>ager</w>
+		<w>gear</w>
+		<w>rage</w>
+	</aChain>
+	<aChain key="aegrrt">
+		<w>garter</w>
+		<w>grater</w>
+	</aChain>
+	<aChain key="aegrs">
+		<w>agers</w>
+		<w>gears</w>
+		<w>rages</w>
+	</aChain>
+	<aChain key="aegrsss">
+		<w>gassers</w>
+		<w>grasses</w>
+	</aChain>
+	<aChain key="aegrst">
+		<w>grates</w>
+		<w>greats</w>
+		<w>stager</w>
+	</aChain>
+	<aChain key="aegrsu">
+		<w>argues</w>
+		<w>augers</w>
+	</aChain>
+	<aChain key="aegrsz">
+		<w>gazers</w>
+		<w>grazes</w>
+	</aChain>
+	<aChain key="aegrt">
+		<w>grate</w>
+		<w>great</w>
+	</aChain>
+	<aChain key="aegru">
+		<w>argue</w>
+		<w>auger</w>
+	</aChain>
+	<aChain key="aegrz">
+		<w>gazer</w>
+		<w>graze</w>
+	</aChain>
+	<aChain key="aegs">
+		<w>ages</w>
+		<w>sage</w>
+	</aChain>
+	<aChain key="aegss">
+		<w>gases</w>
+		<w>sages</w>
+	</aChain>
+	<aChain key="aegst">
+		<w>gates</w>
+		<w>stage</w>
+	</aChain>
+	<aChain key="aehhrs">
+		<w>hasher</w>
+		<w>rehash</w>
+	</aChain>
+	<aChain key="aehhrsst">
+		<w>harshest</w>
+		<w>thrashes</w>
+	</aChain>
+	<aChain key="aehippst">
+		<w>epitaphs</w>
+		<w>happiest</w>
+	</aChain>
+	<aChain key="aehisstt">
+		<w>atheists</w>
+		<w>hastiest</w>
+	</aChain>
+	<aChain key="aehl">
+		<w>hale</w>
+		<w>heal</w>
+	</aChain>
+	<aChain key="aehlrss">
+		<w>hassler</w>
+		<w>slasher</w>
+	</aChain>
+	<aChain key="aehlrt">
+		<w>halter</w>
+		<w>lather</w>
+	</aChain>
+	<aChain key="aehls">
+		<w>heals</w>
+		<w>leash</w>
+		<w>shale</w>
+	</aChain>
+	<aChain key="aehlss">
+		<w>hassle</w>
+		<w>lashes</w>
+		<w>shales</w>
+	</aChain>
+	<aChain key="aehlsss">
+		<w>hassles</w>
+		<w>slashes</w>
+	</aChain>
+	<aChain key="aehmrss">
+		<w>marshes</w>
+		<w>mashers</w>
+		<w>smasher</w>
+	</aChain>
+	<aChain key="aehmss">
+		<w>mashes</w>
+		<w>shames</w>
+	</aChain>
+	<aChain key="aehnsv">
+		<w>havens</w>
+		<w>shaven</w>
+	</aChain>
+	<aChain key="aehors">
+		<w>ashore</w>
+		<w>hoarse</w>
+	</aChain>
+	<aChain key="aehprrs">
+		<w>harpers</w>
+		<w>sharper</w>
+	</aChain>
+	<aChain key="aehprs">
+		<w>phaser</w>
+		<w>phrase</w>
+		<w>shaper</w>
+	</aChain>
+	<aChain key="aehprss">
+		<w>phasers</w>
+		<w>phrases</w>
+		<w>shapers</w>
+	</aChain>
+	<aChain key="aehps">
+		<w>heaps</w>
+		<w>phase</w>
+		<w>shape</w>
+	</aChain>
+	<aChain key="aehpss">
+		<w>phases</w>
+		<w>shapes</w>
+	</aChain>
+	<aChain key="aehr">
+		<w>hare</w>
+		<w>hear</w>
+	</aChain>
+	<aChain key="aehrrs">
+		<w>rasher</w>
+		<w>sharer</w>
+	</aChain>
+	<aChain key="aehrs">
+		<w>asher</w>
+		<w>hares</w>
+		<w>hears</w>
+		<w>share</w>
+		<w>shear</w>
+	</aChain>
+	<aChain key="aehrss">
+		<w>rashes</w>
+		<w>shares</w>
+		<w>shears</w>
+	</aChain>
+	<aChain key="aehrst">
+		<w>earths</w>
+		<w>hearts</w>
+	</aChain>
+	<aChain key="aehrstt">
+		<w>shatter</w>
+		<w>threats</w>
+	</aChain>
+	<aChain key="aehrsv">
+		<w>havers</w>
+		<w>shaver</w>
+	</aChain>
+	<aChain key="aehrt">
+		<w>earth</w>
+		<w>hater</w>
+		<w>heart</w>
+	</aChain>
+	<aChain key="aehst">
+		<w>haste</w>
+		<w>hates</w>
+		<w>heats</w>
+	</aChain>
+	<aChain key="aehsv">
+		<w>haves</w>
+		<w>shave</w>
+	</aChain>
+	<aChain key="aeht">
+		<w>hate</w>
+		<w>heat</w>
+	</aChain>
+	<aChain key="aeiinoprrtt">
+		<w>partitioner</w>
+		<w>repartition</w>
+	</aChain>
+	<aChain key="aeiinrst">
+		<w>inertias</w>
+		<w>rainiest</w>
+	</aChain>
+	<aChain key="aeillnrsst">
+		<w>installers</w>
+		<w>reinstalls</w>
+	</aChain>
+	<aChain key="aeillnrst">
+		<w>installer</w>
+		<w>reinstall</w>
+	</aChain>
+	<aChain key="aeilmnr">
+		<w>manlier</w>
+		<w>mineral</w>
+	</aChain>
+	<aChain key="aeilmns">
+		<w>menials</w>
+		<w>seminal</w>
+	</aChain>
+	<aChain key="aeilmnst">
+		<w>ailments</w>
+		<w>aliments</w>
+		<w>manliest</w>
+	</aChain>
+	<aChain key="aeilmnt">
+		<w>ailment</w>
+		<w>aliment</w>
+	</aChain>
+	<aChain key="aeilmrs">
+		<w>mailers</w>
+		<w>realism</w>
+	</aChain>
+	<aChain key="aeilmsttu">
+		<w>mutilates</w>
+		<w>stimulate</w>
+	</aChain>
+	<aChain key="aeilmttu">
+		<w>mutilate</w>
+		<w>ultimate</w>
+	</aChain>
+	<aChain key="aeilnprty">
+		<w>interplay</w>
+		<w>painterly</w>
+	</aChain>
+	<aChain key="aeilnpst">
+		<w>panelist</w>
+		<w>plainest</w>
+	</aChain>
+	<aChain key="aeilnr">
+		<w>linear</w>
+		<w>nailer</w>
+	</aChain>
+	<aChain key="aeilnrt">
+		<w>latrine</w>
+		<w>retinal</w>
+	</aChain>
+	<aChain key="aeilns">
+		<w>aliens</w>
+		<w>saline</w>
+	</aChain>
+	<aChain key="aeilnssst">
+		<w>saltiness</w>
+		<w>stainless</w>
+	</aChain>
+	<aChain key="aeilnst">
+		<w>entails</w>
+		<w>salient</w>
+	</aChain>
+	<aChain key="aeilrs">
+		<w>sailer</w>
+		<w>serial</w>
+	</aChain>
+	<aChain key="aeilrss">
+		<w>airless</w>
+		<w>serials</w>
+	</aChain>
+	<aChain key="aeilrst">
+		<w>realist</w>
+		<w>retails</w>
+		<w>saltier</w>
+	</aChain>
+	<aChain key="aeilrt">
+		<w>retail</w>
+		<w>tailer</w>
+	</aChain>
+	<aChain key="aeilrty">
+		<w>irately</w>
+		<w>reality</w>
+	</aChain>
+	<aChain key="aeimnr">
+		<w>airmen</w>
+		<w>marine</w>
+		<w>remain</w>
+	</aChain>
+	<aChain key="aeimnrs">
+		<w>marines</w>
+		<w>remains</w>
+		<w>seminar</w>
+	</aChain>
+	<aChain key="aeimrs">
+		<w>aimers</w>
+		<w>armies</w>
+	</aChain>
+	<aChain key="aeimrsstt">
+		<w>misstater</w>
+		<w>mistreats</w>
+	</aChain>
+	<aChain key="aeinnrstt">
+		<w>instanter</w>
+		<w>transient</w>
+	</aChain>
+	<aChain key="aeinprst">
+		<w>painters</w>
+		<w>pantries</w>
+		<w>pertains</w>
+		<w>repaints</w>
+	</aChain>
+	<aChain key="aeinprt">
+		<w>painter</w>
+		<w>pertain</w>
+		<w>repaint</w>
+	</aChain>
+	<aChain key="aeinrrsst">
+		<w>restrains</w>
+		<w>strainers</w>
+	</aChain>
+	<aChain key="aeinrrst">
+		<w>restrain</w>
+		<w>retrains</w>
+		<w>strainer</w>
+		<w>terrains</w>
+		<w>trainers</w>
+	</aChain>
+	<aChain key="aeinrrt">
+		<w>retrain</w>
+		<w>terrain</w>
+		<w>trainer</w>
+	</aChain>
+	<aChain key="aeinrs">
+		<w>arisen</w>
+		<w>arsine</w>
+	</aChain>
+	<aChain key="aeinrst">
+		<w>nastier</w>
+		<w>retains</w>
+		<w>retinas</w>
+		<w>stainer</w>
+	</aChain>
+	<aChain key="aeinrt">
+		<w>retain</w>
+		<w>retina</w>
+	</aChain>
+	<aChain key="aeinrv">
+		<w>naiver</w>
+		<w>ravine</w>
+	</aChain>
+	<aChain key="aeinsstt">
+		<w>instates</w>
+		<w>nastiest</w>
+	</aChain>
+	<aChain key="aeiprrs">
+		<w>aspirer</w>
+		<w>praiser</w>
+		<w>repairs</w>
+	</aChain>
+	<aChain key="aeiprs">
+		<w>aspire</w>
+		<w>praise</w>
+	</aChain>
+	<aChain key="aeiprss">
+		<w>aspires</w>
+		<w>praises</w>
+	</aChain>
+	<aChain key="aeiprst">
+		<w>parties</w>
+		<w>pirates</w>
+	</aChain>
+	<aChain key="aeirrs">
+		<w>airers</w>
+		<w>ariser</w>
+		<w>raiser</w>
+		<w>sierra</w>
+	</aChain>
+	<aChain key="aeirrss">
+		<w>raisers</w>
+		<w>sierras</w>
+	</aChain>
+	<aChain key="aeirrv">
+		<w>arrive</w>
+		<w>varier</w>
+	</aChain>
+	<aChain key="aeirs">
+		<w>arise</w>
+		<w>raise</w>
+	</aChain>
+	<aChain key="aeirss">
+		<w>arises</w>
+		<w>raises</w>
+	</aChain>
+	<aChain key="aeirstw">
+		<w>waister</w>
+		<w>waiters</w>
+		<w>wariest</w>
+	</aChain>
+	<aChain key="aekl">
+		<w>lake</w>
+		<w>leak</w>
+	</aChain>
+	<aChain key="aeklrst">
+		<w>stalker</w>
+		<w>talkers</w>
+	</aChain>
+	<aChain key="aekls">
+		<w>lakes</w>
+		<w>leaks</w>
+	</aChain>
+	<aChain key="aekmrr">
+		<w>marker</w>
+		<w>remark</w>
+	</aChain>
+	<aChain key="aekmrrs">
+		<w>markers</w>
+		<w>remarks</w>
+	</aChain>
+	<aChain key="aekmrs">
+		<w>makers</w>
+		<w>masker</w>
+	</aChain>
+	<aChain key="aeknrst">
+		<w>rankest</w>
+		<w>tankers</w>
+	</aChain>
+	<aChain key="aekns">
+		<w>snake</w>
+		<w>sneak</w>
+	</aChain>
+	<aChain key="aeknss">
+		<w>snakes</w>
+		<w>sneaks</w>
+	</aChain>
+	<aChain key="aekprrs">
+		<w>parkers</w>
+		<w>sparker</w>
+	</aChain>
+	<aChain key="aekps">
+		<w>peaks</w>
+		<w>speak</w>
+	</aChain>
+	<aChain key="aekqsu">
+		<w>quakes</w>
+		<w>squeak</w>
+	</aChain>
+	<aChain key="aekrs">
+		<w>asker</w>
+		<w>rakes</w>
+		<w>saker</w>
+	</aChain>
+	<aChain key="aekrsst">
+		<w>skaters</w>
+		<w>streaks</w>
+	</aChain>
+	<aChain key="aekrst">
+		<w>skater</w>
+		<w>streak</w>
+		<w>takers</w>
+	</aChain>
+	<aChain key="aekrw">
+		<w>waker</w>
+		<w>wreak</w>
+	</aChain>
+	<aChain key="aeksst">
+		<w>skates</w>
+		<w>stakes</w>
+		<w>steaks</w>
+	</aChain>
+	<aChain key="aekst">
+		<w>skate</w>
+		<w>stake</w>
+		<w>steak</w>
+		<w>takes</w>
+	</aChain>
+	<aChain key="aeksw">
+		<w>askew</w>
+		<w>wakes</w>
+	</aChain>
+	<aChain key="aekw">
+		<w>wake</w>
+		<w>weak</w>
+	</aChain>
+	<aChain key="aellrsu">
+		<w>allures</w>
+		<w>laurels</w>
+	</aChain>
+	<aChain key="aellru">
+		<w>allure</w>
+		<w>laurel</w>
+	</aChain>
+	<aChain key="aelm">
+		<w>lame</w>
+		<w>male</w>
+		<w>meal</w>
+	</aChain>
+	<aChain key="aelmnst">
+		<w>laments</w>
+		<w>mantels</w>
+		<w>mantles</w>
+	</aChain>
+	<aChain key="aelmnt">
+		<w>lament</w>
+		<w>mantel</w>
+		<w>mantle</w>
+		<w>mental</w>
+	</aChain>
+	<aChain key="aelmny">
+		<w>laymen</w>
+		<w>meanly</w>
+		<w>namely</w>
+	</aChain>
+	<aChain key="aelmp">
+		<w>ample</w>
+		<w>maple</w>
+	</aChain>
+	<aChain key="aelmpr">
+		<w>ampler</w>
+		<w>lamper</w>
+		<w>palmer</w>
+	</aChain>
+	<aChain key="aelmps">
+		<w>maples</w>
+		<w>sample</w>
+	</aChain>
+	<aChain key="aelmr">
+		<w>lamer</w>
+		<w>realm</w>
+	</aChain>
+	<aChain key="aelms">
+		<w>lames</w>
+		<w>males</w>
+		<w>meals</w>
+	</aChain>
+	<aChain key="aelmst">
+		<w>lamest</w>
+		<w>metals</w>
+	</aChain>
+	<aChain key="aeln">
+		<w>lane</w>
+		<w>lean</w>
+	</aChain>
+	<aChain key="aelnp">
+		<w>panel</w>
+		<w>plane</w>
+	</aChain>
+	<aChain key="aelnps">
+		<w>panels</w>
+		<w>planes</w>
+	</aChain>
+	<aChain key="aelnpst">
+		<w>planets</w>
+		<w>platens</w>
+	</aChain>
+	<aChain key="aelnpt">
+		<w>planet</w>
+		<w>platen</w>
+	</aChain>
+	<aChain key="aelnpty">
+		<w>aplenty</w>
+		<w>penalty</w>
+	</aChain>
+	<aChain key="aelnr">
+		<w>learn</w>
+		<w>renal</w>
+	</aChain>
+	<aChain key="aelnrt">
+		<w>antler</w>
+		<w>rental</w>
+	</aChain>
+	<aChain key="aelnru">
+		<w>neural</w>
+		<w>unreal</w>
+	</aChain>
+	<aChain key="aelns">
+		<w>lanes</w>
+		<w>leans</w>
+	</aChain>
+	<aChain key="aelnstt">
+		<w>latents</w>
+		<w>talents</w>
+	</aChain>
+	<aChain key="aelntt">
+		<w>latent</w>
+		<w>talent</w>
+	</aChain>
+	<aChain key="aelp">
+		<w>leap</w>
+		<w>pale</w>
+		<w>peal</w>
+		<w>plea</w>
+	</aChain>
+	<aChain key="aelpr">
+		<w>paler</w>
+		<w>pearl</w>
+	</aChain>
+	<aChain key="aelprs">
+		<w>lapser</w>
+		<w>pearls</w>
+	</aChain>
+	<aChain key="aelprsst">
+		<w>plasters</w>
+		<w>staplers</w>
+	</aChain>
+	<aChain key="aelprst">
+		<w>plaster</w>
+		<w>platers</w>
+		<w>stapler</w>
+	</aChain>
+	<aChain key="aelprsy">
+		<w>parsley</w>
+		<w>players</w>
+		<w>replays</w>
+		<w>sparely</w>
+	</aChain>
+	<aChain key="aelpry">
+		<w>pearly</w>
+		<w>player</w>
+		<w>replay</w>
+	</aChain>
+	<aChain key="aelps">
+		<w>lapse</w>
+		<w>leaps</w>
+		<w>pales</w>
+		<w>peals</w>
+		<w>pleas</w>
+	</aChain>
+	<aChain key="aelpst">
+		<w>palest</w>
+		<w>petals</w>
+		<w>plates</w>
+		<w>staple</w>
+	</aChain>
+	<aChain key="aelpt">
+		<w>leapt</w>
+		<w>petal</w>
+		<w>plate</w>
+	</aChain>
+	<aChain key="aelqsu">
+		<w>equals</w>
+		<w>squeal</w>
+	</aChain>
+	<aChain key="aelr">
+		<w>earl</w>
+		<w>real</w>
+	</aChain>
+	<aChain key="aelrs">
+		<w>earls</w>
+		<w>laser</w>
+		<w>reals</w>
+	</aChain>
+	<aChain key="aelrsst">
+		<w>artless</w>
+		<w>salters</w>
+		<w>slaters</w>
+	</aChain>
+	<aChain key="aelrsstt">
+		<w>starlets</w>
+		<w>startles</w>
+	</aChain>
+	<aChain key="aelrst">
+		<w>alerts</w>
+		<w>alters</w>
+		<w>laster</w>
+		<w>salter</w>
+		<w>slater</w>
+		<w>staler</w>
+	</aChain>
+	<aChain key="aelrstt">
+		<w>rattles</w>
+		<w>starlet</w>
+		<w>startle</w>
+	</aChain>
+	<aChain key="aelrsv">
+		<w>salver</w>
+		<w>slaver</w>
+	</aChain>
+	<aChain key="aelrsy">
+		<w>layers</w>
+		<w>relays</w>
+		<w>slayer</w>
+	</aChain>
+	<aChain key="aelrt">
+		<w>alert</w>
+		<w>alter</w>
+		<w>later</w>
+		<w>taler</w>
+	</aChain>
+	<aChain key="aelrtt">
+		<w>latter</w>
+		<w>rattle</w>
+	</aChain>
+	<aChain key="aelry">
+		<w>early</w>
+		<w>layer</w>
+		<w>relay</w>
+	</aChain>
+	<aChain key="aels">
+		<w>sale</w>
+		<w>seal</w>
+	</aChain>
+	<aChain key="aelss">
+		<w>sales</w>
+		<w>seals</w>
+	</aChain>
+	<aChain key="aelsst">
+		<w>slates</w>
+		<w>stales</w>
+		<w>steals</w>
+	</aChain>
+	<aChain key="aelssv">
+		<w>salves</w>
+		<w>slaves</w>
+	</aChain>
+	<aChain key="aelst">
+		<w>least</w>
+		<w>slate</w>
+		<w>stale</w>
+		<w>steal</w>
+		<w>tales</w>
+	</aChain>
+	<aChain key="aelsv">
+		<w>salve</w>
+		<w>slave</w>
+		<w>vales</w>
+	</aChain>
+	<aChain key="aelt">
+		<w>late</w>
+		<w>tale</w>
+	</aChain>
+	<aChain key="aeltx">
+		<w>exalt</w>
+		<w>latex</w>
+	</aChain>
+	<aChain key="aelv">
+		<w>vale</w>
+		<w>veal</w>
+	</aChain>
+	<aChain key="aemn">
+		<w>amen</w>
+		<w>mane</w>
+		<w>mean</w>
+		<w>name</w>
+	</aChain>
+	<aChain key="aemnrst">
+		<w>martens</w>
+		<w>smarten</w>
+	</aChain>
+	<aChain key="aemnrsu">
+		<w>manures</w>
+		<w>surname</w>
+	</aChain>
+	<aChain key="aemns">
+		<w>manes</w>
+		<w>means</w>
+		<w>names</w>
+	</aChain>
+	<aChain key="aemprst">
+		<w>stamper</w>
+		<w>tampers</w>
+	</aChain>
+	<aChain key="aemr">
+		<w>mare</w>
+		<w>ream</w>
+	</aChain>
+	<aChain key="aemrrs">
+		<w>armers</w>
+		<w>rearms</w>
+	</aChain>
+	<aChain key="aemrrsw">
+		<w>swarmer</w>
+		<w>warmers</w>
+	</aChain>
+	<aChain key="aemrs">
+		<w>mares</w>
+		<w>reams</w>
+		<w>smear</w>
+	</aChain>
+	<aChain key="aemrss">
+		<w>ramses</w>
+		<w>smears</w>
+	</aChain>
+	<aChain key="aemrsst">
+		<w>masters</w>
+		<w>streams</w>
+	</aChain>
+	<aChain key="aemrsstt">
+		<w>mattress</w>
+		<w>smartest</w>
+	</aChain>
+	<aChain key="aemrssu">
+		<w>amusers</w>
+		<w>assumer</w>
+	</aChain>
+	<aChain key="aemrst">
+		<w>master</w>
+		<w>stream</w>
+	</aChain>
+	<aChain key="aemrt">
+		<w>mater</w>
+		<w>tamer</w>
+	</aChain>
+	<aChain key="aems">
+		<w>same</w>
+		<w>seam</w>
+	</aChain>
+	<aChain key="aemssu">
+		<w>amuses</w>
+		<w>assume</w>
+	</aChain>
+	<aChain key="aemst">
+		<w>mates</w>
+		<w>meats</w>
+		<w>steam</w>
+		<w>tames</w>
+		<w>teams</w>
+	</aChain>
+	<aChain key="aemt">
+		<w>mate</w>
+		<w>meat</w>
+		<w>meta</w>
+		<w>tame</w>
+		<w>team</w>
+	</aChain>
+	<aChain key="aenorst">
+		<w>senator</w>
+		<w>treason</w>
+	</aChain>
+	<aChain key="aenot">
+		<w>atone</w>
+		<w>oaten</w>
+	</aChain>
+	<aChain key="aenps">
+		<w>aspen</w>
+		<w>panes</w>
+	</aChain>
+	<aChain key="aenr">
+		<w>earn</w>
+		<w>near</w>
+	</aChain>
+	<aChain key="aenrs">
+		<w>earns</w>
+		<w>nears</w>
+		<w>saner</w>
+		<w>snare</w>
+	</aChain>
+	<aChain key="aenrssw">
+		<w>answers</w>
+		<w>rawness</w>
+	</aChain>
+	<aChain key="aenrstu">
+		<w>natures</w>
+		<w>saunter</w>
+	</aChain>
+	<aChain key="aenrstv">
+		<w>servant</w>
+		<w>taverns</w>
+	</aChain>
+	<aChain key="aensst">
+		<w>assent</w>
+		<w>sanest</w>
+	</aChain>
+	<aChain key="aent">
+		<w>ante</w>
+		<w>neat</w>
+	</aChain>
+	<aChain key="aenttu">
+		<w>attune</w>
+		<w>tauten</w>
+	</aChain>
+	<aChain key="aenw">
+		<w>anew</w>
+		<w>wane</w>
+		<w>wean</w>
+	</aChain>
+	<aChain key="aeorstt">
+		<w>rotates</w>
+		<w>toaster</w>
+	</aChain>
+	<aChain key="aep">
+		<w>ape</w>
+		<w>pea</w>
+	</aChain>
+	<aChain key="aepr">
+		<w>aper</w>
+		<w>pare</w>
+		<w>pear</w>
+		<w>rape</w>
+		<w>reap</w>
+	</aChain>
+	<aChain key="aeprr">
+		<w>parer</w>
+		<w>raper</w>
+	</aChain>
+	<aChain key="aeprrs">
+		<w>parser</w>
+		<w>rasper</w>
+		<w>sparer</w>
+	</aChain>
+	<aChain key="aeprrss">
+		<w>parsers</w>
+		<w>sparser</w>
+	</aChain>
+	<aChain key="aeprrstu">
+		<w>pasturer</w>
+		<w>raptures</w>
+	</aChain>
+	<aChain key="aeprrsy">
+		<w>prayers</w>
+		<w>sprayer</w>
+	</aChain>
+	<aChain key="aeprrt">
+		<w>parter</w>
+		<w>prater</w>
+	</aChain>
+	<aChain key="aeprs">
+		<w>asper</w>
+		<w>pares</w>
+		<w>parse</w>
+		<w>pears</w>
+		<w>rapes</w>
+		<w>reaps</w>
+		<w>spare</w>
+		<w>spear</w>
+	</aChain>
+	<aChain key="aeprss">
+		<w>parses</w>
+		<w>passer</w>
+		<w>spares</w>
+		<w>sparse</w>
+		<w>spears</w>
+	</aChain>
+	<aChain key="aeprssst">
+		<w>sparsest</w>
+		<w>trespass</w>
+	</aChain>
+	<aChain key="aeprsst">
+		<w>repasts</w>
+		<w>sparest</w>
+	</aChain>
+	<aChain key="aeprst">
+		<w>prates</w>
+		<w>repast</w>
+		<w>tapers</w>
+	</aChain>
+	<aChain key="aeprstt">
+		<w>patters</w>
+		<w>spatter</w>
+	</aChain>
+	<aChain key="aeprsy">
+		<w>payers</w>
+		<w>repays</w>
+	</aChain>
+	<aChain key="aeprt">
+		<w>pater</w>
+		<w>prate</w>
+		<w>taper</w>
+	</aChain>
+	<aChain key="aepry">
+		<w>payer</w>
+		<w>repay</w>
+	</aChain>
+	<aChain key="aeps">
+		<w>apes</w>
+		<w>apse</w>
+		<w>peas</w>
+	</aChain>
+	<aChain key="aepss">
+		<w>apses</w>
+		<w>passe</w>
+	</aChain>
+	<aChain key="aepsst">
+		<w>pastes</w>
+		<w>spates</w>
+	</aChain>
+	<aChain key="aepst">
+		<w>paste</w>
+		<w>spate</w>
+		<w>tapes</w>
+	</aChain>
+	<aChain key="aept">
+		<w>peat</w>
+		<w>tape</w>
+	</aChain>
+	<aChain key="aer">
+		<w>are</w>
+		<w>ear</w>
+		<w>era</w>
+	</aChain>
+	<aChain key="aerr">
+		<w>rare</w>
+		<w>rear</w>
+	</aChain>
+	<aChain key="aerrsst">
+		<w>arrests</w>
+		<w>rasters</w>
+	</aChain>
+	<aChain key="aerrsstt">
+		<w>restarts</w>
+		<w>starters</w>
+	</aChain>
+	<aChain key="aerrst">
+		<w>arrest</w>
+		<w>rarest</w>
+		<w>raster</w>
+		<w>raters</w>
+		<w>starer</w>
+	</aChain>
+	<aChain key="aerrstt">
+		<w>restart</w>
+		<w>starter</w>
+	</aChain>
+	<aChain key="aers">
+		<w>ares</w>
+		<w>ears</w>
+		<w>eras</w>
+		<w>sear</w>
+	</aChain>
+	<aChain key="aersst">
+		<w>assert</w>
+		<w>asters</w>
+		<w>stares</w>
+	</aChain>
+	<aChain key="aerst">
+		<w>aster</w>
+		<w>rates</w>
+		<w>stare</w>
+		<w>tears</w>
+	</aChain>
+	<aChain key="aerstt">
+		<w>stater</w>
+		<w>taster</w>
+		<w>treats</w>
+	</aChain>
+	<aChain key="aerstv">
+		<w>averts</w>
+		<w>starve</w>
+		<w>vaster</w>
+	</aChain>
+	<aChain key="aerstw">
+		<w>rawest</w>
+		<w>waster</w>
+		<w>waters</w>
+	</aChain>
+	<aChain key="aersv">
+		<w>avers</w>
+		<w>raves</w>
+		<w>saver</w>
+		<w>versa</w>
+	</aChain>
+	<aChain key="aersw">
+		<w>sawer</w>
+		<w>swear</w>
+		<w>wares</w>
+		<w>wears</w>
+	</aChain>
+	<aChain key="aersy">
+		<w>ayers</w>
+		<w>sayer</w>
+		<w>years</w>
+	</aChain>
+	<aChain key="aert">
+		<w>rate</w>
+		<w>tear</w>
+	</aChain>
+	<aChain key="aertx">
+		<w>extra</w>
+		<w>taxer</w>
+	</aChain>
+	<aChain key="aerv">
+		<w>aver</w>
+		<w>rave</w>
+	</aChain>
+	<aChain key="aerw">
+		<w>ware</w>
+		<w>wear</w>
+	</aChain>
+	<aChain key="aery">
+		<w>ayer</w>
+		<w>year</w>
+	</aChain>
+	<aChain key="aesst">
+		<w>asset</w>
+		<w>easts</w>
+		<w>sates</w>
+		<w>seats</w>
+	</aChain>
+	<aChain key="aesstt">
+		<w>states</w>
+		<w>tastes</w>
+	</aChain>
+	<aChain key="aesstw">
+		<w>sweats</w>
+		<w>wastes</w>
+	</aChain>
+	<aChain key="aessv">
+		<w>saves</w>
+		<w>vases</w>
+	</aChain>
+	<aChain key="aest">
+		<w>east</w>
+		<w>eats</w>
+		<w>sate</w>
+		<w>seat</w>
+		<w>teas</w>
+	</aChain>
+	<aChain key="aestt">
+		<w>state</w>
+		<w>taste</w>
+	</aChain>
+	<aChain key="aesttu">
+		<w>astute</w>
+		<w>statue</w>
+	</aChain>
+	<aChain key="aestw">
+		<w>sweat</w>
+		<w>waste</w>
+	</aChain>
+	<aChain key="aesv">
+		<w>save</w>
+		<w>vase</w>
+	</aChain>
+	<aChain key="aesy">
+		<w>ayes</w>
+		<w>easy</w>
+		<w>yeas</w>
+	</aChain>
+	<aChain key="aet">
+		<w>ate</w>
+		<w>eat</w>
+		<w>tea</w>
+	</aChain>
+	<aChain key="aey">
+		<w>aye</w>
+		<w>yea</w>
+	</aChain>
+	<aChain key="afgimnr">
+		<w>farming</w>
+		<w>framing</w>
+	</aChain>
+	<aChain key="aflot">
+		<w>aloft</w>
+		<w>float</w>
+	</aChain>
+	<aChain key="afst">
+		<w>fast</w>
+		<w>fats</w>
+	</aChain>
+	<aChain key="aft">
+		<w>aft</w>
+		<w>fat</w>
+	</aChain>
+	<aChain key="agginp">
+		<w>gaping</w>
+		<w>paging</w>
+	</aChain>
+	<aChain key="aghilmorst">
+		<w>algorithms</w>
+		<w>logarithms</w>
+	</aChain>
+	<aChain key="aghilmort">
+		<w>algorithm</w>
+		<w>logarithm</w>
+	</aChain>
+	<aChain key="aghilnss">
+		<w>hassling</w>
+		<w>lashings</w>
+		<w>slashing</w>
+	</aChain>
+	<aChain key="aghilnt">
+		<w>halting</w>
+		<w>lathing</w>
+	</aChain>
+	<aChain key="aghimns">
+		<w>mashing</w>
+		<w>shaming</w>
+	</aChain>
+	<aChain key="aghimnss">
+		<w>mashings</w>
+		<w>smashing</w>
+	</aChain>
+	<aChain key="aghinprs">
+		<w>harpings</w>
+		<w>phrasing</w>
+		<w>sharping</w>
+	</aChain>
+	<aChain key="aghinps">
+		<w>phasing</w>
+		<w>shaping</w>
+	</aChain>
+	<aChain key="aghinrs">
+		<w>garnish</w>
+		<w>sharing</w>
+	</aChain>
+	<aChain key="agiinprs">
+		<w>aspiring</w>
+		<w>pairings</w>
+		<w>praising</w>
+	</aChain>
+	<aChain key="agiinrs">
+		<w>airings</w>
+		<w>arising</w>
+		<w>raising</w>
+	</aChain>
+	<aChain key="agikmns">
+		<w>makings</w>
+		<w>masking</w>
+	</aChain>
+	<aChain key="agiknst">
+		<w>skating</w>
+		<w>staking</w>
+		<w>takings</w>
+		<w>tasking</w>
+	</aChain>
+	<aChain key="agillnsy">
+		<w>sallying</w>
+		<w>signally</w>
+	</aChain>
+	<aChain key="agilnprsy">
+		<w>raspingly</w>
+		<w>sparingly</w>
+	</aChain>
+	<aChain key="agilnps">
+		<w>lapsing</w>
+		<w>sapling</w>
+	</aChain>
+	<aChain key="agilnpst">
+		<w>platings</w>
+		<w>stapling</w>
+	</aChain>
+	<aChain key="agilns">
+		<w>aligns</w>
+		<w>signal</w>
+	</aChain>
+	<aChain key="agilnst">
+		<w>lasting</w>
+		<w>salting</w>
+		<w>slating</w>
+		<w>staling</w>
+	</aChain>
+	<aChain key="agilnsv">
+		<w>salving</w>
+		<w>slaving</w>
+	</aChain>
+	<aChain key="agilny">
+		<w>gainly</w>
+		<w>laying</w>
+	</aChain>
+	<aChain key="agimnr">
+		<w>arming</w>
+		<w>margin</w>
+	</aChain>
+	<aChain key="agimnt">
+		<w>mating</w>
+		<w>taming</w>
+	</aChain>
+	<aChain key="aginnttu">
+		<w>attuning</w>
+		<w>taunting</w>
+	</aChain>
+	<aChain key="aginnw">
+		<w>awning</w>
+		<w>waning</w>
+	</aChain>
+	<aChain key="aginorsst">
+		<w>assorting</w>
+		<w>organists</w>
+	</aChain>
+	<aChain key="aginorst">
+		<w>organist</w>
+		<w>roasting</w>
+	</aChain>
+	<aChain key="aginpr">
+		<w>paring</w>
+		<w>raping</w>
+	</aChain>
+	<aChain key="aginprs">
+		<w>parings</w>
+		<w>parsing</w>
+		<w>rasping</w>
+		<w>sparing</w>
+	</aChain>
+	<aChain key="aginprss">
+		<w>parsings</w>
+		<w>raspings</w>
+	</aChain>
+	<aChain key="aginprt">
+		<w>parting</w>
+		<w>prating</w>
+	</aChain>
+	<aChain key="aginpst">
+		<w>pasting</w>
+		<w>tapings</w>
+	</aChain>
+	<aChain key="aginrst">
+		<w>ratings</w>
+		<w>staring</w>
+	</aChain>
+	<aChain key="aginrt">
+		<w>rating</w>
+		<w>taring</w>
+	</aChain>
+	<aChain key="aginst">
+		<w>giants</w>
+		<w>sating</w>
+	</aChain>
+	<aChain key="aginstt">
+		<w>stating</w>
+		<w>tasting</w>
+	</aChain>
+	<aChain key="agnor">
+		<w>argon</w>
+		<w>groan</w>
+		<w>organ</w>
+	</aChain>
+	<aChain key="agnors">
+		<w>groans</w>
+		<w>organs</w>
+	</aChain>
+	<aChain key="agns">
+		<w>nags</w>
+		<w>sang</w>
+	</aChain>
+	<aChain key="agnst">
+		<w>angst</w>
+		<w>gnats</w>
+	</aChain>
+	<aChain key="agnt">
+		<w>gnat</w>
+		<w>tang</w>
+	</aChain>
+	<aChain key="agps">
+		<w>gaps</w>
+		<w>gasp</w>
+	</aChain>
+	<aChain key="ags">
+		<w>gas</w>
+		<w>sag</w>
+	</aChain>
+	<aChain key="agst">
+		<w>stag</w>
+		<w>tags</w>
+	</aChain>
+	<aChain key="ah">
+		<w>ah</w>
+		<w>ha</w>
+	</aChain>
+	<aChain key="ahkrs">
+		<w>harks</w>
+		<w>shark</w>
+	</aChain>
+	<aChain key="ahllosw">
+		<w>hallows</w>
+		<w>shallow</w>
+	</aChain>
+	<aChain key="ahlls">
+		<w>halls</w>
+		<w>shall</w>
+	</aChain>
+	<aChain key="ahlpy">
+		<w>haply</w>
+		<w>phyla</w>
+	</aChain>
+	<aChain key="ahlt">
+		<w>halt</w>
+		<w>lath</w>
+	</aChain>
+	<aChain key="ahmrs">
+		<w>harms</w>
+		<w>marsh</w>
+	</aChain>
+	<aChain key="ahms">
+		<w>hams</w>
+		<w>mash</w>
+		<w>sham</w>
+	</aChain>
+	<aChain key="ahmss">
+		<w>shams</w>
+		<w>smash</w>
+	</aChain>
+	<aChain key="ahopst">
+		<w>pathos</w>
+		<w>potash</w>
+	</aChain>
+	<aChain key="ahprs">
+		<w>harps</w>
+		<w>sharp</w>
+	</aChain>
+	<aChain key="ahs">
+		<w>ash</w>
+		<w>has</w>
+	</aChain>
+	<aChain key="ahtw">
+		<w>thaw</w>
+		<w>what</w>
+	</aChain>
+	<aChain key="aiilmnosttu">
+		<w>mutilations</w>
+		<w>stimulation</w>
+	</aChain>
+	<aChain key="aiinnortu">
+		<w>ruination</w>
+		<w>urination</w>
+	</aChain>
+	<aChain key="ailn">
+		<w>lain</w>
+		<w>nail</w>
+	</aChain>
+	<aChain key="ailnps">
+		<w>plains</w>
+		<w>spinal</w>
+	</aChain>
+	<aChain key="ailns">
+		<w>nails</w>
+		<w>slain</w>
+		<w>snail</w>
+	</aChain>
+	<aChain key="ailnsty">
+		<w>nastily</w>
+		<w>saintly</w>
+	</aChain>
+	<aChain key="ailorsty">
+		<w>royalist</w>
+		<w>solitary</w>
+	</aChain>
+	<aChain key="ailr">
+		<w>lair</w>
+		<w>liar</w>
+		<w>rail</w>
+	</aChain>
+	<aChain key="ailrs">
+		<w>lairs</w>
+		<w>liars</w>
+		<w>rails</w>
+	</aChain>
+	<aChain key="ailrst">
+		<w>trails</w>
+		<w>trials</w>
+	</aChain>
+	<aChain key="ailrt">
+		<w>trail</w>
+		<w>trial</w>
+	</aChain>
+	<aChain key="ailrv">
+		<w>rival</w>
+		<w>viral</w>
+	</aChain>
+	<aChain key="ails">
+		<w>ails</w>
+		<w>sail</w>
+	</aChain>
+	<aChain key="aimnnos">
+		<w>mansion</w>
+		<w>onanism</w>
+	</aChain>
+	<aChain key="aimnnoty">
+		<w>antimony</w>
+		<w>antinomy</w>
+	</aChain>
+	<aChain key="aimprst">
+		<w>armpits</w>
+		<w>imparts</w>
+	</aChain>
+	<aChain key="aimprt">
+		<w>armpit</w>
+		<w>impart</w>
+	</aChain>
+	<aChain key="ainnost">
+		<w>anoints</w>
+		<w>nations</w>
+	</aChain>
+	<aChain key="ainnot">
+		<w>anoint</w>
+		<w>nation</w>
+	</aChain>
+	<aChain key="ainpt">
+		<w>inapt</w>
+		<w>paint</w>
+	</aChain>
+	<aChain key="ainrst">
+		<w>strain</w>
+		<w>trains</w>
+	</aChain>
+	<aChain key="ainsst">
+		<w>saints</w>
+		<w>stains</w>
+	</aChain>
+	<aChain key="ainst">
+		<w>saint</w>
+		<w>satin</w>
+		<w>stain</w>
+	</aChain>
+	<aChain key="airsstt">
+		<w>artists</w>
+		<w>straits</w>
+	</aChain>
+	<aChain key="airstt">
+		<w>artist</w>
+		<w>strait</w>
+		<w>traits</w>
+	</aChain>
+	<aChain key="aistw">
+		<w>waist</w>
+		<w>waits</w>
+	</aChain>
+	<aChain key="aklst">
+		<w>stalk</w>
+		<w>talks</w>
+	</aChain>
+	<aChain key="akos">
+		<w>oaks</w>
+		<w>soak</w>
+	</aChain>
+	<aChain key="akprs">
+		<w>parks</w>
+		<w>spark</w>
+	</aChain>
+	<aChain key="allms">
+		<w>malls</w>
+		<w>small</w>
+	</aChain>
+	<aChain key="allost">
+		<w>allots</w>
+		<w>atolls</w>
+	</aChain>
+	<aChain key="allosw">
+		<w>allows</w>
+		<w>sallow</w>
+	</aChain>
+	<aChain key="allosww">
+		<w>swallow</w>
+		<w>wallows</w>
+	</aChain>
+	<aChain key="allot">
+		<w>allot</w>
+		<w>atoll</w>
+	</aChain>
+	<aChain key="alloy">
+		<w>alloy</w>
+		<w>loyal</w>
+	</aChain>
+	<aChain key="almp">
+		<w>lamp</w>
+		<w>palm</w>
+	</aChain>
+	<aChain key="almps">
+		<w>lamps</w>
+		<w>palms</w>
+		<w>psalm</w>
+	</aChain>
+	<aChain key="alms">
+		<w>alms</w>
+		<w>slam</w>
+	</aChain>
+	<aChain key="alnos">
+		<w>loans</w>
+		<w>salon</w>
+	</aChain>
+	<aChain key="aloprst">
+		<w>patrols</w>
+		<w>portals</w>
+	</aChain>
+	<aChain key="aloprt">
+		<w>patrol</w>
+		<w>portal</w>
+	</aChain>
+	<aChain key="alors">
+		<w>orals</w>
+		<w>solar</w>
+	</aChain>
+	<aChain key="alostuy">
+		<w>layouts</w>
+		<w>outlays</w>
+	</aChain>
+	<aChain key="alotuy">
+		<w>layout</w>
+		<w>outlay</w>
+	</aChain>
+	<aChain key="alp">
+		<w>lap</w>
+		<w>pal</w>
+	</aChain>
+	<aChain key="alprty">
+		<w>partly</w>
+		<w>raptly</w>
+	</aChain>
+	<aChain key="alps">
+		<w>alps</w>
+		<w>laps</w>
+		<w>pals</w>
+		<w>slap</w>
+	</aChain>
+	<aChain key="alsst">
+		<w>lasts</w>
+		<w>salts</w>
+		<w>slats</w>
+	</aChain>
+	<aChain key="alst">
+		<w>last</w>
+		<w>salt</w>
+		<w>slat</w>
+	</aChain>
+	<aChain key="alsw">
+		<w>awls</w>
+		<w>laws</w>
+	</aChain>
+	<aChain key="alsy">
+		<w>lays</w>
+		<w>slay</w>
+	</aChain>
+	<aChain key="alw">
+		<w>awl</w>
+		<w>law</w>
+	</aChain>
+	<aChain key="amnors">
+		<w>manors</w>
+		<w>ransom</w>
+	</aChain>
+	<aChain key="amnos">
+		<w>mason</w>
+		<w>moans</w>
+	</aChain>
+	<aChain key="amost">
+		<w>atoms</w>
+		<w>moats</w>
+	</aChain>
+	<aChain key="amot">
+		<w>atom</w>
+		<w>moat</w>
+	</aChain>
+	<aChain key="amp">
+		<w>amp</w>
+		<w>map</w>
+	</aChain>
+	<aChain key="amps">
+		<w>amps</w>
+		<w>maps</w>
+	</aChain>
+	<aChain key="amr">
+		<w>arm</w>
+		<w>mar</w>
+		<w>ram</w>
+	</aChain>
+	<aChain key="amrs">
+		<w>arms</w>
+		<w>mars</w>
+		<w>rams</w>
+	</aChain>
+	<aChain key="amrst">
+		<w>marts</w>
+		<w>smart</w>
+	</aChain>
+	<aChain key="amrsw">
+		<w>swarm</w>
+		<w>warms</w>
+	</aChain>
+	<aChain key="amst">
+		<w>mast</w>
+		<w>mats</w>
+	</aChain>
+	<aChain key="anoprs">
+		<w>aprons</w>
+		<w>parson</w>
+	</aChain>
+	<aChain key="anors">
+		<w>arson</w>
+		<w>sonar</w>
+	</aChain>
+	<aChain key="anp">
+		<w>nap</w>
+		<w>pan</w>
+	</aChain>
+	<aChain key="anps">
+		<w>naps</w>
+		<w>pans</w>
+		<w>snap</w>
+		<w>span</w>
+	</aChain>
+	<aChain key="anpss">
+		<w>snaps</w>
+		<w>spans</w>
+	</aChain>
+	<aChain key="anpsw">
+		<w>pawns</w>
+		<w>spawn</w>
+	</aChain>
+	<aChain key="anst">
+		<w>ants</w>
+		<w>tans</w>
+	</aChain>
+	<aChain key="ant">
+		<w>ant</w>
+		<w>tan</w>
+	</aChain>
+	<aChain key="any">
+		<w>any</w>
+		<w>nay</w>
+	</aChain>
+	<aChain key="aors">
+		<w>oars</w>
+		<w>soar</w>
+	</aChain>
+	<aChain key="aorsst">
+		<w>assort</w>
+		<w>roasts</w>
+	</aChain>
+	<aChain key="apr">
+		<w>par</w>
+		<w>rap</w>
+	</aChain>
+	<aChain key="aprs">
+		<w>pars</w>
+		<w>raps</w>
+		<w>rasp</w>
+	</aChain>
+	<aChain key="aprst">
+		<w>parts</w>
+		<w>strap</w>
+		<w>traps</w>
+	</aChain>
+	<aChain key="aprsw">
+		<w>warps</w>
+		<w>wraps</w>
+	</aChain>
+	<aChain key="aprsy">
+		<w>prays</w>
+		<w>spray</w>
+	</aChain>
+	<aChain key="aprt">
+		<w>part</w>
+		<w>rapt</w>
+		<w>trap</w>
+	</aChain>
+	<aChain key="aprw">
+		<w>warp</w>
+		<w>wrap</w>
+	</aChain>
+	<aChain key="aps">
+		<w>asp</w>
+		<w>pas</w>
+		<w>sap</w>
+	</aChain>
+	<aChain key="apss">
+		<w>pass</w>
+		<w>saps</w>
+	</aChain>
+	<aChain key="apsst">
+		<w>pasts</w>
+		<w>spats</w>
+	</aChain>
+	<aChain key="apssw">
+		<w>swaps</w>
+		<w>wasps</w>
+	</aChain>
+	<aChain key="apst">
+		<w>past</w>
+		<w>pats</w>
+		<w>spat</w>
+		<w>taps</w>
+	</aChain>
+	<aChain key="apsw">
+		<w>paws</w>
+		<w>swap</w>
+		<w>wasp</w>
+	</aChain>
+	<aChain key="apt">
+		<w>apt</w>
+		<w>pat</w>
+		<w>tap</w>
+	</aChain>
+	<aChain key="arst">
+		<w>arts</w>
+		<w>rats</w>
+		<w>star</w>
+		<w>tars</w>
+	</aChain>
+	<aChain key="arstt">
+		<w>start</w>
+		<w>tarts</w>
+	</aChain>
+	<aChain key="arstw">
+		<w>straw</w>
+		<w>warts</w>
+	</aChain>
+	<aChain key="arsty">
+		<w>satyr</w>
+		<w>stray</w>
+		<w>trays</w>
+	</aChain>
+	<aChain key="arsw">
+		<w>raws</w>
+		<w>wars</w>
+	</aChain>
+	<aChain key="art">
+		<w>art</w>
+		<w>rat</w>
+		<w>tar</w>
+	</aChain>
+	<aChain key="arw">
+		<w>raw</w>
+		<w>war</w>
+	</aChain>
+	<aChain key="arwy">
+		<w>awry</w>
+		<w>wary</w>
+	</aChain>
+	<aChain key="astv">
+		<w>vast</w>
+		<w>vats</w>
+	</aChain>
+	<aChain key="asw">
+		<w>saw</w>
+		<w>was</w>
+	</aChain>
+	<aChain key="aswy">
+		<w>sway</w>
+		<w>ways</w>
+	</aChain>
+	<aChain key="bbbelru">
+		<w>blubber</w>
+		<w>bubbler</w>
+	</aChain>
+	<aChain key="bbcelor">
+		<w>clobber</w>
+		<w>cobbler</w>
+	</aChain>
+	<aChain key="bbcelors">
+		<w>clobbers</w>
+		<w>cobblers</w>
+	</aChain>
+	<aChain key="bbdeir">
+		<w>bribed</w>
+		<w>ribbed</w>
+	</aChain>
+	<aChain key="bbgiinr">
+		<w>bribing</w>
+		<w>ribbing</w>
+	</aChain>
+	<aChain key="bcrsu">
+		<w>curbs</w>
+		<w>scrub</w>
+	</aChain>
+	<aChain key="bddeeloru">
+		<w>bouldered</w>
+		<w>redoubled</w>
+	</aChain>
+	<aChain key="bddein">
+		<w>bidden</w>
+		<w>binded</w>
+	</aChain>
+	<aChain key="bdeeffru">
+		<w>buffered</w>
+		<w>rebuffed</w>
+	</aChain>
+	<aChain key="bdeeggrsu">
+		<w>begrudges</w>
+		<w>debuggers</w>
+	</aChain>
+	<aChain key="bdeeggru">
+		<w>begrudge</w>
+		<w>buggered</w>
+		<w>debugger</w>
+	</aChain>
+	<aChain key="bdeeil">
+		<w>belied</w>
+		<w>edible</w>
+	</aChain>
+	<aChain key="bdeerttu">
+		<w>buttered</w>
+		<w>rebutted</w>
+	</aChain>
+	<aChain key="bdeglu">
+		<w>bugled</w>
+		<w>bulged</w>
+	</aChain>
+	<aChain key="bdegsu">
+		<w>budges</w>
+		<w>debugs</w>
+	</aChain>
+	<aChain key="bdegu">
+		<w>budge</w>
+		<w>debug</w>
+	</aChain>
+	<aChain key="bdeilnr">
+		<w>blinder</w>
+		<w>brindle</w>
+	</aChain>
+	<aChain key="bdeilrsu">
+		<w>builders</w>
+		<w>rebuilds</w>
+	</aChain>
+	<aChain key="bdeilru">
+		<w>builder</w>
+		<w>rebuild</w>
+	</aChain>
+	<aChain key="bdeinr">
+		<w>binder</w>
+		<w>inbred</w>
+	</aChain>
+	<aChain key="bdeir">
+		<w>bider</w>
+		<w>bride</w>
+	</aChain>
+	<aChain key="bdeirs">
+		<w>brides</w>
+		<w>debris</w>
+		<w>rebids</w>
+	</aChain>
+	<aChain key="bdelnru">
+		<w>blunder</w>
+		<w>bundler</w>
+	</aChain>
+	<aChain key="bdelorsu">
+		<w>boulders</w>
+		<w>doublers</w>
+	</aChain>
+	<aChain key="bdeloru">
+		<w>boulder</w>
+		<w>doubler</w>
+	</aChain>
+	<aChain key="bdelott">
+		<w>blotted</w>
+		<w>bottled</w>
+	</aChain>
+	<aChain key="bdelow">
+		<w>blowed</w>
+		<w>bowled</w>
+	</aChain>
+	<aChain key="bdemoor">
+		<w>bedroom</w>
+		<w>boredom</w>
+		<w>broomed</w>
+	</aChain>
+	<aChain key="bdennou">
+		<w>bounden</w>
+		<w>unboned</w>
+	</aChain>
+	<aChain key="bdenors">
+		<w>bonders</w>
+		<w>rebonds</w>
+	</aChain>
+	<aChain key="bdenoru">
+		<w>bounder</w>
+		<w>rebound</w>
+	</aChain>
+	<aChain key="bdenru">
+		<w>burden</w>
+		<w>burned</w>
+		<w>unbred</w>
+	</aChain>
+	<aChain key="bdeor">
+		<w>bored</w>
+		<w>robed</w>
+	</aChain>
+	<aChain key="bdeorst">
+		<w>debtors</w>
+		<w>strobed</w>
+	</aChain>
+	<aChain key="bdsu">
+		<w>buds</w>
+		<w>dubs</w>
+	</aChain>
+	<aChain key="bdu">
+		<w>bud</w>
+		<w>dub</w>
+	</aChain>
+	<aChain key="beemnrru">
+		<w>numberer</w>
+		<w>renumber</w>
+	</aChain>
+	<aChain key="beeorsv">
+		<w>observe</w>
+		<w>verbose</w>
+	</aChain>
+	<aChain key="beerst">
+		<w>berets</w>
+		<w>bester</w>
+	</aChain>
+	<aChain key="beest">
+		<w>beets</w>
+		<w>beset</w>
+	</aChain>
+	<aChain key="beffginru">
+		<w>buffering</w>
+		<w>rebuffing</w>
+	</aChain>
+	<aChain key="beffrsu">
+		<w>buffers</w>
+		<w>rebuffs</w>
+	</aChain>
+	<aChain key="beffru">
+		<w>buffer</w>
+		<w>rebuff</w>
+	</aChain>
+	<aChain key="beghinrst">
+		<w>berthings</w>
+		<w>brightens</w>
+	</aChain>
+	<aChain key="beghinrt">
+		<w>berthing</w>
+		<w>brighten</w>
+	</aChain>
+	<aChain key="begin">
+		<w>begin</w>
+		<w>being</w>
+		<w>binge</w>
+	</aChain>
+	<aChain key="beginn">
+		<w>benign</w>
+		<w>bingen</w>
+	</aChain>
+	<aChain key="beginrttu">
+		<w>buttering</w>
+		<w>rebutting</w>
+	</aChain>
+	<aChain key="begins">
+		<w>begins</w>
+		<w>beings</w>
+		<w>binges</w>
+	</aChain>
+	<aChain key="beglru">
+		<w>bugler</w>
+		<w>burgle</w>
+	</aChain>
+	<aChain key="beglsu">
+		<w>bugles</w>
+		<w>bulges</w>
+	</aChain>
+	<aChain key="beglu">
+		<w>bugle</w>
+		<w>bulge</w>
+	</aChain>
+	<aChain key="behilprsu">
+		<w>publisher</w>
+		<w>republish</w>
+	</aChain>
+	<aChain key="behlssu">
+		<w>blushes</w>
+		<w>bushels</w>
+	</aChain>
+	<aChain key="beilrsst">
+		<w>blisters</w>
+		<w>bristles</w>
+	</aChain>
+	<aChain key="beilrst">
+		<w>blister</w>
+		<w>bristle</w>
+	</aChain>
+	<aChain key="beirst">
+		<w>biters</w>
+		<w>bitser</w>
+		<w>tribes</w>
+	</aChain>
+	<aChain key="beirsu">
+		<w>bruise</w>
+		<w>buries</w>
+		<w>busier</w>
+		<w>rubies</w>
+	</aChain>
+	<aChain key="beirt">
+		<w>biter</w>
+		<w>tribe</w>
+	</aChain>
+	<aChain key="belmrstu">
+		<w>stumbler</w>
+		<w>tumblers</w>
+	</aChain>
+	<aChain key="belmrsu">
+		<w>lumbers</w>
+		<w>rumbles</w>
+		<w>slumber</w>
+	</aChain>
+	<aChain key="belmru">
+		<w>lumber</w>
+		<w>rumble</w>
+	</aChain>
+	<aChain key="belmstu">
+		<w>stumble</w>
+		<w>tumbles</w>
+	</aChain>
+	<aChain key="belorsst">
+		<w>bolsters</w>
+		<w>lobsters</w>
+	</aChain>
+	<aChain key="belorst">
+		<w>bolster</w>
+		<w>lobster</w>
+	</aChain>
+	<aChain key="belorsw">
+		<w>blowers</w>
+		<w>bowlers</w>
+	</aChain>
+	<aChain key="belorw">
+		<w>blower</w>
+		<w>bowler</w>
+	</aChain>
+	<aChain key="belosw">
+		<w>bowels</w>
+		<w>elbows</w>
+	</aChain>
+	<aChain key="below">
+		<w>below</w>
+		<w>bowel</w>
+		<w>elbow</w>
+	</aChain>
+	<aChain key="belrstu">
+		<w>bluster</w>
+		<w>butlers</w>
+		<w>subtler</w>
+	</aChain>
+	<aChain key="belstu">
+		<w>bluest</w>
+		<w>bustle</w>
+		<w>subtle</w>
+	</aChain>
+	<aChain key="benor">
+		<w>boner</w>
+		<w>borne</w>
+	</aChain>
+	<aChain key="beoorst">
+		<w>booster</w>
+		<w>reboots</w>
+	</aChain>
+	<aChain key="beor">
+		<w>bore</w>
+		<w>robe</w>
+	</aChain>
+	<aChain key="beors">
+		<w>bores</w>
+		<w>robes</w>
+		<w>sober</w>
+	</aChain>
+	<aChain key="beorsw">
+		<w>bowers</w>
+		<w>bowser</w>
+		<w>browse</w>
+	</aChain>
+	<aChain key="berstu">
+		<w>brutes</w>
+		<w>buster</w>
+		<w>tubers</w>
+	</aChain>
+	<aChain key="bertu">
+		<w>brute</w>
+		<w>rebut</w>
+		<w>tuber</w>
+	</aChain>
+	<aChain key="best">
+		<w>best</w>
+		<w>bets</w>
+	</aChain>
+	<aChain key="bggilnu">
+		<w>bugling</w>
+		<w>bulging</w>
+	</aChain>
+	<aChain key="bgilnott">
+		<w>blotting</w>
+		<w>bottling</w>
+	</aChain>
+	<aChain key="bgilnow">
+		<w>blowing</w>
+		<w>bowling</w>
+	</aChain>
+	<aChain key="bginor">
+		<w>boring</w>
+		<w>robing</w>
+	</aChain>
+	<aChain key="bhort">
+		<w>broth</w>
+		<w>throb</w>
+	</aChain>
+	<aChain key="bhrsu">
+		<w>brush</w>
+		<w>shrub</w>
+	</aChain>
+	<aChain key="bhsu">
+		<w>bush</w>
+		<w>hubs</w>
+	</aChain>
+	<aChain key="blost">
+		<w>blots</w>
+		<w>bolts</w>
+	</aChain>
+	<aChain key="blosw">
+		<w>blows</w>
+		<w>bowls</w>
+	</aChain>
+	<aChain key="blot">
+		<w>blot</w>
+		<w>bolt</w>
+	</aChain>
+	<aChain key="blow">
+		<w>blow</w>
+		<w>bowl</w>
+	</aChain>
+	<aChain key="blru">
+		<w>blur</w>
+		<w>burl</w>
+	</aChain>
+	<aChain key="bmoos">
+		<w>booms</w>
+		<w>bosom</w>
+	</aChain>
+	<aChain key="bnosu">
+		<w>bonus</w>
+		<w>bosun</w>
+	</aChain>
+	<aChain key="bnrtu">
+		<w>brunt</w>
+		<w>burnt</w>
+	</aChain>
+	<aChain key="boost">
+		<w>boost</w>
+		<w>boots</w>
+	</aChain>
+	<aChain key="bor">
+		<w>orb</w>
+		<w>rob</w>
+	</aChain>
+	<aChain key="boss">
+		<w>boss</w>
+		<w>sobs</w>
+	</aChain>
+	<aChain key="bruy">
+		<w>bury</w>
+		<w>ruby</w>
+	</aChain>
+	<aChain key="bsstu">
+		<w>busts</w>
+		<w>stubs</w>
+	</aChain>
+	<aChain key="bssu">
+		<w>buss</w>
+		<w>subs</w>
+	</aChain>
+	<aChain key="bstu">
+		<w>bust</w>
+		<w>stub</w>
+		<w>tubs</w>
+	</aChain>
+	<aChain key="bsu">
+		<w>bus</w>
+		<w>sub</w>
+	</aChain>
+	<aChain key="bsuy">
+		<w>busy</w>
+		<w>buys</w>
+	</aChain>
+	<aChain key="btu">
+		<w>but</w>
+		<w>tub</w>
+	</aChain>
+	<aChain key="ccdeeehkr">
+		<w>checkered</w>
+		<w>rechecked</w>
+	</aChain>
+	<aChain key="ccdeenort">
+		<w>concerted</w>
+		<w>concreted</w>
+	</aChain>
+	<aChain key="cceehkrs">
+		<w>checkers</w>
+		<w>rechecks</w>
+	</aChain>
+	<aChain key="cceennorst">
+		<w>connecters</w>
+		<w>reconnects</w>
+	</aChain>
+	<aChain key="cceennort">
+		<w>connecter</w>
+		<w>reconnect</w>
+	</aChain>
+	<aChain key="cddeeer">
+		<w>decreed</w>
+		<w>receded</w>
+	</aChain>
+	<aChain key="cddeeirt">
+		<w>credited</w>
+		<w>directed</w>
+	</aChain>
+	<aChain key="cddeeor">
+		<w>decoder</w>
+		<w>recoded</w>
+	</aChain>
+	<aChain key="cddeeru">
+		<w>deducer</w>
+		<w>reduced</w>
+	</aChain>
+	<aChain key="cddeesu">
+		<w>deduces</w>
+		<w>seduced</w>
+	</aChain>
+	<aChain key="cddeinostu">
+		<w>deductions</w>
+		<w>discounted</w>
+	</aChain>
+	<aChain key="cdeeeinrssst">
+		<w>discreetness</w>
+		<w>discreteness</w>
+	</aChain>
+	<aChain key="cdeeeirv">
+		<w>deceiver</w>
+		<w>received</w>
+	</aChain>
+	<aChain key="cdeeeoprrss">
+		<w>predecessor</w>
+		<w>reprocessed</w>
+	</aChain>
+	<aChain key="cdeeeptx">
+		<w>excepted</w>
+		<w>expected</w>
+	</aChain>
+	<aChain key="cdeeer">
+		<w>decree</w>
+		<w>recede</w>
+	</aChain>
+	<aChain key="cdeeers">
+		<w>decrees</w>
+		<w>recedes</w>
+		<w>seceder</w>
+	</aChain>
+	<aChain key="cdeegiiln">
+		<w>ceilinged</w>
+		<w>diligence</w>
+	</aChain>
+	<aChain key="cdeehinr">
+		<w>enriched</w>
+		<w>richened</w>
+	</aChain>
+	<aChain key="cdeehipr">
+		<w>ciphered</w>
+		<w>decipher</w>
+	</aChain>
+	<aChain key="cdeeilmopr">
+		<w>decompiler</w>
+		<w>recompiled</w>
+	</aChain>
+	<aChain key="cdeeilnr">
+		<w>decliner</w>
+		<w>reclined</w>
+	</aChain>
+	<aChain key="cdeeilns">
+		<w>declines</w>
+		<w>licensed</w>
+		<w>silenced</w>
+	</aChain>
+	<aChain key="cdeeilrsty">
+		<w>discreetly</w>
+		<w>discretely</w>
+	</aChain>
+	<aChain key="cdeeinorrs">
+		<w>considerer</w>
+		<w>reconsider</w>
+	</aChain>
+	<aChain key="cdeeiorrssv">
+		<w>discoverers</w>
+		<w>rediscovers</w>
+	</aChain>
+	<aChain key="cdeeirst">
+		<w>discreet</w>
+		<w>discrete</w>
+	</aChain>
+	<aChain key="cdeemmnor">
+		<w>commender</w>
+		<w>recommend</w>
+	</aChain>
+	<aChain key="cdeennorsu">
+		<w>denouncers</w>
+		<w>uncensored</w>
+	</aChain>
+	<aChain key="cdeennoru">
+		<w>denouncer</w>
+		<w>renounced</w>
+	</aChain>
+	<aChain key="cdeenors">
+		<w>censored</w>
+		<w>encoders</w>
+		<w>seconder</w>
+	</aChain>
+	<aChain key="cdeenorsv">
+		<w>conserved</w>
+		<w>conversed</w>
+	</aChain>
+	<aChain key="cdeenortu">
+		<w>countered</w>
+		<w>recounted</w>
+	</aChain>
+	<aChain key="cdeenst">
+		<w>descent</w>
+		<w>scented</w>
+	</aChain>
+	<aChain key="cdeeoprrsu">
+		<w>procedures</w>
+		<w>reproduces</w>
+	</aChain>
+	<aChain key="cdeeoprru">
+		<w>procedure</w>
+		<w>reproduce</w>
+	</aChain>
+	<aChain key="cdeeorst">
+		<w>escorted</w>
+		<w>sectored</w>
+	</aChain>
+	<aChain key="cdeerrsu">
+		<w>recursed</w>
+		<w>reducers</w>
+	</aChain>
+	<aChain key="cdeersu">
+		<w>reduces</w>
+		<w>rescued</w>
+		<w>secured</w>
+		<w>seducer</w>
+	</aChain>
+	<aChain key="cdegiinrt">
+		<w>crediting</w>
+		<w>directing</w>
+	</aChain>
+	<aChain key="cdeginnos">
+		<w>consigned</w>
+		<w>encodings</w>
+		<w>seconding</w>
+	</aChain>
+	<aChain key="cdei">
+		<w>dice</w>
+		<w>iced</w>
+	</aChain>
+	<aChain key="cdeiinoprst">
+		<w>description</w>
+		<w>predictions</w>
+	</aChain>
+	<aChain key="cdeiinorst">
+		<w>directions</w>
+		<w>discretion</w>
+	</aChain>
+	<aChain key="cdeillo">
+		<w>collide</w>
+		<w>collied</w>
+	</aChain>
+	<aChain key="cdeilmop">
+		<w>compiled</w>
+		<w>complied</w>
+	</aChain>
+	<aChain key="cdeinnotu">
+		<w>continued</w>
+		<w>unnoticed</w>
+	</aChain>
+	<aChain key="cdeinorstu">
+		<w>discounter</w>
+		<w>introduces</w>
+		<w>reductions</w>
+	</aChain>
+	<aChain key="cdeinortu">
+		<w>introduce</w>
+		<w>reduction</w>
+	</aChain>
+	<aChain key="cdeinrs">
+		<w>cinders</w>
+		<w>discern</w>
+	</aChain>
+	<aChain key="cdeioprrst">
+		<w>descriptor</w>
+		<w>predictors</w>
+	</aChain>
+	<aChain key="cdeiorrst">
+		<w>creditors</w>
+		<w>directors</w>
+	</aChain>
+	<aChain key="cdeiorrt">
+		<w>creditor</w>
+		<w>director</w>
+	</aChain>
+	<aChain key="cdeiorsv">
+		<w>discover</w>
+		<w>divorces</w>
+	</aChain>
+	<aChain key="cdeiprst">
+		<w>predicts</w>
+		<w>scripted</w>
+	</aChain>
+	<aChain key="cdeir">
+		<w>cider</w>
+		<w>cried</w>
+		<w>dicer</w>
+	</aChain>
+	<aChain key="cdeirst">
+		<w>credits</w>
+		<w>directs</w>
+	</aChain>
+	<aChain key="cdeirt">
+		<w>credit</w>
+		<w>direct</w>
+	</aChain>
+	<aChain key="cdeit">
+		<w>cited</w>
+		<w>edict</w>
+	</aChain>
+	<aChain key="cdekor">
+		<w>corked</w>
+		<w>docker</w>
+		<w>rocked</w>
+	</aChain>
+	<aChain key="cdeoop">
+		<w>cooped</w>
+		<w>opcode</w>
+	</aChain>
+	<aChain key="cdeoops">
+		<w>opcodes</w>
+		<w>scooped</w>
+	</aChain>
+	<aChain key="cdeoprru">
+		<w>procured</w>
+		<w>producer</w>
+	</aChain>
+	<aChain key="cdeor">
+		<w>coder</w>
+		<w>cored</w>
+	</aChain>
+	<aChain key="cdeorr">
+		<w>corder</w>
+		<w>record</w>
+	</aChain>
+	<aChain key="cdeors">
+		<w>coders</w>
+		<w>scored</w>
+	</aChain>
+	<aChain key="cdeorsu">
+		<w>coursed</w>
+		<w>scoured</w>
+	</aChain>
+	<aChain key="cderstu">
+		<w>crudest</w>
+		<w>crusted</w>
+	</aChain>
+	<aChain key="cderu">
+		<w>crude</w>
+		<w>cured</w>
+	</aChain>
+	<aChain key="cdinostu">
+		<w>conduits</w>
+		<w>discount</w>
+	</aChain>
+	<aChain key="cdlo">
+		<w>clod</w>
+		<w>cold</w>
+	</aChain>
+	<aChain key="cdlos">
+		<w>clods</w>
+		<w>colds</w>
+		<w>scold</w>
+	</aChain>
+	<aChain key="cdlou">
+		<w>cloud</w>
+		<w>could</w>
+	</aChain>
+	<aChain key="ceeeilpprtvy">
+		<w>perceptively</w>
+		<w>preceptively</w>
+	</aChain>
+	<aChain key="ceeeilstv">
+		<w>electives</w>
+		<w>selective</w>
+	</aChain>
+	<aChain key="ceeeipprtv">
+		<w>perceptive</w>
+		<w>preceptive</w>
+	</aChain>
+	<aChain key="ceeelrst">
+		<w>reelects</w>
+		<w>reselect</w>
+	</aChain>
+	<aChain key="ceeginptx">
+		<w>excepting</w>
+		<w>expecting</w>
+	</aChain>
+	<aChain key="ceehiknrt">
+		<w>kitchener</w>
+		<w>thickener</w>
+	</aChain>
+	<aChain key="ceehiknssst">
+		<w>sketchiness</w>
+		<w>thicknesses</w>
+	</aChain>
+	<aChain key="ceeilnost">
+		<w>elections</w>
+		<w>selection</w>
+	</aChain>
+	<aChain key="ceeilnrs">
+		<w>licenser</w>
+		<w>reclines</w>
+		<w>silencer</w>
+	</aChain>
+	<aChain key="ceeilns">
+		<w>license</w>
+		<w>silence</w>
+	</aChain>
+	<aChain key="ceeilnss">
+		<w>licenses</w>
+		<w>silences</w>
+	</aChain>
+	<aChain key="ceeinnss">
+		<w>incenses</w>
+		<w>niceness</w>
+	</aChain>
+	<aChain key="ceeinorst">
+		<w>erections</w>
+		<w>secretion</w>
+	</aChain>
+	<aChain key="ceeipr">
+		<w>piecer</w>
+		<w>pierce</w>
+		<w>recipe</w>
+	</aChain>
+	<aChain key="ceeiprs">
+		<w>pierces</w>
+		<w>precise</w>
+		<w>recipes</w>
+	</aChain>
+	<aChain key="ceelorst">
+		<w>electors</w>
+		<w>selector</w>
+	</aChain>
+	<aChain key="ceelrstu">
+		<w>cruelest</w>
+		<w>lectures</w>
+	</aChain>
+	<aChain key="ceelst">
+		<w>elects</w>
+		<w>select</w>
+	</aChain>
+	<aChain key="ceenorrstv">
+		<w>converters</w>
+		<w>reconverts</w>
+	</aChain>
+	<aChain key="ceenorssv">
+		<w>conserves</w>
+		<w>converses</w>
+	</aChain>
+	<aChain key="ceenorsv">
+		<w>conserve</w>
+		<w>converse</w>
+	</aChain>
+	<aChain key="ceeorrssu">
+		<w>recourses</w>
+		<w>resources</w>
+	</aChain>
+	<aChain key="ceeorrsu">
+		<w>recourse</w>
+		<w>resource</w>
+	</aChain>
+	<aChain key="ceeorrv">
+		<w>coverer</w>
+		<w>recover</w>
+	</aChain>
+	<aChain key="ceepr">
+		<w>creep</w>
+		<w>crepe</w>
+	</aChain>
+	<aChain key="ceepstx">
+		<w>excepts</w>
+		<w>expects</w>
+	</aChain>
+	<aChain key="ceeptx">
+		<w>except</w>
+		<w>expect</w>
+	</aChain>
+	<aChain key="ceerrssu">
+		<w>recurses</w>
+		<w>rescuers</w>
+	</aChain>
+	<aChain key="ceerrsu">
+		<w>recurse</w>
+		<w>rescuer</w>
+		<w>securer</w>
+	</aChain>
+	<aChain key="ceerssu">
+		<w>rescues</w>
+		<w>secures</w>
+	</aChain>
+	<aChain key="ceerst">
+		<w>erects</w>
+		<w>secret</w>
+	</aChain>
+	<aChain key="ceersu">
+		<w>rescue</w>
+		<w>secure</w>
+	</aChain>
+	<aChain key="ceffors">
+		<w>coffers</w>
+		<w>scoffer</w>
+	</aChain>
+	<aChain key="cefginorsu">
+		<w>configures</w>
+		<w>refocusing</w>
+	</aChain>
+	<aChain key="ceforsu">
+		<w>focuser</w>
+		<w>refocus</w>
+	</aChain>
+	<aChain key="ceghiinnr">
+		<w>enriching</w>
+		<w>richening</w>
+	</aChain>
+	<aChain key="cegiilnns">
+		<w>licensing</w>
+		<w>silencing</w>
+	</aChain>
+	<aChain key="ceginnnott">
+		<w>contenting</w>
+		<w>contingent</w>
+	</aChain>
+	<aChain key="ceginnorsv">
+		<w>conserving</w>
+		<w>conversing</w>
+	</aChain>
+	<aChain key="ceginnortu">
+		<w>countering</w>
+		<w>recounting</w>
+	</aChain>
+	<aChain key="ceginorst">
+		<w>escorting</w>
+		<w>sectoring</w>
+	</aChain>
+	<aChain key="ceginrsu">
+		<w>rescuing</w>
+		<w>securing</w>
+	</aChain>
+	<aChain key="cehiknst">
+		<w>kitchens</w>
+		<w>thickens</w>
+	</aChain>
+	<aChain key="cehiknt">
+		<w>kitchen</w>
+		<w>thicken</w>
+	</aChain>
+	<aChain key="cehikstt">
+		<w>thickest</w>
+		<w>thickets</w>
+	</aChain>
+	<aChain key="cehinr">
+		<w>enrich</w>
+		<w>richen</w>
+	</aChain>
+	<aChain key="cehins">
+		<w>inches</w>
+		<w>niches</w>
+	</aChain>
+	<aChain key="cehist">
+		<w>ethics</w>
+		<w>itches</w>
+	</aChain>
+	<aChain key="cehkors">
+		<w>chokers</w>
+		<w>shocker</w>
+	</aChain>
+	<aChain key="cehos">
+		<w>chose</w>
+		<w>echos</w>
+	</aChain>
+	<aChain key="ceiinnopst">
+		<w>inceptions</w>
+		<w>inspection</w>
+	</aChain>
+	<aChain key="ceiist">
+		<w>cities</w>
+		<w>iciest</w>
+	</aChain>
+	<aChain key="ceiklrt">
+		<w>tickler</w>
+		<w>trickle</w>
+	</aChain>
+	<aChain key="ceikpst">
+		<w>pickets</w>
+		<w>skeptic</w>
+	</aChain>
+	<aChain key="ceikrst">
+		<w>sticker</w>
+		<w>tickers</w>
+	</aChain>
+	<aChain key="ceilmop">
+		<w>compile</w>
+		<w>polemic</w>
+	</aChain>
+	<aChain key="ceilmopr">
+		<w>compiler</w>
+		<w>complier</w>
+	</aChain>
+	<aChain key="ceilmoprs">
+		<w>compilers</w>
+		<w>compliers</w>
+	</aChain>
+	<aChain key="ceilmops">
+		<w>compiles</w>
+		<w>complies</w>
+		<w>polemics</w>
+	</aChain>
+	<aChain key="ceilnst">
+		<w>clients</w>
+		<w>stencil</w>
+	</aChain>
+	<aChain key="ceilorst">
+		<w>cloister</w>
+		<w>costlier</w>
+	</aChain>
+	<aChain key="ceilppr">
+		<w>clipper</w>
+		<w>cripple</w>
+	</aChain>
+	<aChain key="ceilpprs">
+		<w>clippers</w>
+		<w>cripples</w>
+	</aChain>
+	<aChain key="ceilrs">
+		<w>relics</w>
+		<w>slicer</w>
+	</aChain>
+	<aChain key="ceinost">
+		<w>notices</w>
+		<w>section</w>
+	</aChain>
+	<aChain key="ceinrst">
+		<w>cistern</w>
+		<w>cretins</w>
+	</aChain>
+	<aChain key="ceinst">
+		<w>insect</w>
+		<w>nicest</w>
+	</aChain>
+	<aChain key="ceiprrs">
+		<w>crisper</w>
+		<w>pricers</w>
+	</aChain>
+	<aChain key="ceips">
+		<w>epics</w>
+		<w>spice</w>
+	</aChain>
+	<aChain key="ceirr">
+		<w>crier</w>
+		<w>ricer</w>
+	</aChain>
+	<aChain key="ceirrstt">
+		<w>critters</w>
+		<w>restrict</w>
+		<w>stricter</w>
+	</aChain>
+	<aChain key="ceirrsu">
+		<w>cruiser</w>
+		<w>curries</w>
+	</aChain>
+	<aChain key="ceirs">
+		<w>cries</w>
+		<w>rices</w>
+	</aChain>
+	<aChain key="cekorr">
+		<w>corker</w>
+		<w>rocker</w>
+	</aChain>
+	<aChain key="cekorrs">
+		<w>corkers</w>
+		<w>rockers</w>
+	</aChain>
+	<aChain key="cekorst">
+		<w>rockets</w>
+		<w>stocker</w>
+	</aChain>
+	<aChain key="cekps">
+		<w>pecks</w>
+		<w>speck</w>
+	</aChain>
+	<aChain key="celnooss">
+		<w>consoles</w>
+		<w>coolness</w>
+	</aChain>
+	<aChain key="celosst">
+		<w>closest</w>
+		<w>closets</w>
+	</aChain>
+	<aChain key="celru">
+		<w>cruel</w>
+		<w>ulcer</w>
+	</aChain>
+	<aChain key="cemorsstu">
+		<w>costumers</w>
+		<w>customers</w>
+	</aChain>
+	<aChain key="cemorstu">
+		<w>costumer</w>
+		<w>customer</w>
+	</aChain>
+	<aChain key="cemost">
+		<w>comest</w>
+		<w>comets</w>
+	</aChain>
+	<aChain key="ceno">
+		<w>cone</w>
+		<w>once</w>
+	</aChain>
+	<aChain key="cenorrs">
+		<w>corners</w>
+		<w>scorner</w>
+	</aChain>
+	<aChain key="cenorstu">
+		<w>construe</w>
+		<w>counters</w>
+		<w>recounts</w>
+	</aChain>
+	<aChain key="cenortu">
+		<w>counter</w>
+		<w>recount</w>
+	</aChain>
+	<aChain key="censt">
+		<w>cents</w>
+		<w>scent</w>
+	</aChain>
+	<aChain key="ceooprs">
+		<w>coopers</w>
+		<w>scooper</w>
+	</aChain>
+	<aChain key="ceoprrrsu">
+		<w>precursor</w>
+		<w>procurers</w>
+	</aChain>
+	<aChain key="ceoprss">
+		<w>corpses</w>
+		<w>process</w>
+	</aChain>
+	<aChain key="ceops">
+		<w>copes</w>
+		<w>copse</w>
+		<w>scope</w>
+	</aChain>
+	<aChain key="ceopss">
+		<w>copses</w>
+		<w>scopes</w>
+	</aChain>
+	<aChain key="ceorrs">
+		<w>corers</w>
+		<w>scorer</w>
+	</aChain>
+	<aChain key="ceorrss">
+		<w>crosser</w>
+		<w>scorers</w>
+	</aChain>
+	<aChain key="ceorrsu">
+		<w>courser</w>
+		<w>scourer</w>
+	</aChain>
+	<aChain key="ceors">
+		<w>cores</w>
+		<w>score</w>
+	</aChain>
+	<aChain key="ceorsst">
+		<w>corsets</w>
+		<w>escorts</w>
+		<w>sectors</w>
+	</aChain>
+	<aChain key="ceorssu">
+		<w>courses</w>
+		<w>sources</w>
+	</aChain>
+	<aChain key="ceorst">
+		<w>corset</w>
+		<w>escort</w>
+		<w>sector</w>
+	</aChain>
+	<aChain key="ceorsu">
+		<w>course</w>
+		<w>source</w>
+	</aChain>
+	<aChain key="ceortv">
+		<w>covert</w>
+		<w>vector</w>
+	</aChain>
+	<aChain key="cerru">
+		<w>curer</w>
+		<w>recur</w>
+	</aChain>
+	<aChain key="cerssu">
+		<w>curses</w>
+		<w>cusser</w>
+	</aChain>
+	<aChain key="cersu">
+		<w>cures</w>
+		<w>curse</w>
+	</aChain>
+	<aChain key="cersw">
+		<w>crews</w>
+		<w>screw</w>
+	</aChain>
+	<aChain key="certu">
+		<w>cuter</w>
+		<w>truce</w>
+	</aChain>
+	<aChain key="cghiinn">
+		<w>inching</w>
+		<w>niching</w>
+	</aChain>
+	<aChain key="cgiknor">
+		<w>corking</w>
+		<w>rocking</w>
+	</aChain>
+	<aChain key="cginops">
+		<w>copings</w>
+		<w>scoping</w>
+	</aChain>
+	<aChain key="cginorss">
+		<w>crossing</w>
+		<w>scorings</w>
+	</aChain>
+	<aChain key="cginorsu">
+		<w>coursing</w>
+		<w>scouring</w>
+	</aChain>
+	<aChain key="chikst">
+		<w>kitsch</w>
+		<w>thicks</w>
+	</aChain>
+	<aChain key="chin">
+		<w>chin</w>
+		<w>inch</w>
+	</aChain>
+	<aChain key="chmu">
+		<w>chum</w>
+		<w>much</w>
+	</aChain>
+	<aChain key="cikls">
+		<w>licks</w>
+		<w>slick</w>
+	</aChain>
+	<aChain key="cikst">
+		<w>stick</w>
+		<w>ticks</w>
+	</aChain>
+	<aChain key="cilo">
+		<w>coil</w>
+		<w>loci</w>
+	</aChain>
+	<aChain key="cino">
+		<w>coin</w>
+		<w>icon</w>
+	</aChain>
+	<aChain key="cinos">
+		<w>coins</w>
+		<w>icons</w>
+	</aChain>
+	<aChain key="ciopst">
+		<w>optics</w>
+		<w>topics</w>
+	</aChain>
+	<aChain key="ciopt">
+		<w>optic</w>
+		<w>topic</w>
+	</aChain>
+	<aChain key="ckmos">
+		<w>mocks</w>
+		<w>smock</w>
+	</aChain>
+	<aChain key="ckor">
+		<w>cork</w>
+		<w>rock</w>
+	</aChain>
+	<aChain key="ckors">
+		<w>corks</w>
+		<w>rocks</w>
+	</aChain>
+	<aChain key="ckrstu">
+		<w>struck</w>
+		<w>trucks</w>
+	</aChain>
+	<aChain key="ckstu">
+		<w>stuck</w>
+		<w>tucks</w>
+	</aChain>
+	<aChain key="closw">
+		<w>cowls</w>
+		<w>scowl</w>
+	</aChain>
+	<aChain key="cnors">
+		<w>corns</w>
+		<w>scorn</w>
+	</aChain>
+	<aChain key="coops">
+		<w>coops</w>
+		<w>scoop</w>
+	</aChain>
+	<aChain key="coprs">
+		<w>corps</w>
+		<w>crops</w>
+	</aChain>
+	<aChain key="cost">
+		<w>cost</w>
+		<w>cots</w>
+	</aChain>
+	<aChain key="cosw">
+		<w>cows</w>
+		<w>scow</w>
+	</aChain>
+	<aChain key="cpsu">
+		<w>cups</w>
+		<w>cusp</w>
+	</aChain>
+	<aChain key="ddeefil">
+		<w>defiled</w>
+		<w>fielded</w>
+	</aChain>
+	<aChain key="ddeegin">
+		<w>deeding</w>
+		<w>deigned</w>
+	</aChain>
+	<aChain key="ddeein">
+		<w>denied</w>
+		<w>indeed</w>
+	</aChain>
+	<aChain key="ddeeinnntu">
+		<w>unindented</w>
+		<w>unintended</w>
+	</aChain>
+	<aChain key="ddeeinnt">
+		<w>indented</w>
+		<w>intended</w>
+	</aChain>
+	<aChain key="ddeeirs">
+		<w>derides</w>
+		<w>desired</w>
+		<w>resided</w>
+	</aChain>
+	<aChain key="ddeelu">
+		<w>delude</w>
+		<w>eluded</w>
+	</aChain>
+	<aChain key="ddeenp">
+		<w>depend</w>
+		<w>pended</w>
+	</aChain>
+	<aChain key="ddeent">
+		<w>dented</w>
+		<w>tended</w>
+	</aChain>
+	<aChain key="ddegil">
+		<w>gilded</w>
+		<w>glided</w>
+	</aChain>
+	<aChain key="ddegilnu">
+		<w>deluding</w>
+		<w>indulged</w>
+	</aChain>
+	<aChain key="ddegir">
+		<w>dirged</w>
+		<w>girded</w>
+		<w>ridged</w>
+	</aChain>
+	<aChain key="ddehlru">
+		<w>huddler</w>
+		<w>hurdled</w>
+	</aChain>
+	<aChain key="ddeilnps">
+		<w>spindled</w>
+		<w>splendid</w>
+	</aChain>
+	<aChain key="ddeinr">
+		<w>ridden</w>
+		<w>rinded</w>
+	</aChain>
+	<aChain key="ddeiov">
+		<w>devoid</w>
+		<w>voided</w>
+	</aChain>
+	<aChain key="ddey">
+		<w>dyed</w>
+		<w>eddy</w>
+	</aChain>
+	<aChain key="deeefmnrt">
+		<w>deferment</w>
+		<w>fermented</w>
+	</aChain>
+	<aChain key="deeefrrr">
+		<w>deferrer</w>
+		<w>referred</w>
+	</aChain>
+	<aChain key="deeehst">
+		<w>seethed</w>
+		<w>sheeted</w>
+	</aChain>
+	<aChain key="deeeinnrtv">
+		<w>intervened</w>
+		<w>reinvented</w>
+	</aChain>
+	<aChain key="deeelnss">
+		<w>lessened</w>
+		<w>needless</w>
+	</aChain>
+	<aChain key="deeeloprsv">
+		<w>developers</w>
+		<w>redevelops</w>
+	</aChain>
+	<aChain key="deeeloprv">
+		<w>developer</w>
+		<w>redevelop</w>
+	</aChain>
+	<aChain key="deeelr">
+		<w>leered</w>
+		<w>reeled</w>
+	</aChain>
+	<aChain key="deeelst">
+		<w>deletes</w>
+		<w>steeled</w>
+	</aChain>
+	<aChain key="deeepr">
+		<w>deeper</w>
+		<w>peered</w>
+	</aChain>
+	<aChain key="deeepst">
+		<w>deepest</w>
+		<w>steeped</w>
+	</aChain>
+	<aChain key="deeerrsv">
+		<w>deserver</w>
+		<w>reserved</w>
+		<w>reversed</w>
+	</aChain>
+	<aChain key="deeerst">
+		<w>reseted</w>
+		<w>steered</w>
+	</aChain>
+	<aChain key="deeersv">
+		<w>deserve</w>
+		<w>severed</w>
+	</aChain>
+	<aChain key="deefgin">
+		<w>feeding</w>
+		<w>feigned</w>
+	</aChain>
+	<aChain key="deefilr">
+		<w>defiler</w>
+		<w>fielder</w>
+	</aChain>
+	<aChain key="deefinr">
+		<w>definer</w>
+		<w>refined</w>
+	</aChain>
+	<aChain key="deefirr">
+		<w>ferried</w>
+		<w>refried</w>
+	</aChain>
+	<aChain key="deeforst">
+		<w>forested</w>
+		<w>fostered</w>
+	</aChain>
+	<aChain key="deefr">
+		<w>defer</w>
+		<w>freed</w>
+	</aChain>
+	<aChain key="deeginn">
+		<w>engined</w>
+		<w>needing</w>
+	</aChain>
+	<aChain key="deeginr">
+		<w>reeding</w>
+		<w>reigned</w>
+	</aChain>
+	<aChain key="deeginrs">
+		<w>designer</w>
+		<w>redesign</w>
+		<w>resigned</w>
+	</aChain>
+	<aChain key="deeginrss">
+		<w>designers</w>
+		<w>redesigns</w>
+	</aChain>
+	<aChain key="deegirv">
+		<w>diverge</w>
+		<w>grieved</w>
+	</aChain>
+	<aChain key="deegl">
+		<w>gleed</w>
+		<w>ledge</w>
+	</aChain>
+	<aChain key="deegls">
+		<w>ledges</w>
+		<w>sledge</w>
+	</aChain>
+	<aChain key="deegr">
+		<w>edger</w>
+		<w>greed</w>
+	</aChain>
+	<aChain key="deegs">
+		<w>edges</w>
+		<w>sedge</w>
+	</aChain>
+	<aChain key="deehilrs">
+		<w>relished</w>
+		<w>shielder</w>
+	</aChain>
+	<aChain key="deeiinsst">
+		<w>densities</w>
+		<w>destinies</w>
+	</aChain>
+	<aChain key="deeilnst">
+		<w>enlisted</w>
+		<w>listened</w>
+	</aChain>
+	<aChain key="deeilr">
+		<w>lieder</w>
+		<w>relied</w>
+	</aChain>
+	<aChain key="deeilrsv">
+		<w>delivers</w>
+		<w>silvered</w>
+	</aChain>
+	<aChain key="deeilrtt">
+		<w>littered</w>
+		<w>retitled</w>
+	</aChain>
+	<aChain key="deeilrv">
+		<w>deliver</w>
+		<w>reviled</w>
+	</aChain>
+	<aChain key="deeilv">
+		<w>levied</w>
+		<w>veiled</w>
+	</aChain>
+	<aChain key="deeimmrs">
+		<w>immersed</w>
+		<w>simmered</w>
+	</aChain>
+	<aChain key="deeinnrt">
+		<w>indenter</w>
+		<w>intender</w>
+		<w>interned</w>
+	</aChain>
+	<aChain key="deeinpr">
+		<w>repined</w>
+		<w>ripened</w>
+	</aChain>
+	<aChain key="deeinr">
+		<w>denier</w>
+		<w>reined</w>
+	</aChain>
+	<aChain key="deeinrsst">
+		<w>dissenter</w>
+		<w>residents</w>
+		<w>tiredness</w>
+	</aChain>
+	<aChain key="deeinrst">
+		<w>inserted</w>
+		<w>resident</w>
+	</aChain>
+	<aChain key="deeinssw">
+		<w>dewiness</w>
+		<w>wideness</w>
+	</aChain>
+	<aChain key="deeinv">
+		<w>endive</w>
+		<w>envied</w>
+		<w>veined</w>
+	</aChain>
+	<aChain key="deeiprrs">
+		<w>presider</w>
+		<w>respired</w>
+	</aChain>
+	<aChain key="deeiprss">
+		<w>despiser</w>
+		<w>disperse</w>
+		<w>presides</w>
+	</aChain>
+	<aChain key="deeirrs">
+		<w>desirer</w>
+		<w>resider</w>
+	</aChain>
+	<aChain key="deeirrt">
+		<w>retired</w>
+		<w>retried</w>
+	</aChain>
+	<aChain key="deeirs">
+		<w>desire</w>
+		<w>reside</w>
+	</aChain>
+	<aChain key="deeirss">
+		<w>desires</w>
+		<w>resides</w>
+	</aChain>
+	<aChain key="deeirsst">
+		<w>resisted</w>
+		<w>sistered</w>
+	</aChain>
+	<aChain key="deeirssu">
+		<w>reissued</w>
+		<w>residues</w>
+	</aChain>
+	<aChain key="deeirsv">
+		<w>derives</w>
+		<w>deviser</w>
+		<w>diverse</w>
+		<w>revised</w>
+	</aChain>
+	<aChain key="deeirt">
+		<w>dieter</w>
+		<w>retied</w>
+		<w>tiered</w>
+	</aChain>
+	<aChain key="deelnrs">
+		<w>lenders</w>
+		<w>slender</w>
+	</aChain>
+	<aChain key="deeloprx">
+		<w>exploder</w>
+		<w>explored</w>
+	</aChain>
+	<aChain key="deelprsu">
+		<w>preludes</w>
+		<w>repulsed</w>
+	</aChain>
+	<aChain key="deelpy">
+		<w>deeply</w>
+		<w>yelped</w>
+	</aChain>
+	<aChain key="deenrs">
+		<w>denser</w>
+		<w>enders</w>
+		<w>sender</w>
+	</aChain>
+	<aChain key="deenrss">
+		<w>redness</w>
+		<w>resends</w>
+		<w>senders</w>
+	</aChain>
+	<aChain key="deenrsu">
+		<w>endures</w>
+		<w>ensured</w>
+	</aChain>
+	<aChain key="deenrt">
+		<w>rented</w>
+		<w>tender</w>
+	</aChain>
+	<aChain key="deenrv">
+		<w>nerved</w>
+		<w>vender</w>
+	</aChain>
+	<aChain key="deens">
+		<w>dense</w>
+		<w>needs</w>
+	</aChain>
+	<aChain key="deenst">
+		<w>nested</w>
+		<w>tensed</w>
+	</aChain>
+	<aChain key="deentt">
+		<w>netted</w>
+		<w>tented</w>
+	</aChain>
+	<aChain key="deeorrr">
+		<w>orderer</w>
+		<w>reorder</w>
+	</aChain>
+	<aChain key="deeorrst">
+		<w>resorted</w>
+		<w>restored</w>
+	</aChain>
+	<aChain key="deeotv">
+		<w>devote</w>
+		<w>vetoed</w>
+	</aChain>
+	<aChain key="deeprss">
+		<w>depress</w>
+		<w>pressed</w>
+	</aChain>
+	<aChain key="deeprsu">
+		<w>perused</w>
+		<w>supered</w>
+	</aChain>
+	<aChain key="deeps">
+		<w>deeps</w>
+		<w>speed</w>
+	</aChain>
+	<aChain key="deer">
+		<w>deer</w>
+		<w>reed</w>
+	</aChain>
+	<aChain key="deerrss">
+		<w>dresser</w>
+		<w>redress</w>
+	</aChain>
+	<aChain key="deers">
+		<w>deers</w>
+		<w>reeds</w>
+	</aChain>
+	<aChain key="deerssst">
+		<w>desserts</w>
+		<w>stressed</w>
+	</aChain>
+	<aChain key="deersst">
+		<w>deserts</w>
+		<w>dessert</w>
+		<w>tressed</w>
+	</aChain>
+	<aChain key="deerst">
+		<w>desert</w>
+		<w>rested</w>
+	</aChain>
+	<aChain key="deersv">
+		<w>served</w>
+		<w>versed</w>
+	</aChain>
+	<aChain key="deestt">
+		<w>detest</w>
+		<w>tested</w>
+	</aChain>
+	<aChain key="deesw">
+		<w>sewed</w>
+		<w>weeds</w>
+	</aChain>
+	<aChain key="defgiiln">
+		<w>defiling</w>
+		<w>fielding</w>
+	</aChain>
+	<aChain key="defiilns">
+		<w>infidels</w>
+		<w>infields</w>
+	</aChain>
+	<aChain key="defil">
+		<w>field</w>
+		<w>filed</w>
+	</aChain>
+	<aChain key="defilrt">
+		<w>flirted</w>
+		<w>trifled</w>
+	</aChain>
+	<aChain key="defin">
+		<w>fiend</w>
+		<w>fined</w>
+	</aChain>
+	<aChain key="definr">
+		<w>finder</w>
+		<w>friend</w>
+	</aChain>
+	<aChain key="definrs">
+		<w>finders</w>
+		<w>friends</w>
+	</aChain>
+	<aChain key="defir">
+		<w>fired</w>
+		<w>fried</w>
+	</aChain>
+	<aChain key="defist">
+		<w>fisted</w>
+		<w>sifted</w>
+	</aChain>
+	<aChain key="deflnoruw">
+		<w>underflow</w>
+		<w>wonderful</w>
+	</aChain>
+	<aChain key="defloor">
+		<w>flooder</w>
+		<w>floored</w>
+	</aChain>
+	<aChain key="defnrsu">
+		<w>funders</w>
+		<w>refunds</w>
+	</aChain>
+	<aChain key="defnru">
+		<w>funder</w>
+		<w>refund</w>
+	</aChain>
+	<aChain key="defsu">
+		<w>feuds</w>
+		<w>fused</w>
+	</aChain>
+	<aChain key="deggir">
+		<w>digger</w>
+		<w>rigged</w>
+	</aChain>
+	<aChain key="deggru">
+		<w>grudge</w>
+		<w>rugged</w>
+	</aChain>
+	<aChain key="deghilst">
+		<w>delights</w>
+		<w>slighted</w>
+	</aChain>
+	<aChain key="deghilt">
+		<w>delight</w>
+		<w>lighted</w>
+	</aChain>
+	<aChain key="degiimnp">
+		<w>impeding</w>
+		<w>impinged</w>
+	</aChain>
+	<aChain key="degiinnnt">
+		<w>indenting</w>
+		<w>intending</w>
+	</aChain>
+	<aChain key="degiinrs">
+		<w>desiring</w>
+		<w>residing</w>
+	</aChain>
+	<aChain key="degilmn">
+		<w>melding</w>
+		<w>mingled</w>
+	</aChain>
+	<aChain key="degilmnor">
+		<w>moldering</w>
+		<w>remolding</w>
+	</aChain>
+	<aChain key="degilnnruy">
+		<w>enduringly</w>
+		<w>underlying</w>
+	</aChain>
+	<aChain key="degilnt">
+		<w>glinted</w>
+		<w>tingled</w>
+	</aChain>
+	<aChain key="degilnu">
+		<w>eluding</w>
+		<w>indulge</w>
+	</aChain>
+	<aChain key="degilor">
+		<w>gloried</w>
+		<w>godlier</w>
+	</aChain>
+	<aChain key="degilr">
+		<w>gilder</w>
+		<w>girdle</w>
+		<w>glider</w>
+	</aChain>
+	<aChain key="degilrs">
+		<w>girdles</w>
+		<w>gliders</w>
+	</aChain>
+	<aChain key="deginns">
+		<w>endings</w>
+		<w>sending</w>
+	</aChain>
+	<aChain key="deginnt">
+		<w>denting</w>
+		<w>tending</w>
+	</aChain>
+	<aChain key="deginor">
+		<w>ignored</w>
+		<w>redoing</w>
+	</aChain>
+	<aChain key="degins">
+		<w>deigns</w>
+		<w>design</w>
+		<w>signed</w>
+		<w>singed</w>
+	</aChain>
+	<aChain key="deginw">
+		<w>dewing</w>
+		<w>winged</w>
+	</aChain>
+	<aChain key="degir">
+		<w>dirge</w>
+		<w>ridge</w>
+	</aChain>
+	<aChain key="degirrs">
+		<w>girders</w>
+		<w>regrids</w>
+	</aChain>
+	<aChain key="degirs">
+		<w>dirges</w>
+		<w>ridges</w>
+	</aChain>
+	<aChain key="degisu">
+		<w>guides</w>
+		<w>guised</w>
+	</aChain>
+	<aChain key="deglno">
+		<w>golden</w>
+		<w>longed</w>
+	</aChain>
+	<aChain key="dehir">
+		<w>hider</w>
+		<w>hired</w>
+	</aChain>
+	<aChain key="dehis">
+		<w>hides</w>
+		<w>shied</w>
+	</aChain>
+	<aChain key="dehiss">
+		<w>dishes</w>
+		<w>hissed</w>
+	</aChain>
+	<aChain key="dehlru">
+		<w>hurdle</w>
+		<w>hurled</w>
+	</aChain>
+	<aChain key="dehors">
+		<w>hordes</w>
+		<w>shored</w>
+	</aChain>
+	<aChain key="dehos">
+		<w>hosed</w>
+		<w>shoed</w>
+	</aChain>
+	<aChain key="dehrs">
+		<w>herds</w>
+		<w>shred</w>
+	</aChain>
+	<aChain key="deiilmst">
+		<w>delimits</w>
+		<w>limiteds</w>
+	</aChain>
+	<aChain key="deiilmt">
+		<w>delimit</w>
+		<w>limited</w>
+	</aChain>
+	<aChain key="deiinoopst">
+		<w>deposition</w>
+		<w>positioned</w>
+	</aChain>
+	<aChain key="deiinosv">
+		<w>devision</w>
+		<w>visioned</w>
+	</aChain>
+	<aChain key="deiinsst">
+		<w>insisted</w>
+		<w>tidiness</w>
+	</aChain>
+	<aChain key="deikln">
+		<w>kindle</w>
+		<w>linked</w>
+	</aChain>
+	<aChain key="deikr">
+		<w>diker</w>
+		<w>irked</w>
+	</aChain>
+	<aChain key="deiks">
+		<w>dikes</w>
+		<w>skied</w>
+	</aChain>
+	<aChain key="deil">
+		<w>idle</w>
+		<w>lied</w>
+	</aChain>
+	<aChain key="deilmnss">
+		<w>mildness</w>
+		<w>mindless</w>
+	</aChain>
+	<aChain key="deilmp">
+		<w>dimple</w>
+		<w>limped</w>
+	</aChain>
+	<aChain key="deilms">
+		<w>misled</w>
+		<w>slimed</w>
+		<w>smiled</w>
+	</aChain>
+	<aChain key="deilnps">
+		<w>spindle</w>
+		<w>splined</w>
+	</aChain>
+	<aChain key="deilnstu">
+		<w>insulted</w>
+		<w>unlisted</w>
+	</aChain>
+	<aChain key="deilp">
+		<w>piled</w>
+		<w>plied</w>
+	</aChain>
+	<aChain key="deilps">
+		<w>dispel</w>
+		<w>lisped</w>
+	</aChain>
+	<aChain key="deilrs">
+		<w>idlers</w>
+		<w>slider</w>
+	</aChain>
+	<aChain key="deils">
+		<w>idles</w>
+		<w>slide</w>
+	</aChain>
+	<aChain key="deilst">
+		<w>idlest</w>
+		<w>listed</w>
+		<w>silted</w>
+		<w>tildes</w>
+	</aChain>
+	<aChain key="deilt">
+		<w>tilde</w>
+		<w>tiled</w>
+	</aChain>
+	<aChain key="deiltt">
+		<w>tilted</w>
+		<w>titled</w>
+	</aChain>
+	<aChain key="deilv">
+		<w>devil</w>
+		<w>lived</w>
+	</aChain>
+	<aChain key="deilw">
+		<w>wield</w>
+		<w>wiled</w>
+	</aChain>
+	<aChain key="deimmsu">
+		<w>dummies</w>
+		<w>mediums</w>
+	</aChain>
+	<aChain key="deimnr">
+		<w>minder</w>
+		<w>remind</w>
+	</aChain>
+	<aChain key="deimnrs">
+		<w>minders</w>
+		<w>reminds</w>
+	</aChain>
+	<aChain key="deimotv">
+		<w>motived</w>
+		<w>vomited</w>
+	</aChain>
+	<aChain key="deimr">
+		<w>dimer</w>
+		<w>mired</w>
+	</aChain>
+	<aChain key="deinnst">
+		<w>indents</w>
+		<w>intends</w>
+	</aChain>
+	<aChain key="deinnt">
+		<w>indent</w>
+		<w>intend</w>
+		<w>tinned</w>
+	</aChain>
+	<aChain key="deinrs">
+		<w>diners</w>
+		<w>rinsed</w>
+	</aChain>
+	<aChain key="deinrsw">
+		<w>rewinds</w>
+		<w>winders</w>
+	</aChain>
+	<aChain key="deinrtu">
+		<w>intrude</w>
+		<w>untried</w>
+	</aChain>
+	<aChain key="deinrw">
+		<w>rewind</w>
+		<w>winder</w>
+	</aChain>
+	<aChain key="deinstt">
+		<w>dentist</w>
+		<w>stinted</w>
+	</aChain>
+	<aChain key="deinsty">
+		<w>density</w>
+		<w>destiny</w>
+	</aChain>
+	<aChain key="deintu">
+		<w>united</w>
+		<w>untied</w>
+	</aChain>
+	<aChain key="deinw">
+		<w>widen</w>
+		<w>wined</w>
+	</aChain>
+	<aChain key="deinx">
+		<w>index</w>
+		<w>nixed</w>
+	</aChain>
+	<aChain key="deioprsv">
+		<w>disprove</w>
+		<w>provides</w>
+	</aChain>
+	<aChain key="deiopst">
+		<w>deposit</w>
+		<w>posited</w>
+	</aChain>
+	<aChain key="deiorrw">
+		<w>wordier</w>
+		<w>worried</w>
+	</aChain>
+	<aChain key="deiorst">
+		<w>editors</w>
+		<w>storied</w>
+	</aChain>
+	<aChain key="deiort">
+		<w>editor</w>
+		<w>rioted</w>
+	</aChain>
+	<aChain key="deiostu">
+		<w>outside</w>
+		<w>tedious</w>
+	</aChain>
+	<aChain key="deippr">
+		<w>dipper</w>
+		<w>ripped</w>
+	</aChain>
+	<aChain key="deipr">
+		<w>pride</w>
+		<w>pried</w>
+	</aChain>
+	<aChain key="deiprs">
+		<w>prides</w>
+		<w>spider</w>
+		<w>spired</w>
+	</aChain>
+	<aChain key="deiprstu">
+		<w>disputer</w>
+		<w>stupider</w>
+	</aChain>
+	<aChain key="deir">
+		<w>dire</w>
+		<w>ride</w>
+	</aChain>
+	<aChain key="deirr">
+		<w>direr</w>
+		<w>drier</w>
+		<w>rider</w>
+	</aChain>
+	<aChain key="deirrs">
+		<w>driers</w>
+		<w>riders</w>
+	</aChain>
+	<aChain key="deirrst">
+		<w>stirred</w>
+		<w>strider</w>
+	</aChain>
+	<aChain key="deirs">
+		<w>dries</w>
+		<w>rides</w>
+		<w>sired</w>
+	</aChain>
+	<aChain key="deirst">
+		<w>direst</w>
+		<w>driest</w>
+		<w>stride</w>
+	</aChain>
+	<aChain key="deirstu">
+		<w>dustier</w>
+		<w>studier</w>
+	</aChain>
+	<aChain key="deirsv">
+		<w>divers</w>
+		<w>drives</w>
+	</aChain>
+	<aChain key="deirt">
+		<w>rited</w>
+		<w>tired</w>
+		<w>tried</w>
+	</aChain>
+	<aChain key="deirv">
+		<w>diver</w>
+		<w>drive</w>
+		<w>rived</w>
+	</aChain>
+	<aChain key="deirw">
+		<w>weird</w>
+		<w>wider</w>
+		<w>wired</w>
+	</aChain>
+	<aChain key="deis">
+		<w>dies</w>
+		<w>side</w>
+	</aChain>
+	<aChain key="deisstu">
+		<w>studies</w>
+		<w>tissued</w>
+	</aChain>
+	<aChain key="deist">
+		<w>diets</w>
+		<w>edits</w>
+		<w>sited</w>
+		<w>tides</w>
+	</aChain>
+	<aChain key="deistu">
+		<w>duties</w>
+		<w>suited</w>
+	</aChain>
+	<aChain key="deit">
+		<w>diet</w>
+		<w>edit</w>
+		<w>tide</w>
+		<w>tied</w>
+	</aChain>
+	<aChain key="deiv">
+		<w>dive</w>
+		<w>vied</w>
+	</aChain>
+	<aChain key="delmors">
+		<w>molders</w>
+		<w>smolder</w>
+	</aChain>
+	<aChain key="delmos">
+		<w>models</w>
+		<w>seldom</w>
+	</aChain>
+	<aChain key="delmpu">
+		<w>lumped</w>
+		<w>plumed</w>
+	</aChain>
+	<aChain key="deloop">
+		<w>looped</w>
+		<w>pooled</w>
+	</aChain>
+	<aChain key="deloos">
+		<w>loosed</w>
+		<w>soloed</w>
+	</aChain>
+	<aChain key="deloot">
+		<w>looted</w>
+		<w>tooled</w>
+	</aChain>
+	<aChain key="delors">
+		<w>resold</w>
+		<w>solder</w>
+	</aChain>
+	<aChain key="delos">
+		<w>doles</w>
+		<w>soled</w>
+	</aChain>
+	<aChain key="delost">
+		<w>oldest</w>
+		<w>stoled</w>
+	</aChain>
+	<aChain key="delru">
+		<w>lured</w>
+		<w>ruled</w>
+	</aChain>
+	<aChain key="delw">
+		<w>lewd</w>
+		<w>weld</w>
+	</aChain>
+	<aChain key="demnor">
+		<w>modern</w>
+		<w>normed</w>
+	</aChain>
+	<aChain key="demo">
+		<w>demo</w>
+		<w>dome</w>
+		<w>mode</w>
+	</aChain>
+	<aChain key="demoor">
+		<w>moored</w>
+		<w>roomed</w>
+	</aChain>
+	<aChain key="demos">
+		<w>demos</w>
+		<w>domes</w>
+		<w>modes</w>
+	</aChain>
+	<aChain key="den">
+		<w>den</w>
+		<w>end</w>
+	</aChain>
+	<aChain key="deno">
+		<w>done</w>
+		<w>node</w>
+	</aChain>
+	<aChain key="denoops">
+		<w>snooped</w>
+		<w>spooned</w>
+	</aChain>
+	<aChain key="denoprs">
+		<w>ponders</w>
+		<w>respond</w>
+	</aChain>
+	<aChain key="denors">
+		<w>drones</w>
+		<w>snored</w>
+	</aChain>
+	<aChain key="denorstu">
+		<w>roundest</w>
+		<w>unsorted</w>
+	</aChain>
+	<aChain key="denorsu">
+		<w>resound</w>
+		<w>sounder</w>
+	</aChain>
+	<aChain key="denorsw">
+		<w>downers</w>
+		<w>wonders</w>
+	</aChain>
+	<aChain key="denorw">
+		<w>downer</w>
+		<w>wonder</w>
+	</aChain>
+	<aChain key="denos">
+		<w>nodes</w>
+		<w>nosed</w>
+	</aChain>
+	<aChain key="denosw">
+		<w>endows</w>
+		<w>snowed</w>
+	</aChain>
+	<aChain key="denot">
+		<w>noted</w>
+		<w>toned</w>
+	</aChain>
+	<aChain key="denow">
+		<w>endow</w>
+		<w>owned</w>
+	</aChain>
+	<aChain key="denoz">
+		<w>dozen</w>
+		<w>zoned</w>
+	</aChain>
+	<aChain key="denps">
+		<w>pends</w>
+		<w>spend</w>
+	</aChain>
+	<aChain key="dens">
+		<w>dens</w>
+		<w>ends</w>
+		<w>send</w>
+	</aChain>
+	<aChain key="denst">
+		<w>dents</w>
+		<w>tends</w>
+	</aChain>
+	<aChain key="densttu">
+		<w>student</w>
+		<w>stunted</w>
+	</aChain>
+	<aChain key="dent">
+		<w>dent</w>
+		<w>tend</w>
+	</aChain>
+	<aChain key="deooprst">
+		<w>doorstep</w>
+		<w>torpedos</w>
+	</aChain>
+	<aChain key="deooprt">
+		<w>torpedo</w>
+		<w>trooped</w>
+	</aChain>
+	<aChain key="deopr">
+		<w>doper</w>
+		<w>pored</w>
+		<w>roped</w>
+	</aChain>
+	<aChain key="deoprs">
+		<w>dopers</w>
+		<w>spored</w>
+	</aChain>
+	<aChain key="deoprst">
+		<w>deports</w>
+		<w>sported</w>
+	</aChain>
+	<aChain key="deoprstu">
+		<w>postured</w>
+		<w>proudest</w>
+		<w>sprouted</w>
+	</aChain>
+	<aChain key="deoprt">
+		<w>deport</w>
+		<w>ported</w>
+	</aChain>
+	<aChain key="deops">
+		<w>dopes</w>
+		<w>posed</w>
+	</aChain>
+	<aChain key="deopst">
+		<w>depots</w>
+		<w>despot</w>
+		<w>posted</w>
+	</aChain>
+	<aChain key="deopt">
+		<w>depot</w>
+		<w>opted</w>
+		<w>toped</w>
+	</aChain>
+	<aChain key="deor">
+		<w>doer</w>
+		<w>oder</w>
+		<w>rode</w>
+	</aChain>
+	<aChain key="deorst">
+		<w>sorted</w>
+		<w>stored</w>
+		<w>strode</w>
+	</aChain>
+	<aChain key="deorsu">
+		<w>douser</w>
+		<w>roused</w>
+		<w>soured</w>
+	</aChain>
+	<aChain key="deortu">
+		<w>routed</w>
+		<w>toured</w>
+	</aChain>
+	<aChain key="deorv">
+		<w>dover</w>
+		<w>drove</w>
+		<w>roved</w>
+	</aChain>
+	<aChain key="deos">
+		<w>does</w>
+		<w>dose</w>
+		<w>odes</w>
+	</aChain>
+	<aChain key="deot">
+		<w>dote</w>
+		<w>toed</w>
+	</aChain>
+	<aChain key="deprsuu">
+		<w>pursued</w>
+		<w>usurped</w>
+	</aChain>
+	<aChain key="derstu">
+		<w>duster</w>
+		<w>rudest</w>
+		<w>rusted</w>
+	</aChain>
+	<aChain key="desu">
+		<w>dues</w>
+		<w>sued</w>
+		<w>used</w>
+	</aChain>
+	<aChain key="desw">
+		<w>dews</w>
+		<w>weds</w>
+	</aChain>
+	<aChain key="dew">
+		<w>dew</w>
+		<w>wed</w>
+	</aChain>
+	<aChain key="dggiiln">
+		<w>gilding</w>
+		<w>gliding</w>
+	</aChain>
+	<aChain key="dggiinr">
+		<w>dirging</w>
+		<w>girding</w>
+		<w>ridging</w>
+	</aChain>
+	<aChain key="dggilno">
+		<w>golding</w>
+		<w>lodging</w>
+	</aChain>
+	<aChain key="dgiinty">
+		<w>dignity</w>
+		<w>tidying</w>
+	</aChain>
+	<aChain key="dginnosu">
+		<w>sounding</w>
+		<w>undoings</w>
+	</aChain>
+	<aChain key="dginos">
+		<w>doings</w>
+		<w>dosing</w>
+	</aChain>
+	<aChain key="dginy">
+		<w>dingy</w>
+		<w>dying</w>
+	</aChain>
+	<aChain key="dgir">
+		<w>gird</w>
+		<w>grid</w>
+	</aChain>
+	<aChain key="dgirs">
+		<w>girds</w>
+		<w>grids</w>
+	</aChain>
+	<aChain key="dgo">
+		<w>dog</w>
+		<w>god</w>
+	</aChain>
+	<aChain key="dgos">
+		<w>dogs</w>
+		<w>gods</w>
+	</aChain>
+	<aChain key="dhnosu">
+		<w>hounds</w>
+		<w>unshod</w>
+	</aChain>
+	<aChain key="diks">
+		<w>disk</w>
+		<w>kids</w>
+	</aChain>
+	<aChain key="dilos">
+		<w>idols</w>
+		<w>solid</w>
+	</aChain>
+	<aChain key="dils">
+		<w>lids</w>
+		<w>slid</w>
+	</aChain>
+	<aChain key="dim">
+		<w>dim</w>
+		<w>mid</w>
+	</aChain>
+	<aChain key="dmoo">
+		<w>doom</w>
+		<w>mood</w>
+	</aChain>
+	<aChain key="dmoos">
+		<w>dooms</w>
+		<w>moods</w>
+	</aChain>
+	<aChain key="dno">
+		<w>don</w>
+		<w>nod</w>
+	</aChain>
+	<aChain key="dnos">
+		<w>dons</w>
+		<w>nods</w>
+	</aChain>
+	<aChain key="dorsw">
+		<w>sword</w>
+		<w>words</w>
+	</aChain>
+	<aChain key="dsstu">
+		<w>dusts</w>
+		<w>studs</w>
+	</aChain>
+	<aChain key="dstu">
+		<w>dust</w>
+		<w>stud</w>
+	</aChain>
+	<aChain key="dstuy">
+		<w>dusty</w>
+		<w>study</w>
+	</aChain>
+	<aChain key="eeefhnrrs">
+		<w>freshener</w>
+		<w>refreshen</w>
+	</aChain>
+	<aChain key="eeeiimnprssssv">
+		<w>impressiveness</w>
+		<w>permissiveness</w>
+	</aChain>
+	<aChain key="eeeiinrstt">
+		<w>entireties</w>
+		<w>eternities</w>
+	</aChain>
+	<aChain key="eeeinprrrstt">
+		<w>interpreters</w>
+		<w>reinterprets</w>
+	</aChain>
+	<aChain key="eeeinprrrtt">
+		<w>interpreter</w>
+		<w>reinterpret</w>
+	</aChain>
+	<aChain key="eeeinprrsst">
+		<w>enterprises</w>
+		<w>intersperse</w>
+	</aChain>
+	<aChain key="eeelprss">
+		<w>peerless</w>
+		<w>sleepers</w>
+	</aChain>
+	<aChain key="eeelsv">
+		<w>levees</w>
+		<w>sleeve</w>
+	</aChain>
+	<aChain key="eeenprrsst">
+		<w>presenters</w>
+		<w>represents</w>
+	</aChain>
+	<aChain key="eeenprrst">
+		<w>presenter</w>
+		<w>represent</w>
+	</aChain>
+	<aChain key="eeenrrt">
+		<w>enterer</w>
+		<w>reenter</w>
+	</aChain>
+	<aChain key="eeeprsw">
+		<w>sweeper</w>
+		<w>weepers</w>
+	</aChain>
+	<aChain key="eeerrrsv">
+		<w>reserver</w>
+		<w>reverser</w>
+	</aChain>
+	<aChain key="eeerrssv">
+		<w>reserves</w>
+		<w>reverses</w>
+	</aChain>
+	<aChain key="eeerrst">
+		<w>reseter</w>
+		<w>steerer</w>
+	</aChain>
+	<aChain key="eeerrsv">
+		<w>reserve</w>
+		<w>reveres</w>
+		<w>reverse</w>
+		<w>severer</w>
+	</aChain>
+	<aChain key="eeersv">
+		<w>reeves</w>
+		<w>severe</w>
+	</aChain>
+	<aChain key="eefgiln">
+		<w>feeling</w>
+		<w>fleeing</w>
+	</aChain>
+	<aChain key="eefginr">
+		<w>feigner</w>
+		<w>freeing</w>
+		<w>reefing</w>
+	</aChain>
+	<aChain key="eefhlrs">
+		<w>flesher</w>
+		<w>herself</w>
+	</aChain>
+	<aChain key="eefhrrs">
+		<w>fresher</w>
+		<w>refresh</w>
+	</aChain>
+	<aChain key="eefirrs">
+		<w>ferries</w>
+		<w>refries</w>
+	</aChain>
+	<aChain key="eefl">
+		<w>feel</w>
+		<w>flee</w>
+	</aChain>
+	<aChain key="eefls">
+		<w>feels</w>
+		<w>flees</w>
+	</aChain>
+	<aChain key="eeforrst">
+		<w>forester</w>
+		<w>fosterer</w>
+	</aChain>
+	<aChain key="eefr">
+		<w>free</w>
+		<w>reef</w>
+	</aChain>
+	<aChain key="eefrr">
+		<w>freer</w>
+		<w>refer</w>
+	</aChain>
+	<aChain key="eefrs">
+		<w>frees</w>
+		<w>reefs</w>
+	</aChain>
+	<aChain key="eeghilnrt">
+		<w>lengthier</w>
+		<w>lightener</w>
+	</aChain>
+	<aChain key="eeghinst">
+		<w>seething</w>
+		<w>sheeting</w>
+	</aChain>
+	<aChain key="eegiinnnrtv">
+		<w>intervening</w>
+		<w>reinventing</w>
+	</aChain>
+	<aChain key="eegiknn">
+		<w>keening</w>
+		<w>kneeing</w>
+	</aChain>
+	<aChain key="eegiknp">
+		<w>keeping</w>
+		<w>peeking</w>
+	</aChain>
+	<aChain key="eegilnr">
+		<w>leering</w>
+		<w>reeling</w>
+	</aChain>
+	<aChain key="eegimnrt">
+		<w>metering</w>
+		<w>regiment</w>
+	</aChain>
+	<aChain key="eegimnt">
+		<w>meeting</w>
+		<w>teeming</w>
+	</aChain>
+	<aChain key="eeginrrsv">
+		<w>reserving</w>
+		<w>reversing</w>
+	</aChain>
+	<aChain key="eeginrst">
+		<w>gentries</w>
+		<w>integers</w>
+		<w>reseting</w>
+		<w>steering</w>
+	</aChain>
+	<aChain key="eeginrttv">
+		<w>revetting</w>
+		<w>vignetter</w>
+	</aChain>
+	<aChain key="eegnr">
+		<w>genre</w>
+		<w>green</w>
+	</aChain>
+	<aChain key="eegnrs">
+		<w>genres</w>
+		<w>greens</w>
+	</aChain>
+	<aChain key="eehinr">
+		<w>herein</w>
+		<w>inhere</w>
+	</aChain>
+	<aChain key="eehinrt">
+		<w>neither</w>
+		<w>therein</w>
+	</aChain>
+	<aChain key="eehorvw">
+		<w>however</w>
+		<w>whoever</w>
+	</aChain>
+	<aChain key="eehrs">
+		<w>heres</w>
+		<w>sheer</w>
+	</aChain>
+	<aChain key="eehrt">
+		<w>there</w>
+		<w>three</w>
+	</aChain>
+	<aChain key="eehrw">
+		<w>hewer</w>
+		<w>where</w>
+	</aChain>
+	<aChain key="eehsst">
+		<w>sheets</w>
+		<w>theses</w>
+	</aChain>
+	<aChain key="eehst">
+		<w>sheet</w>
+		<w>these</w>
+	</aChain>
+	<aChain key="eeiilmprssvy">
+		<w>impressively</w>
+		<w>permissively</w>
+	</aChain>
+	<aChain key="eeiimprssv">
+		<w>impressive</w>
+		<w>permissive</w>
+	</aChain>
+	<aChain key="eeiinoprtt">
+		<w>petitioner</w>
+		<w>repetition</w>
+	</aChain>
+	<aChain key="eeilmnost">
+		<w>limestone</w>
+		<w>milestone</w>
+	</aChain>
+	<aChain key="eeilnosss">
+		<w>lionesses</w>
+		<w>noiseless</w>
+	</aChain>
+	<aChain key="eeilnrsst">
+		<w>listeners</w>
+		<w>reenlists</w>
+	</aChain>
+	<aChain key="eeilnrst">
+		<w>enlister</w>
+		<w>listener</w>
+	</aChain>
+	<aChain key="eeilnssv">
+		<w>evilness</w>
+		<w>liveness</w>
+		<w>vileness</w>
+	</aChain>
+	<aChain key="eeilprst">
+		<w>epistler</w>
+		<w>reptiles</w>
+	</aChain>
+	<aChain key="eeilrsv">
+		<w>relives</w>
+		<w>servile</w>
+	</aChain>
+	<aChain key="eeilrv">
+		<w>levier</w>
+		<w>relive</w>
+		<w>revile</w>
+	</aChain>
+	<aChain key="eeimprs">
+		<w>empires</w>
+		<w>premise</w>
+	</aChain>
+	<aChain key="eeinoprst">
+		<w>entropies</w>
+		<w>interpose</w>
+	</aChain>
+	<aChain key="eeinprr">
+		<w>repiner</w>
+		<w>ripener</w>
+	</aChain>
+	<aChain key="eeinprsstt">
+		<w>persistent</w>
+		<w>prettiness</w>
+	</aChain>
+	<aChain key="eeinrrst">
+		<w>inserter</w>
+		<w>reinsert</w>
+	</aChain>
+	<aChain key="eeinrtty">
+		<w>entirety</w>
+		<w>eternity</w>
+	</aChain>
+	<aChain key="eeinrtu">
+		<w>retinue</w>
+		<w>reunite</w>
+	</aChain>
+	<aChain key="eeinrv">
+		<w>envier</w>
+		<w>veiner</w>
+	</aChain>
+	<aChain key="eeiqrru">
+		<w>querier</w>
+		<w>require</w>
+	</aChain>
+	<aChain key="eeiqrsu">
+		<w>esquire</w>
+		<w>queries</w>
+	</aChain>
+	<aChain key="eeiqrtu">
+		<w>quieter</w>
+		<w>requite</w>
+	</aChain>
+	<aChain key="eeirrrst">
+		<w>retriers</w>
+		<w>terriers</w>
+	</aChain>
+	<aChain key="eeirrrt">
+		<w>retrier</w>
+		<w>terrier</w>
+	</aChain>
+	<aChain key="eeirrst">
+		<w>retires</w>
+		<w>retries</w>
+	</aChain>
+	<aChain key="eeirssv">
+		<w>revises</w>
+		<w>sievers</w>
+	</aChain>
+	<aChain key="eeirssz">
+		<w>resizes</w>
+		<w>seizers</w>
+	</aChain>
+	<aChain key="eeirstv">
+		<w>restive</w>
+		<w>veriest</w>
+	</aChain>
+	<aChain key="eeirsvw">
+		<w>reviews</w>
+		<w>viewers</w>
+	</aChain>
+	<aChain key="eeirsz">
+		<w>resize</w>
+		<w>seizer</w>
+	</aChain>
+	<aChain key="eeirvw">
+		<w>review</w>
+		<w>viewer</w>
+	</aChain>
+	<aChain key="eeklns">
+		<w>kneels</w>
+		<w>sleken</w>
+	</aChain>
+	<aChain key="eekls">
+		<w>keels</w>
+		<w>sleek</w>
+	</aChain>
+	<aChain key="eekn">
+		<w>keen</w>
+		<w>knee</w>
+	</aChain>
+	<aChain key="eekp">
+		<w>keep</w>
+		<w>peek</w>
+	</aChain>
+	<aChain key="eekps">
+		<w>keeps</w>
+		<w>peeks</w>
+	</aChain>
+	<aChain key="eeks">
+		<w>ekes</w>
+		<w>seek</w>
+	</aChain>
+	<aChain key="eel">
+		<w>eel</w>
+		<w>lee</w>
+	</aChain>
+	<aChain key="eellrs">
+		<w>resell</w>
+		<w>seller</w>
+	</aChain>
+	<aChain key="eellrss">
+		<w>resells</w>
+		<w>sellers</w>
+	</aChain>
+	<aChain key="eelnrst">
+		<w>nestler</w>
+		<w>relents</w>
+	</aChain>
+	<aChain key="eelnss">
+		<w>lenses</w>
+		<w>lessen</w>
+	</aChain>
+	<aChain key="eelps">
+		<w>peels</w>
+		<w>sleep</w>
+	</aChain>
+	<aChain key="eelr">
+		<w>leer</w>
+		<w>reel</w>
+	</aChain>
+	<aChain key="eelrs">
+		<w>leers</w>
+		<w>reels</w>
+	</aChain>
+	<aChain key="eelrstt">
+		<w>letters</w>
+		<w>settler</w>
+	</aChain>
+	<aChain key="eelrsv">
+		<w>levers</w>
+		<w>revels</w>
+	</aChain>
+	<aChain key="eelrv">
+		<w>lever</w>
+		<w>revel</w>
+	</aChain>
+	<aChain key="eels">
+		<w>eels</w>
+		<w>else</w>
+		<w>lees</w>
+	</aChain>
+	<aChain key="eelssv">
+		<w>selves</w>
+		<w>vessel</w>
+	</aChain>
+	<aChain key="eelst">
+		<w>sleet</w>
+		<w>steel</w>
+	</aChain>
+	<aChain key="eemort">
+		<w>meteor</w>
+		<w>remote</w>
+	</aChain>
+	<aChain key="eemprsu">
+		<w>presume</w>
+		<w>supreme</w>
+	</aChain>
+	<aChain key="eemrst">
+		<w>merest</w>
+		<w>meters</w>
+	</aChain>
+	<aChain key="eemst">
+		<w>meets</w>
+		<w>metes</w>
+		<w>teems</w>
+	</aChain>
+	<aChain key="eemt">
+		<w>meet</w>
+		<w>mete</w>
+		<w>teem</w>
+	</aChain>
+	<aChain key="eenopr">
+		<w>opener</w>
+		<w>reopen</w>
+	</aChain>
+	<aChain key="eenoprs">
+		<w>openers</w>
+		<w>reopens</w>
+	</aChain>
+	<aChain key="eenprsst">
+		<w>presents</w>
+		<w>serpents</w>
+	</aChain>
+	<aChain key="eenprst">
+		<w>present</w>
+		<w>repents</w>
+		<w>serpent</w>
+	</aChain>
+	<aChain key="eenrst">
+		<w>enters</w>
+		<w>nester</w>
+		<w>resent</w>
+		<w>tenser</w>
+	</aChain>
+	<aChain key="eenrv">
+		<w>nerve</w>
+		<w>never</w>
+	</aChain>
+	<aChain key="eenrw">
+		<w>newer</w>
+		<w>renew</w>
+	</aChain>
+	<aChain key="eenst">
+		<w>teens</w>
+		<w>tense</w>
+	</aChain>
+	<aChain key="eensv">
+		<w>evens</w>
+		<w>seven</w>
+	</aChain>
+	<aChain key="eeorrrst">
+		<w>resorter</w>
+		<w>restorer</w>
+	</aChain>
+	<aChain key="eeprrss">
+		<w>presser</w>
+		<w>repress</w>
+	</aChain>
+	<aChain key="eeprrssu">
+		<w>perusers</w>
+		<w>pressure</w>
+	</aChain>
+	<aChain key="eeprs">
+		<w>peers</w>
+		<w>spree</w>
+	</aChain>
+	<aChain key="eeprsst">
+		<w>pesters</w>
+		<w>presets</w>
+	</aChain>
+	<aChain key="eeprst">
+		<w>pester</w>
+		<w>peters</w>
+		<w>preset</w>
+	</aChain>
+	<aChain key="eepsw">
+		<w>sweep</w>
+		<w>weeps</w>
+	</aChain>
+	<aChain key="eeqrsstu">
+		<w>questers</w>
+		<w>requests</w>
+	</aChain>
+	<aChain key="eeqrstu">
+		<w>quester</w>
+		<w>request</w>
+	</aChain>
+	<aChain key="eerrsv">
+		<w>server</w>
+		<w>verser</w>
+	</aChain>
+	<aChain key="eersst">
+		<w>resets</w>
+		<w>steers</w>
+	</aChain>
+	<aChain key="eersstt">
+		<w>setters</w>
+		<w>streets</w>
+		<w>testers</w>
+	</aChain>
+	<aChain key="eerssv">
+		<w>serves</w>
+		<w>severs</w>
+		<w>verses</w>
+	</aChain>
+	<aChain key="eerst">
+		<w>reset</w>
+		<w>steer</w>
+		<w>trees</w>
+	</aChain>
+	<aChain key="eerstt">
+		<w>setter</w>
+		<w>street</w>
+		<w>tester</w>
+	</aChain>
+	<aChain key="eersv">
+		<w>serve</w>
+		<w>sever</w>
+		<w>veers</w>
+		<w>verse</w>
+	</aChain>
+	<aChain key="eerv">
+		<w>ever</w>
+		<w>veer</w>
+	</aChain>
+	<aChain key="eerw">
+		<w>ewer</w>
+		<w>were</w>
+	</aChain>
+	<aChain key="eew">
+		<w>ewe</w>
+		<w>wee</w>
+	</aChain>
+	<aChain key="efghirst">
+		<w>fighters</w>
+		<w>freights</w>
+	</aChain>
+	<aChain key="efghirt">
+		<w>fighter</w>
+		<w>freight</w>
+	</aChain>
+	<aChain key="efgiinnr">
+		<w>infringe</w>
+		<w>refining</w>
+	</aChain>
+	<aChain key="efgiinnrr">
+		<w>inferring</w>
+		<w>infringer</w>
+	</aChain>
+	<aChain key="efginr">
+		<w>finger</w>
+		<w>fringe</w>
+	</aChain>
+	<aChain key="efginrry">
+		<w>ferrying</w>
+		<w>refrying</w>
+	</aChain>
+	<aChain key="efginrs">
+		<w>fingers</w>
+		<w>fringes</w>
+	</aChain>
+	<aChain key="efginrsu">
+		<w>gunfires</w>
+		<w>refusing</w>
+	</aChain>
+	<aChain key="efhls">
+		<w>flesh</w>
+		<w>shelf</w>
+	</aChain>
+	<aChain key="efiinst">
+		<w>finites</w>
+		<w>nifties</w>
+	</aChain>
+	<aChain key="efil">
+		<w>file</w>
+		<w>life</w>
+	</aChain>
+	<aChain key="efillr">
+		<w>filler</w>
+		<w>refill</w>
+	</aChain>
+	<aChain key="efillrs">
+		<w>fillers</w>
+		<w>refills</w>
+	</aChain>
+	<aChain key="efilr">
+		<w>filer</w>
+		<w>flier</w>
+		<w>lifer</w>
+		<w>rifle</w>
+	</aChain>
+	<aChain key="efilrrt">
+		<w>flirter</w>
+		<w>trifler</w>
+	</aChain>
+	<aChain key="efilrs">
+		<w>filers</w>
+		<w>fliers</w>
+		<w>lifers</w>
+		<w>rifles</w>
+	</aChain>
+	<aChain key="efilrst">
+		<w>filters</w>
+		<w>lifters</w>
+		<w>stifler</w>
+		<w>trifles</w>
+	</aChain>
+	<aChain key="efilrt">
+		<w>filter</w>
+		<w>lifter</w>
+		<w>trifle</w>
+	</aChain>
+	<aChain key="efils">
+		<w>files</w>
+		<w>flies</w>
+	</aChain>
+	<aChain key="efilst">
+		<w>itself</w>
+		<w>stifle</w>
+	</aChain>
+	<aChain key="efinr">
+		<w>finer</w>
+		<w>infer</w>
+	</aChain>
+	<aChain key="efinsst">
+		<w>fitness</w>
+		<w>infests</w>
+	</aChain>
+	<aChain key="efinst">
+		<w>finest</w>
+		<w>infest</w>
+	</aChain>
+	<aChain key="efirr">
+		<w>firer</w>
+		<w>frier</w>
+	</aChain>
+	<aChain key="efirs">
+		<w>fires</w>
+		<w>fries</w>
+	</aChain>
+	<aChain key="efirst">
+		<w>sifter</w>
+		<w>strife</w>
+	</aChain>
+	<aChain key="eflorw">
+		<w>flower</w>
+		<w>fowler</w>
+		<w>wolfer</w>
+	</aChain>
+	<aChain key="eflst">
+		<w>felts</w>
+		<w>lefts</w>
+	</aChain>
+	<aChain key="eflt">
+		<w>felt</w>
+		<w>left</w>
+	</aChain>
+	<aChain key="efmorr">
+		<w>former</w>
+		<w>reform</w>
+	</aChain>
+	<aChain key="efmorrs">
+		<w>formers</w>
+		<w>reforms</w>
+	</aChain>
+	<aChain key="efooprr">
+		<w>proofer</w>
+		<w>reproof</w>
+	</aChain>
+	<aChain key="eforsst">
+		<w>forests</w>
+		<w>fosters</w>
+	</aChain>
+	<aChain key="eforst">
+		<w>forest</w>
+		<w>fortes</w>
+		<w>foster</w>
+		<w>softer</w>
+	</aChain>
+	<aChain key="efrry">
+		<w>ferry</w>
+		<w>refry</w>
+	</aChain>
+	<aChain key="eghhist">
+		<w>heights</w>
+		<w>highest</w>
+	</aChain>
+	<aChain key="eghhit">
+		<w>eighth</w>
+		<w>height</w>
+	</aChain>
+	<aChain key="eghilrst">
+		<w>lighters</w>
+		<w>slighter</w>
+	</aChain>
+	<aChain key="eghin">
+		<w>hinge</w>
+		<w>neigh</w>
+	</aChain>
+	<aChain key="egiilnnst">
+		<w>enlisting</w>
+		<w>listening</w>
+	</aChain>
+	<aChain key="egiilnrv">
+		<w>reliving</w>
+		<w>reviling</w>
+	</aChain>
+	<aChain key="egiimmnrs">
+		<w>immersing</w>
+		<w>simmering</w>
+	</aChain>
+	<aChain key="egiinnpr">
+		<w>repining</w>
+		<w>ripening</w>
+	</aChain>
+	<aChain key="egiinprsst">
+		<w>persisting</w>
+		<w>springiest</w>
+	</aChain>
+	<aChain key="egiinrsst">
+		<w>resisting</w>
+		<w>sistering</w>
+	</aChain>
+	<aChain key="egilnrs">
+		<w>lingers</w>
+		<w>slinger</w>
+	</aChain>
+	<aChain key="egilnss">
+		<w>lessing</w>
+		<w>singles</w>
+	</aChain>
+	<aChain key="egilnst">
+		<w>glisten</w>
+		<w>tingles</w>
+	</aChain>
+	<aChain key="eginnss">
+		<w>ensigns</w>
+		<w>sensing</w>
+	</aChain>
+	<aChain key="eginnst">
+		<w>nesting</w>
+		<w>tensing</w>
+	</aChain>
+	<aChain key="eginntt">
+		<w>netting</w>
+		<w>tenting</w>
+	</aChain>
+	<aChain key="eginoprrt">
+		<w>portering</w>
+		<w>reporting</w>
+	</aChain>
+	<aChain key="eginor">
+		<w>ignore</w>
+		<w>region</w>
+	</aChain>
+	<aChain key="eginorrst">
+		<w>resorting</w>
+		<w>restoring</w>
+	</aChain>
+	<aChain key="eginors">
+		<w>ignores</w>
+		<w>regions</w>
+	</aChain>
+	<aChain key="eginprsu">
+		<w>perusing</w>
+		<w>supering</w>
+	</aChain>
+	<aChain key="eginrr">
+		<w>erring</w>
+		<w>ringer</w>
+	</aChain>
+	<aChain key="eginrs">
+		<w>reigns</w>
+		<w>resign</w>
+		<w>signer</w>
+		<w>singer</w>
+	</aChain>
+	<aChain key="eginrss">
+		<w>resigns</w>
+		<w>signers</w>
+		<w>singers</w>
+	</aChain>
+	<aChain key="eginrst">
+		<w>resting</w>
+		<w>stinger</w>
+	</aChain>
+	<aChain key="eginrstw">
+		<w>strewing</w>
+		<w>wresting</w>
+	</aChain>
+	<aChain key="eginrsv">
+		<w>serving</w>
+		<w>versing</w>
+	</aChain>
+	<aChain key="eginrsw">
+		<w>swinger</w>
+		<w>wingers</w>
+	</aChain>
+	<aChain key="eginsstt">
+		<w>settings</w>
+		<w>testings</w>
+	</aChain>
+	<aChain key="eginstt">
+		<w>setting</w>
+		<w>testing</w>
+	</aChain>
+	<aChain key="eginstw">
+		<w>stewing</w>
+		<w>westing</w>
+	</aChain>
+	<aChain key="egl">
+		<w>gel</w>
+		<w>leg</w>
+	</aChain>
+	<aChain key="eglorsv">
+		<w>glovers</w>
+		<w>grovels</w>
+	</aChain>
+	<aChain key="eglorv">
+		<w>glover</w>
+		<w>grovel</w>
+	</aChain>
+	<aChain key="egls">
+		<w>gels</w>
+		<w>legs</w>
+	</aChain>
+	<aChain key="egoprru">
+		<w>grouper</w>
+		<w>regroup</w>
+	</aChain>
+	<aChain key="egor">
+		<w>ergo</w>
+		<w>goer</w>
+		<w>gore</w>
+	</aChain>
+	<aChain key="egorsu">
+		<w>grouse</w>
+		<w>rogues</w>
+	</aChain>
+	<aChain key="egoru">
+		<w>rogue</w>
+		<w>rouge</w>
+	</aChain>
+	<aChain key="egos">
+		<w>egos</w>
+		<w>goes</w>
+	</aChain>
+	<aChain key="egrsu">
+		<w>surge</w>
+		<w>urges</w>
+	</aChain>
+	<aChain key="ehiknrst">
+		<w>rethinks</w>
+		<w>thinkers</w>
+	</aChain>
+	<aChain key="ehikrs">
+		<w>hikers</w>
+		<w>shriek</w>
+	</aChain>
+	<aChain key="ehinrs">
+		<w>shiner</w>
+		<w>shrine</w>
+	</aChain>
+	<aChain key="ehinrss">
+		<w>shiners</w>
+		<w>shrines</w>
+	</aChain>
+	<aChain key="ehinrt">
+		<w>hinter</w>
+		<w>thiner</w>
+	</aChain>
+	<aChain key="ehir">
+		<w>heir</w>
+		<w>hire</w>
+	</aChain>
+	<aChain key="ehirs">
+		<w>heirs</w>
+		<w>hires</w>
+		<w>shier</w>
+	</aChain>
+	<aChain key="ehirssw">
+		<w>swisher</w>
+		<w>wishers</w>
+	</aChain>
+	<aChain key="ehirstw">
+		<w>withers</w>
+		<w>writhes</w>
+	</aChain>
+	<aChain key="ehirtt">
+		<w>hitter</w>
+		<w>tither</w>
+	</aChain>
+	<aChain key="ehirtw">
+		<w>whiter</w>
+		<w>wither</w>
+		<w>writhe</w>
+	</aChain>
+	<aChain key="ehisst">
+		<w>shiest</w>
+		<w>thesis</w>
+	</aChain>
+	<aChain key="ehlls">
+		<w>hells</w>
+		<w>shell</w>
+	</aChain>
+	<aChain key="ehlosv">
+		<w>hovels</w>
+		<w>shovel</w>
+	</aChain>
+	<aChain key="ehlrsstu">
+		<w>hustlers</w>
+		<w>ruthless</w>
+	</aChain>
+	<aChain key="ehmorst">
+		<w>mothers</w>
+		<w>smother</w>
+	</aChain>
+	<aChain key="ehms">
+		<w>hems</w>
+		<w>mesh</w>
+	</aChain>
+	<aChain key="ehnor">
+		<w>heron</w>
+		<w>honer</w>
+	</aChain>
+	<aChain key="ehnorst">
+		<w>hornets</w>
+		<w>shorten</w>
+		<w>thrones</w>
+	</aChain>
+	<aChain key="ehnort">
+		<w>hornet</w>
+		<w>throne</w>
+	</aChain>
+	<aChain key="ehnos">
+		<w>hones</w>
+		<w>shone</w>
+	</aChain>
+	<aChain key="ehoorst">
+		<w>hooters</w>
+		<w>shooter</w>
+		<w>soother</w>
+	</aChain>
+	<aChain key="ehopprs">
+		<w>hoppers</w>
+		<w>shopper</w>
+	</aChain>
+	<aChain key="ehor">
+		<w>hero</w>
+		<w>hoer</w>
+	</aChain>
+	<aChain key="ehors">
+		<w>heros</w>
+		<w>horse</w>
+		<w>shoer</w>
+		<w>shore</w>
+	</aChain>
+	<aChain key="ehorss">
+		<w>horses</w>
+		<w>shores</w>
+	</aChain>
+	<aChain key="ehorstu">
+		<w>shouter</w>
+		<w>souther</w>
+	</aChain>
+	<aChain key="ehorsv">
+		<w>hovers</w>
+		<w>shover</w>
+	</aChain>
+	<aChain key="ehorsw">
+		<w>shower</w>
+		<w>whores</w>
+	</aChain>
+	<aChain key="ehos">
+		<w>hoes</w>
+		<w>hose</w>
+		<w>shoe</w>
+	</aChain>
+	<aChain key="ehoss">
+		<w>hoses</w>
+		<w>shoes</w>
+	</aChain>
+	<aChain key="ehrssu">
+		<w>rushes</w>
+		<w>ushers</w>
+	</aChain>
+	<aChain key="eiimnoprss">
+		<w>impression</w>
+		<w>permission</w>
+	</aChain>
+	<aChain key="eiimnoprsss">
+		<w>impressions</w>
+		<w>permissions</w>
+	</aChain>
+	<aChain key="eiinopstt">
+		<w>petitions</w>
+		<w>pointiest</w>
+	</aChain>
+	<aChain key="eiinors">
+		<w>ironies</w>
+		<w>noisier</w>
+	</aChain>
+	<aChain key="eijnor">
+		<w>joiner</w>
+		<w>rejoin</w>
+	</aChain>
+	<aChain key="eijnors">
+		<w>joiners</w>
+		<w>rejoins</w>
+	</aChain>
+	<aChain key="eiklns">
+		<w>likens</w>
+		<w>silken</w>
+	</aChain>
+	<aChain key="eikmors">
+		<w>irksome</w>
+		<w>smokier</w>
+	</aChain>
+	<aChain key="eiknrs">
+		<w>inkers</w>
+		<w>sinker</w>
+	</aChain>
+	<aChain key="eiknrst">
+		<w>stinker</w>
+		<w>tinkers</w>
+	</aChain>
+	<aChain key="eiknrt">
+		<w>reknit</w>
+		<w>tinker</w>
+	</aChain>
+	<aChain key="eikps">
+		<w>pikes</w>
+		<w>spike</w>
+	</aChain>
+	<aChain key="eikrrst">
+		<w>skirter</w>
+		<w>striker</w>
+	</aChain>
+	<aChain key="eillrst">
+		<w>stiller</w>
+		<w>tillers</w>
+	</aChain>
+	<aChain key="eillvy">
+		<w>evilly</w>
+		<w>lively</w>
+		<w>vilely</w>
+	</aChain>
+	<aChain key="eilm">
+		<w>lime</w>
+		<w>mile</w>
+	</aChain>
+	<aChain key="eilmntuy">
+		<w>minutely</w>
+		<w>untimely</w>
+	</aChain>
+	<aChain key="eilmps">
+		<w>impels</w>
+		<w>simple</w>
+	</aChain>
+	<aChain key="eilms">
+		<w>limes</w>
+		<w>miles</w>
+		<w>slime</w>
+		<w>smile</w>
+	</aChain>
+	<aChain key="eilmss">
+		<w>slimes</w>
+		<w>smiles</w>
+	</aChain>
+	<aChain key="eiln">
+		<w>lien</w>
+		<w>line</w>
+	</aChain>
+	<aChain key="eilns">
+		<w>liens</w>
+		<w>lines</w>
+	</aChain>
+	<aChain key="eilnsst">
+		<w>enlists</w>
+		<w>listens</w>
+		<w>silents</w>
+	</aChain>
+	<aChain key="eilnst">
+		<w>enlist</w>
+		<w>inlets</w>
+		<w>listen</w>
+		<w>silent</w>
+	</aChain>
+	<aChain key="eilort">
+		<w>loiter</w>
+		<w>toiler</w>
+	</aChain>
+	<aChain key="eilpprs">
+		<w>ripples</w>
+		<w>slipper</w>
+	</aChain>
+	<aChain key="eilpr">
+		<w>peril</w>
+		<w>plier</w>
+	</aChain>
+	<aChain key="eilprs">
+		<w>lisper</w>
+		<w>perils</w>
+		<w>pilers</w>
+		<w>pliers</w>
+	</aChain>
+	<aChain key="eilprstt">
+		<w>splitter</w>
+		<w>triplets</w>
+	</aChain>
+	<aChain key="eilps">
+		<w>piles</w>
+		<w>plies</w>
+	</aChain>
+	<aChain key="eilrstt">
+		<w>litters</w>
+		<w>tilters</w>
+	</aChain>
+	<aChain key="eilrsv">
+		<w>livers</w>
+		<w>silver</w>
+	</aChain>
+	<aChain key="eilrtt">
+		<w>litter</w>
+		<w>tilter</w>
+	</aChain>
+	<aChain key="eilrv">
+		<w>liver</w>
+		<w>viler</w>
+	</aChain>
+	<aChain key="eilrvy">
+		<w>livery</w>
+		<w>verily</w>
+	</aChain>
+	<aChain key="eils">
+		<w>isle</w>
+		<w>lies</w>
+	</aChain>
+	<aChain key="eilsst">
+		<w>islets</w>
+		<w>sliest</w>
+		<w>stiles</w>
+	</aChain>
+	<aChain key="eilst">
+		<w>islet</w>
+		<w>stile</w>
+		<w>tiles</w>
+	</aChain>
+	<aChain key="eilstv">
+		<w>livest</w>
+		<w>vilest</w>
+	</aChain>
+	<aChain key="eilsv">
+		<w>evils</w>
+		<w>lives</w>
+		<w>veils</w>
+	</aChain>
+	<aChain key="eilv">
+		<w>evil</w>
+		<w>live</w>
+		<w>veil</w>
+		<w>vile</w>
+	</aChain>
+	<aChain key="eimn">
+		<w>mien</w>
+		<w>mine</w>
+	</aChain>
+	<aChain key="eimnoort">
+		<w>motioner</w>
+		<w>remotion</w>
+	</aChain>
+	<aChain key="eimnrtu">
+		<w>minuter</w>
+		<w>runtime</w>
+	</aChain>
+	<aChain key="eimns">
+		<w>miens</w>
+		<w>mines</w>
+	</aChain>
+	<aChain key="eimnstt">
+		<w>mittens</w>
+		<w>smitten</w>
+	</aChain>
+	<aChain key="eimoprrs">
+		<w>primrose</w>
+		<w>promiser</w>
+	</aChain>
+	<aChain key="eimoprs">
+		<w>imposer</w>
+		<w>promise</w>
+	</aChain>
+	<aChain key="eimpru">
+		<w>impure</w>
+		<w>umpire</w>
+	</aChain>
+	<aChain key="eimpstu">
+		<w>impetus</w>
+		<w>imputes</w>
+	</aChain>
+	<aChain key="eimr">
+		<w>mire</w>
+		<w>rime</w>
+	</aChain>
+	<aChain key="eimrs">
+		<w>mires</w>
+		<w>miser</w>
+	</aChain>
+	<aChain key="eimrssu">
+		<w>misuser</w>
+		<w>surmise</w>
+	</aChain>
+	<aChain key="eimrst">
+		<w>merits</w>
+		<w>mister</w>
+		<w>smiter</w>
+		<w>timers</w>
+	</aChain>
+	<aChain key="eimrt">
+		<w>merit</w>
+		<w>timer</w>
+	</aChain>
+	<aChain key="eimst">
+		<w>emits</w>
+		<w>items</w>
+		<w>mites</w>
+		<w>smite</w>
+		<w>times</w>
+	</aChain>
+	<aChain key="eimt">
+		<w>emit</w>
+		<w>item</w>
+		<w>mite</w>
+		<w>time</w>
+	</aChain>
+	<aChain key="einoprst">
+		<w>pointers</w>
+		<w>proteins</w>
+	</aChain>
+	<aChain key="einoprt">
+		<w>pointer</w>
+		<w>protein</w>
+	</aChain>
+	<aChain key="einorst">
+		<w>orients</w>
+		<w>stonier</w>
+	</aChain>
+	<aChain key="einprrst">
+		<w>printers</w>
+		<w>reprints</w>
+		<w>sprinter</w>
+	</aChain>
+	<aChain key="einprrt">
+		<w>printer</w>
+		<w>reprint</w>
+	</aChain>
+	<aChain key="einps">
+		<w>pines</w>
+		<w>spine</w>
+	</aChain>
+	<aChain key="einrs">
+		<w>reins</w>
+		<w>resin</w>
+		<w>rinse</w>
+		<w>risen</w>
+		<w>siren</w>
+	</aChain>
+	<aChain key="einrss">
+		<w>resins</w>
+		<w>rinses</w>
+		<w>sirens</w>
+	</aChain>
+	<aChain key="einrssu">
+		<w>insures</w>
+		<w>sunrise</w>
+	</aChain>
+	<aChain key="einrtw">
+		<w>twiner</w>
+		<w>winter</w>
+	</aChain>
+	<aChain key="einstu">
+		<w>unites</w>
+		<w>unties</w>
+	</aChain>
+	<aChain key="einsv">
+		<w>veins</w>
+		<w>vines</w>
+	</aChain>
+	<aChain key="einsw">
+		<w>sinew</w>
+		<w>swine</w>
+		<w>wines</w>
+	</aChain>
+	<aChain key="eintu">
+		<w>unite</w>
+		<w>untie</w>
+	</aChain>
+	<aChain key="einv">
+		<w>vein</w>
+		<w>vine</w>
+	</aChain>
+	<aChain key="eiorrsst">
+		<w>resistor</w>
+		<w>sorriest</w>
+	</aChain>
+	<aChain key="eipqu">
+		<w>equip</w>
+		<w>pique</w>
+	</aChain>
+	<aChain key="eipr">
+		<w>pier</w>
+		<w>ripe</w>
+	</aChain>
+	<aChain key="eiprr">
+		<w>prier</w>
+		<w>riper</w>
+	</aChain>
+	<aChain key="eiprs">
+		<w>piers</w>
+		<w>pries</w>
+		<w>spier</w>
+		<w>spire</w>
+	</aChain>
+	<aChain key="eiprss">
+		<w>pisser</w>
+		<w>spires</w>
+	</aChain>
+	<aChain key="eiprsst">
+		<w>esprits</w>
+		<w>persist</w>
+		<w>priests</w>
+		<w>stripes</w>
+	</aChain>
+	<aChain key="eiprst">
+		<w>esprit</w>
+		<w>priest</w>
+		<w>ripest</w>
+		<w>sprite</w>
+		<w>stripe</w>
+	</aChain>
+	<aChain key="eipsw">
+		<w>swipe</w>
+		<w>wipes</w>
+	</aChain>
+	<aChain key="eiqtu">
+		<w>quiet</w>
+		<w>quite</w>
+	</aChain>
+	<aChain key="eirs">
+		<w>ires</w>
+		<w>rise</w>
+		<w>sire</w>
+	</aChain>
+	<aChain key="eirss">
+		<w>rises</w>
+		<w>sires</w>
+	</aChain>
+	<aChain key="eirssst">
+		<w>resists</w>
+		<w>sisters</w>
+	</aChain>
+	<aChain key="eirsst">
+		<w>resist</w>
+		<w>sister</w>
+	</aChain>
+	<aChain key="eirst">
+		<w>rites</w>
+		<w>tiers</w>
+		<w>tires</w>
+		<w>tries</w>
+	</aChain>
+	<aChain key="eirstv">
+		<w>rivets</w>
+		<w>strive</w>
+	</aChain>
+	<aChain key="eirsw">
+		<w>wires</w>
+		<w>wiser</w>
+	</aChain>
+	<aChain key="eirt">
+		<w>rite</w>
+		<w>tier</w>
+		<w>tire</w>
+	</aChain>
+	<aChain key="eirv">
+		<w>rive</w>
+		<w>vier</w>
+	</aChain>
+	<aChain key="eisstu">
+		<w>suites</w>
+		<w>tissue</w>
+	</aChain>
+	<aChain key="eisstx">
+		<w>exists</w>
+		<w>sexist</w>
+	</aChain>
+	<aChain key="eist">
+		<w>site</w>
+		<w>ties</w>
+	</aChain>
+	<aChain key="eistx">
+		<w>exist</w>
+		<w>exits</w>
+	</aChain>
+	<aChain key="eisvw">
+		<w>views</w>
+		<w>wives</w>
+	</aChain>
+	<aChain key="ejst">
+		<w>jest</w>
+		<w>jets</w>
+	</aChain>
+	<aChain key="ekops">
+		<w>pokes</w>
+		<w>spoke</w>
+	</aChain>
+	<aChain key="ekorrsw">
+		<w>reworks</w>
+		<w>workers</w>
+	</aChain>
+	<aChain key="ekorrw">
+		<w>rework</w>
+		<w>worker</w>
+	</aChain>
+	<aChain key="ellovy">
+		<w>lovely</w>
+		<w>volley</w>
+	</aChain>
+	<aChain key="ellsw">
+		<w>swell</w>
+		<w>wells</w>
+	</aChain>
+	<aChain key="elmno">
+		<w>lemon</w>
+		<w>melon</w>
+	</aChain>
+	<aChain key="elmnos">
+		<w>lemons</w>
+		<w>melons</w>
+		<w>solemn</w>
+	</aChain>
+	<aChain key="elmost">
+		<w>molest</w>
+		<w>motels</w>
+	</aChain>
+	<aChain key="elmpru">
+		<w>lumper</w>
+		<w>rumple</w>
+	</aChain>
+	<aChain key="elmrty">
+		<w>myrtle</w>
+		<w>termly</w>
+	</aChain>
+	<aChain key="elmst">
+		<w>melts</w>
+		<w>smelt</w>
+	</aChain>
+	<aChain key="eloort">
+		<w>looter</w>
+		<w>tooler</w>
+	</aChain>
+	<aChain key="elops">
+		<w>poles</w>
+		<w>slope</w>
+	</aChain>
+	<aChain key="elor">
+		<w>lore</w>
+		<w>role</w>
+	</aChain>
+	<aChain key="elors">
+		<w>loser</w>
+		<w>roles</w>
+	</aChain>
+	<aChain key="elorsv">
+		<w>lovers</w>
+		<w>solver</w>
+	</aChain>
+	<aChain key="elorsw">
+		<w>lowers</w>
+		<w>slower</w>
+	</aChain>
+	<aChain key="elorw">
+		<w>lower</w>
+		<w>owler</w>
+	</aChain>
+	<aChain key="elos">
+		<w>lose</w>
+		<w>sole</w>
+	</aChain>
+	<aChain key="eloss">
+		<w>loses</w>
+		<w>soles</w>
+	</aChain>
+	<aChain key="elostw">
+		<w>lowest</w>
+		<w>towels</w>
+	</aChain>
+	<aChain key="elosv">
+		<w>loves</w>
+		<w>solve</w>
+	</aChain>
+	<aChain key="elosvw">
+		<w>vowels</w>
+		<w>wolves</w>
+	</aChain>
+	<aChain key="elpprsu">
+		<w>purples</w>
+		<w>suppler</w>
+	</aChain>
+	<aChain key="elppru">
+		<w>pulper</w>
+		<w>purple</w>
+	</aChain>
+	<aChain key="elpssu">
+		<w>pluses</w>
+		<w>pulses</w>
+	</aChain>
+	<aChain key="elpst">
+		<w>pelts</w>
+		<w>slept</w>
+	</aChain>
+	<aChain key="elrru">
+		<w>lurer</w>
+		<w>ruler</w>
+	</aChain>
+	<aChain key="elrsstu">
+		<w>results</w>
+		<w>rustles</w>
+	</aChain>
+	<aChain key="elrstu">
+		<w>result</w>
+		<w>rustle</w>
+	</aChain>
+	<aChain key="elrsu">
+		<w>lures</w>
+		<w>rules</w>
+	</aChain>
+	<aChain key="elru">
+		<w>lure</w>
+		<w>rule</w>
+	</aChain>
+	<aChain key="elry">
+		<w>lyre</w>
+		<w>rely</w>
+	</aChain>
+	<aChain key="elst">
+		<w>lest</w>
+		<w>lets</w>
+	</aChain>
+	<aChain key="emnorst">
+		<w>mentors</w>
+		<w>monster</w>
+	</aChain>
+	<aChain key="emrsu">
+		<w>muser</w>
+		<w>serum</w>
+		<w>sumer</w>
+	</aChain>
+	<aChain key="emst">
+		<w>mets</w>
+		<w>stem</w>
+	</aChain>
+	<aChain key="enop">
+		<w>nope</w>
+		<w>open</w>
+	</aChain>
+	<aChain key="enor">
+		<w>oner</w>
+		<w>reno</w>
+	</aChain>
+	<aChain key="enorrstuv">
+		<w>overturns</w>
+		<w>turnovers</w>
+	</aChain>
+	<aChain key="enorrtuv">
+		<w>overturn</w>
+		<w>turnover</w>
+	</aChain>
+	<aChain key="enorss">
+		<w>sensor</w>
+		<w>snores</w>
+	</aChain>
+	<aChain key="enorst">
+		<w>stoner</w>
+		<w>tenors</w>
+		<w>tensor</w>
+	</aChain>
+	<aChain key="enort">
+		<w>noter</w>
+		<w>tenor</w>
+		<w>toner</w>
+	</aChain>
+	<aChain key="enorw">
+		<w>owner</w>
+		<w>rowen</w>
+	</aChain>
+	<aChain key="enos">
+		<w>nose</w>
+		<w>ones</w>
+	</aChain>
+	<aChain key="enosst">
+		<w>onsets</w>
+		<w>stones</w>
+	</aChain>
+	<aChain key="enost">
+		<w>notes</w>
+		<w>onset</w>
+		<w>stone</w>
+		<w>tones</w>
+	</aChain>
+	<aChain key="enot">
+		<w>note</w>
+		<w>tone</w>
+	</aChain>
+	<aChain key="enprrsu">
+		<w>pruners</w>
+		<w>spurner</w>
+	</aChain>
+	<aChain key="enrrstu">
+		<w>returns</w>
+		<w>turners</w>
+	</aChain>
+	<aChain key="enrrsu">
+		<w>nurser</w>
+		<w>reruns</w>
+	</aChain>
+	<aChain key="enrrtu">
+		<w>return</w>
+		<w>turner</w>
+	</aChain>
+	<aChain key="enrst">
+		<w>rents</w>
+		<w>stern</w>
+	</aChain>
+	<aChain key="enrstu">
+		<w>tuners</w>
+		<w>unrest</w>
+	</aChain>
+	<aChain key="enst">
+		<w>nest</w>
+		<w>nets</w>
+		<w>sent</w>
+		<w>tens</w>
+	</aChain>
+	<aChain key="ent">
+		<w>net</w>
+		<w>ten</w>
+	</aChain>
+	<aChain key="entw">
+		<w>newt</w>
+		<w>went</w>
+	</aChain>
+	<aChain key="eoopprrss">
+		<w>oppressor</w>
+		<w>proposers</w>
+	</aChain>
+	<aChain key="eoopprs">
+		<w>opposer</w>
+		<w>propose</w>
+	</aChain>
+	<aChain key="eopprssu">
+		<w>purposes</w>
+		<w>supposer</w>
+	</aChain>
+	<aChain key="eopr">
+		<w>pore</w>
+		<w>rope</w>
+	</aChain>
+	<aChain key="eoprrs">
+		<w>proser</w>
+		<w>ropers</w>
+	</aChain>
+	<aChain key="eoprrst">
+		<w>porters</w>
+		<w>reports</w>
+	</aChain>
+	<aChain key="eoprrt">
+		<w>porter</w>
+		<w>report</w>
+	</aChain>
+	<aChain key="eoprs">
+		<w>pores</w>
+		<w>poser</w>
+		<w>prose</w>
+		<w>ropes</w>
+		<w>spore</w>
+	</aChain>
+	<aChain key="eoprss">
+		<w>posers</w>
+		<w>spores</w>
+	</aChain>
+	<aChain key="eoprsst">
+		<w>posters</w>
+		<w>reposts</w>
+	</aChain>
+	<aChain key="eoprsstt">
+		<w>protests</w>
+		<w>spotters</w>
+	</aChain>
+	<aChain key="eoprst">
+		<w>poster</w>
+		<w>repost</w>
+	</aChain>
+	<aChain key="eoprstt">
+		<w>potters</w>
+		<w>protest</w>
+		<w>spotter</w>
+	</aChain>
+	<aChain key="eoprstu">
+		<w>posture</w>
+		<w>spouter</w>
+	</aChain>
+	<aChain key="eor">
+		<w>ore</w>
+		<w>roe</w>
+	</aChain>
+	<aChain key="eorrsst">
+		<w>resorts</w>
+		<w>sorters</w>
+	</aChain>
+	<aChain key="eorrst">
+		<w>resort</w>
+		<w>sorter</w>
+	</aChain>
+	<aChain key="eorrstu">
+		<w>routers</w>
+		<w>trouser</w>
+	</aChain>
+	<aChain key="eorrsu">
+		<w>rouser</w>
+		<w>sourer</w>
+	</aChain>
+	<aChain key="eorrsw">
+		<w>rowers</w>
+		<w>worser</w>
+	</aChain>
+	<aChain key="eorrtu">
+		<w>router</w>
+		<w>tourer</w>
+	</aChain>
+	<aChain key="eors">
+		<w>ores</w>
+		<w>roes</w>
+		<w>rose</w>
+		<w>sore</w>
+	</aChain>
+	<aChain key="eorss">
+		<w>roses</w>
+		<w>sores</w>
+	</aChain>
+	<aChain key="eorsst">
+		<w>sorest</w>
+		<w>stores</w>
+		<w>tosser</w>
+	</aChain>
+	<aChain key="eorsstu">
+		<w>sourest</w>
+		<w>toruses</w>
+	</aChain>
+	<aChain key="eorstv">
+		<w>stover</w>
+		<w>strove</w>
+		<w>voters</w>
+	</aChain>
+	<aChain key="eorsv">
+		<w>overs</w>
+		<w>roves</w>
+	</aChain>
+	<aChain key="eorsw">
+		<w>swore</w>
+		<w>worse</w>
+	</aChain>
+	<aChain key="eortu">
+		<w>outer</w>
+		<w>route</w>
+	</aChain>
+	<aChain key="eortv">
+		<w>overt</w>
+		<w>voter</w>
+	</aChain>
+	<aChain key="eortw">
+		<w>tower</w>
+		<w>wrote</w>
+	</aChain>
+	<aChain key="eorv">
+		<w>over</w>
+		<w>rove</w>
+	</aChain>
+	<aChain key="eostv">
+		<w>stove</w>
+		<w>votes</w>
+	</aChain>
+	<aChain key="eotv">
+		<w>veto</w>
+		<w>vote</w>
+	</aChain>
+	<aChain key="eow">
+		<w>owe</w>
+		<w>woe</w>
+	</aChain>
+	<aChain key="epprsu">
+		<w>supper</w>
+		<w>uppers</w>
+	</aChain>
+	<aChain key="eprrsuu">
+		<w>pursuer</w>
+		<w>usurper</w>
+	</aChain>
+	<aChain key="eprsttu">
+		<w>putters</w>
+		<w>sputter</w>
+	</aChain>
+	<aChain key="eprsu">
+		<w>purse</w>
+		<w>super</w>
+	</aChain>
+	<aChain key="epsst">
+		<w>pests</w>
+		<w>steps</w>
+	</aChain>
+	<aChain key="epsstu">
+		<w>setups</w>
+		<w>upsets</w>
+	</aChain>
+	<aChain key="epst">
+		<w>pest</w>
+		<w>pets</w>
+		<w>step</w>
+	</aChain>
+	<aChain key="epstu">
+		<w>setup</w>
+		<w>upset</w>
+	</aChain>
+	<aChain key="errsttu">
+		<w>truster</w>
+		<w>turrets</w>
+	</aChain>
+	<aChain key="ersst">
+		<w>rests</w>
+		<w>tress</w>
+	</aChain>
+	<aChain key="ersstu">
+		<w>russet</w>
+		<w>surest</w>
+	</aChain>
+	<aChain key="ersstw">
+		<w>strews</w>
+		<w>wrests</w>
+	</aChain>
+	<aChain key="ersttu">
+		<w>truest</w>
+		<w>utters</w>
+	</aChain>
+	<aChain key="erstw">
+		<w>strew</w>
+		<w>wrest</w>
+	</aChain>
+	<aChain key="ersu">
+		<w>rues</w>
+		<w>suer</w>
+		<w>sure</w>
+		<w>user</w>
+	</aChain>
+	<aChain key="essu">
+		<w>sues</w>
+		<w>uses</w>
+	</aChain>
+	<aChain key="estw">
+		<w>stew</w>
+		<w>west</w>
+		<w>wets</w>
+	</aChain>
+	<aChain key="esu">
+		<w>sue</w>
+		<w>use</w>
+	</aChain>
+	<aChain key="fgiilnrt">
+		<w>flirting</w>
+		<w>trifling</w>
+	</aChain>
+	<aChain key="fgilnow">
+		<w>flowing</w>
+		<w>fowling</w>
+	</aChain>
+	<aChain key="fhort">
+		<w>forth</w>
+		<w>froth</w>
+	</aChain>
+	<aChain key="filst">
+		<w>flits</w>
+		<w>lifts</w>
+	</aChain>
+	<aChain key="filt">
+		<w>flit</w>
+		<w>lift</w>
+	</aChain>
+	<aChain key="fisst">
+		<w>fists</w>
+		<w>sifts</w>
+	</aChain>
+	<aChain key="fist">
+		<w>fist</w>
+		<w>fits</w>
+		<w>sift</w>
+	</aChain>
+	<aChain key="flosw">
+		<w>flows</w>
+		<w>fowls</w>
+	</aChain>
+	<aChain key="flow">
+		<w>flow</w>
+		<w>fowl</w>
+		<w>wolf</w>
+	</aChain>
+	<aChain key="fmor">
+		<w>form</w>
+		<w>from</w>
+	</aChain>
+	<aChain key="forst">
+		<w>forts</w>
+		<w>frost</w>
+	</aChain>
+	<aChain key="frsu">
+		<w>furs</w>
+		<w>surf</w>
+	</aChain>
+	<aChain key="ggiilnns">
+		<w>singling</w>
+		<w>slinging</w>
+	</aChain>
+	<aChain key="ggiilnnt">
+		<w>glinting</w>
+		<w>tingling</w>
+	</aChain>
+	<aChain key="ggiinns">
+		<w>signing</w>
+		<w>singing</w>
+	</aChain>
+	<aChain key="gginoru">
+		<w>roguing</w>
+		<w>rouging</w>
+	</aChain>
+	<aChain key="gginrsu">
+		<w>surging</w>
+		<w>urgings</w>
+	</aChain>
+	<aChain key="ghiintt">
+		<w>hitting</w>
+		<w>tithing</w>
+	</aChain>
+	<aChain key="ghilnstu">
+		<w>hustling</w>
+		<w>sunlight</w>
+	</aChain>
+	<aChain key="ghilst">
+		<w>lights</w>
+		<w>slight</w>
+	</aChain>
+	<aChain key="ghinnort">
+		<w>northing</w>
+		<w>throning</w>
+	</aChain>
+	<aChain key="ghinoost">
+		<w>shooting</w>
+		<w>soothing</w>
+	</aChain>
+	<aChain key="ghinors">
+		<w>horsing</w>
+		<w>shoring</w>
+	</aChain>
+	<aChain key="ghinortw">
+		<w>ingrowth</w>
+		<w>throwing</w>
+		<w>worthing</w>
+	</aChain>
+	<aChain key="ghinostu">
+		<w>shouting</w>
+		<w>southing</w>
+	</aChain>
+	<aChain key="ghinst">
+		<w>nights</w>
+		<w>things</w>
+	</aChain>
+	<aChain key="ghint">
+		<w>night</w>
+		<w>thing</w>
+	</aChain>
+	<aChain key="ghirt">
+		<w>girth</w>
+		<w>right</w>
+	</aChain>
+	<aChain key="ghos">
+		<w>gosh</w>
+		<w>hogs</w>
+	</aChain>
+	<aChain key="ghostu">
+		<w>oughts</w>
+		<w>sought</w>
+	</aChain>
+	<aChain key="ghotu">
+		<w>ought</w>
+		<w>tough</w>
+	</aChain>
+	<aChain key="ghsu">
+		<w>gush</w>
+		<w>hugs</w>
+	</aChain>
+	<aChain key="ghu">
+		<w>hug</w>
+		<w>ugh</w>
+	</aChain>
+	<aChain key="giikllns">
+		<w>killings</w>
+		<w>skilling</w>
+	</aChain>
+	<aChain key="giiklnn">
+		<w>inkling</w>
+		<w>linking</w>
+	</aChain>
+	<aChain key="giiklnns">
+		<w>inklings</w>
+		<w>linkings</w>
+	</aChain>
+	<aChain key="giiknns">
+		<w>inkings</w>
+		<w>sinking</w>
+	</aChain>
+	<aChain key="giiknrst">
+		<w>skirting</w>
+		<w>striking</w>
+	</aChain>
+	<aChain key="giilmns">
+		<w>sliming</w>
+		<w>smiling</w>
+	</aChain>
+	<aChain key="giilnps">
+		<w>lisping</w>
+		<w>pilings</w>
+	</aChain>
+	<aChain key="giilnst">
+		<w>listing</w>
+		<w>silting</w>
+	</aChain>
+	<aChain key="giilntt">
+		<w>tilting</w>
+		<w>titling</w>
+	</aChain>
+	<aChain key="giimnotv">
+		<w>motiving</w>
+		<w>vomiting</w>
+	</aChain>
+	<aChain key="giimnr">
+		<w>miring</w>
+		<w>riming</w>
+	</aChain>
+	<aChain key="giimnst">
+		<w>misting</w>
+		<w>smiting</w>
+		<w>timings</w>
+	</aChain>
+	<aChain key="giinnnps">
+		<w>pinnings</w>
+		<w>spinning</w>
+	</aChain>
+	<aChain key="giinnns">
+		<w>innings</w>
+		<w>sinning</w>
+	</aChain>
+	<aChain key="giinrs">
+		<w>rising</w>
+		<w>siring</w>
+	</aChain>
+	<aChain key="giinrv">
+		<w>riving</w>
+		<w>virgin</w>
+	</aChain>
+	<aChain key="gilmnpu">
+		<w>lumping</w>
+		<w>pluming</w>
+	</aChain>
+	<aChain key="gilnoop">
+		<w>looping</w>
+		<w>pooling</w>
+	</aChain>
+	<aChain key="gilnoos">
+		<w>loosing</w>
+		<w>soloing</w>
+	</aChain>
+	<aChain key="gilnoot">
+		<w>looting</w>
+		<w>tooling</w>
+	</aChain>
+	<aChain key="gilnos">
+		<w>logins</w>
+		<w>losing</w>
+		<w>soling</w>
+	</aChain>
+	<aChain key="gilnru">
+		<w>luring</w>
+		<w>ruling</w>
+	</aChain>
+	<aChain key="gilnsy">
+		<w>lyings</w>
+		<w>singly</w>
+	</aChain>
+	<aChain key="gimnoor">
+		<w>mooring</w>
+		<w>rooming</w>
+	</aChain>
+	<aChain key="ginnoops">
+		<w>snooping</w>
+		<w>spooning</w>
+	</aChain>
+	<aChain key="ginnot">
+		<w>noting</w>
+		<w>toning</w>
+	</aChain>
+	<aChain key="ginopr">
+		<w>poring</w>
+		<w>roping</w>
+	</aChain>
+	<aChain key="ginoprs">
+		<w>prosing</w>
+		<w>sporing</w>
+	</aChain>
+	<aChain key="ginoprstu">
+		<w>posturing</w>
+		<w>sprouting</w>
+	</aChain>
+	<aChain key="ginopt">
+		<w>opting</w>
+		<w>toping</w>
+	</aChain>
+	<aChain key="ginorst">
+		<w>sorting</w>
+		<w>storing</w>
+	</aChain>
+	<aChain key="ginorsu">
+		<w>rousing</w>
+		<w>souring</w>
+	</aChain>
+	<aChain key="ginortu">
+		<w>routing</w>
+		<w>touring</w>
+	</aChain>
+	<aChain key="ginr">
+		<w>grin</w>
+		<w>ring</w>
+	</aChain>
+	<aChain key="ginrs">
+		<w>grins</w>
+		<w>rings</w>
+	</aChain>
+	<aChain key="ginrtu">
+		<w>truing</w>
+		<w>ungirt</w>
+	</aChain>
+	<aChain key="gins">
+		<w>gins</w>
+		<w>sign</w>
+		<w>sing</w>
+	</aChain>
+	<aChain key="ginss">
+		<w>signs</w>
+		<w>sings</w>
+	</aChain>
+	<aChain key="ginsu">
+		<w>suing</w>
+		<w>using</w>
+	</aChain>
+	<aChain key="ginsw">
+		<w>swing</w>
+		<w>wings</w>
+	</aChain>
+	<aChain key="giprs">
+		<w>grips</w>
+		<w>sprig</w>
+	</aChain>
+	<aChain key="girt">
+		<w>girt</w>
+		<w>grit</w>
+	</aChain>
+	<aChain key="glnsu">
+		<w>lungs</w>
+		<w>slung</w>
+	</aChain>
+	<aChain key="glpsu">
+		<w>gulps</w>
+		<w>plugs</w>
+	</aChain>
+	<aChain key="glpu">
+		<w>gulp</w>
+		<w>plug</w>
+	</aChain>
+	<aChain key="gmsu">
+		<w>gums</w>
+		<w>mugs</w>
+		<w>smug</w>
+	</aChain>
+	<aChain key="gmu">
+		<w>gum</w>
+		<w>mug</w>
+	</aChain>
+	<aChain key="gnorw">
+		<w>grown</w>
+		<w>wrong</w>
+	</aChain>
+	<aChain key="gnrstu">
+		<w>grunts</w>
+		<w>strung</w>
+	</aChain>
+	<aChain key="gnsu">
+		<w>guns</w>
+		<w>snug</w>
+		<w>sung</w>
+	</aChain>
+	<aChain key="gstu">
+		<w>gust</w>
+		<w>guts</w>
+		<w>tugs</w>
+	</aChain>
+	<aChain key="gtu">
+		<w>gut</w>
+		<w>tug</w>
+	</aChain>
+	<aChain key="hinst">
+		<w>hints</w>
+		<w>thins</w>
+	</aChain>
+	<aChain key="hint">
+		<w>hint</w>
+		<w>thin</w>
+	</aChain>
+	<aChain key="hips">
+		<w>hips</w>
+		<w>ship</w>
+	</aChain>
+	<aChain key="hist">
+		<w>hits</w>
+		<w>shit</w>
+		<w>this</w>
+	</aChain>
+	<aChain key="hitw">
+		<w>whit</w>
+		<w>with</w>
+	</aChain>
+	<aChain key="hkoos">
+		<w>hooks</w>
+		<w>shook</w>
+	</aChain>
+	<aChain key="hnors">
+		<w>horns</w>
+		<w>shorn</w>
+	</aChain>
+	<aChain key="hnort">
+		<w>north</w>
+		<w>thorn</w>
+	</aChain>
+	<aChain key="hoost">
+		<w>hoots</w>
+		<w>shoot</w>
+		<w>sooth</w>
+	</aChain>
+	<aChain key="hops">
+		<w>hops</w>
+		<w>shop</w>
+	</aChain>
+	<aChain key="horstw">
+		<w>throws</w>
+		<w>worths</w>
+	</aChain>
+	<aChain key="hortw">
+		<w>throw</w>
+		<w>worth</w>
+	</aChain>
+	<aChain key="hosst">
+		<w>hosts</w>
+		<w>shots</w>
+	</aChain>
+	<aChain key="host">
+		<w>host</w>
+		<w>shot</w>
+	</aChain>
+	<aChain key="hostu">
+		<w>shout</w>
+		<w>south</w>
+	</aChain>
+	<aChain key="hosw">
+		<w>hows</w>
+		<w>show</w>
+	</aChain>
+	<aChain key="how">
+		<w>how</w>
+		<w>who</w>
+	</aChain>
+	<aChain key="hrsttu">
+		<w>thrust</w>
+		<w>truths</w>
+	</aChain>
+	<aChain key="hstu">
+		<w>huts</w>
+		<w>shut</w>
+		<w>thus</w>
+	</aChain>
+	<aChain key="iklls">
+		<w>kills</w>
+		<w>skill</w>
+	</aChain>
+	<aChain key="ikn">
+		<w>ink</w>
+		<w>kin</w>
+	</aChain>
+	<aChain key="ikns">
+		<w>inks</w>
+		<w>sink</w>
+		<w>skin</w>
+	</aChain>
+	<aChain key="iknss">
+		<w>sinks</w>
+		<w>skins</w>
+	</aChain>
+	<aChain key="iknst">
+		<w>knits</w>
+		<w>stink</w>
+	</aChain>
+	<aChain key="ikrs">
+		<w>irks</w>
+		<w>risk</w>
+	</aChain>
+	<aChain key="ikss">
+		<w>kiss</w>
+		<w>skis</w>
+	</aChain>
+	<aChain key="illps">
+		<w>pills</w>
+		<w>spill</w>
+	</aChain>
+	<aChain key="ills">
+		<w>ills</w>
+		<w>sill</w>
+	</aChain>
+	<aChain key="illst">
+		<w>still</w>
+		<w>tills</w>
+	</aChain>
+	<aChain key="illy">
+		<w>illy</w>
+		<w>lily</w>
+	</aChain>
+	<aChain key="ilno">
+		<w>lion</w>
+		<w>loin</w>
+	</aChain>
+	<aChain key="ilnos">
+		<w>lions</w>
+		<w>loins</w>
+	</aChain>
+	<aChain key="ilopst">
+		<w>pilots</w>
+		<w>pistol</w>
+	</aChain>
+	<aChain key="ilos">
+		<w>oils</w>
+		<w>soil</w>
+	</aChain>
+	<aChain key="ilps">
+		<w>lips</w>
+		<w>lisp</w>
+		<w>slip</w>
+	</aChain>
+	<aChain key="ilpss">
+		<w>lisps</w>
+		<w>slips</w>
+	</aChain>
+	<aChain key="ilsst">
+		<w>lists</w>
+		<w>silts</w>
+		<w>slits</w>
+	</aChain>
+	<aChain key="ilst">
+		<w>list</w>
+		<w>silt</w>
+		<w>slit</w>
+	</aChain>
+	<aChain key="imost">
+		<w>moist</w>
+		<w>omits</w>
+	</aChain>
+	<aChain key="innosu">
+		<w>unions</w>
+		<w>unison</w>
+	</aChain>
+	<aChain key="inopst">
+		<w>piston</w>
+		<w>points</w>
+	</aChain>
+	<aChain key="inp">
+		<w>nip</w>
+		<w>pin</w>
+	</aChain>
+	<aChain key="inprst">
+		<w>prints</w>
+		<w>sprint</w>
+	</aChain>
+	<aChain key="inps">
+		<w>nips</w>
+		<w>pins</w>
+		<w>spin</w>
+	</aChain>
+	<aChain key="ins">
+		<w>ins</w>
+		<w>sin</w>
+	</aChain>
+	<aChain key="instt">
+		<w>stint</w>
+		<w>tints</w>
+	</aChain>
+	<aChain key="iprst">
+		<w>strip</w>
+		<w>trips</w>
+	</aChain>
+	<aChain key="ipss">
+		<w>piss</w>
+		<w>sips</w>
+	</aChain>
+	<aChain key="ipst">
+		<w>pits</w>
+		<w>spit</w>
+		<w>tips</w>
+	</aChain>
+	<aChain key="ipt">
+		<w>pit</w>
+		<w>tip</w>
+	</aChain>
+	<aChain key="irstw">
+		<w>wrist</w>
+		<w>writs</w>
+	</aChain>
+	<aChain key="ist">
+		<w>its</w>
+		<w>sit</w>
+	</aChain>
+	<aChain key="iv">
+		<w>iv</w>
+		<w>vi</w>
+	</aChain>
+	<aChain key="ivx">
+		<w>xiv</w>
+		<w>xvi</w>
+	</aChain>
+	<aChain key="ix">
+		<w>ix</w>
+		<w>xi</w>
+	</aChain>
+	<aChain key="kloootu">
+		<w>lookout</w>
+		<w>outlook</w>
+	</aChain>
+	<aChain key="llorst">
+		<w>stroll</w>
+		<w>trolls</w>
+	</aChain>
+	<aChain key="lmpsu">
+		<w>lumps</w>
+		<w>plums</w>
+		<w>slump</w>
+	</aChain>
+	<aChain key="lmpu">
+		<w>lump</w>
+		<w>plum</w>
+	</aChain>
+	<aChain key="loop">
+		<w>loop</w>
+		<w>polo</w>
+		<w>pool</w>
+	</aChain>
+	<aChain key="loops">
+		<w>loops</w>
+		<w>pools</w>
+		<w>spool</w>
+	</aChain>
+	<aChain key="loost">
+		<w>loots</w>
+		<w>stool</w>
+		<w>tools</w>
+	</aChain>
+	<aChain key="loot">
+		<w>loot</w>
+		<w>tool</w>
+	</aChain>
+	<aChain key="lost">
+		<w>lost</w>
+		<w>lots</w>
+		<w>slot</w>
+	</aChain>
+	<aChain key="losw">
+		<w>lows</w>
+		<w>owls</w>
+		<w>slow</w>
+	</aChain>
+	<aChain key="low">
+		<w>low</w>
+		<w>owl</w>
+	</aChain>
+	<aChain key="mnoo">
+		<w>mono</w>
+		<w>moon</w>
+	</aChain>
+	<aChain key="mnor">
+		<w>morn</w>
+		<w>norm</w>
+	</aChain>
+	<aChain key="moor">
+		<w>moor</w>
+		<w>room</w>
+	</aChain>
+	<aChain key="moors">
+		<w>moors</w>
+		<w>rooms</w>
+	</aChain>
+	<aChain key="most">
+		<w>most</w>
+		<w>toms</w>
+	</aChain>
+	<aChain key="no">
+		<w>no</w>
+		<w>on</w>
+	</aChain>
+	<aChain key="noops">
+		<w>snoop</w>
+		<w>spoon</w>
+	</aChain>
+	<aChain key="noopss">
+		<w>snoops</w>
+		<w>spoons</w>
+	</aChain>
+	<aChain key="nos">
+		<w>ons</w>
+		<w>son</w>
+	</aChain>
+	<aChain key="nosw">
+		<w>nows</w>
+		<w>owns</w>
+		<w>snow</w>
+	</aChain>
+	<aChain key="not">
+		<w>not</w>
+		<w>ton</w>
+	</aChain>
+	<aChain key="notw">
+		<w>town</w>
+		<w>wont</w>
+	</aChain>
+	<aChain key="now">
+		<w>now</w>
+		<w>own</w>
+	</aChain>
+	<aChain key="npsu">
+		<w>puns</w>
+		<w>spun</w>
+	</aChain>
+	<aChain key="nrsu">
+		<w>runs</w>
+		<w>urns</w>
+	</aChain>
+	<aChain key="nru">
+		<w>run</w>
+		<w>urn</w>
+	</aChain>
+	<aChain key="nstu">
+		<w>nuts</w>
+		<w>stun</w>
+	</aChain>
+	<aChain key="oorst">
+		<w>roost</w>
+		<w>roots</w>
+	</aChain>
+	<aChain key="oprst">
+		<w>ports</w>
+		<w>sport</w>
+	</aChain>
+	<aChain key="oprstu">
+		<w>sprout</w>
+		<w>stupor</w>
+	</aChain>
+	<aChain key="opsst">
+		<w>posts</w>
+		<w>spots</w>
+		<w>stops</w>
+	</aChain>
+	<aChain key="opst">
+		<w>opts</w>
+		<w>post</w>
+		<w>pots</w>
+		<w>spot</w>
+		<w>stop</w>
+		<w>tops</w>
+	</aChain>
+	<aChain key="opstu">
+		<w>pouts</w>
+		<w>spout</w>
+	</aChain>
+	<aChain key="opt">
+		<w>opt</w>
+		<w>pot</w>
+		<w>top</w>
+	</aChain>
+	<aChain key="orst">
+		<w>rots</w>
+		<w>sort</w>
+	</aChain>
+	<aChain key="orsttu">
+		<w>trouts</w>
+		<w>tutors</w>
+	</aChain>
+	<aChain key="orstu">
+		<w>torus</w>
+		<w>tours</w>
+	</aChain>
+	<aChain key="orsu">
+		<w>ours</w>
+		<w>sour</w>
+	</aChain>
+	<aChain key="orttu">
+		<w>trout</w>
+		<w>tutor</w>
+	</aChain>
+	<aChain key="ortu">
+		<w>rout</w>
+		<w>tour</w>
+	</aChain>
+	<aChain key="ostw">
+		<w>stow</w>
+		<w>tows</w>
+		<w>twos</w>
+	</aChain>
+	<aChain key="otw">
+		<w>tow</w>
+		<w>two</w>
+	</aChain>
+	<aChain key="psu">
+		<w>sup</w>
+		<w>ups</w>
+	</aChain>
+	<aChain key="rssttu">
+		<w>struts</w>
+		<w>trusts</w>
+	</aChain>
+	<aChain key="rsttu">
+		<w>strut</w>
+		<w>trust</w>
+	</aChain>
+	<aChain key="rstu">
+		<w>rust</w>
+		<w>ruts</w>
+	</aChain>
+</anagrams>

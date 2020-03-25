@@ -4,7 +4,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  xmlns:f="http://fxsl.sf.net/"
  exclude-result-prefixes="f xs" 
 >
-   <xsl:function name="f:str-map" as="xs:string">
+   <xsl:function name="f:str-map" as="xs:string?">
     <xsl:param name="pFun" as="element()"/>
     <xsl:param name="pStr" as="xs:string"/>
     

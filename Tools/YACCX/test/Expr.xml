@@ -1,0 +1,100 @@
+<parseTables>
+  <!-- All grammar rules are coded in this section -->
+	<rules>
+	  <r left="$accept" length="2">
+	    <right>E</right>
+	    <right>$end</right>
+	  </r>
+
+	  <r left="E" length="3">
+	    <right>E</right>
+	    <right>*</right>
+	    <right>B</right>
+	  </r>
+
+	  <r left="E" length="3">
+	    <right>E</right>
+	    <right>+</right>
+	    <right>B</right>
+	  </r>
+
+	  <r left="E" length="1">
+	    <right>B</right>
+	  </r>
+
+	  <r left="B" length="1">
+	    <right>0</right>
+	  </r>
+
+	  <r left="B" length="1">
+	    <right>1</right>
+	  </r>
+	</rules>
+<!--
+       All actions: (state, TSymb) ==> (sN | rK | acc)
+       where 's' = 'shift and 'r' = 'reduce'          
+                                                      
+       <symbol act="whatever">.</symbol>              
+         means any terminal symbol                    
+-->
+	<actionTable>
+	  <state number="0">
+	    <symbol act="s1">0</symbol>
+	    <symbol act="s2">1</symbol>
+	  </state>
+	  <state number="1">
+	    <symbol act="r4">.</symbol>
+	  </state>
+	  <state number="2">
+	    <symbol act="r5">.</symbol>
+	  </state>
+	  <state number="3">
+	    <symbol act="s5">*</symbol>
+	    <symbol act="s6">+</symbol>
+	    <symbol act="acc">$end</symbol>
+	  </state>
+	  <state number="4">
+	    <symbol act="r3">.</symbol>
+	  </state>
+	  <state number="5">
+	    <symbol act="s1">0</symbol>
+	    <symbol act="s2">1</symbol>
+	  </state>
+	  <state number="6">
+	    <symbol act="s1">0</symbol>
+	    <symbol act="s2">1</symbol>
+	  </state>
+	  <state number="7">
+	    <symbol act="r1">.</symbol>
+	  </state>
+	  <state number="8">
+	    <symbol act="r2">.</symbol>
+	  </state>
+	</actionTable>
+  <!-- All reductions: (state, NTSymb) ==> ruleN -->
+	<gotoTable>
+	  <state number="0" NT="E" newState="3"/>
+	  <state number="0" NT="B" newState="4"/>
+	  <state number="5" NT="B" newState="7"/>
+	  <state number="6" NT="B" newState="8"/>
+	</gotoTable>
+<!--
+       All symbols (terminal (T) or non-terminal (NT)
+       are coded in this section 
+-->
+	<symbols>
+	  <terminal>
+	    <s>$end</s>
+	    <s>error</s>
+	    <s>*</s>
+	    <s>+</s>
+	    <s>0</s>
+	    <s>1</s>
+	  </terminal>
+	  <nonTerminal>
+	    <v>$accept</v>
+	    <v>E</v>
+	    <v>B</v>
+	  </nonTerminal>
+	</symbols>
+</parseTables>

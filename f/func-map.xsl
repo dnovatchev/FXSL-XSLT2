@@ -28,9 +28,9 @@ exclude-result-prefixes="f"
  </xsl:function>
  
  <xsl:template match="f:map" mode="f:FXSL">
-   <xsl:param name="pFun" as="element()"/>
-   <xsl:param name="pList1" as="item()*"/>
+   <xsl:param name="arg1" as="element()"/>
+   <xsl:param name="arg2" as="item()*"/>
    
-   <xsl:sequence select="f:map($pFun, $pList1)"/>
+   <xsl:sequence select="f:map($arg1, $arg2)"/>
  </xsl:template>
 </xsl:stylesheet>

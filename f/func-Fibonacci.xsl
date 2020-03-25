@@ -5,6 +5,7 @@
  xmlns:f="http://fxsl.sf.net/"
  exclude-result-prefixes="f xs saxon"
  >
+ <xsl:import href="func-apply.xsl"/>
   
  <xsl:function name="f:fiboLimitedSeq" as="xs:integer*">
    <xsl:param name="pLimit" as="xs:double"/>
@@ -15,6 +16,29 @@
    <xsl:if test="$vVal le $pLimit" >
      <xsl:sequence select=
      "$vVal, f:fiboLimitedSeq($pLimit, $pN+1)"
+     />
+   </xsl:if>
+ </xsl:function>
+
+ <xsl:function name="f:fiboLimitedGeneratedSeq" as="xs:integer*">
+   <xsl:param name="pLimit" as="xs:double"/>
+   <xsl:param name="pN"  as="xs:integer"/>
+   <xsl:param name="pfunIndex" as="element()"/>
+   
+   <xsl:variable name="vVal" select="f:fibo($pN)"/>
+   
+<!--
+   <xsl:message>
+     <xsl:value-of select=
+      "concat('f(', $pLimit, ',', $pN, ')=', $vVal)"/>
+   </xsl:message>
+-->   
+   <xsl:if test="$vVal le $pLimit" >
+     <xsl:sequence select=
+     "$vVal, 
+      f:fiboLimitedGeneratedSeq($pLimit, 
+                                f:apply($pfunIndex, $pN),
+                                $pfunIndex)"
      />
    </xsl:if>
  </xsl:function>

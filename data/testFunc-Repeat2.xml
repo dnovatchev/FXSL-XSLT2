@@ -1,0 +1,10 @@
+<root>
+ <valuedef>
+  <value>7</value>
+  <decimals>2</decimals>
+ </valuedef>
+ <valuedef>
+  <value>42</value>
+  <decimals>3</decimals>
+ </valuedef>
+</root>

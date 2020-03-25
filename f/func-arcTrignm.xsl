@@ -343,7 +343,7 @@
     <xsl:variable name="vEps" as="xs:double" select=
       "if(exists($pEps))
          then $pEps
-         else '.00000001E0'
+         else .00000001E0
       "/>
 
     <!-- apply the appropriate function -->

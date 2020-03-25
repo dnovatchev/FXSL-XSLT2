@@ -1,0 +1,25 @@
+<employees>  
+  <employee hireDate="04/23/1999">
+    <last>Hill</last>
+    <first>Phil</first>
+    <salary>089000</salary>
+  </employee>
+  
+  <employee hireDate="09/01/1998">
+    <last>Herbert</last>
+    <first>Johnny</first>
+    <salary>095000</salary>
+  </employee>
+  
+  <employee hireDate="08/20/2000">
+    <last>Hill</last>
+    <first>Graham</first>
+    <salary>100000</salary>
+  </employee>
+  
+  
+  
+  <sort order="1">last</sort>
+  <sort order="3">salary</sort>
+  <sort order="3">first</sort>
+</employees>

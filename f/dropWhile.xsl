@@ -1,7 +1,6 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  xmlns:f="http://fxsl.sf.net/"
- xmlns:vendor="http://icl.com/saxon"
-exclude-result-prefixes="f vendor"
+exclude-result-prefixes="f"
 >
   <xsl:template name="dropWhile">
     <xsl:param name="pList" select="/.."/>

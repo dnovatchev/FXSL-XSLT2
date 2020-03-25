@@ -1,0 +1,71 @@
+<poem>
+	<line id="1">
+		<word id="1">
+			<syl length="2">Ar</syl>
+			<syl length="1">ma</syl>
+		</word>
+		<word id="2">
+			<syl length="1">vi</syl>
+			<syl length="2">rum</syl>
+		</word>
+		<word id="3">
+		  <syl length="1">que</syl>
+		</word>
+		<word id="4">
+			<syl length="1">ca</syl>
+			<syl length="2">no</syl>
+		</word> ,
+		<word id="5">
+			<syl length="2">Tro</syl>
+			<syl length="2">iae</syl>
+		</word>
+		<word id="6">
+			<syl length="2">qui</syl>
+		</word>
+		<word id="7">
+			<syl length="2">pri</syl>
+			<syl length="1">mus</syl>
+		</word>
+		<word id="8">
+			<syl length="1">ab</syl>
+		</word>
+		<word id="9">
+			<syl length="2">o</syl>
+			<syl length="2">ris</syl>
+		</word>
+	</line>
+	<line id="2">
+		<word>
+			<syl length="2">li</syl>
+			<syl length="1.5">to</syl>
+			<syl length="1">ra</syl>
+		</word> ,
+		<word id="15">
+			<syl length="2">mul</syl>
+			<syl elide="true" length="1">tum</syl>
+		</word>
+		<word id="16">
+			<syl length="2">il</syl>
+			<syl elide="true" length="1">le</syl>
+		</word>
+		<word id="17">
+			<syl length="2">et</syl>
+		</word>
+		<word id="18">
+			<syl length="2">ter</syl>
+			<syl length="2">ris</syl>
+		</word>
+		<word id="19">
+			<syl length="2">iac</syl>
+			<syl length="2">ta</syl>
+			<syl length="1">tus</syl>
+		</word>
+		<word id="20">
+			<syl length="1">et</syl>
+		</word>
+		<word id="21">
+			<syl length="2">al</syl>
+			<syl length="2">to</syl>
+		</word>
+	</line>
+</poem>
