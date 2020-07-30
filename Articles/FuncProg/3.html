@@ -1,0 +1,2086 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>The Functional Programming Language XSLT - A proof through
+examples</title>
+<meta NAME='description' CONTENT='The Functional Programming Language XSLT - A proof through
+examples'>
+</head>
+<body>
+<table border="0" cellspacing="0">
+	<tr>
+<td width="100%">
+<!-- Navigation --><table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 5 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<A href="2.html"><IMG height=18 alt ="Previous Page" src="arrow_prev.gif" width=18 border=0 ></A>		
+<A href="Functional Programming.html" target=_top><IMG height=15 alt  ="Table Of Contents" src="contents.gif" width=60 border=0 ></A><A href="4.html"><IMG height=18 alt ="Next Page" src="arrow_next.gif" width=18 border=0 ></A></td></tr></table><table align="right" cellPadding="0" cellSpacing="0" width="30%">
+<tr>	<th align="middle" width="100%">Table of Contents</th></tr><tr><td bgColor="#ececff" width="100%"><br>	<font size="1">•&nbsp;</font>
+<A href="Functional Programming.html#Introduction"><font size="1">Introduction</font></A><br>
+	<font size="1">•&nbsp;</font><A href="0.html#Starting_point"><font size="1">Starting point</font></A><br>
+	<font size="1">•&nbsp;</font><A href="1.html#Major_FP_design_patterns/functions_in_XSLT"><font size="1">Major FP design patterns/functions in XSLT</font></A><br>
+	<font size="1">•&nbsp;</font><A href="2.html#List_processing"><font size="1">List processing</font></A><br>
+	<font size="1"><IMG height=11 src="condensed.gif" width=11 border=0>&nbsp;<A href="#Tree_processing"><font size="1">Tree processing</font></A><br>
+	<font size="1">•&nbsp;</font><A href="4.html#Lazy_evaluation"><font size="1">Lazy evaluation</font></A><br>
+	<font size="1">•&nbsp;</font><A href="5.html#Advanced_XSLT_FP_applications"><font size="1">Advanced XSLT FP applications</font></A><br>
+	<font size="1">•&nbsp;</font><A href="6.html#Square_root"><font size="1">Square root</font></A><br>
+	<font size="1">•&nbsp;</font><A href="7.html#Numerical_differentiation"><font size="1">Numerical differentiation</font></A><br>
+	<font size="1">•&nbsp;</font><A href="8.html#Numerical_integration"><font size="1">Numerical integration</font></A><br>
+	<font size="1">•&nbsp;</font><A href="9.html#Summary"><font size="1">Summary</font></A><br>
+	<br><br></font></td></tr></table>
+<h1>The Functional Programming Language XSLT - A proof through
+examples</h1>
+<div>
+<h2><a name="Tree_processing">Tree processing</a></h2>
+
+<p>The same generalised functions exist not only for lists, but
+also for trees. A tree is defined as a set of <b>node</b> (root)
+having a <b>label</b>X, and a set of sub-trees:</p>
+
+<p><code>treeof X&nbsp;&nbsp; ::&nbsp; node X&nbsp; [ (treeof X) ]</code></p>
+
+<p>This effectively defines a datatype of ordered labeled trees,
+saying that a tree of Xs is a node, with a label which is an X, and
+a list of subtrees which are also trees of Xs <A href="9.html#[1]">
+[1]</A>.&nbsp;</p>
+
+<p>Then we can define <b>foldl-tree</b> as follows:</p>
+
+<p><code>foldl-tree&nbsp; f&nbsp; g&nbsp; a&nbsp; ( node, label, subtrees)&nbsp; =&nbsp;</code></p>
+
+<p><code>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+f&nbsp; label&nbsp; ( foldl-tree_&nbsp; f&nbsp; g&nbsp; a&nbsp;
+subtrees )</code></p>
+
+<p><code>foldl-tree_&nbsp; f&nbsp; g&nbsp; a&nbsp; ( subtree&nbsp;
+restSubtrees ) =&nbsp;</code></p>
+
+<p>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+g (foldl-tree f g a&nbsp; subtree) ( foldl-tree_&nbsp; f&nbsp;
+g&nbsp; a&nbsp;&nbsp; restSubtrees )</code></p>
+
+<p>&nbsp;</p>
+
+<p>Probably, a better name for the above function would be <b>
+fold-top-bottom</b>.</p>
+
+<p>As in the case of the list folding, the tree-folding function
+can produce a variety of useful functions on trees:</p>
+
+<p><code>
+sumtree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp; foldl-tree&nbsp; add&nbsp; add&nbsp; 0</code></p>
+
+<p><code>producttree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;
+foldl-tree&nbsp; multiply&nbsp; multiply&nbsp; 1</code></p>
+
+<p><code>tree-labels-list&nbsp; =&nbsp; foldl-tree&nbsp; (:)&nbsp;
+append&nbsp; [ ]</code></p>
+
+<p><code>maptree&nbsp; f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&nbsp; foldl-tree&nbsp; (makeNode . f) (:) [ ]</code></p>
+
+<p>Bellow is the corresponding XSLT implementation:</p>
+
+<p><a name="foldl-tree"></a>foldl-tree:</p>
+<table bgColor="#dcefef" border="1" width="100%">
+  
+    <tr>
+      <td width="100%">
+        <code><FONT face="Courier New"><FONT 
+            color=#0000ff>&nbsp; &lt;</FONT><FONT color="#990000" 
+            point-size="2">xsl:stylesheet&nbsp;<FONT color="red" 
+            point-size="2">version</FONT> <FONT color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP><FONT color="blue" 
+            point-size="2">"</FONT> 
+            <BR>&nbsp;&nbsp;&nbsp; <FONT color=#ff0000>xmlns:xsl</FONT><FONT 
+            color=#0000ff>="</FONT><FONT 
+            color=#ff0000><B>http://www.w3.org/1999/XSL/Transform</B></FONT><FONT 
+            color=#0000ff>"</FONT></FONT><FONT color="blue" 
+            point-size="2">&gt;<BR></FONT></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pNode</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:choose</FONT><FONT face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:when&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">test</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">not($pNode)</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:copy-of&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">select</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pA0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:when</FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:otherwise</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vSubtrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pNode/*</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vSubTreeResult</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:call-template&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree_</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncNode</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncSubtrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pA0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pSubTrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vSubtrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:call-template</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:apply-templates&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">select</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncNode[1]</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncNode[position() > 1]</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pNode/@tree-nodeLabel</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vSubTreeResult</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:apply-templates</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:otherwise</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:choose</FONT><FONT face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree_</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pSubTrees</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:choose</FONT><FONT face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:when&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">test</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">not($pSubTrees)</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:copy-of&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">select</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pA0</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:when</FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:otherwise</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vSubTree1Result</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:call-template&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color="blue" 
+             point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color="#990000" 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color="red" 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncNode</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color="blue" 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color="#990000" 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color="red" 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncSubtrees</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color="blue" 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color="#990000" 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color="red" 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pA0</XMP><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pSubTrees[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;<BR></FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vRestSubtreesResult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree_</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pA0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pSubTrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pSubTrees[position() > 1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;<BR></FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:apply-templates&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFuncSubtrees[position() > 1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vSubTree1Result</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vRestSubtreesResult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:apply-templates</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:otherwise</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:choose</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT< code> </FONT></CODE>
+      </td>
+    </tr>
+  
+</table>
+      <p><a name=sumTree 
+      ></A>sumTree:</P>
+      <table  bgColor="#dcefef" width="100%" border=1>
+        
+        <tr>
+          <td width="100%"><code 
+            ><FONT face="Courier New" 
+            ><FONT color=#0000ff>&nbsp; 
+            &lt;<FONT face="Courier New" color=#990000 
+            point-size="2">xsl:stylesheet&nbsp;<FONT face="Courier New" 
+            color=red point-size="2">version</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT></FONT></FONT><FONT color=#990000 
+             point-size="2"><BR 
+            >&nbsp;&nbsp;&nbsp;<FONT face="Courier New" 
+            color=red 
+            point-size="2">exclude-result-prefixes</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">="</FONT><XMP style="DISPLAY: inline; COLOR: black">xsl add-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"<BR></FONT></FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&nbsp;&nbsp;&nbsp;<FONT color=#ff0000 
+            >xmlns:xsl</FONT><FONT color=#0000ff 
+            >="</FONT><FONT color=#ff0000 
+            ><B 
+            >http://www.w3.org/1999/XSL/Transform</B></FONT><FONT 
+            color=#0000ff>"<BR 
+            ></FONT><FONT color=#ff0000 
+            >&nbsp;&nbsp;&nbsp;xmlns:add-tree</FONT><FONT 
+            color=#0000ff>="</FONT><FONT color=#ff0000 
+            ><B 
+            >add-tree</B></FONT><FONT color=#0000ff 
+            >"&gt;<BR 
+            ></FONT></FONT></FONT></CODE><CODE 
+            ><FONT face="Courier New" size=3 
+            ><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:import&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">href</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree.xsl</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">add-tree:add-tree</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">/&gt;<BR></FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">sumTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vAdd</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/add-tree:*[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vAdd</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vAdd</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='add-tree']</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:value-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1 + $arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT></CODE> </FONT></FONT></TD></TR></TABLE>
+      <p><a name=producttree 
+      ></A>producttree:</P>
+      <table width="100%" bgColor=#dcefef border=1>
+        
+        <tr>
+          <td width="100%"><code 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">version</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT><BR><FONT color=#ff0000 
+            >&nbsp;&nbsp;&nbsp; xmlns:xsl</FONT><FONT 
+            color=#0000ff>="</FONT><FONT color=#ff0000 
+            ><B 
+            >http://www.w3.org/1999/XSL/Transform</B></FONT><FONT 
+            color=#0000ff>"<BR 
+            ></FONT><FONT color=#ff0000 
+            >&nbsp;&nbsp;&nbsp; xmlns:mult-tree</FONT><FONT 
+            color=#0000ff>="</FONT><FONT color=#ff0000 
+            ><B 
+            >mult-tree</B></FONT><FONT color=#0000ff 
+            >"&nbsp;</FONT><BR><FONT 
+            face="Courier New" color=red 
+            point-size="2">&nbsp;&nbsp;&nbsp; exclude-result-prefixes</FONT> 
+            <FONT face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">xsl mult-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:import&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">href</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree.xsl</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">mult-tree:mult-tree</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">/&gt;<BR 
+            ></FONT></FONT></CODE><code 
+            ><font face="Courier New" size=3 
+            ><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">productTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vMult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/mult-tree:*[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vMult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vMult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='mult-tree']</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:value-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1 * $arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT></CODE> </FONT></TD></TR></TABLE>
+      <p><a name=tree-labels-list 
+      ></A>tree-labels-list:</P>
+      <table width="100%" bgColor=#dcefef border=1>
+        
+        <tr>
+          <td width="100%"><code 
+            ><FONT color=#0000ff 
+            >&nbsp; &lt;</FONT><FONT face="Courier New" 
+            color=#990000 
+            point-size="2">xsl:stylesheet&nbsp;<FONT face="Courier New" 
+            color=red point-size="2">version</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR><FONT 
+            color=#ff0000>&nbsp;&nbsp;&nbsp; 
+            xmlns:xsl</FONT><FONT color=#0000ff 
+            >="</FONT><FONT color=#ff0000 
+            ><B><A 
+            href="http://www.w3.org/1999/XSL/Transform" 
+            >http://www.w3.org/1999/XSL/Transform</A>"</B></FONT><FONT 
+            color=#0000ff><BR 
+            ></FONT><FONT color=#ff0000 
+            >&nbsp;&nbsp;&nbsp; xmlns:mult-tree</FONT><FONT 
+            color=#0000ff>="</FONT><FONT color=#ff0000 
+            ><B 
+            >mult-tree</B></FONT><FONT color=#0000ff 
+            >"<BR></FONT><FONT 
+            face="Courier New" color=red 
+            point-size="2">&nbsp;&nbsp;&nbsp; exclude-result-prefixes</FONT> 
+            <FONT face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">xsl mult-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:import&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">href</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree.xsl</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">mult-tree:mult-tree</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">/&gt;<BR></FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">productTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vMult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/mult-tree:*[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vMult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vMult</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='mult-tree']</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:value-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1 * $arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT></CODE> </TD></TR></TABLE>
+      <p><a name=mapTree 
+      ></A>mapTree:</P>
+      <table width="100%" bgColor=#dcefef border=1>
+        
+        <tr>
+          <td width="100%"><code 
+            ><FONT color=#0000ff>&nbsp; 
+            &lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">version</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR><FONT 
+            color=#ff0000>&nbsp;&nbsp;&nbsp; 
+            xmlns:xsl</FONT><FONT color=#0000ff 
+            >="</FONT><FONT color=#ff0000 
+            ><B 
+            >http://www.w3.org/1999/XSL/Transform</B></FONT><FONT 
+            color=#0000ff>"<BR 
+            ></FONT><FONT color=#ff0000 
+            >&nbsp;&nbsp;&nbsp; 
+            xmlns:tree-labels-append</FONT><FONT color=#0000ff 
+            >="</FONT><FONT color=#ff0000 
+            ><B 
+            >tree-labels-append</B></FONT><FONT 
+            color=#0000ff>"<BR 
+            ></FONT><FONT color=#ff0000 
+            >&nbsp;&nbsp;&nbsp; 
+            xmlns:tree-labels-cons</FONT><FONT color=#0000ff 
+            >="</FONT><FONT color=#ff0000 
+            ><B 
+            >tree-labels-cons</B></FONT><FONT color=#0000ff 
+            >"&nbsp;</FONT><BR 
+            >&nbsp;&nbsp;&nbsp; <FONT face="Courier New" 
+            color=red 
+            point-size="2">exclude-result-prefixes</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">xsl msxsl mapTree-cons mapTree-makeNode-f</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT></FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:import&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">href</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree.xsl</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             
+            point-size="2">mapTree-cons:mapTree-cons</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">/&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             
+            point-size="2">mapTree-makeNode-f:mapTree-makeNode-f</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">/&gt;<BR></FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">mapTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFun</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vmakeNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/mapTree-makeNode-f:*[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR></FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vCons</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/mapTree-cons:*[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             
+            point-size="2">mapTree-makeNode-f:mapTree-makeNode-f</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">/&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFun</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;<BR></FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">foldl-tree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">msxsl:node-set($vFuncNode)/*</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFuncSubtrees</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vCons</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pA0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pNode</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pTree</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:call-template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='mapTree-cons']</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='mapTree-makeNode-f']</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg0</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt; </FONT><FONT 
+            face="Courier New" color=green 
+            point-size="2">&lt;!-- must contain pFun --&gt;</FONT><FONT 
+            face="Times New Roman"> <BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt; </FONT><FONT 
+            face="Courier New" color=green 
+            point-size="2">&lt;!-- must contain the node --&gt;</FONT><FONT 
+            face="Times New Roman"> <BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt; </FONT><FONT 
+            face="Courier New" color=green 
+            point-size="2">&lt;!-- must contan pA0 --&gt;</FONT><FONT 
+            face="Times New Roman"> <BR 
+            ><BR 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vFun1Result</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:apply-templates&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg0[1]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">select</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:apply-templates</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:variable</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;<BR></FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:element&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">{name($arg1/..)}</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:apply-templates&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">mode</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">copy</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:with-param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pContents</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <FONT face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">msxsl:node-set($vFun1Result)</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:apply-templates</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg1/../node()[not(self::*)]</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$arg2</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:element</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">node()</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">mode</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">copy</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pContents</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pContents</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">match</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">@*</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT>&nbsp;<FONT face="Courier New" color=red 
+             point-size="2">mode</FONT> <FONT 
+            face="Courier New" color=blue 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">copy</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pContents</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;<BR 
+            ></FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:attribute&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">name</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">{name()}</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:copy-of&nbsp;<FONT 
+            face="Courier New" color=red 
+            point-size="2">select</FONT> <FONT face="Courier New" color=blue 
+             point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pContents</XMP><FONT 
+            face="Courier New" color=blue 
+            point-size="2">"</FONT> </FONT><FONT face="Courier New" color=blue 
+             point-size="2">/&gt;</FONT><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:attribute</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><FONT 
+            face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:template</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT><BR><BR 
+            ><FONT face="Times New Roman" 
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&lt;/</FONT><FONT face="Courier New" color=#990000 
+             point-size="2">xsl:stylesheet</FONT><FONT 
+            face="Courier New" color=blue 
+            point-size="2">&gt;</FONT></CODE> </TD></TR></TABLE>
+      <p></P>
+</div>
+      <table cellSpacing=1 cellPadding=1 width="100%" border=0 
+      >
+        
+        <tr>
+          <td vAlign=top align=right><font color=#000080 
+            >Page 5 of 11</FONT> 
+            <p>&nbsp;</P></TD>
+          <td vAlign=top align=right width=150><A href="2.html" ><IMG height=18 alt="Previous Page" src="arrow_prev.gif" width=18 border=0 ></A> 
+		  <A href="Functional Programming.html" target=_top ><IMG height=15 alt="Table Of Contents" src="contents.gif" width=60 border=0 ></A><A href="4.html" ><IMG height=18 alt="Next Page" src="arrow_next.gif" width=18 border=0 ></A></TD></TR></TABLE>
+	</td>
+		</tr>
+	</table>
+
+	  <p align="center">
+		  <a href="http://sourceforge.net">
+		   <img src="http://sourceforge.net/sflogo.php?group_id=53841&amp;type=6" 
+		        width="210" height="62" border="0" alt="SourceForge.net Logo">
+		  </a>
+	  </p>
+<a target="_top" href="#">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=38
+border=0 width=41 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=dimitren&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=dimitren&j=n"></noscript>
+
+	
+</body>
+</html>
+

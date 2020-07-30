@@ -1,0 +1,113 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>The Functional Programming Language XSLT - A proof through
+examples</title>
+<meta NAME='description' CONTENT='The Functional Programming Language XSLT - A proof through
+examples'>
+</head>
+<body>
+<table border="0" cellspacing="0">
+	<tr>
+<td width="100%">
+<!-- Navigation --><table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 7 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<A href="4.html"><IMG height=18 alt ="Previous Page" src="arrow_prev.gif" width=18 border=0 ></A>		<A href="Functional Programming.html" target=_top><IMG height=15 alt  ="Table Of Contents" src="contents.gif" width=60 border=0 ></A><A href="6.html"><IMG height=18 alt ="Next Page" src="arrow_next.gif" width=18 border=0 ></A></td></tr></table><table align="right" cellPadding="0" cellSpacing="0" width="30%">
+<tr>	<th align="middle" width="100%">Table of Contents</th></tr><tr><td bgColor="#ececff" width="100%"><br>	<font size="1">•&nbsp;</font><A href="Functional Programming.html#Introduction"><font size="1">Introduction</font></A><br>
+	<font size="1">•&nbsp;</font><A href="0.html#Starting_point"><font size="1">Starting point</font></A><br>
+	<font size="1">•&nbsp;</font><A href="1.html#Major_FP_design_patterns/functions_in_XSLT"><font size="1">Major FP design patterns/functions in XSLT</font></A><br>
+	<font size="1">•&nbsp;</font><A href="2.html#List_processing"><font size="1">List processing</font></A><br>
+	<font size="1">•&nbsp;</font><A href="3.html#Tree_processing"><font size="1">Tree processing</font></A><br>
+	<font size="1">•&nbsp;</font><A href="4.html#Lazy_evaluation"><font size="1">Lazy evaluation</font></A><br>
+	<font size="1"><IMG height=11 src="condensed.gif" width=11 border=0>&nbsp;<A href="#Advanced_XSLT_FP_applications"><font size="1">Advanced XSLT FP applications</font></A><br>
+	<font size="1">•&nbsp;</font><A href="6.html#Square_root"><font size="1">Square root</font></A><br>
+	<font size="1">•&nbsp;</font><A href="7.html#Numerical_differentiation"><font size="1">Numerical differentiation</font></A><br>
+	<font size="1">•&nbsp;</font><A href="8.html#Numerical_integration"><font size="1">Numerical integration</font></A><br>
+	<font size="1">•&nbsp;</font><A href="9.html#Summary"><font size="1">Summary</font></A><br>
+	<br><br></font></td></tr></table>
+<h1>The Functional Programming Language XSLT - A proof through
+examples</h1>
+<div>
+<h2><a name="Advanced_XSLT_FP_applications">Advanced XSLT FP applications</a></h2>
+
+<p>In this section we provide the XSLT implementation of some
+advanced numerical algorithms by using essentially higher order
+functions for list processing and list generation. Essentially used
+in these implementations is a function <b>within</b> , which is
+passed a list-generator function and a tolerance as parameters. <b>
+within</b>&nbsp; uses the <b>buildListWhile</b> function with the
+list-generator passed to it as parameter and with its own
+controller function, which triggers the stop condition, whenever
+the difference between the last two generated list elements becomes
+less than the tolerance parameter <b>eps</b>.</p>
+
+<p>Here's the XSLT implementation of <b><a name="within">within</a></b>:</p>
+
+<table bgColor="#dcefef" border="1" width="100%">
+  
+    <tr>
+      <td width="100%">
+        <code>&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:stylesheet&nbsp;<FONT face="Courier New" color=red>version</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<BR><FONT 
+            color=#ff0000>&nbsp;&nbsp;&nbsp; xmlns:xsl</FONT><FONT 
+            color=#0000ff>="</FONT><FONT 
+            color=#ff0000><B>http://www.w3.org/1999/XSL/Transform</B></FONT><FONT 
+            color=#0000ff>"<BR></FONT><FONT color=#ff0000>&nbsp;&nbsp;&nbsp; 
+            xmlns:msxsl</FONT><FONT color=#0000ff>="</FONT><FONT 
+            color=#ff0000><B>urn:schemas-microsoft-com:xslt</B></FONT><FONT 
+            color=#0000ff>"<BR></FONT><FONT color=#ff0000>&nbsp;&nbsp;&nbsp; 
+            xmlns:MyWithinEpsController</FONT><FONT color=#0000ff>="</FONT><FONT 
+            color=#ff0000><B>MyWithinEpsController</B></FONT><FONT 
+            color=#0000ff>"<BR></FONT><FONT face="Courier New" color=red>&nbsp;&nbsp;&nbsp; exclude-result-prefixes</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">xsl msxsl MyWithinEpsController</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:import&nbsp;<FONT face="Courier New" color=red>href</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">buildListWhile.xsl</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>MyWithinEpsController:MyWithinEpsController</FONT><FONT face="Courier New" color=blue>/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:variable&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vMyWithinEpsController</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/MyWithinEpsController:*[1]</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:template&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">within</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pGenerator</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pParam0</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">Eps</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">0.1</XMP><FONT face="Courier Ne
+w" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:variable&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vResultList</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:call-template&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">buildListWhile</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:with-param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pGenerator</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pGenerator</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:with-param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pParam0</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pParam0</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:with-param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pController</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vMyWithinEpsController</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:with-param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pContollerParam</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$Eps</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:call-template</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:variable</FONT><FONT face="Courier New" color=blue>&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:value-of&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">msxsl:node-set($vResultList)/*[last()]</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:template</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:template&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">MyWithinEpsController</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=red>match</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='MyWithinEpsController']</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pList</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:param&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pParams</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:choose</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:when&nbsp;<FONT face="Courier New" color=red>test</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">count($pList) &lt; 2</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;</FONT><XMP style="PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; MARGIN: 0em; PADDING-TOP: 0px">1</XMP><FONT face="Courier New" color=blue>&lt;/</FO
+NT><FONT face="Courier New" color=#990000>xsl:when</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:when&nbsp;<FONT face="Courier New" color=red>test</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">count($pList) >= 2</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:variable&nbsp;<FONT face="Courier New" color=red>name</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">lastDiff</XMP><FONT face="Courier New" color=blue>"</FONT>&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=red>select</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pList[last()] - $pList[last() - 1]</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:if&nbsp;<FONT face="Courier New" color=red>test</FONT> <FONT face="Courier New" color=blue>=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">not($lastDiff &lt;= $pParams
+	                   and $lastDiff >= (0 - $pParams))</XMP><FONT face="Courier New" color=blue>"</FONT> </FONT><FONT face="Courier New" color=blue>&gt;</FONT><XMP style="PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; MARGIN: 0em; PADDING-TOP: 0px">1</XMP><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:if</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:when</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;</FONT><FONT face="Courier New" color=#990000>xsl:otherwise</FONT><FONT face="Courier New" color=blue>&gt;</FONT><XMP style="PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; MARGIN: 0em; PADDING-TOP: 0px">1</XMP><FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:otherwise</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:choose</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:template</FONT><FONT face="Courier New" color=blue>&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT face="Courier New" color=blue>&lt;/</FONT><FONT face="Courier New" color=#990000>xsl:stylesheet</FONT><FONT face="Courier New" color=blue>&gt;</FONT></code>
+      </td>
+    </tr>
+  
+</table>
+<p></p>
+</div>
+
+<table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 7 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<A href="4.html"><IMG height=18 alt ="Previous Page" src="arrow_prev.gif" width=18 border=0 ></A>		<A href="Functional Programming.html" target=_top><IMG height=15 alt  ="Table Of Contents" src="contents.gif" width=60 border=0 ></A><A href="6.html"><IMG height=18 alt ="Next Page" src="arrow_next.gif" width=18 border=0 ></A></td></tr></table>
+	</td>
+		</tr>
+	</table>
+	
+	  <p align="center">
+		  <a href="http://sourceforge.net">
+		   <img src="http://sourceforge.net/sflogo.php?group_id=53841&amp;type=6" 
+		        width="210" height="62" border="0" alt="SourceForge.net Logo">
+		  </a>
+	  </p>
+<a target="_top" href="#">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=38
+border=0 width=41 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=dimitren&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=dimitren&j=n"></noscript>
+
+	
+</body>
+</html>
+

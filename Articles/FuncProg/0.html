@@ -1,0 +1,560 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>The Functional Programming Language XSLT - A proof through
+examples</title>
+<meta NAME='description' CONTENT='The Functional Programming Language XSLT - A proof through
+examples'>
+<body>
+<table border="0" cellspacing="0">
+	<tr>
+<td width="100%">
+<!-- Navigation -->
+
+
+
+
+<table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 2 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+&nbsp;		<A href="Functional Programming.html"><IMG height=18 alt ="Previous Page" src="arrow_prev.gif" width=18 border=0 ></A>		<A href="Functional Programming.html" target=_top><IMG height=15 alt  ="Table Of Contents" src="contents.gif" width=60 border=0 ></A><A href="1.html"><IMG height=18 alt ="Next Page" src="arrow_next.gif" width=18 border=0 ></A></td></tr></table>
+
+<table align="right" cellPadding="0" cellSpacing="0" width="30%">
+<tr>	<th align="middle" width="100%">Table of Contents</th></tr><tr><td bgColor="#ececff" width="100%"><br>	<font size="1">•&nbsp;<A href="Functional Programming.html#Introduction"><font size="1">Introduction</font></a><br>
+    <IMG border="0" height="11" src="condensed.gif" width="11">&nbsp;<A href="0.html#Starting_point"><font size="1">Starting point</font></a><br>
+	<font size="1">•&nbsp;</font><A href="1.html#Major_FP_design_patterns"><font size="1">Major FP design patterns/functions in XSLT</font></a><br>
+	<font size="1">•&nbsp;</font><A href="2.html#List_processing"><font size="1">List processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="3.html#Tree_processing"><font size="1">Tree processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="4.html#Lazy_evaluation"><font size="1">Lazy evaluation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="5.html#Advanced_XSLT_FP_applications"><font size="1">Advanced XSLT FP applications</font></a><br>
+	<font size="1">•&nbsp;</font><A href="6.html#Square_root"><font size="1">Square root</font></a><br>
+	<font size="1">•&nbsp;</font><A href="7.html#Numerical_differentiation"><font size="1">Numerical differentiation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="8.html#Numerical_integration"><font size="1">Numerical integration</font></a><br>
+	<font size="1">•&nbsp;</font><A href="9.html#Summary"><font size="1">Summary</font></a><br>
+	<br><br></font></td></tr></table>
+      <P><b>The Functional Programming Language XSLT - A proof through examples</b></P>
+<h2><a name="Starting_point">Starting point</a></h2>
+
+<p>As a starting point, let's define some basic terminology and
+present examples of the use of higher-order functions in FP. Then,
+we'll take a first step towards our FP implementation in XSLT by
+defining the&nbsp; "template reference" data type and demonstrate a
+simple example of its use.</p>
+
+<h3>Imperative programming</h3>
+
+<p>The imperative style of programming describes a system as
+evolving from an initial state through a series of state changes to
+a set of desired final states. A program consists of commands that
+change the state of the system. For example:</p>
+      <code><pre>&nbsp;&nbsp; <FONT face="Courier New">y = y + 3</FONT></pre></code>
+      <p>will bring the system into a new state, in which the variable y 
+      has a new value, which has been obtained by adding 3 to the value of y in 
+      the previous state of the system.</p>
+
+<h3>Declarative programming</h3>
+
+<p>The declarative programming style specifies relationships
+between different variables, e.g. the equation</p>
+
+<code><pre>&nbsp;<FONT face="Courier New Greek">z = y + 3&nbsp;</FONT></pre></code>
+
+<p>declares <i>z</i> to have a value of three more than the value
+of <i>y</i>. Variables, once declared, cannot change their value.
+Typically, there is no concept of <i>state</i>, <i>order of
+execution</i>, <i>memory</i>,... etc.</p>
+
+<p>&nbsp;In XSLT, the declarative approach is used: e.g.:</p>
+
+<code><pre><FONT face="Courier New">&lt;xsl:variable name=&quot;z&quot; select= &quot;$y + 3&quot; /&gt;&nbsp;</FONT></pre></code>
+
+<p>is the XSLT version of the mathematical equation above.</p>
+
+<h3>Functional programming</h3>
+
+<p>A <i>function</i> is a relationship between a set of <i>
+inputs</i> and an <i>output</i>. It can also be regarded as an
+operation, which when passed specific values as input produces a
+specific output.</p>
+
+<p>A <i>functional program</i> is made up of a series of
+definitions of functions and other values <A href="9.html#[7]">
+[7]</A>.</p>
+
+<p>The functional programming style builds upon the declarative
+programming style by adding the ability to treat functions as
+first-class objects -- that means among other things that functions
+can be passed as arguments to other functions. A function can also
+return another function as its result.</p>
+
+<h3>Higher-order functions in FP languages</h3>
+
+<p>A function is <i>higher order</i> if it takes a function as an
+argument or returns a function as a result, or both <A href="9.html#[7]">
+[7]</A>.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Examples.&nbsp;</p>
+
+<p>A classical example is the <b><i>map</i></b> function, which can
+be defined in Haskell in the following two ways:</p>
+
+<code><pre><FONT face="Courier New"><b>map&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; xs&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; [ f&nbsp; x&nbsp; |&nbsp;&nbsp; x&nbsp; &lt;-&nbsp; xs ]</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)</FONT></pre></code>
+
+<code><pre>or</pre></code>
+
+<code><pre><FONT face="Courier New">map&nbsp;&nbsp; f&nbsp;&nbsp; [ ]&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; [ ]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)
+map&nbsp;&nbsp; f&nbsp; (x:xs)&nbsp;&nbsp; =&nbsp;&nbsp; f&nbsp; x&nbsp;&nbsp; :&nbsp;&nbsp; map&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; xs</FONT></pre></code>
+
+<p>&nbsp;</p>
+
+<p>The <b><i>map</i></b> function takes two arguments&nbsp;
+--&nbsp; another function&nbsp;&nbsp; <b><i>f</i></b>&nbsp;&nbsp;and a list&nbsp; <b>
+<i>xs</i></b> . The result is a list, every element of which is the
+result of applying&nbsp; <b><i>f</i></b>&nbsp; to the corresponding element of
+the list&nbsp; <b><i>xs</i></b> .</p>
+
+<p>If we define <b>f</b> as :</p>
+
+<code><pre><FONT face="Courier New">f x = x + 3</FONT></pre></code>
+
+<p>and <b>xs</b> as</p>
+
+<code><pre><FONT face="Courier New">[1, 2, 3]</FONT></pre></code>
+
+<p>Then&nbsp; the value of&nbsp;</p>
+
+<code><pre><FONT face="Courier New">map&nbsp;&nbsp; f&nbsp;&nbsp;&nbsp; xs<b>&nbsp;&nbsp;</b></FONT></pre></code>
+
+<p>is</p>
+
+<code><pre>[4, 5, 6]</pre></code>
+
+<p>&nbsp;</p>
+
+<p>The <b>map</b>&nbsp; function can be used to produce many other
+functions. For example, we can define a function to produce from a
+list a new one, whose elements' values are twice as big as the
+values of the elements of the input list:</p>
+
+<code><pre><FONT face="Courier New">doubleall&nbsp; xs&nbsp; =&nbsp; map (* 2) xs</FONT></pre></code>
+
+<p>where (* 2) is a function, that produces a result twice as
+bigger as its input.</p>
+
+<p>Another classical example is <i>functional composition</i>:</p>
+
+<code><pre><FONT face="Courier New">(.) f g x&nbsp; =&nbsp; f (g x)</FONT></pre></code>
+
+<h3>Higher-order functions in XSLT -- implementation of template
+references</h3>
+
+<p>Higher order functions can be implemented in XSLT by way of the
+<i>template reference</i> datatype.</p>
+
+<h4>Explanation through an example</h4>
+
+<p>Templates in XSLT correspond to functions in FP languages. Named
+templates are always called by a corresponding xsl:call-template
+instruction. Templates with a match attribute are usually selected
+for instantiation in a less direct way -- from all templates
+matching the node-set specified in an xsl:apply-templates
+instruction.</p>
+
+<p>Parameters can be declared for templates using xsl:param
+children of xsl:template and actual values for the parameters can
+be specified using xsl:with-param children of either
+xsl:call-template or xsl:apply-templates.</p>
+
+<p>The result of calling/applying a template is always a particular
+output. Therefore, an XSLT template fits precisely the definition
+of a function.</p>
+
+<p>As noted before, it is believed that XSLT is not a full
+functional programming language, because functions cannot be passed
+as parameters to other functions -- not that XSLT lacks functions
+at all. We accept that XSLT templates serve the role of functions,
+and want to show that functions (templates) can be passed as
+parameters to other functions (templates).</p>
+
+<p>Unfortunately, it is not possible to specify through a variable
+the name of a template to be called, e.g.:</p>
+
+<p><FONT face="Courier New">&lt;xsl:call-template 
+      name="$aTemplate"/&gt;</FONT></p>
+
+<p>because according to the W3 XSLT Spec. <A href="9.html#[8]">[8]</A>
+the value of the name attribute can only be a Q-Name. A Q-Name is
+static and must be completely specified&nbsp; -- it cannot be
+dynamically produced by the contents of a variable.</p>
+
+<p>Another way to instantiate a template dynamically has been known
+for quite some time <A href="9.html#[9]">
+[9]</A>, but there's no evidence until now of using it in a
+systematic manner. Let's have a template, which matches only a
+single node belonging to a unique namespace. In the rest of the
+text we'll call such nodes "<i>nodes having a unique type</i>":</p>
+
+<p>File: example1.xsl</p>
+      <DIV>
+<table border="1" width="100%">
+  
+    <tr>
+      <td bgColor="#dcefef" width="100%"><code><font color="#0000ff"><font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:stylesheet&nbsp;</font></font><FONT 
+            face="Courier New" color="blue" 
+            point-size="2"><FONT color=#ff0000 
+            >xmlns:xsl</FONT>="<FONT color=#ff0000 
+            ><STRONG 
+            >http://www.w3.org/1999/XSL/Transform</STRONG></FONT>" </FONT><font color="#0000ff"><font face="Courier New" color="#990000" point-size="2"><font face="Courier New" color="red" point-size="2">version</font>
+        <font face="Courier New" color="blue" point-size="2">=&nbsp;"</font><XMP style="DISPLAY: inline; COLOR: black">1.0</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font> </font><font face="Courier New" color="blue" point-size="2">&gt;</font><br>
+        &nbsp;<font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:template&nbsp;<font face="Courier New" color="red" point-size="2">match</font><font face="Courier New" color="blue" point-size="2">="</font><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='8B9C63F4-F4AB5D11-994A0001-B4CD626F']</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font></font><font face="Courier New" color="blue" point-size="2">&gt;</font><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<font face="Courier New" color="red" point-size="2">name</font>
+        <font face="Courier New" color="blue" point-size="2">=&nbsp;"</font><XMP style="DISPLAY: inline; COLOR: black">pX</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font> </font><font face="Courier New" color="blue" point-size="2">/&gt;</font><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:value-of&nbsp;<font face="Courier New" color="red" point-size="2">select</font>
+        <font face="Courier New" color="blue" point-size="2">=&nbsp;"</font><XMP style="DISPLAY: inline; COLOR: black">2 * $pX</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font> </font><font face="Courier New" color="blue" point-size="2">/&gt;</font><br>
+        &nbsp;<font face="Courier New" color="blue" point-size="2">&lt;/</font><font face="Courier New" color="#990000" point-size="2">xsl:template</font><font face="Courier New" color="blue" point-size="2">&gt;</font><br>
+        <br>
+        &nbsp;<font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:template&nbsp;<font face="Courier New" color="red" point-size="2">match</font><font face="Courier New" color="blue" point-size="2">="</font><XMP style="DISPLAY: inline; COLOR: black">*[namespace-uri()='AB02AC1C-1C65B3FF-77C5FFFE-4B329DA1']</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font></font><font face="Courier New" color="blue" point-size="2">&gt;</font><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<font face="Courier New" color="red" point-size="2">name</font>
+        <font face="Courier New" color="blue" point-size="2">=&nbsp;"</font><XMP style="DISPLAY: inline; COLOR: black">pX</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font> </font><font face="Courier New" color="blue" point-size="2">/&gt;</font><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="Courier New" color="blue" point-size="2">&lt;</font><font face="Courier New" color="#990000" point-size="2">xsl:value-of&nbsp;<font face="Courier New" color="red" point-size="2">select</font>
+        <font face="Courier New" color="blue" point-size="2">=&nbsp;"</font><XMP style="DISPLAY: inline; COLOR: black">3 * $pX</XMP>
+        <font face="Courier New" color="blue" point-size="2">"</font> </font><font face="Courier New" color="blue" point-size="2">/&gt;</font><br>
+        &nbsp;<font face="Courier New" color="blue" point-size="2">&lt;/</font><font face="Courier New" color="#990000" point-size="2">xsl:template</font><font face="Courier New" color="blue" point-size="2">&gt;</font><br>
+        <font face="Courier New" color="blue" point-size="2">&lt;/</font><font face="Courier New" color="#990000" point-size="2">xsl:stylesheet</font><font face="Courier New" color="blue" point-size="2">&gt;</font><br>
+        </font></code></td>
+    </tr>
+  
+</table></DIV>
+<p>We have defined two templates, each matching only a node of a unique type.
+The first template produces the value of its input parameter <font face="Courier New"><b>pX</b></font>
+multiplied by 2. The second template produces the value of its input parameter <font face="Courier New"><b>pX</b></font>
+multiplied by 3.</p>
+<p>Now we'll define in another stylesheet a template that accepts as parameters
+references to two other templates (<i>template references</i>), instantiates the
+two templates that are referenced by its template-reference parameters, passing
+as parameter to each instantiation its <font face="Courier New"><b>pX</b></font>
+parameter, then as result it produces the sum of the outputs of these
+instantiated templates.</p>
+      <DIV>
+<table bgColor="#dcefef" border="1" width="100%">
+  
+    <tr>
+      <td bgColor="#dcefef" width="100%">
+            <code><FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:stylesheet&nbsp; <FONT 
+            color=#ff0000>xmlns:xsl</FONT><FONT color=#0000ff>="</FONT><FONT 
+            color=#ff0000><STRONG>http://www.w3.org/1999/XSL/Transform</STRONG></FONT><FONT 
+            color=#0000ff>"</FONT><BR>&nbsp; <FONT 
+            color=#ff0000>xmlns:f1</FONT>="<STRONG><FONT 
+            color=#ff0000>8B9C63F4-F4AB5D11-994A0001-B4CD626F</FONT></STRONG>"<BR>&nbsp; 
+            <FONT color=#ff0000>xmlns:f2</FONT>="<STRONG><FONT 
+            color=#ff0000>AB02AC1C-1C65B3FF-77C5FFFE-4B329DA1</FONT></STRONG>" </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;<BR></FONT></code><CODE><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:import&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">href</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">example1.xsl</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:output&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">method</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">text</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">f1:f1</FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">f2:f2</FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;<BR></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">match</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vFun1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/f1:*[1]</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vFun2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">document('')/*/f2:*[1]</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:call-template&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">mySum</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pX</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">3</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFun1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vFun1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFun2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vFun2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:call-template</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">mySum</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pX</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFun1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" point-size="2">xsl:param&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">name</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pFun2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">/..</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vFx_1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:apply-templates&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">select</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFun1</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pX</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pX</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:apply-templates</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">name</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">vFx_2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:apply-templates&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">select</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pFun2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:with-param&nbsp;<FONT face="Courier New" 
+            color="red" point-size="2">name</FONT> <FONT face="Courier New" 
+            color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">pX</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT>&nbsp;<FONT 
+            face="Courier New" color="red" point-size="2">select</FONT> <FONT 
+            face="Courier New" color="blue" point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$pX</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:apply-templates</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:variable</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:value-of&nbsp;<FONT face="Courier New" color="red" 
+            point-size="2">select</FONT> <FONT face="Courier New" color="blue" 
+            point-size="2">=&nbsp;"</FONT><XMP style="DISPLAY: inline; COLOR: black">$vFx_1 + $vFx_2</XMP><FONT 
+            face="Courier New" color="blue" point-size="2">"</FONT> </FONT><FONT 
+            face="Courier New" color="blue" 
+            point-size="2">/&gt;</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:template</FONT><FONT face="Courier New" 
+            color="blue" 
+            point-size="2">&gt;</FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+            face="Courier New" color="blue" point-size="2">&lt;/</FONT><FONT 
+            face="Courier New" color="#990000" 
+            point-size="2">xsl:stylesheet</FONT><FONT face="Courier New" 
+            color="blue" point-size="2">&gt;</FONT></CODE></td>
+    </tr>
+  
+</table></DIV>
+<p>The result produced when this last stylesheet is applied on any (dummy) xml
+source document, is:</p>
+<code><pre><font face="Courier New">15</font></pre></code>
+
+<p>What we have effectively done is we called the template named
+"<b>mySum</b>", passing to it two <i>references to
+templates</i>, that accept a <b>pX</b> parameter and
+produce something out of it. The "<b>mySum</b>"
+template successfully instantiates (applies/calls) the templates
+that are uniquely identified by the template reference parameters,
+then produces the sum of their results. What guarantees that
+exactly the necessary templates will be selected by the XSLT
+processor is the unique namespace-uri of the nodes they are
+matching. The most important property of a template reference is
+that it guarantees the unique matching of the template that it is
+referencing.</p>
+
+<p>The next two sections demonstrate that by using the template
+reference datatype just as described above we can implement even
+the most powerful FP design patterns/functions.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 2 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<A href="Functional Programming.html"><IMG height=18 alt ="Previous Page" src="arrow_prev.gif" width=18 border=0 ></A>		<A href="Functional Programming.html" target=_top><IMG height=15 alt  ="Table Of Contents" src="contents.gif" width=60 border=0 ></A><A href="1.html"><IMG height=18 alt ="Next Page" src="arrow_next.gif" width=18 border=0 ></A></td></tr></table>
+	</td>
+		</tr>
+	</table>
+	  <p align="center">
+		  <a href="http://sourceforge.net">
+		   <img src="http://sourceforge.net/sflogo.php?group_id=53841&amp;type=6" 
+		        width="210" height="62" border="0" alt="SourceForge.net Logo">
+		  </a>
+	  </p>
+<a target="_top" href="#">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=38
+border=0 width=41 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=dimitren&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=dimitren&j=n"></noscript>
+
+
+</body>
+</html>
+

@@ -1,0 +1,277 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>The Functional Programming Language XSLT - A proof through
+examples</title>
+<meta NAME='description' CONTENT='The Functional Programming Language XSLT - A proof through
+examples'>
+<body>
+
+<table border="0" cellspacing="0">
+	<tr>
+<td width="100%">
+<!-- Navigation --><table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 3 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+&nbsp;		<a href="0.html"><img alt="Previous Page" border="0" height="18" src="arrow_prev.gif" width="18"></a>		<a href="Functional Programming.html" target="_top"><img alt="Table Of Contents" border="0" src="contents.gif" width="60" height="15"></a><a href="2.html"><img alt="Next Page" border="0" height="18" src="arrow_next.gif" width="18"></a></td></tr></table>
+<table align="right" cellPadding="0" cellSpacing="0" width="30%">
+<tr>	<th align="middle" width="100%">Table of Contents</th></tr><tr><td bgColor="#ececff" width="100%">
+<br>	<font size="1">•&nbsp;<A href="Functional Programming.html#Introduction"><font size="1">Introduction</font></a>
+<br><font size="1">•&nbsp;</font>
+    <A href="0.html#Starting_point"><font size="1">Starting point</font></a><br>
+	<font size="1"><IMG border="0" height="11" src="condensed.gif" width="11">&nbsp;</font>
+	<A href="1.html#Major_FP_design_patterns"><font size="1">Major FP design patterns/functions in XSLT</font></a><br>
+	<font size="1">•&nbsp;</font><A href="2.html#List_processing"><font size="1">List processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="3.html#Tree_processing"><font size="1">Tree processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="4.html#Lazy_evaluation"><font size="1">Lazy evaluation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="5.html#Advanced_XSLT_FP_applications"><font size="1">Advanced XSLT FP applications</font></a><br>
+	<font size="1">•&nbsp;</font><A href="6.html#Square_root"><font size="1">Square root</font></a><br>
+	<font size="1">•&nbsp;</font><A href="7.html#Numerical_differentiation"><font size="1">Numerical differentiation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="8.html#Numerical_integration"><font size="1">Numerical integration</font></a><br>
+	<font size="1">•&nbsp;</font><A href="9.html#Summary"><font size="1">Summary</font></a><br>
+	<br><br></font></td></tr></table>
+<h1>The Functional Programming Language XSLT - A proof through
+examples</h1>
+<div>
+<h2><a name="Major_FP_design_patterns/functions_in_XSLT">Major FP design patterns/functions in XSLT</a></h2>
+
+<p>In this section we provide the XSLT implementation of many of
+the functions defined in John Hughes paper "Why functional
+programming matters" <a href="9.html#[1]">
+[1]</a>. We provide numerous implementations of list-processing
+functions, and of a very generic tree-folding function and other
+functions that are based on it. We also demonstrate how <i>lazy
+evaluation</i> can be simulated in XSLT.</p>
+
+<h3>Implemented Functions</h3>
+
+<p>The following table contains the names of all functions (in
+chronological order), whose XSLT implementation are provided as
+part of this article.</p>
+
+<table border="0" cellpadding="0" width="100%">
+<tr>
+<td width="33%">
+<p><a href="2.html#foldl">
+foldl</a></p>
+</td>
+<td width="33%">
+<p><a href="2.html#foldr">
+foldr</a></p>
+</td>
+<td width="34%">
+<p><a href="2.html#sum">
+sum</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="2.html#product">
+product</a></p>
+</td>
+<td width="33%">
+<p><a href="2.html#sometrue">
+sometrue</a></p>
+</td>
+<td width="34%">
+<p><a href="2.html#alltrue">
+alltrue</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="2.html#minimum">
+minimum</a></p>
+</td>
+<td width="33%">
+<p><a href="2.html#maximum">
+maximum</a></p>
+</td>
+<td width="34%">
+<p><a href="2.html#append">
+append</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="2.html#map">
+map</a></p>
+</td>
+<td width="33%">
+<p><a href="2.html#doubleall">
+doubleall</a></p>
+</td>
+<td width="34%">
+<p><a href="2.html#sumproducts">
+sumproducts</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="3.html#foldl-tree">
+foldl-tree</a></p>
+</td>
+<td width="33%">
+<p><a href="3.html#sumTree">
+sumTree</a></p>
+</td>
+<td width="34%">
+<p><a href="3.html#producttree">
+productTree</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="3.html#tree-labels-list">
+tree-labels-list</a></p>
+</td>
+<td width="33%">
+<p><a href="3.html#mapTree">
+mapTree</a></p>
+</td>
+<td width="34%">
+<p><a href="4.html#buildListWhile">
+buildListWhile</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="4.html#buildListUntil">
+buildListUntil</a></p>
+</td>
+<td width="33%">
+<p><a href="4.html#take">
+take</a></p>
+</td>
+<td width="34%">
+<p><a href="4.html#takeWhile">
+takeWhile</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="4.html#drop">
+drop</a></p>
+</td>
+<td width="33%">
+<p><a href="4.html#dropWhile">
+dropWhile</a></p>
+</td>
+<td width="34%">
+<p><a href="4.html#splitAt">
+splitAt</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="4.html#span">
+span</a></p>
+</td>
+<td width="33%">
+<p><a href="4.html#partition">
+partition</a></p>
+</td>
+<td width="34%">
+<p><a href="5.html#within">
+within</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="6.html#sqrt">
+sqrt</a></p>
+</td>
+<td width="33%">
+<p><a href="7.html#buildListWhileMap">
+buildListWhileMap</a></p>
+</td>
+<td width="34%">
+<p><a href="7.html#easyDiffList">
+easyDiffList</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="7.html#elimerror">
+elimError</a></p>
+</td>
+<td width="33%">
+<p><a href="7.html#improve">
+improve</a></p>
+</td>
+<td width="34%">
+<p><a href="7.html#improvedDiff">
+improvedDiff</a></p>
+</td>
+</tr>
+
+<tr>
+<td width="33%">
+<p><a href="8.html#partialSumsList">
+partialSumsList</a></p>
+</td>
+<td width="33%">
+<p><a href="8.html#improvedIntegration">
+improvedIntegration</a></p>
+</td>
+<td width="34%">
+<p>&nbsp;</p>
+</td>
+</tr>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 3 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<a href="0.html"><img alt="Previous Page" border="0" height="18" src="arrow_prev.gif" width="18"></a>		<a href="Functional Programming.html" target="_top"><img alt="Table Of Contents" border="0" src="contents.gif" width="60" height="15"></a><a href="2.html"><img alt="Next Page" border="0" height="18" src="arrow_next.gif" width="18"></a></td></tr></table>
+	</td>
+		</tr>
+	</table>
+
+	  <p align="center">
+		  <a href="http://sourceforge.net">
+		   <img src="http://sourceforge.net/sflogo.php?group_id=53841&amp;type=6" 
+		        width="210" height="62" border="0" alt="SourceForge.net Logo">
+		  </a>
+	  </p>
+<a target="_top" href="#">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=38
+border=0 width=41 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=dimitren&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=dimitren&j=n"></noscript>
+	
+	
+</body>
+</html>
+

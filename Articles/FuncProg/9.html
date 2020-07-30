@@ -1,0 +1,207 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>The Functional Programming Language XSLT - A proof through
+examples</title>
+<meta NAME='description' CONTENT='The Functional Programming Language XSLT - A proof through
+examples'>
+</head>
+<body>
+
+<table border="0" cellspacing="0">
+	<tr>
+<td width="100%">
+<!-- Navigation --><table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 11 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<a href="8.html"><img alt="Previous Page" border="0" height="18" src="arrow_prev.gif" width="18"></a>		<a href="Functional Programming.html" target="_top"><img alt="Table Of Contents" border="0" src="contents.gif" width="60" height="15"></a>&nbsp;</td></tr></table><table align="right" cellPadding="0" cellSpacing="0" width="30%">
+<tr>	<th align="middle" width="100%">Table of Contents</th></tr><tr><td bgColor="#ececff" width="100%"><br>	<font size="1">•&nbsp;</font><A href="Functional Programming.html#Introduction"><font size="1">Introduction</font></a><br>
+	<font size="1">•&nbsp;</font><A href="0.html#Starting_point"><font size="1">Starting point</font></a><br>
+	<font size="1">•&nbsp;</font><A href="1.html#Major_FP_design_patterns/functions_in_XSLT"><font size="1">Major FP design patterns/functions in XSLT</font></a><br>
+	<font size="1">•&nbsp;</font><A href="2.html#List_processing"><font size="1">List processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="3.html#Tree_processing"><font size="1">Tree processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="4.html#Lazy_evaluation"><font size="1">Lazy evaluation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="5.html#Advanced_XSLT_FP_applications"><font size="1">Advanced XSLT FP applications</font></a><br>
+	<font size="1">•&nbsp;</font><A href="6.html#Square_root"><font size="1">Square root</font></a><br>
+	<font size="1">•&nbsp;</font><A href="7.html#Numerical_differentiation"><font size="1">Numerical differentiation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="8.html#Numerical_integration"><font size="1">Numerical integration</font></a><br>
+	<font size="1"><IMG border="0" height="11" src="condensed.gif" width="11">&nbsp;<A href="#Summary"><font size="1">Summary</font></a><br>
+	<br><br></font></td></tr></table>
+<h1>The Functional Programming Language XSLT - A proof through
+examples</h1>
+<div>
+<h2><a name="Summary">Summary</a></h2>
+
+<p>Not only the purpose of this article to prove that XSLT can be
+considered a functional programming language has been fulfilled by
+providing XSLT implementation for the most major FP design patterns
+and examples from John Hughes article "Why Functional Programming
+matters" (this article contains the code of 35 functions), but as a
+side effect we have now available what can be considered the first
+XSLT functional programming library. The full library code,
+together with test examples demonstrating the use of individual
+functions, is available at the downloads page of TopXML.COM as specified 
+in the links at the start of this article. 
+The fxsl library and its next versions are (will be) available also as part of the
+evaluation version of the Xselerator IDE, which can be downloaded
+at&nbsp; <a href="http://www.topxml.com/xselerator/">
+http://www.topxml.com/xselerator/</a> . This is done with the
+purpose to assure that the new <b>fxsl</b> library releases would be made
+constantly available to the thousands of highly experienced XSLT
+programmers, who are users of Xselerator. Anyone, who is interested
+to study and start using the <b>fxsl</b> library, can do this
+now.</p>
+
+<h3>Discussion</h3>
+
+<p>We have provided a multitude of examples illustrating the
+usefulness of higher-order functions in XSLT. Most of the examples
+from John Hughes article "Why Functional Programming matters"&nbsp;
+have been implemented and the XSLT code demonstrated. Many of them
+(e.g. foldl, foldr, foldl-tree, map, buildListWhile,
+buildListWhileMap) are important functional programming design
+patterns that can generate unlimited types of new functions,
+depending on the functions passed to them as parameters.</p>
+
+<p>All this is more than an ample proof that XSLT <b>is</b> in fact
+a full-pledged functional programming language.</p>
+
+<p>On&nbsp;&nbsp; the other side, the XSLT code of those functions
+seems too-verbose compared to the corresponding Haskell code. The
+process of writing functional XSLT code can be made much more
+straightforward and easier by providing support for higher-order
+functions in XPath and XSLT, thus definitely improving even further
+the compactness, readability and reliability of XSLT functional
+code. It is the ideal time right now for the W3C XPath 2.0 working
+group to make the decision to provide the necessary support for
+higher-order functions as part of the standard XPath 2.0 specification.
+In case this golden opportunity is missed, then generic templates and libraries 
+will be used in the years to come.</p>
+
+<h3>Resources</h3>
+
+<p><b><a name="[1]">[1]</a></b><a
+href="http://www.md.chalmers.se/~rjmh/Papers/whyfp.html" target="_blank"><b>Why
+Functional Programming Matters</b></a></p>
+
+<p>By <a href="http://www.cs.chalmers.se/~rjmh" target="_blank">John
+Hughes</a></p>
+
+<p>A brilliant paper, explaining the essence and beauty of the most
+important FP concepts. Multiple, very nice examples. Beautiful and
+elegant -- this is a "must read" for everyone who needs to
+understand what FP is all about.</p>
+
+<p><a name="[2]">[2]</a> <a
+href="http://www.xml.com/lpt/a/2001/02/14/functional.html" target="_blank">
+Functional Programming and XML</a></p>
+
+<p><b>By Bijan Parsia</b><b>:</b> Describes support for XML in some
+FP languages: HaXML, LambdaXML and Erlang.</p>
+
+<p><b><a name="[3]">[3]</a></b> <a
+href="http://www-106.ibm.com/developerworks/xml/library/x-xslt/" target="_blank">
+<b>What kind of language is XSLT?</b></a></p>
+
+<p><b>By Michael Kay:</b>("Note: Although XSLT is based on
+functional programming ideas, it is not as yet a full functional
+programming language, as it lacks the ability to treat functions as
+a first-class data type.")</p>
+
+<p><a name="[4]">[4]</a> <a
+href="http://citeseer.nj.nec.com/cache/papers/cs/9582/http:zSzzSzwww.cs.bell-labs.comzSz~wadlerzSzpaperszSzxsl-semanticszSzxsl-semantics.pdf/wadler99formal.pdf" target="_blank">
+A formal semantics of patterns in XSLT (PDF)</a></p>
+
+<p>By Philip Wadler</p>
+
+<p><a name="[5]">[5]</a> <a
+href="http://cm.bell-labs.com/cm/cs/who/wadler/" target="_blank">Philip Wadler's
+home page</a></p>
+
+<p>A researcher with major contributions in the area of formal
+definition of the semantics of XSLT and XPath</p>
+
+<p><a name="[6]">[6]</a> <a href="http://www.haskell.org" target="_blank">Haskell home
+page</a></p>
+
+<p>The home page of the FP language Haskell.</p>
+
+<p><a name="[7]">[7]</a> <a
+href="http://www.cs.ukc.ac.uk/people/staff/sjt/craft2e/" target="_blank">Haskell,
+The Craft of Functional Programming, Second Edition</a></p>
+
+<p>By Simon Thompson</p>
+
+<p><b><a name="[8]">[8]</a></b> <a href="http://www.w3.org/TR/xslt" target="_blank">XSL
+Transformations (XSLT) Version 1.0W3C Recommendation 16 November
+1999</a></p>
+
+<p><a name="[9]">[9]</a> Personal communication with Corey Haines, through messages
+in the <a href="http://www.yahoogroups.com/archive/XSLTalk" target="_blank">xsltalk
+forum</a>.</p>
+
+<p><a name="[10]">[10]</a> <a href="http://www.haskell.org/tutorial/" target="_blank">A Gentle
+Introduction to Haskell, Version 98</a></p>
+
+<p>By <a href="http://www.cs.yale.edu/homes/hudak-paul.html" target="_blank">Paul Hudak</a>,
+<a href="http://www.cs.yale.edu/homes/peterson-john.html" target="_blank">John
+Peterson</a>, <a href="http://coyote.lanl.gov/HOMES/jfasel.html" target="_blank">
+Joseph Fasel</a></p>
+
+<h3>About the author</h3>
+
+<p><a href="http://www.topxml.com/members/profile.asp?id=i1005" target="_blank">
+Dimitre Novatchev</a> is the author of the popular tool for learning
+XPath -- the XPath Visualizer, and he developed the first
+systematic implementation of the concept of "<i>generic
+templates</i>". His background (and PhD, a long time ago) is in
+computer science and mathematics. He has been working at Fujitsu
+Australia on various aspects of OODBMS, including XML support for
+Jasmine. At the time of writing Dimitre is a software development
+manager at the UN Centre in Vienna, Austria.&nbsp;</p>
+
+</div>
+
+<table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 11 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+<a href="8.html"><img alt="Previous Page" border="0" height="18" src="arrow_prev.gif" width="18"></a>		<a href="Functional Programming.html" target="_top"><img alt="Table Of Contents" border="0" src="contents.gif" width="60" height="15"></a>&nbsp;</td></tr></table>
+	</td>
+		</tr>
+	</table>
+
+	
+	  <p align="center">
+		  <a href="http://sourceforge.net">
+		   <img src="http://sourceforge.net/sflogo.php?group_id=53841&amp;type=6" 
+		        width="210" height="62" border="0" alt="SourceForge.net Logo">
+		  </a>
+	  </p>
+<a target="_top" href="#">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=38
+border=0 width=41 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=dimitren&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=dimitren&j=n"></noscript>
+
+	
+</body>
+</html>
+

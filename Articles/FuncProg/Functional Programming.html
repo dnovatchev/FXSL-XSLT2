@@ -1,0 +1,151 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type"
+content="text/html; charset=windows-1252" />
+<title>The Functional Programming Language XSLT - A proof through
+examples</title>
+<meta NAME='description' CONTENT='The Functional Programming Language XSLT - A proof through
+examples'>
+</head>
+<body>
+
+<table border="0" cellspacing="0">
+	<tr>
+<td width="100%">
+<!-- Navigation --><table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 1 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+&nbsp;		<a href="Functional Programming.html" target="_top"><img alt="Table Of Contents" border="0" src="contents.gif" width="60" height="15"></a><a href="0.html"><img alt="Next Page" border="0" height="18" src="arrow_next.gif" width="18"></a></td></tr></table><table align="right" cellPadding="0" cellSpacing="0" width="30%">
+<tr>	<th align="middle" width="100%">Table of Contents</th></tr><tr><td bgColor="#ececff" width="100%"><br>	<font size="1"><IMG border="0" height="11" src="condensed.gif" width="11">&nbsp;<A href="#Introduction"><font size="1">Introduction</font></a><br>
+    •&nbsp;<A href="0.html#Starting_point"><font size="1">Starting point</font></a><br>
+	<font size="1">•&nbsp;</font><A href="1.html#Major_FP_design_patterns"><font size="1">Major FP design patterns/functions in XSLT</font></a><br>
+	<font size="1">•&nbsp;</font><A href="2.html#List_processing"><font size="1">List processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="3.html#Tree_processing"><font size="1">Tree processing</font></a><br>
+	<font size="1">•&nbsp;</font><A href="4.html#Lazy_evaluation"><font size="1">Lazy evaluation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="5.html#Advanced_XSLT_FP_applications"><font size="1">Advanced XSLT FP applications</font></a><br>
+	<font size="1">•&nbsp;</font><A href="6.html#Square_root"><font size="1">Square root</font></a><br>
+	<font size="1">•&nbsp;</font><A href="7.html#Numerical_differentiation"><font size="1">Numerical differentiation</font></a><br>
+	<font size="1">•&nbsp;</font><A href="8.html#Numerical_integration"><font size="1">Numerical integration</font></a><br>
+	<font size="1">•&nbsp;</font><A href="9.html#Summary"><font size="1">Summary</font></a><br>
+	<br><br></font></td></tr></table>
+<div>
+<h1>The Functional Programming Language XSLT - A proof through
+examples</h1>
+
+<p><a href="http://www.topxml.com/members/profile.asp?id=i1005" target="_blank">
+Dimitre Novatchev</a> (<a
+href="mailto:dnovatchev@yahoo.com">dnovatchev@yahoo.com</a>)<br />
+November, 2001</p>
+
+<p>Until now it was believed that although XSLT is based on
+functional programming ideas, it is not as yet a full functional
+programming language, as it lacks the ability to treat functions as
+a first-class data type. Based on numerous concrete XSLT
+implementations of some of the major functional programming design
+patterns, including some of the most generic list-processing and
+tree-processing functions, this article provides ample proof that
+XSLT is in fact a full-pledged functional programming language. The
+presented code forms the base of a first XSLT functional
+programming library. It is emphasized that a decision to include
+higher-order functions support in XPath 2.0 will make functional
+programming in XSLT even more straightforward, natural and
+convenient.</p>
+
+<p></p>
+<p>The source code for this article is part of the <b>FXSL</b> library version 1.1 
+and can be downloaded <a href="http://sourceforge.net/project/showfiles.php?group_id=53841">here</a>:</p>
+<p><a href="http://prdownloads.sourceforge.net/fxsl/fxsl-MS-1.1.zip?download">
+<img border="0" src="zip.jpg"></a>&nbsp;
+Using MSXML?&nbsp; <a href="http://prdownloads.sourceforge.net/fxsl/fxsl-MS-1.1.zip?download">Get the MSXML source code!</a></p>
+
+<p><a href="http://prdownloads.sourceforge.net/fxsl/fxsl-Saxon-1.1.zip?download"><img border="0" src="zip.jpg"></a>&nbsp;
+Using SAXON?&nbsp; <a href="http://prdownloads.sourceforge.net/fxsl/fxsl-Saxon-1.1.zip?download">Get the SAXON source code!</a></p>
+
+<p><a href="http://prdownloads.sourceforge.net/fxsl/fxsl-Xalan-1.1.zip?download"><img border="0" src="zip.jpg"></a>&nbsp;
+Using XALAN?&nbsp; <a href="http://prdownloads.sourceforge.net/fxsl/fxsl-Xalan-1.1.zip?download">Get the XALAN source code as adapted by Knut Wannheden !</a></p>
+
+<h2><a name="Introduction">Introduction</a></h2>
+
+<p>XSLT has turned out to be very different from the typical
+programming languages in use today. One question that's being asked
+frequently is: "<i>What kind of programming language is actually
+XSLT?</i>". Until now, the authoritative answer from some of the
+best specialists was that XSLT is a declarative (as opposed to
+imperative) but still not a functional programming (FP) language.
+Michael Kay notes in his article "What kind of language is XSLT" <a href="9.html#[3]">
+[3]</a> :<br />
+"<i>although XSLT is based on functional programming ideas, it is
+not as yet a full functional programming language, as it lacks the
+ability to treat functions as a first-class data type</i>".</p>
+
+<p>What has been done to bring XML and FP languages closer
+together? One notable direction is to add XML support to some
+well-known FP languages, such as the HaXML compiler and tools
+written in Haskell <a href="9.html#[6]">
+[6]</a>, the LambdaXML xml-based FP&nbsp; language and the XML
+support in Erlang <a href="9.html#[2]">
+[2]</a>.</p>
+
+<p>However, nothing is seemingly being done in the other direction
+-- to add functional programming capabilities to XSLT. The citation
+in the start of this section reflects the unanimous, dominating
+understanding of XSLT as a declarative-only programming language,
+which does not belong to the family of FP languages, due to its
+lack of support for higher order functions.</p>
+
+<p>The purpose of this article is to demonstrate beyond any doubt
+that XSLT <b>is</b> a functional programming language in its own
+right. To achieve this goal, a reference XSLT implementation is
+provided of major FP concepts and functions. This article closely
+follows the contents and layout of John Hughes' article "Why
+functional programming matters" <a href="9.html#[1]">
+[1]</a>, in which some most typical and useful FP patterns and
+functions are defined. This article provides an XSLT implementation
+of most of the functions defined in <a href="9.html#[1]">
+[1]</a>.&nbsp; Therefore, the reader is encouraged to read <a href="9.html#[1]">
+[1]</a> either prior, or side-by-side with the current article.</p>
+
+<h2><a name="&nbsp;">&nbsp;</a></h2>
+</div>
+
+<table border="0" cellpadding="1" cellspacing="1" width="100%"><tr>
+<td valign="top" align="right">
+<font color="#000080">Page 1 of 11</font>
+<p>&nbsp;</p>
+</td>
+<td valign="top" align="right" width="150">
+&nbsp;		<a href="Functional Programming.html" target="_top"><img alt="Table Of Contents" border="0" src="contents.gif" width="60" height="15"></a><a href="0.html"><img alt="Next Page" border="0" height="18" src="arrow_next.gif" width="18"></a></td></tr></table>
+	</td>
+		</tr>
+	</table>
+
+	  <p align="center">
+		  <a href="http://sourceforge.net">
+		   <img src="http://sourceforge.net/sflogo.php?group_id=53841&amp;type=6" 
+		        width="210" height="62" border="0" alt="SourceForge.net Logo">
+		  </a>
+	  </p>
+<a target="_top" href="#">
+<img name=im src="http://t1.extreme-dm.com/i.gif" height=38
+border=0 width=41 alt=""></a><script language="javascript"><!--
+an=navigator.appName;d=document;function
+pr(){d.write("<img src=\"http://t0.extreme-dm.com",
+"/0.gif?tag=dimitren&j=y&srw="+srw+"&srb="+srb+"&",
+"rs="+r+"&l="+escape(d.referrer)+"\" height=1 ",
+"width=1>");}srb="na";srw="na";//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?
+srb=s.colorDepth:srb=s.pixelDepth;//-->
+</script><script language="javascript"><!--
+r=41;d.images?r=d.im.width:z=0;pr();//-->
+</script><noscript><img height=1 width=1 alt="" 
+src="http://t0.extreme-dm.com/0.gif?tag=dimitren&j=n"></noscript>
+	  
+	  
+</body>
+</html>
+
