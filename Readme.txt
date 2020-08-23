@@ -54,4 +54,4 @@ Using unique mode is necessary to ensure that no other template will be selected
 
 
 Cheers,
-Dimitre Novatchev...
+Dimitre Novatchev.
