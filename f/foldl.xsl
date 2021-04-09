@@ -9,7 +9,7 @@
       <xsl:param name="pList" select="/.."/>
 
       <xsl:choose>
-         <xsl:when test="not($pList)">
+         <xsl:when test="empty($pList)">
             <xsl:copy-of select="$pA0"/>
          </xsl:when>
          <xsl:otherwise>
