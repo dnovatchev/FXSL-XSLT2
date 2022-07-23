@@ -29,8 +29,8 @@
 
 >   This function
 >   is [·deterministic·](https://www.w3.org/TR/xpath-functions-31/#dt-deterministic), [·context-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-context-dependent),
->   and [·focus-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-focus-independent).
->   It doesn’t depend on collations, and implicit timezone.
+>   [·focus-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-focus-independent),
+>   and transitive. It doesn’t depend on collations, and implicit timezone.
 
 >   **Rules**
 
@@ -39,9 +39,9 @@
 >   If the two sequences are of different lengths, the function returns false.
 
 >   If the two sequences are of the same length, the function returns true if
->   and only if every item in the sequence \$param1 is deep-equal to the item at
->   the same position in the sequence \$param2. The rules for deciding whether
->   two items are deep-equal-good follow.
+>   and only if every item in the sequence \$param1 is deep-equal-good to the
+>   item at the same position in the sequence \$param2. The rules for deciding
+>   whether two items are deep-equal-good follow.
 
 >   Call the two items \$i1 and \$i2 respectively.
 
