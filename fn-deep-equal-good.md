@@ -2,16 +2,17 @@
 
 **Summary**
 
->   This function assesses whether two sequences are deep-equal to each other.
->   To be deep-equal, they must contain items that are pairwise deep-equal; and
->   for two items to be deep-equal, they must either be atomic values that
->   compare equal, or nodes of the same kind, with the same name, whose children
->   are deep-equal, or maps with matching entries, or arrays with matching
->   members. This function differs from the standard XPath 3.1
->   **fn:deep-equal()** in that **fn:deep-equal-good** doesn’t raise any errors
->   and
+>   This function assesses whether two sequences are deep-equal-good to each
+>   other. To be deep-equal-good, they must contain items that are pairwise
+>   deep-equal-good; and for two items to be deep-equal-good, they must either
+>   be atomic values that are deep-equal-good, or nodes of the same kind, with
+>   the same name, whose children are deep-equal-good, or maps with matching
+>   entries, or arrays with matching members.  
+>     
+>   This function differs from the standard XPath 3.1 **fn:deep-equal()** in
+>   that **fn:deep-equal-good** doesn’t raise any errors and
 >   is[·deterministic·](https://www.w3.org/TR/xpath-functions-31/#dt-deterministic), [·context-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-context-dependent),
->   and [·focus-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-focus-independent)and
+>   [·focus-independent,·](https://www.w3.org/TR/xpath-functions-31/#dt-focus-independent)and
 >   transitive, that is if:  
 >     
 >   **fn:deep-equal-good(\$p1, \$p2) and fn:deep-equal-good(\$p2, \$p3)**
@@ -26,7 +27,7 @@
 
 >   **Properties**
 
->   The two-argument form of this function
+>   This function
 >   is [·deterministic·](https://www.w3.org/TR/xpath-functions-31/#dt-deterministic), [·context-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-context-dependent),
 >   and [·focus-independent·](https://www.w3.org/TR/xpath-functions-31/#dt-focus-independent).
 >   It doesn’t depend on collations, and implicit timezone.
@@ -38,9 +39,9 @@
 >   If the two sequences are of different lengths, the function returns false.
 
 >   If the two sequences are of the same length, the function returns true if
->   and only if every item in the sequence \$parameter1 is deep-equal to the
->   item at the same position in the sequence \$parameter2. The rules for
->   deciding whether two items are deep-equal follow.
+>   and only if every item in the sequence \$param1 is deep-equal to the item at
+>   the same position in the sequence \$param2. The rules for deciding whether
+>   two items are deep-equal-good follow.
 
 >   Call the two items \$i1 and \$i2 respectively.
 
@@ -69,35 +70,30 @@
 
         1.  Both \$i1 and \$i2 are NaN
 
->   **Note:**
-
+>   **Note:**  
 >   xs:double('NaN') is the same key as xs:float('NaN')
 
 1.  Both \$i1 and \$i2 are positive infinity
 
->   **Note:**
-
+>   **Note:**  
 >   xs:double('INF') is the same key as xs:float('INF')
 
 1.  Both \$i1 and \$i2 are negative infinity
 
->   **Note:**
-
+>   **Note:**  
 >   xs:double('-INF') is the same key as xs:float('-INF')
 
 1.  \$i1 and \$i2 when converted to decimal numbers with no rounding or loss of
     precision are mathematically equal.
 
->   **Note:**
-
+>   **Note:**  
 >   Every instance of xs:double, xs:float, and xs:decimal can be represented
 >   exactly as a decimal number provided enough digits are available both before
 >   and after the decimal point. Unlike the eq relation, which converts both
 >   operands to xs:double values, possibly losing precision in the process,
 >   *this comparison is transitive*.
 
->   **Note:**
-
+>   **Note:**  
 >   Positive and negative zero are the same key.
 
 1.  All of the following conditions are true:
@@ -116,13 +112,11 @@
 
     4.  fn:deep-equal(\$i1, \$i2)
 
->   **Note:**
-
+>   **Note:**  
 >   The use of deep-equal rather than eq ensures that comparing values of
 >   different types yields false rather than an error.
 
->   **Note:**
-
+>   **Note:**  
 >   Unlike the eq operator, this comparison has no dependency on the implicit
 >   timezone, which means that the question of whether or not a map contains
 >   duplicate keys is not dependent on this aspect of the dynamic context.
@@ -139,8 +133,7 @@
 
     3.  fn:deep-equal(\$k1, \$k2)
 
->   **Note:**
-
+>   **Note:**  
 >   The use of deep-equal rather than eq ensures that comparing values of
 >   different types yields false rather than an error.
 
@@ -188,8 +181,7 @@
         content; "complex content" means a complex type whose variety is mixed,
         element-only, or empty.
 
->   **Note:**
-
+>   **Note:**  
 >   It is a consequence of this rule that validating a document *D* against a
 >   schema will usually (but not necessarily) result in a document that is not
 >   deep-equal to *D*. The exception is when the schema allows all elements to
