@@ -70,20 +70,20 @@
 
         1.  Both \$i1 and \$i2 are NaN
 
->   **Note:**  
->   xs:double('NaN') is the same key as xs:float('NaN')
+    >   **Note:**  
+    >   xs:double('NaN') is the same key as xs:float('NaN')
 
-1.  Both \$i1 and \$i2 are positive infinity
+2.  Both \$i1 and \$i2 are positive infinity
 
->   **Note:**  
->   xs:double('INF') is the same key as xs:float('INF')
+    >   **Note:**  
+    >   xs:double('INF') is the same key as xs:float('INF')
 
-1.  Both \$i1 and \$i2 are negative infinity
+3.  Both \$i1 and \$i2 are negative infinity
 
->   **Note:**  
->   xs:double('-INF') is the same key as xs:float('-INF')
+    >   **Note:**  
+    >   xs:double('-INF') is the same key as xs:float('-INF')
 
-1.  \$i1 and \$i2 when converted to decimal numbers with no rounding or loss of
+4.  \$i1 and \$i2 when converted to decimal numbers with no rounding or loss of
     precision are mathematically equal.
 
 >   **Note:**  
@@ -98,19 +98,19 @@
 
 1.  All of the following conditions are true:
 
-    1.  \$i1 is an instance of xs:date, xs:time, xs:dateTime, xs:gYear,
-        xs:gYearMonth, xs:gMonth, xs:gMonthDay, or xs:gDay
+2.  \$i1 is an instance of xs:date, xs:time, xs:dateTime, xs:gYear,
+    xs:gYearMonth, xs:gMonth, xs:gMonthDay, or xs:gDay
 
-    2.  \$i2 is an instance of xs:date, xs:time, xs:dateTime, xs:gYear,
-        xs:gYearMonth, xs:gMonth, xs:gMonthDay, or xs:gDay
+3.  \$i2 is an instance of xs:date, xs:time, xs:dateTime, xs:gYear,
+    xs:gYearMonth, xs:gMonth, xs:gMonthDay, or xs:gDay
 
-    3.  One of the following conditions is true:
+4.  One of the following conditions is true:
 
-        1.  Both \$i1 and \$i2 have a timezone
+5.  Both \$i1 and \$i2 have a timezone
 
-        2.  Neither \$i1 nor \$i2 has a timezone
+6.  Neither \$i1 nor \$i2 has a timezone
 
-    4.  fn:deep-equal(\$i1, \$i2)
+7.  fn:deep-equal(\$i1, \$i2)
 
 >   **Note:**  
 >   The use of deep-equal rather than eq ensures that comparing values of
@@ -133,43 +133,43 @@
 
     3.  fn:deep-equal(\$k1, \$k2)
 
->   **Note:**  
->   The use of deep-equal rather than eq ensures that comparing values of
->   different types yields false rather than an error.
+    >   **Note:**  
+    >   The use of deep-equal rather than eq ensures that comparing values of
+    >   different types yields false rather than an error.
 
-1.  If \$i1 and \$i2 are
+2.  If \$i1 and \$i2 are
     both [·maps·](https://www.w3.org/TR/xpath-functions-31/#dt-map), the result
     is true if and only if all the following conditions apply:
 
-2.  Both maps have the same number of entries.
+3.  Both maps have the same number of entries.
 
-3.  For every entry \$me1k  in the first map, there is an entry \$me2n  in the
+4.  For every entry \$me1k  in the first map, there is an entry \$me2n  in the
     second map that:
 
     1.  fn:deep-equal-safe(key(\$me1k), key(\$me2n)), and
 
     2.  fn:deep-equal-safe(value(\$me1k), value(\$me2n))
 
-4.  If \$i1 and \$i2 are
+5.  If \$i1 and \$i2 are
     both [·arrays·](https://www.w3.org/TR/xpath-functions-31/), the result
     is true if and only if all the following conditions apply:
 
-5.  Both arrays have the same number of members (array:size(\$i1) eq
-    array:size(\$i2)).
+    1.  Both arrays have the same number of members (array:size(\$i1) eq
+        array:size(\$i2)).
 
-6.  For all pairs of members in the same position of both arrays:  
-    every \$p in 1 to array:size(\$i1) satisfies deep-equal-safe(\$i1(\$p),
-    \$i2(\$p))
+    2.  For all pairs of members in the same position of both arrays:  
+        every \$p in 1 to array:size(\$i1) satisfies deep-equal-safe(\$i1(\$p),
+        \$i2(\$p))
 
->   If \$i1 and \$i2 are both nodes, they are compared as described below:
+6.  If \$i1 and \$i2 are both nodes, they are compared as described below:
 
-1.  If the two nodes are of different kinds, the result is false.
+7.  If the two nodes are of different kinds, the result is false.
 
-2.  If the two nodes are both document nodes then they are *deep-equal-safe* if
+8.  If the two nodes are both document nodes then they are *deep-equal-safe* if
     and only if the sequence \$i1/(\*\|text()) is *deep-equal-safe* to the
     sequence \$i2/(\*\|text()).
 
-3.  If the two nodes are both element nodes then they are *deep-equal-safe* if
+9.  If the two nodes are both element nodes then they are *deep-equal-safe* if
     and only if all of the following conditions are satisfied:
 
     1.  The two nodes have the same name, that is (node-name(\$i1) eq
@@ -181,34 +181,34 @@
         content; "complex content" means a complex type whose variety is mixed,
         element-only, or empty.
 
->   **Note:**  
->   It is a consequence of this rule that validating a document *D* against a
->   schema will usually (but not necessarily) result in a document that is not
->   *deep-equal-safe* to *D*. The exception is when the schema allows all
->   elements to have mixed content.
+10. **Note:**  
+    It is a consequence of this rule that validating a document *D* against a
+    schema will usually (but not necessarily) result in a document that is not
+    *deep-equal-safe* to *D*. The exception is when the schema allows all
+    elements to have mixed content.
 
-1.  The two nodes have the same number of attributes, and for every
+11. The two nodes have the same number of attributes, and for every
     attribute \$a1 in \$i1/\@\* there exists an attribute \$a2 in \$i2/\@\* such
     that \$a1 and \$a2 are *deep-equal-safe*.
 
-2.  One of the following conditions holds:
+12. One of the following conditions holds:
 
-    -   Both element nodes are annotated as having simple content (as defined in
+    1.  Both element nodes are annotated as having simple content (as defined in
         3(b) above), and the typed value of \$i1 is *deep-equal-safe* to the
         typed value of \$i2.
 
-    -   Both element nodes have a type annotation that is a complex type with
+    2.  Both element nodes have a type annotation that is a complex type with
         variety element-only, and the sequence \$i1/\* is *deep-equal-safe* to
         the sequence \$i2/\*.
 
-    -   Both element nodes have a type annotation that is a complex type with
+    3.  Both element nodes have a type annotation that is a complex type with
         variety mixed, and the sequence \$i1/(\*\|text()) is *deep-equal-safe*
         to the sequence \$i2/(\*\|text()).
 
-    -   Both element nodes have a type annotation that is a complex type with
+    4.  Both element nodes have a type annotation that is a complex type with
         variety empty.
 
-3.  If the two nodes are both attribute nodes then they are *deep-equal-safe* if
+13. If the two nodes are both attribute nodes then they are *deep-equal-safe* if
     and only if both the following conditions are satisfied:
 
     1.  The two nodes have the same name, that is  
@@ -216,7 +216,7 @@
 
     2.  The typed value of \$i1 is *deep-equal-safe* to the typed value of \$i2.
 
-4.  If the two nodes are both processing instruction nodes, then they are
+14. If the two nodes are both processing instruction nodes, then they are
     *deep-equal-safe* if and only if both the following conditions are
     satisfied:
 
@@ -227,7 +227,7 @@
         of \$i2. That is:  
          fn:codepoint-equal(string(\$i1), string(\$i2))
 
-5.  If the two nodes are both namespace nodes, then they are *deep-equal-safe*
+15. If the two nodes are both namespace nodes, then they are *deep-equal-safe*
     if and only if both the following conditions are satisfied:
 
     1.  The two nodes either have the same name or are both nameless, that
@@ -235,7 +235,7 @@
 
     2.  fn:codepoint-equal(string(\$i1), string(\$i2))
 
-6.  If the two nodes are both text nodes or comment nodes, then they are
+16. If the two nodes are both text nodes or comment nodes, then they are
     *deep-equal-safe* if and only if:  
     fn:codepoint-equal(string(\$i1), string(\$i2))
 
